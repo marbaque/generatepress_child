@@ -12,3 +12,8 @@ function generatepress_child_enqueue_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'generatepress_child_enqueue_scripts', 100 );
+
+function remove_page_tags_recurso_field() {
+	remove_meta_box( 'tagsdiv-recurso_category' , 'post' , 'normal' ); 
+}
+add_action( 'admin_menu' , 'remove_page_tags_recurso_field' );
