@@ -1,0 +1,112 @@
+/*
+ Theme Name:   GeneratePress Child
+ Theme URI:    https://generatepress.com
+ Description:  Default GeneratePress child theme
+ Author:       Tom Usborne
+ Author URI:   https://tomusborne.com
+ Template:     generatepress
+ Version:      0.1
+ GitHub Theme URI: https://github.com/marbaque/generatepress_child
+*/
+
+$color__body-text: #4A4A4A;
+$color__primario: #FA9046;
+$color__secundario: #F9E9C9; 
+
+header.site-header {
+	
+	.inside-header {
+		padding: 20px;
+	}
+	
+	
+}
+.main-navigation {
+	background-color: transparent;
+	button.menu-toggle {
+		background-color: $color__primario;
+	}
+	.main-nav {
+		
+		ul {
+			li {
+				a {
+					color: $color__body-text;
+					&:hover {
+						background-color: $color__secundario;
+						color: $color__body-text;
+					}
+				}
+				
+				&:focus, 
+				&.sfHover  {
+					>a {
+						background-color: $color__secundario;
+						color: $color__body-text;
+					}
+				}	
+			}
+			
+			li[class*="current-menu-"],
+			li[class*="current-menu-"].sfHover {
+				a {
+					background-color: white;
+					color: $color__body-text;
+					
+					&:hover {
+						background-color: $color__secundario;
+						color: $color__body-text;
+					}
+				}
+				&:after {
+					display: block;
+					content: "";
+					background-color: $color__primario;
+					height: 3px;
+					width: 30px;
+					position: absolute;
+					bottom: 5px;
+					left: 5px;
+					
+				}
+				
+			}
+			
+			ul {
+				background-color: $color__secundario;
+				
+				li {
+					a {
+						background-color: $color__secundario;
+						color: $color__body-text;
+					}
+					&:focus,
+					&.sfHover,
+					&:hover  {
+						>a {
+							background-color: $color__secundario;
+							color: $color__body-text;
+							&:hover {
+								background-color: $color__primario;
+							}
+						}
+					}
+				}
+				li[class*="current-menu-"],
+				li[class*="current-menu-"].sfHover {
+					a {
+						background-color: white;
+						color: $color__body-text;
+						
+						&:hover {
+							background-color: $color__secundario;
+							color: $color__body-text;
+						}
+					}
+					
+				}
+			}
+		}
+	}
+
+}

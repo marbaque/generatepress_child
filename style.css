@@ -8,4 +8,56 @@
  Version:      0.1
  GitHub Theme URI: https://github.com/marbaque/generatepress_child
 */
+header.site-header .inside-header {
+  padding: 20px; }
 
+.main-navigation {
+  background-color: transparent; }
+  .main-navigation button.menu-toggle {
+    background-color: #FA9046; }
+  .main-navigation .main-nav ul li a {
+    color: #4A4A4A; }
+    .main-navigation .main-nav ul li a:hover {
+      background-color: #F9E9C9;
+      color: #4A4A4A; }
+  .main-navigation .main-nav ul li:focus > a, .main-navigation .main-nav ul li.sfHover > a {
+    background-color: #F9E9C9;
+    color: #4A4A4A; }
+  .main-navigation .main-nav ul li[class*="current-menu-"] a,
+  .main-navigation .main-nav ul li[class*="current-menu-"].sfHover a {
+    background-color: white;
+    color: #4A4A4A; }
+    .main-navigation .main-nav ul li[class*="current-menu-"] a:hover,
+    .main-navigation .main-nav ul li[class*="current-menu-"].sfHover a:hover {
+      background-color: #F9E9C9;
+      color: #4A4A4A; }
+  .main-navigation .main-nav ul li[class*="current-menu-"]:after,
+  .main-navigation .main-nav ul li[class*="current-menu-"].sfHover:after {
+    display: block;
+    content: "";
+    background-color: #FA9046;
+    height: 3px;
+    width: 30px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px; }
+  .main-navigation .main-nav ul ul {
+    background-color: #F9E9C9; }
+    .main-navigation .main-nav ul ul li a {
+      background-color: #F9E9C9;
+      color: #4A4A4A; }
+    .main-navigation .main-nav ul ul li:focus > a, .main-navigation .main-nav ul ul li.sfHover > a, .main-navigation .main-nav ul ul li:hover > a {
+      background-color: #F9E9C9;
+      color: #4A4A4A; }
+      .main-navigation .main-nav ul ul li:focus > a:hover, .main-navigation .main-nav ul ul li.sfHover > a:hover, .main-navigation .main-nav ul ul li:hover > a:hover {
+        background-color: #FA9046; }
+    .main-navigation .main-nav ul ul li[class*="current-menu-"] a,
+    .main-navigation .main-nav ul ul li[class*="current-menu-"].sfHover a {
+      background-color: white;
+      color: #4A4A4A; }
+      .main-navigation .main-nav ul ul li[class*="current-menu-"] a:hover,
+      .main-navigation .main-nav ul ul li[class*="current-menu-"].sfHover a:hover {
+        background-color: #F9E9C9;
+        color: #4A4A4A; }
+
+/*# sourceMappingURL=style.css.map */
