@@ -8,6 +8,7 @@
  Version:      0.1
  GitHub Theme URI: https://github.com/marbaque/generatepress_child
 */
+@import url("custom-styles.css");
 header.site-header .inside-header {
   padding: 20px; }
 
@@ -15,6 +16,9 @@ header.site-header .inside-header {
   background-color: transparent; }
   .main-navigation button.menu-toggle {
     background-color: #FA9046; }
+  .main-navigation .navigation-search input[type="search"] {
+    background-color: #F9E9C9;
+    color: #4A4A4A; }
   .main-navigation .main-nav ul li a {
     color: #4A4A4A; }
     .main-navigation .main-nav ul li a:hover {

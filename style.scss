@@ -26,6 +26,20 @@ header.site-header {
 	button.menu-toggle {
 		background-color: $color__primario;
 	}
+	.navigation-search {
+		
+		input[type="search"] {
+			
+			background-color: $color__secundario;
+			color: $color__body-text;
+			
+			&:focus {
+				
+			}
+			
+		}
+		
+	}
 	.main-nav {
 		
 		ul {
@@ -110,3 +124,6 @@ header.site-header {
 	}
 
 }
+
+
+@import url('custom-styles.css');
