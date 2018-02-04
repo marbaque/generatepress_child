@@ -57,7 +57,36 @@ get_header(); ?>
 			 * @since 0.1
 			 */
 			do_action( 'generate_before_main_content' );
+			?>
+			<aside class="curso_sidebar">
+				<div class="submenu">
+					<?php 
+					global $post;
 
+					$args = array(
+					    'post_parent' => $post->ID,
+					    'posts_per_page' => -1,
+					    'post_type' => 'seccion', //you can use also 'any'
+					    );
+					
+					$the_query = new WP_Query( $args );
+					// The Loop
+					if ( $the_query->have_posts() ) :
+						echo '<h3>Contenidos del curso</h3>';
+						echo '<ul>';
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+							// Do Stuff
+							the_title( sprintf( '<li><a href="%s" rel="bookmark">', esc_url( generate_get_link_url() ) ), '</a></li>' );
+						endwhile;
+						echo '</ul>';
+					endif;
+					// Reset Post Data
+					wp_reset_postdata();
+					?>
+				</div><!-- submenu -->
+			</aside><!-- aside .curso_sidebar -->
+
+			<?php
 			while ( have_posts() ) : the_post();
 
 				get_template_part( 'content', 'curso' );

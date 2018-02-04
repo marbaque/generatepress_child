@@ -22,8 +22,13 @@ function generate_press_child_setup() {
 	add_image_size('portada-curso', 350, 350, true);
 	add_image_size('portada-curso-thumbnail', 270, 270, true);
 	
+	//agregar iconos de fontawesome.com
+	wp_enqueue_script('generatepress-fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js', true );
 	
 	
+	
+	//Las siguientes funciones son para agregar un metabox de parent-post
+	//o sea, para escoger el curso al que pertenecen las secciones
 	
 	//Updating the “Parent” meta box
 	function my_add_meta_boxes() {

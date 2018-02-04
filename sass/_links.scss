@@ -1,5 +1,6 @@
 a {
 	border-bottom: 2px solid currentcolor;
+	transition: .5s all;
 	
 	&:hover {
 		border-bottom: 2px solid $color__primario;
