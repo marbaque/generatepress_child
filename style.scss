@@ -9,14 +9,17 @@
  GitHub Theme URI: https://github.com/marbaque/generatepress_child
 */
 
-$color__body-text: #4A4A4A;
-$color__primario: #FA9046;
-$color__secundario: #F9E9C9; 
+@import 'sass/_variables';
+@import 'sass/_links';
 
 header.site-header {
 	
 	.inside-header {
 		padding: 20px;
+		
+		a {
+			border: none;
+		}
 	}
 	
 	
@@ -125,5 +128,49 @@ header.site-header {
 
 }
 
+//pagina de single-curso
+.single-curso,
+.single-seccion {
+	.entry-header {
+		background-color: $color__primario;
+		color: white;
+		padding: .5em 1em;
+		
+		.entry-title {
+			font-size: 1.5em;
+		}
+	}
+	.widget-area {
+		>div {
+			margin: 0;
+		}
+	}
+	.content-area {
+		.site-main {
+			margin-top: 0;
+			
+		}
+	}
+}
+
+
+//footer
+.site-footer {
+	.footer-widgets {
+		background: $color__dark;
+		color: $color__text-overdark;
+		
+		.widget-title {
+			color: $color__text-overdark;
+		}
+		
+		a {
+			color: $color__text-overdark;
+		}
+	}
+}
+.site-info {
+	background: $color__dark;
+}
 
 @import url('custom-styles.css');

@@ -9,8 +9,16 @@
  GitHub Theme URI: https://github.com/marbaque/generatepress_child
 */
 @import url("custom-styles.css");
+a {
+  border-bottom: 2px solid currentcolor; }
+  a:hover {
+    border-bottom: 2px solid #FA9046;
+    color: #FA9046; }
+
 header.site-header .inside-header {
   padding: 20px; }
+  header.site-header .inside-header a {
+    border: none; }
 
 .main-navigation {
   background-color: transparent; }
@@ -63,5 +71,31 @@ header.site-header .inside-header {
       .main-navigation .main-nav ul ul li[class*="current-menu-"].sfHover a:hover {
         background-color: #F9E9C9;
         color: #4A4A4A; }
+
+.single-curso .entry-header,
+.single-seccion .entry-header {
+  background-color: #FA9046;
+  color: white;
+  padding: .5em 1em; }
+  .single-curso .entry-header .entry-title,
+  .single-seccion .entry-header .entry-title {
+    font-size: 1.5em; }
+.single-curso .widget-area > div,
+.single-seccion .widget-area > div {
+  margin: 0; }
+.single-curso .content-area .site-main,
+.single-seccion .content-area .site-main {
+  margin-top: 0; }
+
+.site-footer .footer-widgets {
+  background: #50545E;
+  color: #CDD8E8; }
+  .site-footer .footer-widgets .widget-title {
+    color: #CDD8E8; }
+  .site-footer .footer-widgets a {
+    color: #CDD8E8; }
+
+.site-info {
+  background: #50545E; }
 
 /*# sourceMappingURL=style.css.map */

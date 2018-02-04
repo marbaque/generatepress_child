@@ -1,0 +1,8 @@
+a {
+	border-bottom: 2px solid currentcolor;
+	
+	&:hover {
+		border-bottom: 2px solid $color__primario;
+		color: $color__primario;
+	}
+}

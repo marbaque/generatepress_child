@@ -1,2 +1,6 @@
 // Agregue aqui los estilos css... NO edite style.css directamente
 // pues ese es actualizado automaticamente a partir de style.scss
+
+body {
+	background: red;
+}
