@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
-	<header class="entry-header">
+	<header class="entry-header grid-container grid-parent">
 		<?php
 		/**
 		 * generate_before_entry_title hook.
@@ -21,10 +21,10 @@ get_header(); ?>
 		do_action( 'generate_before_entry_title' );
 		
 		$parent = $post->post_parent;
+		$permalink = get_permalink( $post->post_parent );
 
 		if ( generate_show_title() ) {
-			//the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' );
-			echo '<h2 class="entry-title" itemprop="headline">' . get_the_title($parent) . '</h2>';
+			echo '<a href="' . $permalink . '" title="Inicio del curso"><h2 class="entry-title" itemprop="headline">' . get_the_title($parent) . '</h2></a>';
 		}
 
 		/**
@@ -69,17 +69,18 @@ get_header(); ?>
 					$args = array(
 					    'post_parent' => $parent,
 					    'posts_per_page' => -1,
+					    'order' => 'ASC',
 					    'post_type' => 'seccion', //you can use also 'any'
 					    );
 					
 					$the_query = new WP_Query( $args );
 					// The Loop
 					if ( $the_query->have_posts() ) :
-						echo '<h3>Contenidos del curso</h3>';
+						echo '<h4>Contenidos</h4>';
 						echo '<ul>';
 						while ( $the_query->have_posts() ) : $the_query->the_post();
 							// Do Stuff
-							the_title( sprintf( '<li><a href="%s" rel="bookmark">', esc_url( generate_get_link_url() ) ), '</a></li>' );
+							echo '<li><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';
 						endwhile;
 						echo '</ul>';
 					endif;

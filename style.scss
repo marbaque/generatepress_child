@@ -2,7 +2,7 @@
  Theme Name:   GeneratePress Child
  Theme URI:    https://generatepress.com
  Description:  Default GeneratePress child theme
- Author:       Tom Usborne
+ Author:       Tom Usborne - Modified by Mario Badilla
  Author URI:   https://tomusborne.com
  Template:     generatepress
  Version:      0.1
@@ -11,6 +11,7 @@
 
 @import 'sass/_variables';
 @import 'sass/_links';
+@import 'sass/_tipo';
 
 header.site-header {
 	
@@ -27,7 +28,8 @@ header.site-header {
 .main-navigation {
 	background-color: transparent;
 	button.menu-toggle {
-		background-color: $color__primario;
+		background-color: $color__dark;
+		color: $color__text-overdark;
 	}
 	.navigation-search {
 		
@@ -133,7 +135,7 @@ header.site-header {
 .single-seccion {
 	
 	.site-main {
-		width: 100%;
+		//width: 100%;
 		.curso_sidebar {
 			background-color: $color__secundario;
 			width: 100%;
@@ -142,6 +144,20 @@ header.site-header {
 			margin: 0;
 			.submenu {
 				padding: 40px 20px;
+				h4 {
+					margin-top: 0;
+				}
+				//submenu de curso
+				ul {
+					list-style: none;
+					margin: 0;
+					li {
+						margin-bottom: .25em;
+					}
+					a {
+						border-width: 0;
+					}
+				}
 			}
 		}
 		.curso,
@@ -157,19 +173,24 @@ header.site-header {
 			}
 			.curso,
 			.seccion {
-				width: 70%;
+				//width: 70%;
 			}
 		}
 	}
 	
 	.entry-header {
-		background-color: $color__primario;
-		color: white;
-		padding: .5em 1em .75em;
 		margin-top: 20px;
-		
+		width: 100%;
 		.entry-title {
-			font-size: 1.5em;
+			font-size: 1.2em;
+			padding: .5em 1em .75em;
+			background: $color__primario;
+			color: white;
+			margin-top: 0;
+			@media screen and (min-width: $break__small) {
+				font-size: 1.5em;
+				padding: .5em 1em .75em;
+			}
 		}
 	}
 	.widget-area {
@@ -181,7 +202,7 @@ header.site-header {
 		.site-main {
 			.inside-article {
 				@media screen and (max-width: $break__small) {
-					padding: 0 40px 40px;
+					//padding: 0 40px 40px;
 				}
 			}
 			.entry-content {
@@ -190,7 +211,7 @@ header.site-header {
 			
 			.portada__wrap {
 				display: block;
-				margin: 0 -40px 2em;
+				margin: 0 -20px 2em;
 				background: $color__secundario;
 				
 				.portada {
@@ -203,11 +224,11 @@ header.site-header {
 					
 				}
 				.curso__info {
-					width: 100%; 
+					width: auto; 
 					padding: 1em;
 					line-height: 1.4;
 					font-size: .9em;
-					
+					overflow: hidden;
 					ul {
 						list-style: none;
 						margin: 0;
@@ -227,9 +248,13 @@ header.site-header {
 						.curso_area {
 							font-weight: 600;
 						}
+						
+					}
+					.curso_info {
+						font-size: .85em;
 					}
 				}
-				
+				//portada
 				@media screen and (min-width: $break__small) {
 					display: flex;
 					flex-wrap: wrap;

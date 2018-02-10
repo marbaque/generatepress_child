@@ -2,12 +2,13 @@
  Theme Name:   GeneratePress Child
  Theme URI:    https://generatepress.com
  Description:  Default GeneratePress child theme
- Author:       Tom Usborne
+ Author:       Tom Usborne - Modified by Mario Badilla
  Author URI:   https://tomusborne.com
  Template:     generatepress
  Version:      0.1
  GitHub Theme URI: https://github.com/marbaque/generatepress_child
 */
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
 @import url("custom-styles.css");
 a {
   border-bottom: 2px solid currentcolor;
@@ -15,6 +16,41 @@ a {
   a:hover {
     border-bottom: 2px solid #FA9046;
     color: #FA9046; }
+
+/************************************************************************/
+/************************************************************************/
+html {
+  font-size: 1.063em; }
+
+body {
+  font-weight: 400;
+  line-height: 1.45;
+  color: #333; }
+
+p {
+  margin-bottom: 1.3em; }
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-family: 'Varela Round', Helvetica, serif;
+  font-weight: inherit;
+  line-height: 1.2; }
+
+h1 {
+  margin-top: 0;
+  font-size: 2.441em; }
+
+h2 {
+  font-size: 1.953em; }
+
+h3 {
+  font-size: 1.563em; }
+
+h4 {
+  font-size: 1.25em; }
+
+small, .font_small {
+  font-size: 0.8em; }
 
 header.site-header .inside-header {
   padding: 20px; }
@@ -24,7 +60,8 @@ header.site-header .inside-header {
 .main-navigation {
   background-color: transparent; }
   .main-navigation button.menu-toggle {
-    background-color: #FA9046; }
+    background-color: #50545E;
+    color: #CDD8E8; }
   .main-navigation .navigation-search input[type="search"] {
     background-color: #DFE5EE;
     color: #4A4A4A; }
@@ -73,57 +110,65 @@ header.site-header .inside-header {
         background-color: #DFE5EE;
         color: #4A4A4A; }
 
-.single-curso .site-main,
-.single-seccion .site-main {
+.single-curso .site-main .curso_sidebar,
+.single-seccion .site-main .curso_sidebar {
+  background-color: #DFE5EE;
+  width: 100%;
+  display: block;
+  min-height: 20px;
+  margin: 0; }
+  .single-curso .site-main .curso_sidebar .submenu,
+  .single-seccion .site-main .curso_sidebar .submenu {
+    padding: 40px 20px; }
+    .single-curso .site-main .curso_sidebar .submenu h4,
+    .single-seccion .site-main .curso_sidebar .submenu h4 {
+      margin-top: 0; }
+    .single-curso .site-main .curso_sidebar .submenu ul,
+    .single-seccion .site-main .curso_sidebar .submenu ul {
+      list-style: none;
+      margin: 0; }
+      .single-curso .site-main .curso_sidebar .submenu ul li,
+      .single-seccion .site-main .curso_sidebar .submenu ul li {
+        margin-bottom: .25em; }
+      .single-curso .site-main .curso_sidebar .submenu ul a,
+      .single-seccion .site-main .curso_sidebar .submenu ul a {
+        border-width: 0; }
+.single-curso .site-main .curso,
+.single-curso .site-main .seccion,
+.single-seccion .site-main .curso,
+.single-seccion .site-main .seccion {
   width: 100%; }
-  .single-curso .site-main .curso_sidebar,
-  .single-seccion .site-main .curso_sidebar {
-    background-color: #DFE5EE;
-    width: 100%;
-    display: block;
-    min-height: 20px;
-    margin: 0; }
-    .single-curso .site-main .curso_sidebar .submenu,
-    .single-seccion .site-main .curso_sidebar .submenu {
-      padding: 40px 20px; }
-  .single-curso .site-main .curso,
-  .single-curso .site-main .seccion,
-  .single-seccion .site-main .curso,
-  .single-seccion .site-main .seccion {
-    width: 100%; }
-  @media screen and (min-width: 500px) {
-    .single-curso .site-main,
-    .single-seccion .site-main {
-      display: flex;
-      align-items: stretch; }
-      .single-curso .site-main .curso_sidebar,
-      .single-seccion .site-main .curso_sidebar {
-        width: 30%; }
-      .single-curso .site-main .curso,
-      .single-curso .site-main .seccion,
-      .single-seccion .site-main .curso,
-      .single-seccion .site-main .seccion {
-        width: 70%; } }
+@media screen and (min-width: 500px) {
+  .single-curso .site-main,
+  .single-seccion .site-main {
+    display: flex;
+    align-items: stretch; }
+    .single-curso .site-main .curso_sidebar,
+    .single-seccion .site-main .curso_sidebar {
+      width: 30%; } }
 .single-curso .entry-header,
 .single-seccion .entry-header {
-  background-color: #FA9046;
-  color: white;
-  padding: .5em 1em .75em;
-  margin-top: 20px; }
+  margin-top: 20px;
+  width: 100%; }
   .single-curso .entry-header .entry-title,
   .single-seccion .entry-header .entry-title {
-    font-size: 1.5em; }
-@media screen and (max-width: 500px) {
-  .single-curso .content-area .site-main .inside-article,
-  .single-seccion .content-area .site-main .inside-article {
-    padding: 0 40px 40px; } }
+    font-size: 1.2em;
+    padding: .5em 1em .75em;
+    background: #FA9046;
+    color: white;
+    margin-top: 0; }
+    @media screen and (min-width: 500px) {
+      .single-curso .entry-header .entry-title,
+      .single-seccion .entry-header .entry-title {
+        font-size: 1.5em;
+        padding: .5em 1em .75em; } }
 .single-curso .content-area .site-main .entry-content,
 .single-seccion .content-area .site-main .entry-content {
   margin: 0; }
 .single-curso .content-area .site-main .portada__wrap,
 .single-seccion .content-area .site-main .portada__wrap {
   display: block;
-  margin: 0 -40px 2em;
+  margin: 0 -20px 2em;
   background: #DFE5EE; }
   .single-curso .content-area .site-main .portada__wrap .portada,
   .single-seccion .content-area .site-main .portada__wrap .portada {
@@ -135,10 +180,11 @@ header.site-header .inside-header {
     background-position: center center; }
   .single-curso .content-area .site-main .portada__wrap .curso__info,
   .single-seccion .content-area .site-main .portada__wrap .curso__info {
-    width: 100%;
+    width: auto;
     padding: 1em;
     line-height: 1.4;
-    font-size: .9em; }
+    font-size: .9em;
+    overflow: hidden; }
     .single-curso .content-area .site-main .portada__wrap .curso__info ul,
     .single-seccion .content-area .site-main .portada__wrap .curso__info ul {
       list-style: none;
@@ -159,6 +205,9 @@ header.site-header .inside-header {
       .single-curso .content-area .site-main .portada__wrap .curso__info ul .curso_area,
       .single-seccion .content-area .site-main .portada__wrap .curso__info ul .curso_area {
         font-weight: 600; }
+    .single-curso .content-area .site-main .portada__wrap .curso__info .curso_info,
+    .single-seccion .content-area .site-main .portada__wrap .curso__info .curso_info {
+      font-size: .85em; }
   @media screen and (min-width: 500px) {
     .single-curso .content-area .site-main .portada__wrap,
     .single-seccion .content-area .site-main .portada__wrap {
