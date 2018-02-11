@@ -265,17 +265,17 @@ header.site-header .inside-header {
       padding: 1em 4% 1.5em; } }
 
 .migajas {
-  font-size: .7em;
+  font-size: .77em;
   font-weight: 200;
   margin-top: -10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: #aaa; }
   .migajas a {
     color: #bbb;
     border: none; }
     .migajas a:hover {
       color: #FA9046;
-      border: 2px solid #FA9046; }
+      border-bottom: 1px solid #FA9046; }
 
 .site-footer .footer-widgets {
   background: #50545E;

@@ -296,17 +296,17 @@ header.site-header {
 	}
 }
 .migajas {
-	font-size: .7em;
+	font-size: .77em;
 	font-weight: 200;
 	margin-top: -10px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	color: #aaa;
 	a {
 		color: #bbb;
 		border: none;
 		&:hover {
 			color: $color__primario;
-			border: 2px solid $color__primario;
+			border-bottom: 1px solid $color__primario;
 		}
 	}	
 }
