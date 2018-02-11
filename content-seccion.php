@@ -59,13 +59,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 		<div class="entry-content" itemprop="text">
-			<div class="migajas"
+			
 				<?php 
 				if(function_exists('bcn_display')) {
+					echo '<div class="migajas">';
 					bcn_display();
+					echo '</div>';
 				}
 				?>
-			</div>
+			
 			<?php
 			the_content();
 			?>
