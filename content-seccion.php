@@ -59,8 +59,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 		<div class="entry-content" itemprop="text">
+			<div class="migajas"
+				<?php 
+				if(function_exists('bcn_display')) {
+					bcn_display();
+				}
+				?>
+			</div>
 			<?php
 			the_content();
+			?>
+			
+			<?php 
+			$file = get_field('archivo_seccion');
+			
+			if( $file ): ?>
+				<a class="filelink" title="Enlace de descarga" href="<?php echo $file['url']; ?>"><i class="fas fa-cloud-download-alt"></i> Descargar archivo</a>
+			
+			<?php endif; ?>
+			
+			<?php
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'generatepress' ),

@@ -18,6 +18,7 @@ function remove_page_tags_recurso_field() {
   }
   add_action( 'admin_menu' , 'remove_page_tags_recurso_field' );
 
+
 //esta función se carga despues del functions.php del parent theme
 function generate_press_child_setup() {
 	
@@ -25,8 +26,8 @@ function generate_press_child_setup() {
 	add_image_size('portada-curso', 350, 350, true);
 	add_image_size('portada-curso-thumbnail', 270, 270, true);
 	
-	//agregar iconos de fontawesome.com
-	wp_enqueue_script('generatepress-fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js', true );
+	//agregar iconos de fontawesome-com
+	wp_enqueue_script('generatepress-fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js' );
 	
 	
 	

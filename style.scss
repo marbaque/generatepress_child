@@ -135,7 +135,7 @@ header.site-header {
 .single-seccion {
 	
 	.site-main {
-		//width: 100%;
+		
 		.curso_sidebar {
 			background-color: $color__secundario;
 			width: 100%;
@@ -144,8 +144,10 @@ header.site-header {
 			margin: 0;
 			.submenu {
 				padding: 40px 20px;
+				font-size: .9em;
 				h4 {
 					margin-top: 0;
+					margin-bottom: 20px;
 				}
 				//submenu de curso
 				ul {
@@ -163,17 +165,26 @@ header.site-header {
 		.curso,
 		.seccion {
 			width: 100%;
+			margin-bottom: 20px;
+			
+			.entry-title {
+				margin-bottom: 20px;
+				padding-bottom: 20px;
+				border-bottom: 1px solid $color__dark;
+			}
 		}
 		@media screen and (min-width:$break__small) {
 			display: flex;
-			align-items: stretch;
+			align-items: stretch!important;
 			
 			.curso_sidebar {
 				width: 30%;
+				margin-bottom: 20px;
 			}
 			.curso,
 			.seccion {
 				//width: 70%;
+				background: white;
 			}
 		}
 	}
@@ -183,7 +194,7 @@ header.site-header {
 		width: 100%;
 		.entry-title {
 			font-size: 1.2em;
-			padding: .5em 1em .75em;
+			padding: .5em 1em .5em;
 			background: $color__primario;
 			color: white;
 			margin-top: 0;
@@ -283,8 +294,22 @@ header.site-header {
 
 		}
 	}
-	}
-
+}
+.migajas {
+	font-size: .7em;
+	font-weight: 200;
+	margin-top: -10px;
+	margin-bottom: 10px;
+	color: #aaa;
+	a {
+		color: #bbb;
+		border: none;
+		&:hover {
+			color: $color__primario;
+			border: 2px solid $color__primario;
+		}
+	}	
+}
 
 //footer
 .site-footer {

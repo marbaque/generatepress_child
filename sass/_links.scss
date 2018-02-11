@@ -7,3 +7,26 @@ a {
 		color: $color__primario;
 	}
 }
+
+.filelink {
+	padding: 20px 15px;
+	border: 0;
+	background: $color__secundario;
+	margin: 1em 0;
+}
+.curso,
+.seccion {
+	
+	a[href$= ".pdf"],
+	a[href$= ".ppt"],
+	a[href$= ".pptx"],
+	a[href$= ".doc"] 
+	{
+		&::before {
+			font-family: FontAwesome;
+			content: "\f15c";
+			margin-right: .25em;
+		    
+		}
+	}
+}
