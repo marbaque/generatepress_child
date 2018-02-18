@@ -1,6 +1,7 @@
 $color__body-text: #4A4A4A;
 $color__primario: #FA9046;
 $color__secundario: #DFE5EE;
+$color__grisillo: #98B1D5;
 
 $color__dark: #50545E; 
 $color__text-overdark: #CDD8E8;
@@ -21,4 +22,10 @@ $break__medium: 700px;
 	-webkit-hyphens: auto;
 	   -moz-hyphens: auto;
 	        hyphens: auto;
+}
+
+@mixin radio($r) {
+	-webkit-border-radius: $r;
+	-moz-border-radius: $r;
+	border-radius: $r;
 }

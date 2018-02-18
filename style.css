@@ -277,6 +277,79 @@ header.site-header .inside-header {
       color: #FA9046;
       border-bottom: 1px solid #FA9046; }
 
+/************************************************************************/
+/************************************************************************/
+.video-wrap {
+  display: block;
+  background: #111;
+  width: 100%; }
+
+.video-contenedor {
+  display: block;
+  background: #111;
+  width: 100%;
+  max-width: 840px;
+  text-align: center;
+  margin: 0 auto; }
+  .video-contenedor .attachment-portada-video {
+    margin: 0 auto !important; }
+
+.btn {
+  background: #DFE5EE;
+  padding: 1em;
+  margin-bottom: 2em;
+  display: inline-block;
+  border: none; }
+  .btn:hover {
+    border: none; }
+
+.licencia {
+  padding: 1em 1em 1.25em;
+  margin: 2em 0 0;
+  display: block;
+  background: #eee;
+  font-size: .8em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+  .licencia span {
+    display: block; }
+  .licencia p:last-child {
+    margin: 0; }
+  .licencia img {
+    float: left;
+    margin: 1em 1em 0 0; }
+
+/************************************************************************/
+/************************************************************************/
+.archive.post-type-archive-recurso .page-header {
+  margin: 20px 0 0;
+  padding: 20px; }
+
+.recursos-nav ul {
+  list-style: none;
+  background: #F6E871;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  height: auto; }
+  .recursos-nav ul a {
+    padding: 1em;
+    display: block;
+    border: none;
+    color: #50545E; }
+    .recursos-nav ul a:hover, .recursos-nav ul a:active {
+      background: #51F0FA;
+      color: #5D769B; }
+      .recursos-nav ul a:hover:after, .recursos-nav ul a:active:after {
+        content: "";
+        width: 20px;
+        height: 8px;
+        background: #51F0FA; }
+
+/************************************************************************/
+/************************************************************************/
 .site-footer .footer-widgets {
   background: #50545E;
   color: #CDD8E8; }

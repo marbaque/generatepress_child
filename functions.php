@@ -26,6 +26,12 @@ function generate_press_child_setup() {
 	//agregar tamaños de imagen
 	add_image_size('portada-curso', 350, 350, true);
 	add_image_size('portada-curso-thumbnail', 270, 270, true);
+	add_image_size('portada-video', 840, 473, true);
+	
+	//registrar menu para recursos
+	register_nav_menus( array(
+		'recursos-nav' => ( 'Menu de recursos' ),
+	) );
 	
 	//agregar iconos de fontawesome-com
 	wp_enqueue_script('generatepress-fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js' );

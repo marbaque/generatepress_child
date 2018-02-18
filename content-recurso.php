@@ -12,18 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php generate_article_schema( 'CreativeWork' ); ?>>
 	<div class="inside-article">
-		<?php
-		/**
-		 * generate_before_content hook.
-		 *
-		 * @since 0.1
-		 *
-		 * @hooked generate_featured_page_header_inside_single - 10
-		 */
-		do_action( 'generate_before_content' );
-		?>
+		
+		
 
-		<header class="seccion-header">
+		<header class="entry-header">
 			<?php
 			/**
 			 * generate_before_entry_title hook.
@@ -59,38 +51,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 		<div class="entry-content" itemprop="text">
-			
-				<?php 
-				if(function_exists('bcn_display')) {
-					echo '<div class="migajas">';
-					bcn_display();
-					echo '</div>';
-				}
-				?>
-			
 			<?php
-			the_content();
+			$file = get_field('archivo_recurso'); 
+			if ($file) {
 			?>
-			
-			<?php 
-			$file = get_field('archivo_seccion');
-			
-			if( $file ): ?>
-				<a class="filelink" title="Enlace de descarga" href="<?php echo $file['url']; ?>"><i class="fas fa-cloud-download-alt"></i> Descargar archivo</a>
-			
-			<?php endif; ?>
-
-
+			<a href="<?php echo $file; ?>" class="descargar btn"><i class="fa fa-download"></i> Descargar <strong><?php echo get_field('nombre_archivo'); ?></strong></a>
 			
 			<?php
+			}
+			the_content();
+			
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'generatepress' ),
 				'after'  => '</div>',
 			) );
 			?>
+			
+			
 			<?php 
-		
+			//licencia
 			$licencia = get_field('seleccionar_licencia');
 			$pic = the_field('icono_licencia', $licencia);
 					
@@ -99,11 +79,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php if ($pic) { ?>
 						<img class="aligh-left" src="<?php the_field('icono_licencia', $licencia); ?>">
 					<?php } ?>
-					<h4><?php echo $licencia->name; ?></h4>
-					<p><?php echo $licencia->description; ?></p>
+					<p><strong><?php echo $licencia->name; ?></strong>
+					<span><?php echo $licencia->description; ?></span></p>
 				</footer>
 			<?php endif; ?>
-
 		</div><!-- .entry-content -->
 
 		<?php
