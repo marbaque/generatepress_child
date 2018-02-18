@@ -92,13 +92,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php 
 		
 			$licencia = get_field('seleccionar_licencia');
-			$pic = the_field('icono_licencia', $licencia);
 					
 			if( $licencia ): ?>
 				<footer class="licencia">
-					<?php if ($pic) { ?>
-						<img class="aligh-left" src="<?php the_field('icono_licencia', $licencia); ?>">
-					<?php } ?>
+					<img class="aligh-left" src="<?php the_field('icono_licencia', $licencia); ?>">
 					<h4><?php echo $licencia->name; ?></h4>
 					<p><?php echo $licencia->description; ?></p>
 				</footer>

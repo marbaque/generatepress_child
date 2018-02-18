@@ -76,9 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					
 			if( $licencia ): ?>
 				<footer class="licencia">
-					<?php if ($pic) { ?>
-						<img class="aligh-left" src="<?php the_field('icono_licencia', $licencia); ?>">
-					<?php } ?>
+					<img class="aligh-left" src="<?php the_field('icono_licencia', $licencia); ?>">
 					<p><strong><?php echo $licencia->name; ?></strong>
 					<span><?php echo $licencia->description; ?></span></p>
 				</footer>

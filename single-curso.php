@@ -59,7 +59,7 @@ get_header(); ?>
 			do_action( 'generate_before_main_content' );
 			?>
 			<aside class="curso_sidebar">
-				<div class="submenu">
+				
 					
 					<?php 
 					global $post;
@@ -74,6 +74,7 @@ get_header(); ?>
 					$the_query = new WP_Query( $args );
 					// The Loop
 					if ( $the_query->have_posts() ) :
+						echo '<div class="submenu">';
 						echo '<h4>Contenidos</h4>';
 						echo '<ul>';
 						echo '<li><a href="' . $permalink . '" title="Inicio del curso">Inicio</a></li>';
@@ -82,12 +83,13 @@ get_header(); ?>
 							echo '<li><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';
 						endwhile;
 						echo '</ul>';
+						echo '</div><!-- submenu -->';
 					endif;
 					// Reset Post Data
 					wp_reset_postdata();
 					?>
 					
-				</div><!-- submenu -->
+				
 			</aside><!-- aside .curso_sidebar -->
 
 			<?php
