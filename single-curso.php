@@ -76,6 +76,7 @@ get_header(); ?>
 					if ( $the_query->have_posts() ) :
 						echo '<h4>Contenidos</h4>';
 						echo '<ul>';
+						echo '<li><a href="' . $permalink . '" title="Inicio del curso">Inicio</a></li>';
 						while ( $the_query->have_posts() ) : $the_query->the_post();
 							// Do Stuff
 							echo '<li><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';

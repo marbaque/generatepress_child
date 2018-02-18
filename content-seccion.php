@@ -79,6 +79,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<a class="filelink" title="Enlace de descarga" href="<?php echo $file['url']; ?>"><i class="fas fa-cloud-download-alt"></i> Descargar archivo</a>
 			
 			<?php endif; ?>
+
+
 			
 			<?php
 
@@ -87,6 +89,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'after'  => '</div>',
 			) );
 			?>
+			
+			<?php 
+
+			$licencia = get_field('seleccionar_licencia');
+			
+			if( $licencia ): ?>
+				<footer class="licencia">
+					<img class="aligh-left" src="<?php the_field('icono_licencia', $licencia); ?>">
+					<h4><?php echo $licencia->name; ?></h4>
+					<p><?php echo $licencia->description; ?></p>
+				</footer>
+			<?php endif; ?>
+
 		</div><!-- .entry-content -->
 
 		<?php
