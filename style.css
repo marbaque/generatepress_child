@@ -70,10 +70,14 @@ h4 {
 small, .font_small {
   font-size: 0.8em; }
 
-header.site-header .inside-header {
-  padding: 20px; }
-  header.site-header .inside-header a {
-    border: none; }
+header.site-header {
+  border-bottom: 1px solid #eee;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13); }
+  header.site-header .inside-header {
+    padding: 20px; }
+    header.site-header .inside-header a {
+      border: none; }
 
 .main-navigation {
   background-color: transparent; }
@@ -279,16 +283,30 @@ header.site-header .inside-header {
 
 /************************************************************************/
 /************************************************************************/
+.post-image a {
+  border: none; }
+
+/************************************************************************/
+/************************************************************************/
+.video-dark-background {
+  position: absolute;
+  background-color: #111;
+  height: 100%;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw); }
+
 .video-wrap {
   display: block;
   background: #111;
-  width: 100%; }
+  width: 100%;
+  height: auto;
+  position: relative; }
 
 .video-contenedor {
   display: block;
   background: #111;
   width: 100%;
-  max-width: 840px;
   text-align: center;
   margin: 0 auto; }
   .video-contenedor .attachment-portada-video {
@@ -320,15 +338,25 @@ header.site-header .inside-header {
     float: left;
     margin: 1em 1em 0 0; }
 
+.inside-article .portada {
+  margin-bottom: 40px;
+  width: 100%; }
+  .inside-article .portada img {
+    width: 100%;
+    height: auto; }
+
 /************************************************************************/
 /************************************************************************/
-.archive.post-type-archive-recurso .page-header {
+.archive-view.post-type-archive-recurso .page-header, .archive-view.tax-recurso_category .page-header {
   margin: 20px 0 0;
-  padding: 20px; }
+  padding: 20px;
+  background: none; }
+.archive-view .taxonomy-description {
+  display: none; }
 
 .recursos-nav ul {
   list-style: none;
-  background: #F6E871;
+  background: #DFE5EE;
   margin: 0;
   display: flex;
   align-items: baseline;
@@ -350,6 +378,49 @@ header.site-header .inside-header {
 
 /************************************************************************/
 /************************************************************************/
+#right-sidebar .widget {
+  padding: 2em;
+  font-size: .9em;
+  background: #F6E871; }
+#right-sidebar h2 {
+  margin: 0 0 1em; }
+#right-sidebar li {
+  margin-bottom: .5em; }
+
+/************************************************************************/
+/************************************************************************/
+.archive-view {
+  background: #f4f4f4; }
+  .archive-view .post {
+    background: white;
+    position: relative; }
+    .archive-view .post .entry-title {
+      margin-top: 0; }
+    .archive-view .post .read-more {
+      position: absolute;
+      padding: 1em;
+      background-color: #50545E;
+      color: #CDD8E8;
+      bottom: 0;
+      right: 0;
+      border: none; }
+      .archive-view .post .read-more:hover {
+        background: #FA9046;
+        color: white; }
+  .archive-view .nav-links {
+    width: 100%;
+    display: flex;
+    align-content: space-around;
+    text-align: center; }
+    .archive-view .nav-links a, .archive-view .nav-links span {
+      padding: 1em;
+      border: 1px solid #eee;
+      margin: 0 5px; }
+      .archive-view .nav-links a.current, .archive-view .nav-links span.current {
+        background: #DFE5EE; }
+
+/************************************************************************/
+/************************************************************************/
 .site-footer .footer-widgets {
   background: #50545E;
   color: #CDD8E8; }
@@ -360,5 +431,19 @@ header.site-header .inside-header {
 
 .site-info {
   background: #50545E; }
+
+.copyright-bar {
+  display: none; }
+
+.cc-widget {
+  font-size: .8em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+  .cc-widget a.cc-img {
+    border: none;
+    float: right;
+    order: 2;
+    margin: 0 0 0 1em; }
 
 /*# sourceMappingURL=style.css.map */

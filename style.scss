@@ -14,7 +14,9 @@
 @import 'sass/_tipo';
 
 header.site-header {
-	
+	border-bottom: 1px solid #eee;
+	background: #FFFFFF;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.13);
 	.inside-header {
 		padding: 20px;
 		
@@ -312,18 +314,42 @@ header.site-header {
 }
 
 /************************************************************************/
+// Posts and pages
+/************************************************************************/
+.post-image {
+	a {
+		border: none;
+	}
+}
+
+/************************************************************************/
 // pagina de recurso single-recurso content-recurso
 /************************************************************************/
+.recurso-post {
+	
+}
+
+.video-dark-background {
+	position: absolute;
+	background-color: #111;
+	height: 100%;
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
 .video-wrap {
 	display: block;
 	background: #111;
 	width: 100%;
+	height: auto;
+	position: relative;
+	
 }
 .video-contenedor {
 	display: block;
 	background: #111;
 	width: 100%;
-	max-width: 840px;
+	//max-width: 900px;
 	text-align: center;
 	margin: 0 auto;
 	.attachment-portada-video {
@@ -358,23 +384,36 @@ header.site-header {
 		margin: 1em 1em 0 0;
 	}
 }
+.inside-article .portada {
+	margin-bottom: 40px;
+	width: 100%;
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
 
 /************************************************************************/
 // archivo de recursos
 /************************************************************************/
-.archive {
-	&.post-type-archive-recurso { 
+.archive-view {
+	&.post-type-archive-recurso,
+	&.tax-recurso_category { 
 		.page-header {
 			margin: 20px 0 0;
 			padding: 20px;
+			background: none;
 		}
+	}
+	.taxonomy-description {
+		display: none;
 	}
 }
 
 .recursos-nav {
 	ul {
 		list-style: none;
-		background: #F6E871;
+		background: $color__secundario;
 		margin: 0;
 		display: flex;
 		align-items: baseline;
@@ -400,6 +439,67 @@ header.site-header {
 		}
 	}
 }
+/************************************************************************/
+// Sidebars
+/************************************************************************/
+#right-sidebar{
+	.widget {
+		padding: 2em;
+		font-size: .9em;
+		background: $color__amarillo;
+	}
+	h2 {
+		margin: 0 0 1em;
+	}
+	li {
+		margin-bottom: .5em;
+	}
+}
+
+/************************************************************************/
+// Pagina archivo de blog
+/************************************************************************/
+.archive-view {
+	background: #f4f4f4;
+	.post {
+		background: white;
+		position: relative;
+
+		.entry-title {
+			margin-top: 0;
+		}
+		.read-more {
+			position: absolute;
+			padding: 1em;
+			background-color: $color__dark;
+			color: $color__text-overdark;
+			bottom: 0;
+			right: 0;
+			border: none;
+			&:hover {
+				background: $color__primario;
+				color: white;
+			}
+		}
+	}
+	
+	.nav-links {
+		width: 100%;
+		display: flex;
+		align-content: space-around;
+		text-align: center;
+
+		a, span {
+			padding: 1em;
+			border: 1px solid #eee;
+			margin: 0 5px;
+			&.current {
+				background: $color__secundario;
+			}
+		}
+	}
+}
+
 
 /************************************************************************/
 // footer
@@ -421,5 +521,19 @@ header.site-header {
 .site-info {
 	background: $color__dark;
 }
-
+.copyright-bar{
+	display: none;
+}
+.cc-widget {
+	font-size: .8em;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	a.cc-img {
+		border: none;
+		float: right;
+		order: 2;
+		margin: 0 0 0 1em;
+	}
+}
 @import url('custom-styles.css');

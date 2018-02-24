@@ -75,5 +75,28 @@ function generate_press_child_setup() {
 	}
 	add_filter('post_type_link', 'my_permalinks', 10, 3);
 	
+	//Agregar clases a las paginas
+	function generatepress_body_classes( $classes ) {
+		
+		if ( is_multi_author() ) {
+			$classes[] = 'group-blog';
+		}
+	
+		if ( ! is_singular() ) {
+			$classes[] = 'hfeed';
+			$classes[] = 'archive-view';
+		}
+		
+		if ( is_singular('recurso') ) {
+			$classes[] = 'recurso-post';
+		} 		
+		return $classes;
+		
+		
+	}
+	add_filter( 'body_class', 'generatepress_body_classes' );
+
+		
+		
 }
 add_action('after_setup_theme', 'generate_press_child_setup');

@@ -13,8 +13,7 @@ get_header(); ?>
 	
 	<?php 
 		
-	//do_action( 'generate_archive_title' );
-	the_archive_title('<div class="page-header"><h1 class="page-title">', '</div></h1>');
+	do_action( 'generate_archive_title' );
 	
 	wp_nav_menu( array( 
 		'theme_location' => 'recursos-nav', 

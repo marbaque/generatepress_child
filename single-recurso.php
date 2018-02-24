@@ -16,6 +16,7 @@ get_header(); ?>
 				
 		if( $term->slug == 'video-educativo' ): ?>
 		<div class="video-wrap">
+			<div class="video-dark-background" aria-hidden></div>
 			<div class="video-contenedor">
 				<?php 
 				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
@@ -28,16 +29,6 @@ get_header(); ?>
 
 	<div id="primary" <?php generate_content_class();?>>
 		<main id="main" <?php generate_main_class(); ?>>
-			<?php
-			if( $term->slug == 'modelo-3d' ): ?>
-			<div class="portada">
-				<?php 
-				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-					the_post_thumbnail('portada-video');
-				} 
-				?>
-			</div>
-			<?php endif; ?>
 			
 			<?php
 			while ( have_posts() ) : the_post();
