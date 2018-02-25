@@ -3,6 +3,8 @@
 /************************************************************************/
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 
+$headings: 'Varela Round', Helvetica, serif;;;
+
 html {font-size: 1.063em;}
 
 body {
@@ -16,7 +18,7 @@ p {margin-bottom: 1.3em;}
 
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;
-  font-family: 'Varela Round', Helvetica, serif;;
+  font-family: $headings;
   font-weight: inherit;
   line-height: 1.2;
 }

@@ -511,6 +511,72 @@ header.site-header {
 			}
 		}
 	}
+	
+	.recursos-container {
+		.recurso {
+			width: 100%;
+			display: flex;
+			margin-bottom: 20px;
+			position: relative;
+			
+			&:after { //icono de flecha
+				content: "";
+				width: 12px;
+				height: 20px;
+				background: url(img/arrow-right.png) no-repeat;
+				position: absolute;
+				right: 10px;
+				top: calc(50% - 10px);
+			}
+			
+			.thumb-recurso {
+				width: 150px;
+				height: 150px;
+				flex-shrink: 0;
+				border: none;
+				background-color: $color__secundario;
+			}
+			
+			.inside-article {
+				height: 130px; //150px menus 20px del padding
+				padding: 10px 40px 10px 20px;
+				flex-grow: 1;
+				overflow: hidden;
+				
+				.entry-title {
+					font-family: $headings;
+					font-size: 1.2em;
+					margin: 0 0 .5em;
+					a {
+						border: none;
+					}
+				}
+			
+				.entry-content {
+					margin: 0;
+					width: 100%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					font-size: .85em;
+					font-weight: 200;
+					line-height: 1.3;
+				}
+			}
+		}
+		
+		@media screen and (min-width: $break__medium) {
+			display: flex;
+			flex-flow: row wrap;
+			width: 100%;
+			.recurso {
+				flex: auto;
+				height: auto;
+				max-width: 48%;
+				margin: 0 1% 20px; /* Some gutter */
+			}
+
+		}
+	}
 }
 
 

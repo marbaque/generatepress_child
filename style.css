@@ -50,7 +50,7 @@ p {
 
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;
-  font-family: 'Varela Round', Helvetica, serif;
+  font-family: "Varela Round", Helvetica, serif;
   font-weight: inherit;
   line-height: 1.2; }
 
@@ -431,6 +431,55 @@ header.site-header {
       margin: 0 5px; }
       .archive-view .nav-links a.current, .archive-view .nav-links span.current {
         background: #DFE5EE; }
+  .archive-view .recursos-container .recurso {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    position: relative; }
+    .archive-view .recursos-container .recurso:after {
+      content: "";
+      width: 12px;
+      height: 20px;
+      background: url(img/arrow-right.png) no-repeat;
+      position: absolute;
+      right: 10px;
+      top: calc(50% - 10px); }
+    .archive-view .recursos-container .recurso .thumb-recurso {
+      width: 150px;
+      height: 150px;
+      flex-shrink: 0;
+      border: none;
+      background-color: #DFE5EE; }
+    .archive-view .recursos-container .recurso .inside-article {
+      height: 130px;
+      padding: 10px 40px 10px 20px;
+      flex-grow: 1;
+      overflow: hidden; }
+      .archive-view .recursos-container .recurso .inside-article .entry-title {
+        font-family: "Varela Round", Helvetica, serif;
+        font-size: 1.2em;
+        margin: 0 0 .5em; }
+        .archive-view .recursos-container .recurso .inside-article .entry-title a {
+          border: none; }
+      .archive-view .recursos-container .recurso .inside-article .entry-content {
+        margin: 0;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: .85em;
+        font-weight: 200;
+        line-height: 1.3; }
+  @media screen and (min-width: 700px) {
+    .archive-view .recursos-container {
+      display: flex;
+      flex-flow: row wrap;
+      width: 100%; }
+      .archive-view .recursos-container .recurso {
+        flex: auto;
+        height: auto;
+        max-width: 48%;
+        margin: 0 1% 20px;
+        /* Some gutter */ } }
 
 /************************************************************************/
 /************************************************************************/

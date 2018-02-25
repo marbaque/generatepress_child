@@ -33,19 +33,23 @@ get_header(); ?>
 			do_action( 'generate_before_main_content' );
 
 			if ( have_posts() ) :
+				?>
+				<div class="recursos-container">
+				<?php
 				
-
-				while ( have_posts() ) : the_post();
-
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-
-				endwhile;
-
+					while ( have_posts() ) : the_post();
+	
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'content', 'recursoitem' );
+	
+					endwhile;
+				?>
+				</div>
+				<?php
 				generate_content_nav( 'nav-below' );
 
 			else :
