@@ -1,9 +1,9 @@
 /*
  Theme Name:   GeneratePress Child
  Theme URI:    https://generatepress.com
- Description:  Default GeneratePress child theme
- Author:       Tom Usborne - Modified by Mario Badilla
- Author URI:   https://tomusborne.com
+ Description:  Child theme for Generate Press
+ Author:       Mario Badilla and Ricardo Herrera
+ Author URI:   https://mariobadilla.com
  Template:     generatepress
  Version:      0.1
  GitHub Theme URI: https://github.com/marbaque/generatepress_child
@@ -208,8 +208,8 @@ header.site-header {
   display: block;
   margin: 0 -20px 2em;
   background: #DFE5EE; }
-  .single-curso .content-area .site-main .portada__wrap .portada,
-  .single-seccion .content-area .site-main .portada__wrap .portada {
+  .single-curso .content-area .site-main .portada__wrap .portada-curso,
+  .single-seccion .content-area .site-main .portada__wrap .portada-curso {
     width: 100%;
     min-height: 320px;
     overflow: hidden;
@@ -252,16 +252,16 @@ header.site-header {
       display: flex;
       flex-wrap: wrap;
       margin: 0 0 2em; }
-      .single-curso .content-area .site-main .portada__wrap .portada,
-      .single-seccion .content-area .site-main .portada__wrap .portada {
+      .single-curso .content-area .site-main .portada__wrap .portada-curso,
+      .single-seccion .content-area .site-main .portada__wrap .portada-curso {
         width: 100%; }
       .single-curso .content-area .site-main .portada__wrap .curso__info,
       .single-seccion .content-area .site-main .portada__wrap .curso__info {
         width: 100%;
         padding: 1em 4% 1.5em; } }
   @media screen and (min-width: 700px) {
-    .single-curso .content-area .site-main .portada__wrap .portada,
-    .single-seccion .content-area .site-main .portada__wrap .portada {
+    .single-curso .content-area .site-main .portada__wrap .portada-curso,
+    .single-seccion .content-area .site-main .portada__wrap .portada-curso {
       width: 50%; }
     .single-curso .content-area .site-main .portada__wrap .curso__info,
     .single-seccion .content-area .site-main .portada__wrap .curso__info {
@@ -361,6 +361,7 @@ header.site-header {
   display: flex;
   align-items: baseline;
   justify-content: flex-end;
+  flex-wrap: wrap;
   height: auto; }
   .recursos-nav ul a {
     padding: 1em;
@@ -370,21 +371,33 @@ header.site-header {
     .recursos-nav ul a:hover, .recursos-nav ul a:active {
       background: #51F0FA;
       color: #5D769B; }
-      .recursos-nav ul a:hover:after, .recursos-nav ul a:active:after {
-        content: "";
-        width: 20px;
-        height: 8px;
-        background: #51F0FA; }
+  .recursos-nav ul .current-menu-item a {
+    background: #51F0FA;
+    color: #5D769B;
+    position: relative; }
+    .recursos-nav ul .current-menu-item a:after {
+      content: "";
+      width: 2em;
+      height: 8px;
+      background: #51F0FA;
+      position: absolute;
+      bottom: -8px;
+      left: calc(50% - 1em);
+      -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+      clip-path: polygon(50% 100%, 0 0, 100% 0); }
 
 /************************************************************************/
 /************************************************************************/
-#right-sidebar .widget {
+#right-sidebar .widget,
+#left-sidebar .widget {
   padding: 2em;
   font-size: .9em;
   background: #F6E871; }
-#right-sidebar h2 {
+#right-sidebar h2,
+#left-sidebar h2 {
   margin: 0 0 1em; }
-#right-sidebar li {
+#right-sidebar li,
+#left-sidebar li {
   margin-bottom: .5em; }
 
 /************************************************************************/

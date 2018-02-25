@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				
 				if( !empty($image) ): ?>
 				
-					<div class="portada" style="background-image: url(<?php echo $thumb; ?>)" aria-hideen="true"></div>
+					<div class="portada-curso" style="background-image: url(<?php echo $thumb; ?>)" aria-hideen="true"></div>
 				<?php endif; ?>
 				
 				<div class="curso__info">

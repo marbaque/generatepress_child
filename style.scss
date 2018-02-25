@@ -1,9 +1,9 @@
 /*
  Theme Name:   GeneratePress Child
  Theme URI:    https://generatepress.com
- Description:  Default GeneratePress child theme
- Author:       Tom Usborne - Modified by Mario Badilla
- Author URI:   https://tomusborne.com
+ Description:  Child theme for Generate Press
+ Author:       Mario Badilla and Ricardo Herrera
+ Author URI:   https://mariobadilla.com
  Template:     generatepress
  Version:      0.1
  GitHub Theme URI: https://github.com/marbaque/generatepress_child
@@ -227,7 +227,7 @@ header.site-header {
 				margin: 0 -20px 2em;
 				background: $color__secundario;
 				
-				.portada {
+				.portada-curso {
 					width: 100%;
 					min-height: 320px;
 					overflow: hidden;
@@ -273,7 +273,7 @@ header.site-header {
 					flex-wrap: wrap;
 					margin: 0 0 2em;
 					
-					.portada {
+					.portada-curso {
 						width: 100%;
 					}
 					.curso__info {
@@ -284,7 +284,7 @@ header.site-header {
 				}
 				@media screen and (min-width: $break__medium) {
 					
-					.portada {
+					.portada-curso {
 						width: 50%;
 					}
 					.curso__info {
@@ -418,6 +418,7 @@ header.site-header {
 		display: flex;
 		align-items: baseline;
 		justify-content: flex-end;
+		flex-wrap: wrap;
 		height: auto;
 		a {
 			padding: 1em;
@@ -429,12 +430,23 @@ header.site-header {
 			&:active {
 				background: #51F0FA;
 				color: #5D769B;
-				&:after {
-					content: "";
-					width: 20px;
-					height: 8px;
-					background: #51F0FA;
-				}
+				
+			}
+		}
+		.current-menu-item a {
+			background: #51F0FA;
+			color: #5D769B;
+			position: relative;
+			&:after {
+				content: "";
+				width: 2em;
+				height: 8px;
+				background: #51F0FA;
+				position: absolute;
+				bottom: -8px;
+				left: calc(50% - 1em);
+				-webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+				clip-path: polygon(50% 100%, 0 0, 100% 0);
 			}
 		}
 	}
@@ -442,7 +454,8 @@ header.site-header {
 /************************************************************************/
 // Sidebars
 /************************************************************************/
-#right-sidebar{
+#right-sidebar,
+#left-sidebar{
 	.widget {
 		padding: 2em;
 		font-size: .9em;
