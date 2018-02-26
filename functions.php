@@ -27,6 +27,7 @@ function generate_press_child_setup() {
 	add_image_size('portada-curso', 350, 350, true);
 	add_image_size('portada-curso-thumbnail', 270, 270, true);
 	add_image_size('portada-video', 840, 473, true);
+	add_image_size('portada-recurso', 630, 330, true);
 	
 	//registrar menu para recursos
 	register_nav_menus( array(
@@ -95,6 +96,11 @@ function generate_press_child_setup() {
 		
 	}
 	add_filter( 'body_class', 'generatepress_body_classes' );
+	
+	function custom_excerpt_length( $length ) {
+		return 20;
+	}
+	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 		
 		

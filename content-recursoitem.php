@@ -10,7 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php generate_article_schema( 'CreativeWork' ); ?>>
-	
+	<?php 
+	$term = get_field('tipo_recurso');
+	if ($term){ ?>
+		<span class="recurso-category"><?php echo $term->name; ?></span>
+	<?php } ?>
+
 	<?php 
 	if ( has_post_thumbnail( $_post->ID ) ) {
         echo '<a href="' . get_permalink( $_post->ID ) . '" title="' . esc_attr( $_post->post_title ) . '" class="thumb-recurso">';
@@ -41,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			) );
 			?>
 		</div><!-- .entry-content -->
-
-
 	</div><!-- .inside-article -->
+	
+	
 </article><!-- #post-## -->

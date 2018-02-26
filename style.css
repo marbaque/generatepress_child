@@ -20,7 +20,7 @@ a {
 .filelink {
   padding: 20px 15px;
   border: 0;
-  background: #DFE5EE;
+  background: #CDD8E8;
   margin: 1em 0; }
 
 .curso a[href$=".pdf"]::before,
@@ -85,15 +85,15 @@ header.site-header {
     background-color: #50545E;
     color: #CDD8E8; }
   .main-navigation .navigation-search input[type="search"] {
-    background-color: #DFE5EE;
+    background-color: #CDD8E8;
     color: #4A4A4A; }
   .main-navigation .main-nav ul li a {
     color: #4A4A4A; }
     .main-navigation .main-nav ul li a:hover {
-      background-color: #DFE5EE;
+      background-color: #CDD8E8;
       color: #4A4A4A; }
   .main-navigation .main-nav ul li:focus > a, .main-navigation .main-nav ul li.sfHover > a {
-    background-color: #DFE5EE;
+    background-color: #CDD8E8;
     color: #4A4A4A; }
   .main-navigation .main-nav ul li[class*="current-menu-"] a,
   .main-navigation .main-nav ul li[class*="current-menu-"].sfHover a {
@@ -101,7 +101,7 @@ header.site-header {
     color: #4A4A4A; }
     .main-navigation .main-nav ul li[class*="current-menu-"] a:hover,
     .main-navigation .main-nav ul li[class*="current-menu-"].sfHover a:hover {
-      background-color: #DFE5EE;
+      background-color: #CDD8E8;
       color: #4A4A4A; }
   .main-navigation .main-nav ul li[class*="current-menu-"]:after,
   .main-navigation .main-nav ul li[class*="current-menu-"].sfHover:after {
@@ -114,12 +114,12 @@ header.site-header {
     bottom: 5px;
     left: 5px; }
   .main-navigation .main-nav ul ul {
-    background-color: #DFE5EE; }
+    background-color: #CDD8E8; }
     .main-navigation .main-nav ul ul li a {
-      background-color: #DFE5EE;
+      background-color: #CDD8E8;
       color: #4A4A4A; }
     .main-navigation .main-nav ul ul li:focus > a, .main-navigation .main-nav ul ul li.sfHover > a, .main-navigation .main-nav ul ul li:hover > a {
-      background-color: #DFE5EE;
+      background-color: #CDD8E8;
       color: #4A4A4A; }
       .main-navigation .main-nav ul ul li:focus > a:hover, .main-navigation .main-nav ul ul li.sfHover > a:hover, .main-navigation .main-nav ul ul li:hover > a:hover {
         background-color: #FA9046; }
@@ -129,12 +129,14 @@ header.site-header {
       color: #4A4A4A; }
       .main-navigation .main-nav ul ul li[class*="current-menu-"] a:hover,
       .main-navigation .main-nav ul ul li[class*="current-menu-"].sfHover a:hover {
-        background-color: #DFE5EE;
+        background-color: #CDD8E8;
         color: #4A4A4A; }
 
+/************************************************************************/
+/************************************************************************/
 .single-curso .site-main .curso_sidebar,
 .single-seccion .site-main .curso_sidebar {
-  background-color: #DFE5EE;
+  background-color: #CDD8E8;
   width: 100%;
   display: block;
   min-height: 20px;
@@ -186,8 +188,9 @@ header.site-header {
       background: white; } }
 .single-curso .entry-header,
 .single-seccion .entry-header {
-  margin-top: 20px;
-  width: 100%; }
+  width: 100%;
+  position: sticky;
+  top: 100px; }
   .single-curso .entry-header .entry-title,
   .single-seccion .entry-header .entry-title {
     font-size: 1.2em;
@@ -207,7 +210,7 @@ header.site-header {
 .single-seccion .content-area .site-main .portada__wrap {
   display: block;
   margin: 0 -20px 2em;
-  background: #DFE5EE; }
+  background: #CDD8E8; }
   .single-curso .content-area .site-main .portada__wrap .portada-curso,
   .single-seccion .content-area .site-main .portada__wrap .portada-curso {
     width: 100%;
@@ -288,6 +291,22 @@ header.site-header {
 
 /************************************************************************/
 /************************************************************************/
+.recurso-post figcaption {
+  font-size: .8em;
+  font-weight: 200;
+  color: #aaa; }
+
+.recurso-category {
+  font-size: .7em;
+  letter-spacing: .5px;
+  background: #F6E871;
+  color: #50545E;
+  padding: 4px 10px;
+  margin-bottom: 1em;
+  display: inline-block;
+  -webkit-clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%); }
+
 .video-dark-background {
   position: absolute;
   background-color: #111;
@@ -313,7 +332,7 @@ header.site-header {
     margin: 0 auto !important; }
 
 .btn {
-  background: #DFE5EE;
+  background: #CDD8E8;
   padding: 1em;
   margin-bottom: 2em;
   display: inline-block;
@@ -353,10 +372,75 @@ header.site-header {
   background: none; }
 .archive-view .taxonomy-description {
   display: none; }
+.archive-view .recursos-container {
+  padding: 40px 20px 0; }
+  .archive-view .recursos-container .recurso {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25); }
+    .archive-view .recursos-container .recurso:after {
+      content: "";
+      width: 12px;
+      height: 20px;
+      background: url(img/arrow-right.png) no-repeat;
+      position: absolute;
+      right: 14px;
+      top: calc(50% - 10px); }
+    .archive-view .recursos-container .recurso a {
+      border: none; }
+    .archive-view .recursos-container .recurso .thumb-recurso {
+      width: 150px;
+      height: 150px;
+      flex-shrink: 0;
+      border: none;
+      background-color: #CDD8E8;
+      z-index: 10; }
+      .archive-view .recursos-container .recurso .thumb-recurso .recurso-icon {
+        width: 100%;
+        height: 100%; }
+    .archive-view .recursos-container .recurso .inside-article {
+      height: 130px;
+      padding: 10px 40px 10px 20px;
+      flex-grow: 1;
+      overflow: hidden;
+      position: relative; }
+      .archive-view .recursos-container .recurso .inside-article .entry-title {
+        font-family: "Varela Round", Helvetica, serif;
+        font-size: 1.2em;
+        margin: 0 0 .5em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+      .archive-view .recursos-container .recurso .inside-article .entry-content {
+        margin: 0;
+        width: 100%;
+        height: auto;
+        font-size: .85em;
+        font-weight: 200;
+        line-height: 1.3; }
+    .archive-view .recursos-container .recurso .recurso-category {
+      position: absolute;
+      left: -6px;
+      bottom: 0;
+      z-index: 20; }
+  @media screen and (min-width: 700px) {
+    .archive-view .recursos-container {
+      display: flex;
+      flex-flow: row wrap;
+      width: 100%;
+      padding: 40px 0 0; }
+      .archive-view .recursos-container .recurso {
+        flex: auto;
+        height: auto;
+        max-width: 48%;
+        margin: 0 1% 20px;
+        /* Some gutter */ } }
 
 .recursos-nav ul {
   list-style: none;
-  background: #DFE5EE;
+  background: #98B1D5;
   margin: 0;
   display: flex;
   align-items: baseline;
@@ -367,10 +451,10 @@ header.site-header {
     padding: 1em;
     display: block;
     border: none;
-    color: #50545E; }
+    color: white;
+    letter-spacing: .5px; }
     .recursos-nav ul a:hover, .recursos-nav ul a:active {
-      background: #51F0FA;
-      color: #5D769B; }
+      background: #51F0FA; }
   .recursos-nav ul .current-menu-item a {
     background: #51F0FA;
     color: #5D769B;
@@ -402,84 +486,33 @@ header.site-header {
 
 /************************************************************************/
 /************************************************************************/
-.archive-view {
-  background: #f4f4f4; }
-  .archive-view .post {
-    background: white;
-    position: relative; }
-    .archive-view .post .entry-title {
-      margin-top: 0; }
-    .archive-view .post .read-more {
-      position: absolute;
-      padding: 1em;
-      background-color: #50545E;
-      color: #CDD8E8;
-      bottom: 0;
-      right: 0;
-      border: none; }
-      .archive-view .post .read-more:hover {
-        background: #FA9046;
-        color: white; }
-  .archive-view .nav-links {
-    width: 100%;
-    display: flex;
-    align-content: space-around;
-    text-align: center; }
-    .archive-view .nav-links a, .archive-view .nav-links span {
-      padding: 1em;
-      border: 1px solid #eee;
-      margin: 0 5px; }
-      .archive-view .nav-links a.current, .archive-view .nav-links span.current {
-        background: #DFE5EE; }
-  .archive-view .recursos-container .recurso {
-    width: 100%;
-    display: flex;
-    margin-bottom: 20px;
-    position: relative; }
-    .archive-view .recursos-container .recurso:after {
-      content: "";
-      width: 12px;
-      height: 20px;
-      background: url(img/arrow-right.png) no-repeat;
-      position: absolute;
-      right: 10px;
-      top: calc(50% - 10px); }
-    .archive-view .recursos-container .recurso .thumb-recurso {
-      width: 150px;
-      height: 150px;
-      flex-shrink: 0;
-      border: none;
-      background-color: #DFE5EE; }
-    .archive-view .recursos-container .recurso .inside-article {
-      height: 130px;
-      padding: 10px 40px 10px 20px;
-      flex-grow: 1;
-      overflow: hidden; }
-      .archive-view .recursos-container .recurso .inside-article .entry-title {
-        font-family: "Varela Round", Helvetica, serif;
-        font-size: 1.2em;
-        margin: 0 0 .5em; }
-        .archive-view .recursos-container .recurso .inside-article .entry-title a {
-          border: none; }
-      .archive-view .recursos-container .recurso .inside-article .entry-content {
-        margin: 0;
-        width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-size: .85em;
-        font-weight: 200;
-        line-height: 1.3; }
-  @media screen and (min-width: 700px) {
-    .archive-view .recursos-container {
-      display: flex;
-      flex-flow: row wrap;
-      width: 100%; }
-      .archive-view .recursos-container .recurso {
-        flex: auto;
-        height: auto;
-        max-width: 48%;
-        margin: 0 1% 20px;
-        /* Some gutter */ } }
+.archive-view .post {
+  background: white;
+  position: relative; }
+  .archive-view .post .entry-title {
+    margin-top: 0; }
+  .archive-view .post .read-more {
+    position: absolute;
+    padding: 1em;
+    background-color: #50545E;
+    color: #CDD8E8;
+    bottom: 0;
+    right: 0;
+    border: none; }
+    .archive-view .post .read-more:hover {
+      background: #FA9046;
+      color: white; }
+.archive-view .paging-navigation {
+  text-align: center;
+  background: none; }
+.archive-view .nav-links a, .archive-view .nav-links span {
+  padding: 1em;
+  border: none;
+  background: white;
+  margin: 0 5px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.19); }
+  .archive-view .nav-links a.current, .archive-view .nav-links span.current {
+    background: #CDD8E8; }
 
 /************************************************************************/
 /************************************************************************/

@@ -17,15 +17,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 		$term = get_field('tipo_recurso');
 		
 		if( $term->slug == 'modelo-3d' || $term->slug == 'manual' || $term->slug == 'interactivo' ): ?>
-		<div class="portada">
+		
+			
 			<?php 
 			if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-				the_post_thumbnail('portada-video');
-			} 
-			?>
-		</div>
+				?>
+				<figure class="portada">
+					<?php the_post_thumbnail('portada-recurso'); ?>
+						<figcaption>
+						<?php echo get_post(get_post_thumbnail_id())->post_content; ?>
+						</figcaption>
+				</figure>
+			<?php } ?>
 		<?php endif; ?>
-
+		<?php if ($term){ ?>
+			<span class="recurso-category"><?php echo $term->name; ?></span>
+		<?php } ?>
+		
 		<header class="entry-header">
 			<?php
 			/**
