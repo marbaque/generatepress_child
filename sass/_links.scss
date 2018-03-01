@@ -23,7 +23,7 @@ a {
 	a[href$= ".doc"] 
 	{
 		&::before {
-			font-family: FontAwesome;
+			font-family: 'FontAwesome';
 			content: "\f15c";
 			margin-right: .25em;
 		    

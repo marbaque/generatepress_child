@@ -17,8 +17,9 @@ add_action( 'wp_enqueue_scripts', 'generatepress_child_enqueue_scripts', 100 );
 function remove_tags_fields() {
 	remove_meta_box( 'tagsdiv-area' , 'curso' , 'side' );
 	remove_meta_box( 'tagsdiv-licencia' , 'seccion' , 'side' );
-  }
-  add_action( 'admin_menu' , 'remove_tags_fields' );
+}
+add_action( 'admin_menu' , 'remove_tags_fields' );
+
 
 //esta función se carga despues del functions.php del parent theme
 function generate_press_child_setup() {
@@ -32,6 +33,7 @@ function generate_press_child_setup() {
 	//registrar menu para recursos
 	register_nav_menus( array(
 		'recursos-nav' => ( 'Menu de recursos' ),
+		'cursos-areas' => ( 'Menu de áreas para cursos' ),
 	) );
 	
 	//agregar iconos de fontawesome-com
@@ -97,11 +99,13 @@ function generate_press_child_setup() {
 	}
 	add_filter( 'body_class', 'generatepress_body_classes' );
 	
+	//cortar el estracto del post
 	function custom_excerpt_length( $length ) {
 		return 20;
 	}
 	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-
+	
+	
 		
 		
 }

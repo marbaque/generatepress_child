@@ -12,6 +12,9 @@
 @import 'sass/_variables';
 @import 'sass/_links';
 @import 'sass/_tipo';
+.site-content{
+	min-height: 700px;
+}
 
 header.site-header {
 	border-bottom: 1px solid #eee;
@@ -24,7 +27,6 @@ header.site-header {
 			border: none;
 		}
 	}
-	
 	
 }
 .main-navigation {
@@ -132,13 +134,20 @@ header.site-header {
 
 }
 
+.contained-content {
+	.inside-article {
+		background-color: transparent;
+	}
+}
+
+
 /************************************************************************/
 // pagina de single-curso
 /************************************************************************/
 .single-curso,
 .single-seccion {
 	.site-main {
-		
+		margin: 0;
 		.curso_sidebar {
 			background-color: $color__secundario;
 			width: 100%;
@@ -157,10 +166,10 @@ header.site-header {
 					list-style: none;
 					margin: 0;
 					li {
-						margin-bottom: .25em;
+						margin-bottom: .5em;
 					}
 					a {
-						border-width: 0;
+						color: $color__body-text;
 					}
 				}
 			}
@@ -179,6 +188,7 @@ header.site-header {
 		@media screen and (min-width:$break__small) {
 			display: flex;
 			align-items: stretch!important;
+			min-height: 740px;
 			
 			.curso_sidebar {
 				width: 30%;
@@ -186,17 +196,15 @@ header.site-header {
 			}
 			.curso,
 			.seccion {
-				//width: 70%;
+				border: 1px solid #eee;
 				background: white;
 			}
 		}
 	}
 	
 	.entry-header {
-		//margin-top: 20px;
+		margin-top: 20px;
 		width: 100%;
-		position: sticky;
-		top: 100px;
 		
 		.entry-title {
 			font-size: 1.2em;
@@ -217,6 +225,8 @@ header.site-header {
 	}
 	.content-area {
 		.site-main {
+			margin-top: 0;
+			
 			.inside-article {
 				@media screen and (max-width: $break__small) {
 					//padding: 0 40px 40px;
@@ -317,12 +327,29 @@ header.site-header {
 	}	
 }
 
+
 /************************************************************************/
 // Posts and pages
 /************************************************************************/
 .post-image {
 	a {
 		border: none;
+	}
+}
+
+.tags {
+	margin: 80px 0 40px;
+	a {
+		margin: 0;
+		padding: .25em .5em;
+		background-color: $color__dark;
+		color: $color__amarillo;
+		font-size: .66em;
+		letter-spacing: 1px;
+		font-weight: 200;
+		text-transform: uppercase;
+		border: none;
+		
 	}
 }
 
@@ -337,7 +364,56 @@ header.site-header {
 	}
 }
 
-.recurso-category {
+.single-recurso{
+	.recurso-category {
+		@media screen and (min-width: $break__large) {
+			margin-left: -60px;
+		}
+	}
+	.video-dark-background {
+		position: absolute;
+		background-color: #111;
+		height: 100%;
+		width: 100vw;
+		margin-left: calc(50% - 50vw);
+	    margin-right: calc(50% - 50vw);
+	}
+	.video-wrap {
+		display: block;
+		background: #111;
+		width: 100%;
+		height: auto;
+		position: relative;
+		
+	}
+	.video-contenedor {
+		display: block;
+		background: #111;
+		width: 100%;
+		//max-width: 900px;
+		text-align: center;
+		margin: 0 auto;
+		.attachment-portada-video {
+			margin: 0 auto!important;
+		}
+	}
+	.hentry {
+		border: 1px solid #eee;
+	}
+	.meta-info {
+		text-align: center;
+		font-size: .77em;
+		color: #a4a4a4;
+		margin-bottom: 2em;
+		span {
+			display: block;
+		}
+		a {
+			color: #a4a4a4;
+		}
+	}
+}
+ .recurso-category {
 	font-size: .7em;
 	letter-spacing: .5px;
 	background: $color__amarillo;
@@ -347,40 +423,17 @@ header.site-header {
 	display: inline-block;
 	-webkit-clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%);
 	clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%);
-}
-.video-dark-background {
-	position: absolute;
-	background-color: #111;
-	height: 100%;
-	width: 100vw;
-	margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-}
-.video-wrap {
-	display: block;
-	background: #111;
-	width: 100%;
-	height: auto;
-	position: relative;
 	
-}
-.video-contenedor {
-	display: block;
-	background: #111;
-	width: 100%;
-	//max-width: 900px;
-	text-align: center;
-	margin: 0 auto;
-	.attachment-portada-video {
-		margin: 0 auto!important;
-	}
-}
+}	
+
 .btn {
 	background: $color__secundario;
 	padding: 1em;
-	margin-bottom: 2em;
-	display: inline-block;
+	margin-bottom: 20px;
+	display: block;
 	border: none;
+	text-align: center;
+	max-width: $break__medium;
 	&:hover {
 		border: none;
 	}
@@ -413,23 +466,38 @@ header.site-header {
 }
 
 /************************************************************************/
-// archivo de recursos
+// archivo de recursos y cursos
 /************************************************************************/
 .archive-view {
 	&.post-type-archive-recurso,
-	&.tax-recurso_category { 
+	&.post-type-archive-curso,
+	&.tax-recurso_category,
+	&.tax-area { 
 		.page-header {
 			margin: 20px 0 0;
 			padding: 20px;
 			background: none;
 		}
 	}
+	&.post-type-archive-recurso {
+		.content-area {
+			left: 0;
+			margin-left: 0;
+			width: 100%;
+			.site-main {
+				margin: 0;
+			}
+		}
+
+	}
 	.taxonomy-description {
 		display: none;
 	}
 	
+	
+	
 	.recursos-container {
-		padding: 40px 20px 0;
+		padding: 40px 0 0;
 		
 		.recurso {
 			width: 100%;
@@ -512,6 +580,90 @@ header.site-header {
 
 		}
 	}
+	&.post-type-archive-curso,
+	&.tax-area {
+		.cursos-nav {
+			ul {
+				margin: 20px 0 0;
+				padding-top: 10px;
+				font-size: .8em;
+				background-color: #98B1D5;
+				padding-bottom: 80px;
+				list-style: none;
+				-webkit-clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
+				clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
+				
+				li {
+					margin: 2px 0;				}
+				a {
+					background-color: rgba(255, 255, 255, 0.47);
+					color: $color__body-text;
+					border: none;
+					padding: 1em;
+					display: block;
+					
+				}
+			}
+		}
+		.cursos-container {
+			padding: 0 20px;
+		}
+		.curso {
+			margin: 0 0 20px;
+			width: 100%;
+			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+			background-color: white;
+			img {
+				width: 100%;
+				margin: 0;
+			}
+			
+			.inside-article {
+				padding: 20px;
+				margin: 0;
+				.entry-title {
+					font-family: $headings;
+					margin: 0;
+				}
+				.curso_codigo {
+					margin: 1em 0 0;
+					font-size: .8em;
+					color: #a4a4a4;
+				}
+			}
+		}
+		@media screen and (min-width: $break__medium) {
+			.cursos-container {
+				padding: 0;
+			}
+			.content-area {
+				width: 100%;
+				margin: 0;
+				left: 0;
+				display: flex;
+				justify-content: space-between;
+				.cursos-nav {
+					width: 30%;
+				}
+				.site-main {
+					width: 65%;
+					margin-left: 0;
+				}
+			}
+		}
+		@media screen and (min-width: $break__small) {
+			.cursos-container {
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+				.curso {
+					width: 48%;
+					max-width: 270px;
+				}
+			}
+		}
+		
+	}
 }
 
 //menu de recursos
@@ -555,6 +707,7 @@ header.site-header {
 		}
 	}
 }
+
 /************************************************************************/
 // Sidebars
 /************************************************************************/

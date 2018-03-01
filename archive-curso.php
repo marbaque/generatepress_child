@@ -14,14 +14,19 @@ get_header(); ?>
 	<?php 
 		
 	do_action( 'generate_archive_title' );
-	
-	wp_nav_menu( array( 
-		'theme_location' => 'recursos-nav', 
-		'container_class' => 'recursos-nav', 
-	) );
+	//the_archive_title('<div class="page-header"><h1 class="page-title">', '</div></h1>');
 	?>
 	
+	
+	
+	
 	<section id="primary" <?php generate_content_class(); ?>>
+		<?php 
+		wp_nav_menu( array( 
+			'theme_location' => 'cursos-areas', 
+			'container_class' => 'cursos-nav', 
+		) );	
+		?>
 		<main id="main" <?php generate_main_class(); ?>>
 			<?php
 			/**
@@ -33,23 +38,22 @@ get_header(); ?>
 
 			if ( have_posts() ) :
 				?>
-				<div class="recursos-container">
+				<div class="cursos-container">
 				<?php
-
-				while ( have_posts() ) : the_post();
-
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', 'recursoitem' );
-
-				endwhile;
+				
+					while ( have_posts() ) : the_post();
+	
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'content', 'cursoitem' );
+	
+					endwhile;
 				?>
 				</div>
 				<?php
-
 				generate_content_nav( 'nav-below' );
 
 			else :
@@ -74,7 +78,7 @@ get_header(); ?>
 	 *
 	 * @since 2.0
 	 */
-	 //do_action( 'generate_after_primary_content_area' );
+	 do_action( 'generate_after_primary_content_area' );
 
 	 //generate_construct_sidebars();
 

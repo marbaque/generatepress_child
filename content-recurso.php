@@ -70,14 +70,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 		<div class="entry-content" itemprop="text">
+			
 			<?php
-			$file = get_field('archivo_recurso'); 
+			$file = get_field('archivo_recurso');
 			if ($file) {
 			?>
 			<a href="<?php echo $file; ?>" class="descargar btn"><i class="fa fa-download"></i> Descargar <strong><?php echo get_field('nombre_archivo'); ?></strong></a>
-			
 			<?php
 			}
+			
+			echo get_the_term_list( $post->ID, 'autor_recurso', '<p class="meta-info">Hecho por ', ', ', '.</p>' );
+			
 			the_content();
 			
 
@@ -85,10 +88,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'before' => '<div class="page-links">' . __( 'Pages:', 'generatepress' ),
 				'after'  => '</div>',
 			) );
-			?>
-
-			<?php 
-		
+			
+			the_tags('<div class="tags"><span class="screen-reader-text">Contenido etiquetado como: </span>', ' ', '</div>'); 
+			
 			$licencia = get_field('seleccionar_licencia');
 			$icono = get_field('icono_licencia', $licencia);
 					
