@@ -17,6 +17,8 @@ add_action( 'wp_enqueue_scripts', 'generatepress_child_enqueue_scripts', 100 );
 function remove_tags_fields() {
 	remove_meta_box( 'tagsdiv-area' , 'curso' , 'side' );
 	remove_meta_box( 'tagsdiv-licencia' , 'seccion' , 'side' );
+	remove_meta_box( 'tagsdiv-recurso_category' , 'recurso' , 'side' );
+	remove_meta_box( 'tagsdiv-licencia' , 'recurso' , 'side' );
 }
 add_action( 'admin_menu' , 'remove_tags_fields' );
 
