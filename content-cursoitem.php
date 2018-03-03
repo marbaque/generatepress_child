@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	
 	if( !empty($image) ): ?>
-		<img src="<?php echo $thumb; ?>)">
+		<img src="<?php echo $thumb; ?>">
 	<?php endif; ?>
 
 	
