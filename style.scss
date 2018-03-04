@@ -485,10 +485,10 @@ header.site-header {
 		.content-area {
 			left: 0;
 			margin-left: 0;
-			//width: 100%;
+			width: 100%!important;
 			.site-main {
 				margin: 0;
-				//width: 100%;
+				width: 100%!important;
 			}
 		}
 
@@ -534,6 +534,10 @@ header.site-header {
 			}
 		}
 	}
+	
+}
+
+.archivo-cursos {
 	@media screen and (min-width: $break__medium) {
 		.cursos-container {
 			padding: 0;
@@ -569,7 +573,6 @@ header.site-header {
 			}
 		}
 	}
-
 }
 .cursos-container {
 	padding: 0 20px;
@@ -633,7 +636,7 @@ header.site-header {
 			height: 150px;
 			flex-shrink: 0;
 			border: none;
-			background-color: $color__secundario;
+			background-color: $color__grisillo;
 			z-index: 10;
 			.recurso-icon {
 				width: 100%;
