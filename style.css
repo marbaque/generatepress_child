@@ -395,84 +395,28 @@ header.site-header {
 
 /************************************************************************/
 /************************************************************************/
-.archive-view.post-type-archive-recurso .page-header, .archive-view.post-type-archive-curso .page-header, .archive-view.tax-recurso_category .page-header, .archive-view.tax-area .page-header {
+.archive-view.archivo-recursos .page-header, .archive-view.archivo-cursos .page-header, .archive-view.tax-recurso_category .page-header, .archive-view.tax-area .page-header,
+.ocw-front.archivo-recursos .page-header,
+.ocw-front.archivo-cursos .page-header,
+.ocw-front.tax-recurso_category .page-header,
+.ocw-front.tax-area .page-header {
   margin: 20px 0 0;
   padding: 20px;
   background: none; }
-.archive-view.post-type-archive-recurso .content-area {
+.archive-view.archivo-recursos .content-area,
+.ocw-front.archivo-recursos .content-area {
   left: 0;
   margin-left: 0;
   width: 100%; }
-  .archive-view.post-type-archive-recurso .content-area .site-main {
-    margin: 0; }
-.archive-view .taxonomy-description {
+  .archive-view.archivo-recursos .content-area .site-main,
+  .ocw-front.archivo-recursos .content-area .site-main {
+    margin: 0;
+    width: 100%; }
+.archive-view .taxonomy-description,
+.ocw-front .taxonomy-description {
   display: none; }
-.archive-view .recursos-container {
-  padding: 40px 0 0; }
-  .archive-view .recursos-container .recurso {
-    width: 100%;
-    display: flex;
-    margin-bottom: 20px;
-    position: relative;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25); }
-    .archive-view .recursos-container .recurso:after {
-      content: "";
-      width: 12px;
-      height: 20px;
-      background: url(img/arrow-right.png) no-repeat;
-      position: absolute;
-      right: 14px;
-      top: calc(50% - 10px); }
-    .archive-view .recursos-container .recurso a {
-      border: none; }
-    .archive-view .recursos-container .recurso .thumb-recurso {
-      width: 150px;
-      height: 150px;
-      flex-shrink: 0;
-      border: none;
-      background-color: #F9E9C9;
-      z-index: 10; }
-      .archive-view .recursos-container .recurso .thumb-recurso .recurso-icon {
-        width: 100%;
-        height: 100%; }
-    .archive-view .recursos-container .recurso .inside-article {
-      height: 130px;
-      padding: 10px 40px 10px 20px;
-      flex-grow: 1;
-      overflow: hidden;
-      position: relative; }
-      .archive-view .recursos-container .recurso .inside-article .entry-title {
-        font-family: "Varela Round", Helvetica, serif;
-        font-size: 1.2em;
-        margin: 0 0 .5em;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis; }
-      .archive-view .recursos-container .recurso .inside-article .entry-content {
-        margin: 0;
-        width: 100%;
-        height: auto;
-        font-size: .85em;
-        font-weight: 200;
-        line-height: 1.3; }
-    .archive-view .recursos-container .recurso .recurso-category {
-      position: absolute;
-      left: -6px;
-      bottom: 0;
-      z-index: 20; }
-  @media screen and (min-width: 700px) {
-    .archive-view .recursos-container {
-      display: flex;
-      flex-flow: row wrap;
-      width: 100%;
-      padding: 40px 0 0; }
-      .archive-view .recursos-container .recurso {
-        flex: auto;
-        height: auto;
-        max-width: 48%;
-        margin: 0 1% 20px;
-        /* Some gutter */ } }
-.archive-view.post-type-archive-curso .cursos-nav ul, .archive-view.tax-area .cursos-nav ul {
+.archive-view .cursos-nav ul,
+.ocw-front .cursos-nav ul {
   margin: 20px 0 0;
   padding-top: 10px;
   font-size: .8em;
@@ -481,72 +425,146 @@ header.site-header {
   list-style: none;
   -webkit-clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
   clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0); }
-  .archive-view.post-type-archive-curso .cursos-nav ul li, .archive-view.tax-area .cursos-nav ul li {
+  .archive-view .cursos-nav ul li,
+  .ocw-front .cursos-nav ul li {
     margin: 2px 0;
     line-height: 1.3; }
-  .archive-view.post-type-archive-curso .cursos-nav ul a, .archive-view.tax-area .cursos-nav ul a {
+  .archive-view .cursos-nav ul a,
+  .ocw-front .cursos-nav ul a {
     background-color: rgba(255, 255, 255, 0.47);
     color: #5D769B;
     border: none;
     padding: 1em;
     display: block;
     letter-spacing: .25px; }
-    .archive-view.post-type-archive-curso .cursos-nav ul a:hover, .archive-view.post-type-archive-curso .cursos-nav ul a:active, .archive-view.tax-area .cursos-nav ul a:hover, .archive-view.tax-area .cursos-nav ul a:active {
+    .archive-view .cursos-nav ul a:hover, .archive-view .cursos-nav ul a:active,
+    .ocw-front .cursos-nav ul a:hover,
+    .ocw-front .cursos-nav ul a:active {
       background: #51F0FA; }
-  .archive-view.post-type-archive-curso .cursos-nav ul li.current-menu-item a, .archive-view.tax-area .cursos-nav ul li.current-menu-item a {
+  .archive-view .cursos-nav ul li.current-menu-item a,
+  .ocw-front .cursos-nav ul li.current-menu-item a {
     background: #51F0FA;
     color: #5D769B;
     position: relative; }
-.archive-view.post-type-archive-curso .cursos-container, .archive-view.tax-area .cursos-container {
+
+.cursos-container {
   padding: 0 20px; }
-.archive-view.post-type-archive-curso .curso, .archive-view.tax-area .curso {
+
+.curso {
   margin: 0 0 20px;
   width: 100%;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   background-color: white; }
-  .archive-view.post-type-archive-curso .curso img, .archive-view.tax-area .curso img {
+  .curso img {
     width: 100%;
     margin: 0;
     outline: none; }
-  .archive-view.post-type-archive-curso .curso a, .archive-view.tax-area .curso a {
+  .curso a {
     border: none;
     color: inherit;
     text-decoration: none; }
-  .archive-view.post-type-archive-curso .curso .inside-article, .archive-view.tax-area .curso .inside-article {
+  .curso .inside-article {
     padding: 20px;
     margin: 0;
     line-height: 1.25; }
-    .archive-view.post-type-archive-curso .curso .inside-article .entry-title, .archive-view.tax-area .curso .inside-article .entry-title {
+    .curso .inside-article .entry-title {
       font-family: "Varela Round", Helvetica, serif;
       margin: 0; }
-    .archive-view.post-type-archive-curso .curso .inside-article .curso_codigo, .archive-view.tax-area .curso .inside-article .curso_codigo {
+    .curso .inside-article .curso_codigo {
       margin: 1em 0 0;
       font-size: .7em;
       color: #a4a4a4; }
+
 @media screen and (min-width: 700px) {
-  .archive-view.post-type-archive-curso .cursos-container, .archive-view.tax-area .cursos-container {
+  .cursos-container {
     padding: 0; }
-  .archive-view.post-type-archive-curso .content-area, .archive-view.tax-area .content-area {
+
+  .content-area {
     width: 100%;
     margin: 0;
     left: 0;
     display: flex;
     justify-content: space-between; }
-    .archive-view.post-type-archive-curso .content-area .cursos-nav, .archive-view.tax-area .content-area .cursos-nav {
+    .content-area .cursos-nav {
       width: 30%; }
-    .archive-view.post-type-archive-curso .content-area .site-main, .archive-view.tax-area .content-area .site-main {
+    .content-area .site-main {
       width: 65%;
       margin-left: 0; } }
 @media screen and (min-width: 500px) {
-  .archive-view.post-type-archive-curso .cursos-container, .archive-view.tax-area .cursos-container {
+  .cursos-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap; }
-    .archive-view.post-type-archive-curso .cursos-container .curso, .archive-view.tax-area .cursos-container .curso {
-      width: 48%;
+    .cursos-container .curso {
+      width: auto;
       flex-grow: 0;
-      margin: 10px auto; } }
+      margin: 10px auto;
+      max-width: 310px;
+      min-width: 300px; } }
+.recursos-container {
+  padding: 40px 0 0; }
+  .recursos-container .recurso {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25); }
+    .recursos-container .recurso:after {
+      content: "";
+      width: 12px;
+      height: 20px;
+      background: url(img/arrow-right.png) no-repeat;
+      position: absolute;
+      right: 14px;
+      top: calc(50% - 10px); }
+    .recursos-container .recurso a {
+      border: none; }
+    .recursos-container .recurso .thumb-recurso {
+      width: 150px;
+      height: 150px;
+      flex-shrink: 0;
+      border: none;
+      background-color: #F9E9C9;
+      z-index: 10; }
+      .recursos-container .recurso .thumb-recurso .recurso-icon {
+        width: 100%;
+        height: 100%; }
+    .recursos-container .recurso .inside-article {
+      height: 130px;
+      padding: 10px 40px 10px 20px;
+      flex-grow: 1;
+      overflow: hidden;
+      position: relative; }
+      .recursos-container .recurso .inside-article .entry-title {
+        font-family: "Varela Round", Helvetica, serif;
+        font-size: 1.2em;
+        margin: 0 0 .5em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+      .recursos-container .recurso .inside-article .entry-content {
+        margin: 0;
+        width: 100%;
+        height: auto;
+        font-size: .85em;
+        font-weight: 200;
+        line-height: 1.3; }
+    .recursos-container .recurso .recurso-category {
+      position: absolute;
+      left: -6px;
+      bottom: 0;
+      z-index: 20; }
+  @media screen and (min-width: 700px) {
+    .recursos-container {
+      display: flex;
+      flex-flow: row wrap;
+      padding: 40px 0 0; }
+      .recursos-container .recurso {
+        flex: auto;
+        height: auto;
+        max-width: 48%;
+        margin: 0 1% 20px;
+        /* Some gutter */ } }
 
 .recursos-nav ul {
   list-style: none;
@@ -579,6 +597,31 @@ header.site-header {
       left: calc(50% - 1em);
       -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
       clip-path: polygon(50% 100%, 0 0, 100% 0); }
+
+/************************************************************************/
+/************************************************************************/
+.ocw-front .cursos-container {
+  background: #51F0FA;
+  padding: 40px 20px 60px; }
+.ocw-front .recursos-container {
+  background: #F6E871;
+  padding: 40px 20px 60px; }
+
+a.btn1,
+a.btn1:visited {
+  padding: 1em;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.22);
+  font-family: "Varela Round", Helvetica, serif;
+  border: none !important;
+  display: inline-block;
+  margin: 1em auto;
+  position: relative;
+  top: -2em;
+  color: #98B1D5; }
+
+.ocw-front .btn1 {
+  margin: 0 auto; }
 
 /************************************************************************/
 /************************************************************************/

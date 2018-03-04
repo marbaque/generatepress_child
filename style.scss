@@ -465,12 +465,14 @@ header.site-header {
 	}
 }
 
+
 /************************************************************************/
 // archivo de recursos y cursos
 /************************************************************************/
-.archive-view {
-	&.post-type-archive-recurso,
-	&.post-type-archive-curso,
+.archive-view, 
+.ocw-front {
+	&.archivo-recursos,
+	&.archivo-cursos,
 	&.tax-recurso_category,
 	&.tax-area { 
 		.page-header {
@@ -479,13 +481,14 @@ header.site-header {
 			background: none;
 		}
 	}
-	&.post-type-archive-recurso {
+	&.archivo-recursos {
 		.content-area {
 			left: 0;
 			margin-left: 0;
 			width: 100%;
 			.site-main {
 				margin: 0;
+				width: 100%;
 			}
 		}
 
@@ -494,198 +497,194 @@ header.site-header {
 		display: none;
 	}
 	
-	
-	
-	.recursos-container {
-		padding: 40px 0 0;
-		
-		.recurso {
-			width: 100%;
-			display: flex;
-			margin-bottom: 20px;
-			position: relative;
-			box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+
+	//menu de cursos
+	.cursos-nav {
+		ul {
+			margin: 20px 0 0;
+			padding-top: 10px;
+			font-size: .8em;
+			background-color: #98B1D5;
+			padding-bottom: 80px;
+			list-style: none;
+			-webkit-clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
+			clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
 			
-			&:after { //icono de flecha
-				content: "";
-				width: 12px;
-				height: 20px;
-				background: url(img/arrow-right.png) no-repeat;
-				position: absolute;
-				right: 14px;
-				top: calc(50% - 10px);
+			li {
+				margin: 2px 0;
+				line-height: 1.3;				
 			}
 			a {
+				background-color: rgba(255, 255, 255, 0.47);
+				color: #5D769B;
 				border: none;
-			}
-			
-			.thumb-recurso {
-				width: 150px;
-				height: 150px;
-				flex-shrink: 0;
-				border: none;
-				background-color: $color__secundario;
-				z-index: 10;
-				.recurso-icon {
-					width: 100%;
-					height: 100%;
+				padding: 1em;
+				display: block;
+				letter-spacing: .25px;
+				&:hover,
+				&:active {
+					background: #51F0FA;
+					
 				}
 			}
-			
-			.inside-article {
-				height: 130px; //150px menus 20px del padding
-				padding: 10px 40px 10px 20px;
-				flex-grow: 1;
-				overflow: hidden;
+			li.current-menu-item a {
+				background: #51F0FA;
+				color: #5D769B;
 				position: relative;
-				
-				.entry-title {
-					font-family: $headings;
-					font-size: 1.2em;
-					margin: 0 0 .5em;
-					white-space: nowrap;
-					overflow: hidden;
-					text-overflow: ellipsis;
-				}
-			
-				.entry-content {
-					margin: 0;
-					width: 100%;
-					height: auto;
-					font-size: .85em;
-					font-weight: 200;
-					line-height: 1.3;
-				}
-				
 			}
-			.recurso-category {
-				position: absolute;
-				left: -6px;
-				bottom: 0;
-				z-index: 20;
-			}
-		}
-		
-		@media screen and (min-width: $break__medium) {
-			display: flex;
-			flex-flow: row wrap;
-			width: 100%;
-			padding: 40px 0 0;
-			.recurso {
-				flex: auto;
-				height: auto;
-				max-width: 48%;
-				margin: 0 1% 20px; /* Some gutter */
-			}
-
 		}
 	}
-	&.post-type-archive-curso,
-	&.tax-area {
-		//menu de cursos
+}
+.cursos-container {
+	padding: 0 20px;
+}
+.curso {
+	margin: 0 0 20px;
+	width: 100%;
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+	background-color: white;
+	img {
+		width: 100%;
+		margin: 0;
+		outline: none;
+	}
+	a {
+		border: none;
+		color: inherit;
+		text-decoration: none;
+	}
+	
+	.inside-article {
+		padding: 20px;
+		margin: 0;
+		line-height: 1.25;
+		.entry-title {
+			font-family: $headings;
+			margin: 0;
+		}
+		.curso_codigo {
+			margin: 1em 0 0;
+			font-size: .7em;
+			color: #a4a4a4;
+		}
+	}
+}
+@media screen and (min-width: $break__medium) {
+	.cursos-container {
+		padding: 0;
+	}
+	.content-area {
+		width: 100%;
+		margin: 0;
+		left: 0;
+		display: flex;
+		justify-content: space-between;
 		.cursos-nav {
-			ul {
-				margin: 20px 0 0;
-				padding-top: 10px;
-				font-size: .8em;
-				background-color: #98B1D5;
-				padding-bottom: 80px;
-				list-style: none;
-				-webkit-clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
-				clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
-				
-				li {
-					margin: 2px 0;
-					line-height: 1.3;				
-				}
-				a {
-					background-color: rgba(255, 255, 255, 0.47);
-					color: #5D769B;
-					border: none;
-					padding: 1em;
-					display: block;
-					letter-spacing: .25px;
-					&:hover,
-					&:active {
-						background: #51F0FA;
-						
-					}
-				}
-				li.current-menu-item a {
-					background: #51F0FA;
-					color: #5D769B;
-					position: relative;
-				}
-			}
+			width: 30%;
 		}
-		.cursos-container {
-			padding: 0 20px;
+		.site-main {
+			width: 65%;
+			margin-left: 0;
 		}
+	}
+}
+@media screen and (min-width: $break__small) {
+	.cursos-container {
+		display: flex;
+		justify-content: space-around;
+		flex-direction: row;
+		flex-wrap: wrap;
 		.curso {
-			margin: 0 0 20px;
-			width: 100%;
-			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-			background-color: white;
-			img {
-				width: 100%;
-				margin: 0;
-				outline: none;
-			}
-			a {
-				border: none;
-				color: inherit;
-				text-decoration: none;
-			}
-			
-			.inside-article {
-				padding: 20px;
-				margin: 0;
-				line-height: 1.25;
-				.entry-title {
-					font-family: $headings;
-					margin: 0;
-				}
-				.curso_codigo {
-					margin: 1em 0 0;
-					font-size: .7em;
-					color: #a4a4a4;
-				}
-			}
+			//width: 48%;
+			width: auto;
+			flex-grow: 0;
+			margin: 10px auto;
+			max-width: 310px;
+			min-width: 300px;
 		}
-		@media screen and (min-width: $break__medium) {
-			.cursos-container {
-				padding: 0;
-			}
-			.content-area {
-				width: 100%;
-				margin: 0;
-				left: 0;
-				display: flex;
-				justify-content: space-between;
-				.cursos-nav {
-					width: 30%;
-				}
-				.site-main {
-					width: 65%;
-					margin-left: 0;
-				}
-			}
+	}
+}
+
+.recursos-container {
+	padding: 40px 0 0;
+	
+	.recurso {
+		display: flex;
+		margin-bottom: 20px;
+		position: relative;
+		box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+		
+		&:after { //icono de flecha
+			content: "";
+			width: 12px;
+			height: 20px;
+			background: url(img/arrow-right.png) no-repeat;
+			position: absolute;
+			right: 14px;
+			top: calc(50% - 10px);
 		}
-		@media screen and (min-width: $break__small) {
-			.cursos-container {
-				display: flex;
-				justify-content: flex-start;
-				flex-direction: row;
-				flex-wrap: wrap;
-				.curso {
-					width: 48%;
-					flex-grow: 0;
-					margin: 10px auto;
-					//max-width: 350px;
-				}
+		a {
+			border: none;
+		}
+		
+		.thumb-recurso {
+			width: 150px;
+			height: 150px;
+			flex-shrink: 0;
+			border: none;
+			background-color: $color__secundario;
+			z-index: 10;
+			.recurso-icon {
+				width: 100%;
+				height: 100%;
 			}
 		}
 		
+		.inside-article {
+			height: 130px; //150px menus 20px del padding
+			padding: 10px 40px 10px 20px;
+			flex-grow: 1;
+			overflow: hidden;
+			position: relative;
+			
+			.entry-title {
+				font-family: $headings;
+				font-size: 1.2em;
+				margin: 0 0 .5em;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		
+			.entry-content {
+				margin: 0;
+				width: 100%;
+				height: auto;
+				font-size: .85em;
+				font-weight: 200;
+				line-height: 1.3;
+			}
+			
+		}
+		.recurso-category {
+			position: absolute;
+			left: -6px;
+			bottom: 0;
+			z-index: 20;
+		}
+	}
+	
+	@media screen and (min-width: $break__medium) {
+		display: flex;
+		flex-flow: row wrap;
+		padding: 40px 0 0;
+		.recurso {
+			flex: auto;
+			height: auto;
+			max-width: 48%;
+			margin: 0 1% 20px; /* Some gutter */
+		}
+
 	}
 }
 
@@ -730,6 +729,38 @@ header.site-header {
 		}
 	}
 }
+/************************************************************************/
+// Front page especiales
+/************************************************************************/
+.ocw-front {
+	.cursos-container {
+		background: $color__verdeazul;
+		padding: 40px 20px 60px;
+	}
+	.recursos-container {
+		background: $color__amarillo;
+		padding: 40px 20px 60px;
+	}
+	
+}
+
+a.btn1,
+a.btn1:visited {
+	padding: 1em;
+	background: #FFFFFF;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
+	font-family: $headings;
+	border: none!important;
+	display: inline-block;
+	margin: 1em auto;
+	position: relative;
+	top: -2em;
+	color: $color__grisillo;
+}
+.ocw-front .btn1 {
+	margin: 0 auto;
+}
+
 
 /************************************************************************/
 // Sidebars

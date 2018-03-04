@@ -94,7 +94,16 @@ function generate_press_child_setup() {
 		
 		if ( is_singular('recurso') ) {
 			$classes[] = 'recurso-post';
-		} 		
+		}
+		if ( is_front_page() ) {
+			$classes[] = 'ocw-front';
+		}
+		if ( is_post_type_archive('curso') ) {
+			$classes[] = 'archivo-cursos';
+		}
+		if ( is_post_type_archive('recurso') ) {
+			$classes[] = 'archivo-recursos';
+		}
 		return $classes;
 		
 		
