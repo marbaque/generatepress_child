@@ -740,11 +740,26 @@ header.site-header {
 	.cursos-container {
 		background: $color__verdeazul;
 		padding: 40px 20px 60px;
+		@media screen and (min-width: $break__small) {
+			display: flex;
+			justify-content: space-around;
+			flex-direction: row;
+			flex-wrap: wrap;
+			.curso {
+				//width: 48%;
+				width: auto;
+				flex-grow: 0;
+				margin: 10px auto;
+				max-width: 310px;
+				min-width: 300px;
+			}
+		}
 	}
 	.recursos-container {
 		background: $color__amarillo;
 		padding: 40px 20px 60px;
 	}
+	
 	
 }
 

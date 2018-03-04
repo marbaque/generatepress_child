@@ -603,6 +603,18 @@ header.site-header {
 .ocw-front .cursos-container {
   background: #51F0FA;
   padding: 40px 20px 60px; }
+  @media screen and (min-width: 500px) {
+    .ocw-front .cursos-container {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      flex-wrap: wrap; }
+      .ocw-front .cursos-container .curso {
+        width: auto;
+        flex-grow: 0;
+        margin: 10px auto;
+        max-width: 310px;
+        min-width: 300px; } }
 .ocw-front .recursos-container {
   background: #F6E871;
   padding: 40px 20px 60px; }
