@@ -485,10 +485,10 @@ header.site-header {
 		.content-area {
 			left: 0;
 			margin-left: 0;
-			width: 100%;
+			//width: 100%;
 			.site-main {
 				margin: 0;
-				width: 100%;
+				//width: 100%;
 			}
 		}
 
@@ -534,6 +534,42 @@ header.site-header {
 			}
 		}
 	}
+	@media screen and (min-width: $break__medium) {
+		.cursos-container {
+			padding: 0;
+		}
+		.content-area {
+			width: 100%;
+			margin: 0;
+			left: 0;
+			display: flex;
+			justify-content: space-between;
+			.cursos-nav {
+				width: 30%;
+			}
+			.site-main {
+				width: 65%;
+				margin-left: 0;
+			}
+		}
+	}
+	@media screen and (min-width: $break__small) {
+		.cursos-container {
+			display: flex;
+			justify-content: space-around;
+			flex-direction: row;
+			flex-wrap: wrap;
+			.curso {
+				//width: 48%;
+				width: auto;
+				flex-grow: 0;
+				margin: 10px auto;
+				max-width: 310px;
+				min-width: 300px;
+			}
+		}
+	}
+
 }
 .cursos-container {
 	padding: 0 20px;
@@ -566,41 +602,6 @@ header.site-header {
 			margin: 1em 0 0;
 			font-size: .7em;
 			color: #a4a4a4;
-		}
-	}
-}
-@media screen and (min-width: $break__medium) {
-	.cursos-container {
-		padding: 0;
-	}
-	.content-area {
-		width: 100%;
-		margin: 0;
-		left: 0;
-		display: flex;
-		justify-content: space-between;
-		.cursos-nav {
-			width: 30%;
-		}
-		.site-main {
-			width: 65%;
-			margin-left: 0;
-		}
-	}
-}
-@media screen and (min-width: $break__small) {
-	.cursos-container {
-		display: flex;
-		justify-content: space-around;
-		flex-direction: row;
-		flex-wrap: wrap;
-		.curso {
-			//width: 48%;
-			width: auto;
-			flex-grow: 0;
-			margin: 10px auto;
-			max-width: 310px;
-			min-width: 300px;
 		}
 	}
 }

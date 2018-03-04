@@ -406,12 +406,10 @@ header.site-header {
 .archive-view.archivo-recursos .content-area,
 .ocw-front.archivo-recursos .content-area {
   left: 0;
-  margin-left: 0;
-  width: 100%; }
+  margin-left: 0; }
   .archive-view.archivo-recursos .content-area .site-main,
   .ocw-front.archivo-recursos .content-area .site-main {
-    margin: 0;
-    width: 100%; }
+    margin: 0; }
 .archive-view .taxonomy-description,
 .ocw-front .taxonomy-description {
   display: none; }
@@ -446,6 +444,38 @@ header.site-header {
     background: #51F0FA;
     color: #5D769B;
     position: relative; }
+@media screen and (min-width: 700px) {
+  .archive-view .cursos-container,
+  .ocw-front .cursos-container {
+    padding: 0; }
+  .archive-view .content-area,
+  .ocw-front .content-area {
+    width: 100%;
+    margin: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between; }
+    .archive-view .content-area .cursos-nav,
+    .ocw-front .content-area .cursos-nav {
+      width: 30%; }
+    .archive-view .content-area .site-main,
+    .ocw-front .content-area .site-main {
+      width: 65%;
+      margin-left: 0; } }
+@media screen and (min-width: 500px) {
+  .archive-view .cursos-container,
+  .ocw-front .cursos-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .archive-view .cursos-container .curso,
+    .ocw-front .cursos-container .curso {
+      width: auto;
+      flex-grow: 0;
+      margin: 10px auto;
+      max-width: 310px;
+      min-width: 300px; } }
 
 .cursos-container {
   padding: 0 20px; }
@@ -475,33 +505,6 @@ header.site-header {
       font-size: .7em;
       color: #a4a4a4; }
 
-@media screen and (min-width: 700px) {
-  .cursos-container {
-    padding: 0; }
-
-  .content-area {
-    width: 100%;
-    margin: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between; }
-    .content-area .cursos-nav {
-      width: 30%; }
-    .content-area .site-main {
-      width: 65%;
-      margin-left: 0; } }
-@media screen and (min-width: 500px) {
-  .cursos-container {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap; }
-    .cursos-container .curso {
-      width: auto;
-      flex-grow: 0;
-      margin: 10px auto;
-      max-width: 310px;
-      min-width: 300px; } }
 .recursos-container {
   padding: 40px 0 0; }
   .recursos-container .recurso {
