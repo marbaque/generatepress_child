@@ -10,7 +10,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header(); 
-get_header('3d'); 
+wp_enqueue_script( 'stl', get_stylesheet_directory_uri() . '/js/stl.js' );
+wp_enqueue_script( 'loader', get_stylesheet_directory_uri() . '/js/loader.js' );
+wp_enqueue_script( 'three.min', 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js' );
+wp_enqueue_script( 'TrackballControls', 'https://rawgit.com/mrdoob/three.js/master/examples/js/controls/TrackballControls.js' );
 
 ?>
 		<?php 
@@ -33,9 +36,11 @@ get_header('3d');
 		<div class="3d-wrap">
 			<div class="modelo3d-contenedor">
 				<?php 
-				if ( has_post_video() ) {
-					echo get_the_post_video_url();
-				} 
+				if ( has_post_video() ) { ?>				
+					<div id="stl-uri" style="display: none" value="<?php echo get_the_post_video_url(); ?>"></div>
+					<div id="view"></div>
+				<?php
+				}
 				?>
 			</div>
 		</div>	

@@ -52,22 +52,7 @@ window.addEventListener("load", function () {
     };
     
     // file input button
-    var input = document.getElementById("file");
-    input.addEventListener("change", function (ev) {
-        var file = ev.target.files[0];
-        openFile(file);
-    }, false);
+    var file = document.getElementById("stl-uri").value();
+    openFile(file);
     
-    // dnd
-    view.addEventListener("dragover", function (ev) {
-        ev.stopPropagation();
-        ev.preventDefault();
-        ev.dataTransfer.dropEffect = "copy";
-    }, false);
-    view.addEventListener("drop", function (ev) {
-        ev.stopPropagation();
-        ev.preventDefault();
-        var file = ev.dataTransfer.files[0];
-        openFile(file);
-    }, false);
 }, false);
