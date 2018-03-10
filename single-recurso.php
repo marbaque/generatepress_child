@@ -9,7 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-get_header(); ?>
+get_header(); 
+get_header('3d'); 
+
+?>
 		<?php 
 		
 		$term = get_field('tipo_recurso');
