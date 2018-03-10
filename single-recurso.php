@@ -10,8 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header(); 
-wp_enqueue_script( 'three', get_stylesheet_directory_uri() . '/js/three.min.js' );
-wp_enqueue_script( 'STLLoader', get_stylesheet_directory_uri() . '/js/STLLoader.js' );
 ?>
 		<?php 
 		
@@ -34,7 +32,9 @@ wp_enqueue_script( 'STLLoader', get_stylesheet_directory_uri() . '/js/STLLoader.
 			<div class="modelo3d-contenedor">
 				<?php 
 				if ( has_post_video() ) { ?>
-					<input type="hidden" id="stl-uri" value="<?php echo get_the_post_video_url(); ?>">
+-->					<literal>
+						<iframe width="420" height="315" frameborder="0" scrolling="no" src="./stl.html?uri=<?php echo get_the_post_video_url(); ?>"></iframe>
+					</literal>
 				<?php
 				}
 				?>

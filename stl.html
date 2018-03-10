@@ -1,7 +1,7 @@
 <html>
 <head>
-<script src="three.min.js"></script>
-<script src="STLLoader.js"></script>
+<script src="js/three.min.js"></script>
+<script src="js/STLLoader.js"></script>
 </head>
 <body>
 
@@ -29,7 +29,7 @@ function init(){
         scene.add(mesh);});
 
     // STL file to be loaded
-    loader.load('./Llavero.stl');
+    loader.load(url.searchParams.get("uri"));
 
     // lights
     scene.add(new THREE.AmbientLight(0x736F6E));
