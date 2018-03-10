@@ -10,11 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header(); 
-wp_enqueue_script( 'stl', get_stylesheet_directory_uri() . '/js/stl.js' );
-wp_enqueue_script( 'loader', get_stylesheet_directory_uri() . '/js/loader.js' );
-wp_enqueue_script( 'three.min', 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js' );
-wp_enqueue_script( 'TrackballControls', 'https://rawgit.com/mrdoob/three.js/master/examples/js/controls/TrackballControls.js' );
-
+wp_enqueue_script( 'three', get_stylesheet_directory_uri() . '/js/three.min.js' );
+wp_enqueue_script( 'STLLoader', get_stylesheet_directory_uri() . '/js/STLLoader.js' );
 ?>
 		<?php 
 		
@@ -36,9 +33,8 @@ wp_enqueue_script( 'TrackballControls', 'https://rawgit.com/mrdoob/three.js/mast
 		<div class="3d-wrap">
 			<div class="modelo3d-contenedor">
 				<?php 
-				if ( has_post_video() ) { ?>				
-					<div id="stl-uri" style="display: none" value="<?php echo get_the_post_video_url(); ?>"></div>
-					<div id="view"></div>
+				if ( has_post_video() ) { ?>
+					<input type="hidden" id="stl-uri" value="<?php echo get_the_post_video_url(); ?>">
 				<?php
 				}
 				?>
