@@ -25,6 +25,17 @@ get_header(); ?>
 				?>
 			</div>
 		</div>
+		<?php 
+		elseif($term->slug == 'modelo-3d'): ?>
+		<div class="3d-wrap">
+			<div class="modelo3d-contenedor">
+				<?php 
+				if ( has_post_video() ) {
+					echo get_the_post_video_url();
+				} 
+				?>
+			</div>
+		</div>	
 		<?php endif; ?>
 
 	<div id="primary" <?php generate_content_class();?>>

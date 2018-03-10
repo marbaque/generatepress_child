@@ -6,6 +6,18 @@
  * Only edit this file if you have direct access to it on your server (to fix errors if they happen).
  */
 
+ // Permite subida de archivos stl (modelos 3D)
+ function custom_upload_mimes($mimes = array()) {
+
+	// Add a key and value for the stl file type
+	$mimes['stl'] = "object/stl";
+
+	return $mimes;
+}
+
+add_action('upload_mimes', 'custom_upload_mimes');
+ 
+ 
 function generatepress_child_enqueue_scripts() {
 	if ( is_rtl() ) {
 		wp_enqueue_style( 'generatepress-rtl', trailingslashit( get_template_directory_uri() ) . 'rtl.css' );
