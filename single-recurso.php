@@ -14,8 +14,8 @@ get_header();
 		<?php 
 		
 		$term = get_field('tipo_recurso');
-				
-		if( $term->slug == 'video-educativo' ): ?>
+		
+		if( $term && $term->slug == 'video-educativo' ): ?>
 		<div class="video-wrap">
 			<div class="video-dark-background" aria-hidden></div>
 			<div class="video-contenedor">
@@ -27,7 +27,7 @@ get_header();
 			</div>
 		</div>
 		<?php 
-		elseif($term->slug == 'modelo-3d'): ?>
+		elseif( $term && $term->slug == 'modelo-3d' ): ?>
 		<div class="3d-wrap">
 			<div class="modelo3d-contenedor">
 				<?php 
