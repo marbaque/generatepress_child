@@ -427,7 +427,7 @@ header.site-header {
 }	
 
 .btn {
-	background: $color__secundario;
+	background: $color__grisillo;
 	padding: 1em;
 	margin-bottom: 20px;
 	display: block;
@@ -436,6 +436,7 @@ header.site-header {
 	max-width: $break__medium;
 	&:hover {
 		border: none;
+		color: $color__dark;
 	}
 }
 .licencia {
@@ -737,27 +738,35 @@ header.site-header {
 // Front page especiales
 /************************************************************************/
 .ocw-front {
+	.inside-article {
+		
+	}
 	.cursos-container {
 		background: $color__verdeazul;
 		padding: 40px 20px 60px;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 90%);
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 90%);
+		overflow: visible;
+		
 		@media screen and (min-width: $break__small) {
 			display: flex;
 			justify-content: space-around;
 			flex-direction: row;
 			flex-wrap: wrap;
 			.curso {
-				//width: 48%;
 				width: auto;
 				flex-grow: 0;
 				margin: 10px auto;
 				max-width: 310px;
-				min-width: 300px;
+				min-width: 200px;
 			}
 		}
 	}
 	.recursos-container {
 		background: $color__amarillo;
 		padding: 40px 20px 60px;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 93% 100%, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 94%, 93% 100%, 0 100%);
 	}
 	
 	

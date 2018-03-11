@@ -72,12 +72,14 @@ get_header(); ?>
 					    );
 					
 					$the_query = new WP_Query( $args );
+					
 					// The Loop
 					if ( $the_query->have_posts() ) :
+						
 						echo '<div class="submenu">';
 						echo '<h4>Contenidos</h4>';
 						echo '<ul>';
-						echo '<li><a href="' . $permalink . '" title="Inicio del curso">Inicio</a></li>';
+						echo '<li><a href="' . get_permalink() . '" title="Inicio del curso">Inicio</a></li>';
 						while ( $the_query->have_posts() ) : $the_query->the_post();
 							// Do Stuff
 							echo '<li><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';

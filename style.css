@@ -359,7 +359,7 @@ header.site-header {
   clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%); }
 
 .btn {
-  background: #F9E9C9;
+  background: #98B1D5;
   padding: 1em;
   margin-bottom: 20px;
   display: block;
@@ -367,7 +367,8 @@ header.site-header {
   text-align: center;
   max-width: 700px; }
   .btn:hover {
-    border: none; }
+    border: none;
+    color: #50545E; }
 
 .licencia {
   padding: 1em 1em 1.25em;
@@ -602,7 +603,10 @@ header.site-header {
 /************************************************************************/
 .ocw-front .cursos-container {
   background: #51F0FA;
-  padding: 40px 20px 60px; }
+  padding: 40px 20px 60px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 90%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 90%);
+  overflow: visible; }
   @media screen and (min-width: 500px) {
     .ocw-front .cursos-container {
       display: flex;
@@ -614,10 +618,12 @@ header.site-header {
         flex-grow: 0;
         margin: 10px auto;
         max-width: 310px;
-        min-width: 300px; } }
+        min-width: 200px; } }
 .ocw-front .recursos-container {
   background: #F6E871;
-  padding: 40px 20px 60px; }
+  padding: 40px 20px 60px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 93% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 94%, 93% 100%, 0 100%); }
 
 a.btn1,
 a.btn1:visited {

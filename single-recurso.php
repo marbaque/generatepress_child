@@ -33,7 +33,7 @@ get_header();
 				<?php 
 				if ( has_post_video() ) { ?>
 					<literal>
-						<iframe width="420" height="315" frameborder="0" scrolling="no" src="<?php echo get_stylesheet_directory_uri()> . '/stl.html?uri=' . get_the_post_video_url(); ?>"></iframe>
+						<iframe width="420" height="315" frameborder="0" scrolling="no" src="<?php echo get_stylesheet_directory_uri() . '/stl.html?uri=' . get_the_post_video_url(); ?>"></iframe>
 					</literal>
 				<?php
 				}

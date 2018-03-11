@@ -12,21 +12,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php generate_article_schema( 'CreativeWork' ); ?>>
 	<?php 
 	$term = get_field('tipo_recurso');
-	if ($term){ ?>
+	
+	if ( $term ): ?>
 		<span class="recurso-category"><?php echo $term->name; ?></span>
-	<?php } ?>
+	<?php endif; ?>
 
-	<?php 
-	if ( has_post_thumbnail( $_post->ID ) ) {
-        echo '<a href="' . get_permalink( $_post->ID ) . '" title="' . esc_attr( $_post->post_title ) . '" class="thumb-recurso">';
-        echo get_the_post_thumbnail( $_post->ID, 'thumbnail' );
-        echo '</a>';
-    } else {
-	    echo '<a href="' . get_permalink( $_post->ID ) . '" title="' . esc_attr( $_post->post_title ) . '" class="thumb-recurso">';
-	    echo '<span class="recurso-icon"></span>';
-	    echo '</a>';
-    }
-	 ?>
+	<?php if ( has_post_thumbnail() ) : ?>
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="thumb-recurso">
+			<?php the_post_thumbnail( 'thumbnail' ); ?>
+		</a>
+	<?php else: ?>
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="thumb-recurso"><span class="recurso-icon"></span></a>
+	
+	<?php endif; ?>
 	
 	<div class="inside-article">
 		
