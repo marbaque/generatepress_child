@@ -102,7 +102,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php if ($icono): ?>
 					<img class="aligh-left" src="<?php echo $icono; ?>">
 					<?php endif; ?>
-					<p><strong><?php echo $licencia->name; ?></strong>
+					<p><!-- <strong><?php echo $licencia->name; ?></strong> -->
 					<span><?php echo $licencia->description; ?></span></p>
 				</footer>
 			<?php endif; ?>

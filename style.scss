@@ -475,14 +475,16 @@ header.site-header {
 	&.archivo-recursos,
 	&.archivo-cursos,
 	&.tax-recurso_category,
-	&.tax-area { 
+	&.tax-area,
+	&.tax-recurso_category { 
 		.page-header {
 			margin: 20px 0 0;
 			padding: 20px;
 			background: none;
 		}
 	}
-	&.archivo-recursos {
+	&.archivo-recursos,
+	&.tax-recurso_category {
 		.content-area {
 			left: 0;
 			margin-left: 0;
@@ -538,7 +540,8 @@ header.site-header {
 	
 }
 
-.archivo-cursos {
+.archivo-cursos,
+.tax-area {
 	@media screen and (min-width: $break__medium) {
 		.cursos-container {
 			padding: 0;

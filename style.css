@@ -396,21 +396,24 @@ header.site-header {
 
 /************************************************************************/
 /************************************************************************/
-.archive-view.archivo-recursos .page-header, .archive-view.archivo-cursos .page-header, .archive-view.tax-recurso_category .page-header, .archive-view.tax-area .page-header,
+.archive-view.archivo-recursos .page-header, .archive-view.archivo-cursos .page-header, .archive-view.tax-recurso_category .page-header, .archive-view.tax-area .page-header, .archive-view.tax-recurso_category .page-header,
 .ocw-front.archivo-recursos .page-header,
 .ocw-front.archivo-cursos .page-header,
 .ocw-front.tax-recurso_category .page-header,
-.ocw-front.tax-area .page-header {
+.ocw-front.tax-area .page-header,
+.ocw-front.tax-recurso_category .page-header {
   margin: 20px 0 0;
   padding: 20px;
   background: none; }
-.archive-view.archivo-recursos .content-area,
-.ocw-front.archivo-recursos .content-area {
+.archive-view.archivo-recursos .content-area, .archive-view.tax-recurso_category .content-area,
+.ocw-front.archivo-recursos .content-area,
+.ocw-front.tax-recurso_category .content-area {
   left: 0;
   margin-left: 0;
   width: 100% !important; }
-  .archive-view.archivo-recursos .content-area .site-main,
-  .ocw-front.archivo-recursos .content-area .site-main {
+  .archive-view.archivo-recursos .content-area .site-main, .archive-view.tax-recurso_category .content-area .site-main,
+  .ocw-front.archivo-recursos .content-area .site-main,
+  .ocw-front.tax-recurso_category .content-area .site-main {
     margin: 0;
     width: 100% !important; }
 .archive-view .taxonomy-description,
@@ -449,26 +452,32 @@ header.site-header {
     position: relative; }
 
 @media screen and (min-width: 700px) {
-  .archivo-cursos .cursos-container {
+  .archivo-cursos .cursos-container,
+  .tax-area .cursos-container {
     padding: 0; }
-  .archivo-cursos .content-area {
+  .archivo-cursos .content-area,
+  .tax-area .content-area {
     width: 100%;
     margin: 0;
     left: 0;
     display: flex;
     justify-content: space-between; }
-    .archivo-cursos .content-area .cursos-nav {
+    .archivo-cursos .content-area .cursos-nav,
+    .tax-area .content-area .cursos-nav {
       width: 30%; }
-    .archivo-cursos .content-area .site-main {
+    .archivo-cursos .content-area .site-main,
+    .tax-area .content-area .site-main {
       width: 65%;
       margin-left: 0; } }
 @media screen and (min-width: 500px) {
-  .archivo-cursos .cursos-container {
+  .archivo-cursos .cursos-container,
+  .tax-area .cursos-container {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap; }
-    .archivo-cursos .cursos-container .curso {
+    .archivo-cursos .cursos-container .curso,
+    .tax-area .cursos-container .curso {
       width: auto;
       flex-grow: 0;
       margin: 10px auto;
