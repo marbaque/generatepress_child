@@ -21,7 +21,25 @@ get_header(); ?>
 
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'content', 'page' );
+				echo '<div class="texto">';
+				the_title( '<h2 class="entry-title">', '</h2>' );
+				the_content( sprintf(
+					wp_kses(
+						/* translators: %s: Name of current post. Only visible to screen readers */
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', '_s' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					get_the_title()
+				) );
+				echo '</div>';
+				
+				$image = get_stylesheet_directory_uri() . '/img/dibujo.png';
+				echo '<div class="dibujo"><img src="'. $image . '"></div>';
+
 
 			endwhile;
 

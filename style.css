@@ -601,6 +601,45 @@ header.site-header {
 
 /************************************************************************/
 /************************************************************************/
+.ocw-front .site-main {
+  margin-top: 0;
+  margin-bottom: 0; }
+  .ocw-front .site-main .texto {
+    max-width: 100%;
+    background: #FA9046;
+    color: #fff;
+    padding: 40px 20px;
+    margin-bottom: 0; }
+    .ocw-front .site-main .texto .entry-title {
+      margin-top: 0;
+      margin-bottom: .5em; }
+    .ocw-front .site-main .texto p:last-child {
+      margin-bottom: 0; }
+  .ocw-front .site-main .dibujo {
+    width: 100%; }
+  .ocw-front .site-main .btn1 {
+    top: 0; }
+  @media screen and (min-width: 700px) {
+    .ocw-front .site-main {
+      display: flex; }
+      .ocw-front .site-main .texto {
+        width: 50%; }
+      .ocw-front .site-main .dibujo {
+        width: 50%;
+        height: auto;
+        background: #CDD8E8;
+        overflow: hidden; } }
+  @media screen and (min-width: 1024px) {
+    .ocw-front .site-main {
+      flex-wrap: wrap;
+      margin-bottom: 20px; }
+      .ocw-front .site-main .texto {
+        order: 2;
+        width: 100%;
+        padding: 40px 20%; }
+      .ocw-front .site-main .dibujo {
+        order: 1;
+        width: 100%; } }
 .ocw-front .cursos-container {
   background: #51F0FA;
   padding: 40px 20px 60px;

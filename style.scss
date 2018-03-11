@@ -738,8 +738,65 @@ header.site-header {
 // Front page especiales
 /************************************************************************/
 .ocw-front {
-	.inside-article {
+	.site-main {
+		margin-top: 0;
+		margin-bottom: 0;
 		
+		.texto {
+			max-width: 100%;
+			background: $color__primario;
+			color: #fff;
+			padding: 40px 20px;
+			margin-bottom: 0;
+			
+			.entry-title {
+				margin-top: 0;
+				margin-bottom: .5em;
+			}
+			
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+		.dibujo {
+			width: 100%;
+		}
+		.btn1 {
+			top: 0;
+		}
+		
+		@media screen and (min-width: $break__medium) {
+			
+			display: flex;
+			
+			.texto {
+				width: 50%;
+			}
+			.dibujo {
+				width: 50%;
+				height: auto;
+				background: $color__text-overdark;
+				overflow: hidden;
+				img {
+					
+				}
+				
+			}
+		}
+		
+		@media screen and (min-width: $break__large) {
+			flex-wrap: wrap;
+			margin-bottom: 20px;
+			.texto {
+				order: 2;
+				width: 100%;
+				padding: 40px 20%;
+			}
+			.dibujo {
+				order: 1;
+				width: 100%;
+			}
+		}
 	}
 	.cursos-container {
 		background: $color__verdeazul;
