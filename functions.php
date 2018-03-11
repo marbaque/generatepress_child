@@ -131,7 +131,7 @@ function generate_press_child_setup() {
 	
 	//cortar el estracto del post
 	function custom_excerpt_length( $length ) {
-		return 20;
+		return 14;
 	}
 	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 	

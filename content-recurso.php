@@ -99,11 +99,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 					
 			if( $licencia ): ?>
 				<footer class="licencia">
+					<h4>¿Cómo compartir este recurso?</h4>
 					<?php if ($icono): ?>
 					<img class="aligh-left" src="<?php echo $icono; ?>">
 					<?php endif; ?>
-					<p><!-- <strong><?php echo $licencia->name; ?></strong> -->
-					<span><?php echo $licencia->description; ?></span></p>
+					<p><strong><?php echo $licencia->name; ?></strong></p>
+					<p><?php echo $licencia->description; ?></p>
 				</footer>
 			<?php endif; ?>
 			

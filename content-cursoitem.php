@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	
 	if( !empty($image) ): ?>
-		<img src="<?php echo $thumb; ?>">
+		<a href="<?php the_permalink(); ?>" rel="bookmark"><img src="<?php echo $thumb; ?>"></a>
 	<?php endif; ?>
 
 	

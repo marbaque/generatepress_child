@@ -401,7 +401,6 @@ header.site-header {
 		border: 1px solid #eee;
 	}
 	.meta-info {
-		text-align: center;
 		font-size: .77em;
 		color: #a4a4a4;
 		margin-bottom: 2em;
@@ -446,10 +445,13 @@ header.site-header {
 	background: #eee;
 	font-size: .8em;
 	@include radio(5px);
+	h4 {
+		margin: 0 0 .5em;
+	}
 	span {
 		display: block;
 	}
-	p:last-child {
+	p{
 		margin: 0;
 	}
 	img {
@@ -538,6 +540,124 @@ header.site-header {
 		}
 	}
 	
+	.cursos-container {
+		padding: 0 20px;
+		.curso {
+			margin: 0 0 20px;
+			width: 100%;
+			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+			background-color: white;
+			img {
+				width: 100%;
+				margin: 0;
+				outline: none;
+			}
+			a {
+				border: none;
+				color: inherit;
+				text-decoration: none;
+			}
+			
+			.inside-article {
+				padding: 20px;
+				margin: 0;
+				line-height: 1.25;
+				.entry-title {
+					font-family: $headings;
+					margin: 0;
+				}
+				.curso_codigo {
+					margin: 1em 0 0;
+					font-size: .7em;
+					color: #a4a4a4;
+				}
+			}
+		}
+	
+	}
+	.recursos-container {
+		padding: 40px 0 0;
+		
+		.recurso {
+			display: flex;
+			margin-bottom: 20px;
+			position: relative;
+			box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+			
+			&:after { //icono de flecha
+				content: "";
+				width: 12px;
+				height: 20px;
+				background: url(img/arrow-right.png) no-repeat;
+				position: absolute;
+				right: 14px;
+				top: calc(50% - 10px);
+			}
+			a {
+				border: none;
+			}
+			
+			.thumb-recurso {
+				width: 150px;
+				height: 150px;
+				flex-shrink: 0;
+				border: none;
+				background-color: $color__grisillo;
+				z-index: 10;
+				.recurso-icon {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			
+			.inside-article {
+				height: 130px; //150px menus 20px del padding
+				padding: 10px 40px 10px 20px;
+				flex-grow: 1;
+				overflow: hidden;
+				position: relative;
+				
+				.entry-title {
+					font-family: $headings;
+					font-size: 1.2em;
+					margin: 0 0 .5em;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			
+				.entry-content {
+					margin: 0;
+					width: 100%;
+					height: auto;
+					font-size: .85em;
+					font-weight: 200;
+					line-height: 1.3;
+				}
+				
+			}
+			.recurso-category {
+				position: absolute;
+				left: -6px;
+				bottom: 0;
+				z-index: 20;
+			}
+		}
+		
+		@media screen and (min-width: $break__medium) {
+			display: flex;
+			flex-flow: row wrap;
+			padding: 40px 0 0;
+			.recurso {
+				flex: auto;
+				height: auto;
+				max-width: 48%;
+				margin: 0 1% 20px; /* Some gutter */
+			}
+	
+		}
+	}
+	
 }
 
 .archivo-cursos,
@@ -578,123 +698,42 @@ header.site-header {
 		}
 	}
 }
-.cursos-container {
-	padding: 0 20px;
-}
-.curso {
-	margin: 0 0 20px;
-	width: 100%;
-	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-	background-color: white;
-	img {
-		width: 100%;
-		margin: 0;
-		outline: none;
-	}
-	a {
-		border: none;
-		color: inherit;
-		text-decoration: none;
-	}
-	
-	.inside-article {
-		padding: 20px;
-		margin: 0;
-		line-height: 1.25;
-		.entry-title {
-			font-family: $headings;
-			margin: 0;
-		}
-		.curso_codigo {
-			margin: 1em 0 0;
-			font-size: .7em;
-			color: #a4a4a4;
-		}
-	}
-}
 
+//iconos de recursos sin imagen destacada
 .recursos-container {
-	padding: 40px 0 0;
-	
 	.recurso {
-		display: flex;
-		margin-bottom: 20px;
-		position: relative;
-		box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-		
-		&:after { //icono de flecha
-			content: "";
-			width: 12px;
-			height: 20px;
-			background: url(img/arrow-right.png) no-repeat;
-			position: absolute;
-			right: 14px;
-			top: calc(50% - 10px);
-		}
-		a {
-			border: none;
-		}
 		
 		.thumb-recurso {
-			width: 150px;
-			height: 150px;
-			flex-shrink: 0;
-			border: none;
-			background-color: $color__grisillo;
-			z-index: 10;
-			.recurso-icon {
-				width: 100%;
-				height: 100%;
-			}
+			background-repeat: no-repeat;
+			background-position: center center;
+			@include vector-bg-with-fallback(recurso);
 		}
 		
-		.inside-article {
-			height: 130px; //150px menus 20px del padding
-			padding: 10px 40px 10px 20px;
-			flex-grow: 1;
-			overflow: hidden;
-			position: relative;
-			
-			.entry-title {
-				font-family: $headings;
-				font-size: 1.2em;
-				margin: 0 0 .5em;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
+		&.recurso_category-interactivo {
+			.thumb-recurso {
+				@include vector-bg-with-fallback(interactivo);
 			}
-		
-			.entry-content {
-				margin: 0;
-				width: 100%;
-				height: auto;
-				font-size: .85em;
-				font-weight: 200;
-				line-height: 1.3;
+		}
+		&.recurso_category-video-educativo {
+			.thumb-recurso {
+				@include vector-bg-with-fallback(video);
 			}
-			
 		}
-		.recurso-category {
-			position: absolute;
-			left: -6px;
-			bottom: 0;
-			z-index: 20;
+		&.recurso_category-modelo-3d {
+			.thumb-recurso {
+				@include vector-bg-with-fallback(3d);
+			}
 		}
-	}
-	
-	@media screen and (min-width: $break__medium) {
-		display: flex;
-		flex-flow: row wrap;
-		padding: 40px 0 0;
-		.recurso {
-			flex: auto;
-			height: auto;
-			max-width: 48%;
-			margin: 0 1% 20px; /* Some gutter */
+		&.recurso_category-manual {
+			.thumb-recurso {
+				@include vector-bg-with-fallback(manual);
+			}
 		}
-
 	}
 }
+
+
+
 
 //menu de recursos
 .recursos-nav {
@@ -738,12 +777,12 @@ header.site-header {
 	}
 }
 /************************************************************************/
-// Front page especiales
+// Front page especifico
 /************************************************************************/
 .ocw-front {
-	.site-main {
-		margin-top: 0;
-		margin-bottom: 0;
+	
+	.site-main { //banner de arriba
+		margin: 0 0 20px!important;
 		
 		.texto {
 			max-width: 100%;
@@ -751,7 +790,8 @@ header.site-header {
 			color: #fff;
 			padding: 40px 20px;
 			margin-bottom: 0;
-			
+			font-size: .9em;
+			line-height: 1.45;
 			.entry-title {
 				margin-top: 0;
 				margin-bottom: .5em;
@@ -774,12 +814,13 @@ header.site-header {
 			
 			.texto {
 				width: 50%;
+				order: 1;
 			}
 			.dibujo {
 				width: 50%;
 				height: auto;
-				background: $color__text-overdark;
 				overflow: hidden;
+				order: 2;
 				img {
 					
 				}
@@ -793,7 +834,9 @@ header.site-header {
 			.texto {
 				order: 2;
 				width: 100%;
-				padding: 40px 20%;
+				padding: 40px 25%;
+				-webkit-clip-path: polygon(91% 0, 100% 20%, 100% 100%, 0 100%, 0 0);
+				clip-path: polygon(91% 0, 100% 20%, 100% 100%, 0 100%, 0 0);
 			}
 			.dibujo {
 				order: 1;
@@ -803,30 +846,34 @@ header.site-header {
 	}
 	.cursos-container {
 		background: $color__verdeazul;
-		padding: 40px 20px 60px;
+		padding: 40px 10px 60px;
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 90%);
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 90%);
 		overflow: visible;
+		position: relative;
 		
 		@media screen and (min-width: $break__small) {
 			display: flex;
-			justify-content: space-around;
+			justify-content: flex-start!important;
 			flex-direction: row;
 			flex-wrap: wrap;
+			padding: 40px 40px 60px;
 			.curso {
-				width: auto;
-				flex-grow: 0;
+				width: 30%;
+				flex-shrink: 0;
 				margin: 10px auto;
-				max-width: 310px;
-				min-width: 200px;
+				min-width: 240px!important;
 			}
 		}
 	}
 	.recursos-container {
-		background: $color__amarillo;
-		padding: 40px 20px 60px;
+		background: $color__primario;
+		padding: 40px 10px 60px;
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 93% 100%, 0 100%);
 		clip-path: polygon(0 0, 100% 0, 100% 94%, 93% 100%, 0 100%);
+		@media screen and (min-width: $break__small) {
+			padding: 40px 40px 60px;
+		}
 	}
 	
 	
@@ -858,7 +905,8 @@ a.btn1:visited {
 	.widget {
 		padding: 2em;
 		font-size: .9em;
-		background: $color__amarillo;
+		background: #fff;
+		border: 1px solid #eaeaea;
 	}
 	h2 {
 		margin: 0 0 1em;
@@ -906,7 +954,7 @@ a.btn1:visited {
 			margin: 0 5px;
 			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.19);
 			&.current {
-				background: $color__secundario;
+				background: $color__grisillo;
 			}
 		}
 	}

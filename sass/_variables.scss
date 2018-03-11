@@ -32,3 +32,11 @@ $break__large: 1024px;
 	-moz-border-radius: $r;
 	border-radius: $r;
 }
+
+
+$public_path: "";
+
+@mixin vector-bg-with-fallback($name) {
+  background-image: url('#{$public_path}img/#{$name}.png');
+  background-image: none, url('#{$public_path}img/#{$name}.svg');
+}

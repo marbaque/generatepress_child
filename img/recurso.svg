@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="36px" viewBox="0 0 48 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>recurso</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="recurso" stroke="#7D95B8" stroke-width="2">
+            <rect id="Rectangle-10" x="1" y="1" width="46" height="34"></rect>
+            <rect id="Rectangle-11" x="5" y="5" width="14" height="14"></rect>
+            <path d="M5,25 L41.2215406,25" id="Line-3" stroke-linecap="square" stroke-linejoin="round"></path>
+            <path d="M5,29 L41.2215406,29" id="Line-3-Copy" stroke-linecap="square" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

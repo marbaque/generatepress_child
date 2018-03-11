@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="36px" viewBox="0 0 50 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>3d</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3d" transform="translate(1.000000, 0.000000)" stroke="#7D95B8" stroke-width="2">
+            <path d="M1,3.89858056 L1,26.8469903 L27,23.1327046 L27,1.11286627 L1,3.89858056 Z" id="Rectangle-8"></path>
+            <path d="M21,8.89858056 L21,34.8469903 L47,31.1327046 L47,6.11286627 L21,8.89858056 Z" id="Rectangle-8-Copy"></path>
+            <path d="M47.1567383,6.27050781 L26.9477539,1.03369141" id="Path-2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M20.9790039,9.17822266 L0.926269531,3.97412109" id="Path-3" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M21.0927734,35.0249023 L1.04833984,27.1196289" id="Path-4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M47.0473633,31.1777344 L26.8164062,22.9897461" id="Path-5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>
