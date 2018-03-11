@@ -22,7 +22,8 @@ get_header(); ?>
 		
 		$parent = $post->post_parent;
 		$permalink = get_permalink( $post->post_parent );
-
+		$current = $post->ID;
+		
 		if ( generate_show_title() ) {
 			echo '<a href="' . $permalink . '" title="Inicio del curso"><h2 class="entry-title" itemprop="headline">' . get_the_title($parent) . '</h2></a>';
 		}
@@ -65,6 +66,8 @@ get_header(); ?>
 				<div class="submenu">
 					<?php 
 					global $post;
+					
+					
 
 					$args = array(
 					    'post_parent' => $parent,
@@ -82,7 +85,14 @@ get_header(); ?>
 						echo '<li><a href="' . $permalink . '" title="Inicio del curso">Inicio</a></li>';
 						while ( $the_query->have_posts() ) : $the_query->the_post();
 							// Do Stuff
-							echo '<li><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';
+							$queried_object = get_the_ID();
+							
+							if( $queried_object == $current) {
+								echo '<li class="current-item"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';
+							} else {
+								echo '<li><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';
+							}
+								
 						endwhile;
 						echo '</ul>';
 					endif;

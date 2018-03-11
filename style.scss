@@ -149,13 +149,14 @@ header.site-header {
 	.site-main {
 		margin: 0;
 		.curso_sidebar {
-			background-color: $color__secundario;
+			background-color: #fff;
 			width: 100%;
 			display: block;
 			min-height: 20px;
 			margin: 0;
+			text-align: center;
 			.submenu {
-				padding: 40px 20px;
+				padding: 20px 20px;
 				font-size: .9em;
 				h4 {
 					margin-top: 0;
@@ -165,13 +166,42 @@ header.site-header {
 				ul {
 					list-style: none;
 					margin: 0;
+					
 					li {
 						margin-bottom: .5em;
 					}
 					a {
 						color: $color__body-text;
+						border: none;
+					}
+					
+					li.current-item {
+						position: relative;
+						&:before {
+							font-family: 'FontAwesome';
+							content: "\f06e";
+							color: $color__primario;
+							margin-right: 4px;
+							position: absolute;
+							left: -1.2em;
+							line-height: 1.3;
+						}
+						a {
+							color: $color__primario;
+						}
 					}
 				}
+				
+				@media screen and (min-width: $break__medium) {
+					padding: 40px 20px;
+					position: -webkit-sticky;
+					position: sticky;
+					top: 20px;
+					ul {
+						padding-left: 20px;
+					}
+				}
+				
 			}
 		}
 		.curso,
@@ -185,14 +215,14 @@ header.site-header {
 				border-bottom: 1px solid $color__dark;
 			}
 		}
-		@media screen and (min-width:$break__small) {
+		@media screen and (min-width:$break__medium) {
 			display: flex;
 			align-items: stretch!important;
 			min-height: 740px;
-			
 			.curso_sidebar {
 				width: 30%;
 				margin-bottom: 20px;
+				text-align: left;
 			}
 			.curso,
 			.seccion {
@@ -438,7 +468,7 @@ header.site-header {
 		color: $color__dark;
 	}
 }
-.licencia {
+.licencia-block {
 	padding: 1em 1em 1.25em;
 	margin: 2em 0 0;
 	display: block;
@@ -447,9 +477,6 @@ header.site-header {
 	@include radio(5px);
 	h4 {
 		margin: 0 0 .5em;
-	}
-	span {
-		display: block;
 	}
 	p{
 		margin: 0;
@@ -533,8 +560,8 @@ header.site-header {
 				}
 			}
 			li.current-menu-item a {
-				background: #51F0FA;
-				color: #5D769B;
+				background: $color__primario;
+				color: #fff;
 				position: relative;
 			}
 		}
@@ -759,14 +786,14 @@ header.site-header {
 			}
 		}
 		.current-menu-item a {
-			background: #51F0FA;
+			background: $color__amarillo;
 			color: #5D769B;
 			position: relative;
 			&:after {
 				content: "";
 				width: 2em;
 				height: 8px;
-				background: #51F0FA;
+				background: $color__amarillo;
 				position: absolute;
 				bottom: -8px;
 				left: calc(50% - 1em);
@@ -792,6 +819,9 @@ header.site-header {
 			margin-bottom: 0;
 			font-size: .9em;
 			line-height: 1.45;
+			border-bottom: 8px solid #F07738;
+			border-right: 6px solid #F07738;
+			
 			.entry-title {
 				margin-top: 0;
 				margin-bottom: .5em;
@@ -809,9 +839,7 @@ header.site-header {
 		}
 		
 		@media screen and (min-width: $break__medium) {
-			
 			display: flex;
-			
 			.texto {
 				width: 50%;
 				order: 1;
@@ -850,14 +878,15 @@ header.site-header {
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 90%);
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 90%);
 		overflow: visible;
-		position: relative;
-		
+		position: relative;		
 		@media screen and (min-width: $break__small) {
 			display: flex;
 			justify-content: flex-start!important;
 			flex-direction: row;
 			flex-wrap: wrap;
 			padding: 40px 40px 60px;
+			border-left: 6px solid #4AE2E9;
+			border-top: 12px solid #4AE2E9;
 			.curso {
 				width: 30%;
 				flex-shrink: 0;
@@ -867,12 +896,14 @@ header.site-header {
 		}
 	}
 	.recursos-container {
-		background: $color__primario;
+		background: $color__amarillo;
 		padding: 40px 10px 60px;
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 93% 100%, 0 100%);
 		clip-path: polygon(0 0, 100% 0, 100% 94%, 93% 100%, 0 100%);
 		@media screen and (min-width: $break__small) {
 			padding: 40px 40px 60px;
+			border-top: 6px solid #F1D15A;
+			border-right: 10px solid #F1D15A;
 		}
 	}
 	

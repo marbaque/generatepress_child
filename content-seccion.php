@@ -95,12 +95,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$icono = get_field('icono_licencia', $licencia);
 					
 			if( $licencia ): ?>
-				<footer class="licencia">
+				<footer class="licencia-block">
+					<h4>¿Cómo compartir este contenido?</h4>
 					<?php if ($icono): ?>
 					<img class="aligh-left" src="<?php echo $icono; ?>">
 					<?php endif; ?>
-					<p><strong><?php echo $licencia->name; ?></strong>
-					<span><?php echo $licencia->description; ?></span></p>
+					<p><strong><?php echo $licencia->name; ?></strong></p>
+					<p><?php echo $licencia->description; ?></p>
 				</footer>
 			<?php endif; ?>
 

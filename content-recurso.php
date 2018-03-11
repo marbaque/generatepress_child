@@ -98,7 +98,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$icono = get_field('icono_licencia', $licencia);
 					
 			if( $licencia ): ?>
-				<footer class="licencia">
+				<footer class="licencia-block">
 					<h4>¿Cómo compartir este recurso?</h4>
 					<?php if ($icono): ?>
 					<img class="aligh-left" src="<?php echo $icono; ?>">

@@ -14,7 +14,6 @@ get_header(); ?>
 	<?php 
 		
 	do_action( 'generate_archive_title' );
-	//the_archive_title('<div class="page-header"><h1 class="page-title">', '</div></h1>');
 	?>
 	
 	
