@@ -136,6 +136,32 @@ function generate_press_child_setup() {
 	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 	
 	
+	//generar numero de visitas
+	function getPostViews($postID){
+	    $count_key = 'post_views_count';
+	    $count = get_post_meta($postID, $count_key, true);
+	    if($count==''){
+	        delete_post_meta($postID, $count_key);
+	        add_post_meta($postID, $count_key, '0');
+	        return "0 View";
+	    }
+	    return $count.' Views';
+	}
+	function setPostViews($postID) {
+	    $count_key = 'post_views_count'; //este es el meta key usado en el query de cursos de la página principal
+	    $count = get_post_meta($postID, $count_key, true);
+	    if($count==''){
+	        $count = 0;
+	        delete_post_meta($postID, $count_key);
+	        add_post_meta($postID, $count_key, '0');
+	    }else{
+	        $count++;
+	        update_post_meta($postID, $count_key, $count);
+	    }
+	}
+	// Remove issues with prefetching adding extra views
+	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+	
 		
 		
 }

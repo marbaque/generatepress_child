@@ -49,12 +49,14 @@ get_header(); ?>
 			?>
 		</main><!-- #main -->
 		
+		
 		<section class="cursos-container">
 			<?php $custom_query = new WP_Query( array(
-				'post_type' => 'curso',
-				'orderby' => 'date',
-				'order'   => 'DESC',
-				'posts_per_page' => '3', 
+				'posts_per_page' => 3,
+				'meta_key' => 'post_views_count',
+				'order' => 'DESC',
+				'orderby' => 'meta_value_num',
+				'post_type' => 'curso', 
 				) );
 			while($custom_query->have_posts()) : $custom_query->the_post(); ?>
 			

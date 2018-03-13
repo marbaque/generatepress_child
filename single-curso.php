@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header(); ?>
-
+<?php setPostViews(get_the_ID()); ?>
 	<header class="entry-header grid-container grid-parent">
 		<?php
 		/**
@@ -91,6 +91,7 @@ get_header(); ?>
 					wp_reset_postdata();
 					?>
 					
+					<p class="escondido"><?php echo getPostViews(get_the_ID()); ?></p>
 				
 			</aside><!-- aside .curso_sidebar -->
 
@@ -128,6 +129,6 @@ get_header(); ?>
 	 */
 	 do_action( 'generate_after_primary_content_area' );
 
-	 generate_construct_sidebars();
+	 //generate_construct_sidebars();
 
 get_footer();

@@ -22,7 +22,6 @@ header.site-header {
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.13);
 	.inside-header {
 		padding: 20px;
-		
 		a {
 			border: none;
 		}
@@ -32,8 +31,8 @@ header.site-header {
 .main-navigation {
 	background-color: transparent;
 	button.menu-toggle {
-		background-color: $color__dark;
-		color: $color__text-overdark;
+		background-color: $color__text-overdark;
+		color: $color__dark;
 	}
 	.navigation-search {
 		
@@ -141,6 +140,10 @@ header.site-header {
 }
 
 
+.escondido {
+	//display: none;
+}
+
 /************************************************************************/
 // pagina de single-curso
 /************************************************************************/
@@ -149,7 +152,7 @@ header.site-header {
 	.site-main {
 		margin: 0;
 		.curso_sidebar {
-			background-color: #fff;
+			background-color: #DFE5EE;
 			width: 100%;
 			display: block;
 			min-height: 20px;
@@ -157,7 +160,7 @@ header.site-header {
 			text-align: center;
 			.submenu {
 				padding: 20px 20px;
-				font-size: .9em;
+				font-size: .8em;
 				h4 {
 					margin-top: 0;
 					margin-bottom: 20px;
@@ -426,9 +429,6 @@ header.site-header {
 		.attachment-portada-video {
 			margin: 0 auto!important;
 		}
-	}
-	.hentry {
-		border: 1px solid #eee;
 	}
 	.meta-info {
 		font-size: .77em;
@@ -814,13 +814,11 @@ header.site-header {
 		.texto {
 			max-width: 100%;
 			background: $color__primario;
+			background-image: linear-gradient(-140deg, #FD8F7C 0%, #FA9046 93%);
 			color: #fff;
 			padding: 40px 20px;
 			margin-bottom: 0;
-			font-size: .9em;
 			line-height: 1.45;
-			border-bottom: 8px solid #F07738;
-			border-right: 6px solid #F07738;
 			
 			.entry-title {
 				margin-top: 0;
@@ -843,6 +841,7 @@ header.site-header {
 			.texto {
 				width: 50%;
 				order: 1;
+				padding: 40px;
 			}
 			.dibujo {
 				width: 50%;
@@ -856,6 +855,7 @@ header.site-header {
 			}
 		}
 		
+/*
 		@media screen and (min-width: $break__large) {
 			flex-wrap: wrap;
 			margin-bottom: 20px;
@@ -863,20 +863,22 @@ header.site-header {
 				order: 2;
 				width: 100%;
 				padding: 40px 25%;
-				-webkit-clip-path: polygon(91% 0, 100% 20%, 100% 100%, 0 100%, 0 0);
-				clip-path: polygon(91% 0, 100% 20%, 100% 100%, 0 100%, 0 0);
+				-webkit-clip-path: polygon(95% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
+				clip-path: polygon(95% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
 			}
 			.dibujo {
 				order: 1;
 				width: 100%;
 			}
 		}
+*/
 	}
 	.cursos-container {
 		background: $color__verdeazul;
+		background-image: linear-gradient(45deg, #89FDC8 0%, #51F0FA 100%);
 		padding: 40px 10px 60px;
-		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 90%);
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 90%);
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 95%);
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 95%);
 		overflow: visible;
 		position: relative;		
 		@media screen and (min-width: $break__small) {
@@ -885,25 +887,27 @@ header.site-header {
 			flex-direction: row;
 			flex-wrap: wrap;
 			padding: 40px 40px 60px;
-			border-left: 6px solid #4AE2E9;
-			border-top: 12px solid #4AE2E9;
 			.curso {
 				width: 30%;
 				flex-shrink: 0;
 				margin: 10px auto;
 				min-width: 240px!important;
+				background: white;
 			}
 		}
 	}
 	.recursos-container {
 		background: $color__amarillo;
+		background-image: linear-gradient(-222deg, #ECCB6A 0%, #F6E871 95%);
 		padding: 40px 10px 60px;
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 93% 100%, 0 100%);
 		clip-path: polygon(0 0, 100% 0, 100% 94%, 93% 100%, 0 100%);
 		@media screen and (min-width: $break__small) {
 			padding: 40px 40px 60px;
-			border-top: 6px solid #F1D15A;
-			border-right: 10px solid #F1D15A;
+		}
+		
+		.recurso {
+			background: white;
 		}
 	}
 	
@@ -937,7 +941,6 @@ a.btn1:visited {
 		padding: 2em;
 		font-size: .9em;
 		background: #fff;
-		border: 1px solid #eaeaea;
 	}
 	h2 {
 		margin: 0 0 1em;
