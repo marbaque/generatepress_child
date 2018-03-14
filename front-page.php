@@ -21,7 +21,8 @@ get_header(); ?>
 
 			while ( have_posts() ) : the_post();
 				$image = get_stylesheet_directory_uri() . '/img/dibujo.png';
-				echo '<div class="dibujo"><img src="'. $image . '"></div>';
+				//echo '<div class="dibujo"><img src="'. $image . '"></div>';
+				echo '<div class="dibujo"></div>';
 				
 				echo '<div class="texto">';
 				the_title( '<h2 class="entry-title">', '</h2>' );

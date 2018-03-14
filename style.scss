@@ -19,9 +19,9 @@
 header.site-header {
 	border-bottom: 1px solid #eee;
 	background: #FFFFFF;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.13);
+	//box-shadow: 0 2px 4px 0 rgba(0,0,0,0.13);
 	.inside-header {
-		padding: 20px;
+		padding: 10px;
 		a {
 			border: none;
 		}
@@ -141,7 +141,7 @@ header.site-header {
 
 
 .escondido {
-	//display: none;
+	display: none;
 }
 
 /************************************************************************/
@@ -155,8 +155,7 @@ header.site-header {
 			background-color: #DFE5EE;
 			width: 100%;
 			display: block;
-			min-height: 20px;
-			margin: 0;
+			margin: 0 0 20px;
 			text-align: center;
 			.submenu {
 				padding: 20px 20px;
@@ -215,7 +214,7 @@ header.site-header {
 			.entry-title {
 				margin-bottom: 20px;
 				padding-bottom: 20px;
-				border-bottom: 1px solid $color__dark;
+
 			}
 		}
 		@media screen and (min-width:$break__medium) {
@@ -229,24 +228,29 @@ header.site-header {
 			}
 			.curso,
 			.seccion {
-				border: 1px solid #eee;
 				background: white;
 			}
 		}
 	}
 	
 	.entry-header {
-		margin-top: 20px;
+		margin-top: 0;
 		width: 100%;
 		
 		.entry-title {
-			font-size: 1.2em;
+			font-size: 1.1em;
 			padding: .5em 1em .5em;
 			background: $color__primario;
 			color: white;
 			margin-top: 0;
+			span {
+				display: block;
+				font-size: .5em;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
 			@media screen and (min-width: $break__small) {
-				font-size: 1.5em;
+				font-size: 1.25em;
 				padding: .5em 1em .75em;
 			}
 		}
@@ -272,7 +276,7 @@ header.site-header {
 			.portada__wrap {
 				display: block;
 				margin: 0 -20px 2em;
-				background: $color__secundario;
+				background: $color__text-overdark;
 				
 				.portada-curso {
 					width: 100%;
@@ -810,12 +814,13 @@ header.site-header {
 	
 	.site-main { //banner de arriba
 		margin: 0 0 20px!important;
+		background: white;
 		
 		.texto {
 			max-width: 100%;
 			background: $color__primario;
-			background-image: linear-gradient(-140deg, #FD8F7C 0%, #FA9046 93%);
-			color: #fff;
+			background-image: linear-gradient(45deg, #89FDC8 0%, #51F0FA 100%);
+			color: #3F7EC5;
 			padding: 40px 20px;
 			margin-bottom: 0;
 			line-height: 1.45;
@@ -831,6 +836,10 @@ header.site-header {
 		}
 		.dibujo {
 			width: 100%;
+			height: 320px;
+			margin-bottom: 0;
+			background: white url(img/dibujo.png) no-repeat center center;
+			background-size: cover;
 		}
 		.btn1 {
 			top: 0;
@@ -838,6 +847,8 @@ header.site-header {
 		
 		@media screen and (min-width: $break__medium) {
 			display: flex;
+			align-content: stretch;
+			margin-top: 20px!important;
 			.texto {
 				width: 50%;
 				order: 1;
@@ -848,6 +859,7 @@ header.site-header {
 				height: auto;
 				overflow: hidden;
 				order: 2;
+				margin: 0;
 				img {
 					
 				}
@@ -855,7 +867,6 @@ header.site-header {
 			}
 		}
 		
-/*
 		@media screen and (min-width: $break__large) {
 			flex-wrap: wrap;
 			margin-bottom: 20px;
@@ -869,13 +880,13 @@ header.site-header {
 			.dibujo {
 				order: 1;
 				width: 100%;
+				height: 65vh;
 			}
 		}
-*/
 	}
 	.cursos-container {
 		background: $color__verdeazul;
-		background-image: linear-gradient(45deg, #89FDC8 0%, #51F0FA 100%);
+		background-image: linear-gradient(-140deg, #FD8F7C 0%, #FA9046 93%);
 		padding: 40px 10px 60px;
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 95%);
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 95%);

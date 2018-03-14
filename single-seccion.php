@@ -25,7 +25,7 @@ get_header(); ?>
 		$current = $post->ID;
 		
 		if ( generate_show_title() ) {
-			echo '<a href="' . $permalink . '" title="Inicio del curso"><h2 class="entry-title" itemprop="headline">' . get_the_title($parent) . '</h2></a>';
+			echo '<a href="' . $permalink . '" title="Inicio del curso"><h2 class="entry-title" itemprop="headline"><span>Curso </span>' . get_the_title($parent) . '</h2></a>';
 		}
 
 		/**

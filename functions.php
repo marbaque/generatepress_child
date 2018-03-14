@@ -131,7 +131,7 @@ function generate_press_child_setup() {
 	
 	//cortar el estracto del post
 	function custom_excerpt_length( $length ) {
-		return 12;
+		return 10;
 	}
 	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 	
@@ -143,9 +143,9 @@ function generate_press_child_setup() {
 	    if($count==''){
 	        delete_post_meta($postID, $count_key);
 	        add_post_meta($postID, $count_key, '0');
-	        return "0 View";
+	        return "0 visitas";
 	    }
-	    return $count.' Views';
+	    return $count.' visitas';
 	}
 	function setPostViews($postID) {
 	    $count_key = 'post_views_count'; //este es el meta key usado en el query de cursos de la página principal

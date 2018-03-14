@@ -64,10 +64,9 @@ small, .font_small {
 
 header.site-header {
   border-bottom: 1px solid #eee;
-  background: #FFFFFF;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13); }
+  background: #FFFFFF; }
   header.site-header .inside-header {
-    padding: 20px; }
+    padding: 10px; }
     header.site-header .inside-header a {
       border: none; }
 
@@ -127,6 +126,9 @@ header.site-header {
 .contained-content .inside-article {
   background-color: transparent; }
 
+.escondido {
+  display: none; }
+
 /************************************************************************/
 /************************************************************************/
 .single-curso .site-main,
@@ -137,8 +139,7 @@ header.site-header {
     background-color: #DFE5EE;
     width: 100%;
     display: block;
-    min-height: 20px;
-    margin: 0;
+    margin: 0 0 20px;
     text-align: center; }
     .single-curso .site-main .curso_sidebar .submenu,
     .single-seccion .site-main .curso_sidebar .submenu {
@@ -195,8 +196,7 @@ header.site-header {
     .single-seccion .site-main .curso .entry-title,
     .single-seccion .site-main .seccion .entry-title {
       margin-bottom: 20px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #2B2E35; }
+      padding-bottom: 20px; }
   @media screen and (min-width: 700px) {
     .single-curso .site-main,
     .single-seccion .site-main {
@@ -212,23 +212,28 @@ header.site-header {
       .single-curso .site-main .seccion,
       .single-seccion .site-main .curso,
       .single-seccion .site-main .seccion {
-        border: 1px solid #eee;
         background: white; } }
 .single-curso .entry-header,
 .single-seccion .entry-header {
-  margin-top: 20px;
+  margin-top: 0;
   width: 100%; }
   .single-curso .entry-header .entry-title,
   .single-seccion .entry-header .entry-title {
-    font-size: 1.2em;
+    font-size: 1.1em;
     padding: .5em 1em .5em;
     background: #FA9046;
     color: white;
     margin-top: 0; }
+    .single-curso .entry-header .entry-title span,
+    .single-seccion .entry-header .entry-title span {
+      display: block;
+      font-size: .5em;
+      text-transform: uppercase;
+      letter-spacing: 1px; }
     @media screen and (min-width: 500px) {
       .single-curso .entry-header .entry-title,
       .single-seccion .entry-header .entry-title {
-        font-size: 1.5em;
+        font-size: 1.25em;
         padding: .5em 1em .75em; } }
 .single-curso .content-area .site-main,
 .single-seccion .content-area .site-main {
@@ -240,7 +245,7 @@ header.site-header {
   .single-seccion .content-area .site-main .portada__wrap {
     display: block;
     margin: 0 -20px 2em;
-    background: #F9E9C9; }
+    background: #CDD8E8; }
     .single-curso .content-area .site-main .portada__wrap .portada-curso,
     .single-seccion .content-area .site-main .portada__wrap .portada-curso {
       width: 100%;
@@ -671,28 +676,12 @@ header.site-header {
 /************************************************************************/
 .ocw-front .site-main {
   margin: 0 0 20px !important;
-  /*
-  		@media screen and (min-width: $break__large) {
-  			flex-wrap: wrap;
-  			margin-bottom: 20px;
-  			.texto {
-  				order: 2;
-  				width: 100%;
-  				padding: 40px 25%;
-  				-webkit-clip-path: polygon(95% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
-  				clip-path: polygon(95% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
-  			}
-  			.dibujo {
-  				order: 1;
-  				width: 100%;
-  			}
-  		}
-  */ }
+  background: white; }
   .ocw-front .site-main .texto {
     max-width: 100%;
     background: #FA9046;
-    background-image: linear-gradient(-140deg, #FD8F7C 0%, #FA9046 93%);
-    color: #fff;
+    background-image: linear-gradient(45deg, #89FDC8 0%, #51F0FA 100%);
+    color: #3F7EC5;
     padding: 40px 20px;
     margin-bottom: 0;
     line-height: 1.45; }
@@ -702,12 +691,18 @@ header.site-header {
     .ocw-front .site-main .texto p:last-child {
       margin-bottom: 0; }
   .ocw-front .site-main .dibujo {
-    width: 100%; }
+    width: 100%;
+    height: 320px;
+    margin-bottom: 0;
+    background: white url(img/dibujo.png) no-repeat center center;
+    background-size: cover; }
   .ocw-front .site-main .btn1 {
     top: 0; }
   @media screen and (min-width: 700px) {
     .ocw-front .site-main {
-      display: flex; }
+      display: flex;
+      align-content: stretch;
+      margin-top: 20px !important; }
       .ocw-front .site-main .texto {
         width: 50%;
         order: 1;
@@ -716,10 +711,25 @@ header.site-header {
         width: 50%;
         height: auto;
         overflow: hidden;
-        order: 2; } }
+        order: 2;
+        margin: 0; } }
+  @media screen and (min-width: 1200px) {
+    .ocw-front .site-main {
+      flex-wrap: wrap;
+      margin-bottom: 20px; }
+      .ocw-front .site-main .texto {
+        order: 2;
+        width: 100%;
+        padding: 40px 25%;
+        -webkit-clip-path: polygon(95% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
+        clip-path: polygon(95% 0, 100% 10%, 100% 100%, 0 100%, 0 0); }
+      .ocw-front .site-main .dibujo {
+        order: 1;
+        width: 100%;
+        height: 65vh; } }
 .ocw-front .cursos-container {
   background: #51F0FA;
-  background-image: linear-gradient(45deg, #89FDC8 0%, #51F0FA 100%);
+  background-image: linear-gradient(-140deg, #FD8F7C 0%, #FA9046 93%);
   padding: 40px 10px 60px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 95%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 95%);

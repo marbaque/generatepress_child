@@ -21,7 +21,7 @@ get_header(); ?>
 		do_action( 'generate_before_entry_title' );
 
 		if ( generate_show_title() ) {
-			the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' );
+			the_title( '<h1 class="entry-title" itemprop="headline"><span>Curso </span>', '</h1>' );
 		}
 
 		/**
