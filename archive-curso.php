@@ -20,12 +20,17 @@ get_header(); ?>
 	
 	
 	<section id="primary" <?php generate_content_class(); ?>>
-		<?php 
-		wp_nav_menu( array( 
-			'theme_location' => 'cursos-areas', 
-			'container_class' => 'cursos-nav', 
-		) );	
-		?>
+		
+		<nav id="responsive-navigation" class="responsive-navigation" role="navigation">
+			<button class="submenu-toggle">Áreas</button>
+			<?php 
+			wp_nav_menu( array( 
+				'theme_location' => 'cursos-areas', 
+				'container_class' => 'cursos-nav nav-submenu',
+			) );	
+			?>
+		</nav>
+		
 		<main id="main" <?php generate_main_class(); ?>>
 			<?php
 			/**

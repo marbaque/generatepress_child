@@ -50,7 +50,7 @@ get_header(); ?>
 			?>
 		</main><!-- #main -->
 		
-		
+		<h2 class="fs-title">Cursos más visitados</h2>
 		<section class="cursos-container">
 			<?php $custom_query = new WP_Query( array(
 				'posts_per_page' => 3,
@@ -67,13 +67,13 @@ get_header(); ?>
 			<?php wp_reset_postdata(); // reset the query ?>
 		</section>
 		<div align="center"><a class="btn1" href="<?php echo get_post_type_archive_link('curso'); ?>" title="Todos los cursos">Ver todos los cursos</a></div>
-				
+		<h2 class="fs-title">Recursos recientes</h2>	
 		<section class="recursos-container">
 			<?php $custom_query = new WP_Query( array(
 				'post_type' => 'recurso',
 				'orderby' => 'date',
 				'order'   => 'DESC',
-				'posts_per_page' => '4', 
+				'posts_per_page' => '8', 
 				) );
 			while($custom_query->have_posts()) : $custom_query->the_post(); ?>
 			

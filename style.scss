@@ -19,7 +19,6 @@
 header.site-header {
 	border-bottom: 1px solid #eee;
 	background: #FFFFFF;
-	//box-shadow: 0 2px 4px 0 rgba(0,0,0,0.13);
 	.inside-header {
 		padding: 10px;
 		a {
@@ -29,16 +28,20 @@ header.site-header {
 	
 }
 .main-navigation {
-	background-color: transparent;
+	background-color: white;
+	
+	@media screen and (min-width: $break__medium) {
+		background-color: transparent;
+	}
 	button.menu-toggle {
-		background-color: $color__text-overdark;
-		color: $color__dark;
+		background-color: $color__dark;
+		color: white;
 	}
 	.navigation-search {
 		
 		input[type="search"] {
 			
-			background-color: $color__secundario;
+			background-color: white;
 			color: $color__body-text;
 			
 			&:focus {
@@ -534,7 +537,7 @@ header.site-header {
 	}
 	
 
-	//menu de cursos
+	//submenu de areas de cursos
 	.cursos-nav {
 		ul {
 			margin: 20px 0 0;
@@ -664,6 +667,7 @@ header.site-header {
 					font-size: .85em;
 					font-weight: 200;
 					line-height: 1.3;
+				    overflow: hidden;
 				}
 				
 			}
@@ -703,7 +707,7 @@ header.site-header {
 			left: 0;
 			display: flex;
 			justify-content: space-between;
-			.cursos-nav {
+			.responsive-navigation {
 				width: 30%;
 			}
 			.site-main {
@@ -729,6 +733,44 @@ header.site-header {
 		}
 	}
 }
+
+
+//sub menu responsive
+.responsive-navigation {
+    text-align: center;
+    width: 100%;
+    
+    ul.nav-submenu,
+	div.nav-submenu > ul {
+	    display: none;
+	    width: 100%;
+	}
+	ul.nav-submenu.submenuToggled-on,
+	.submenu-toggle {
+	    display: inline-block;
+	    width: calc(100% - 40px);
+	    margin: 0 auto;
+	}
+	.submenu-toggle {
+		background: #98B1D5;
+	}
+	
+	//estilos para desktop
+	@media screen and (min-width: $break__medium) {
+		ul.nav-submenu,
+	    div.nav-submenu > ul {
+	        display: inline-block!important;
+	        text-align: left;
+	        //width: 100%;
+	    }
+	    
+	    .submenu-toggle {
+	        display: none;
+	    }
+	}
+}
+
+
 
 //iconos de recursos sin imagen destacada
 .recursos-container {
@@ -772,13 +814,9 @@ header.site-header {
 		list-style: none;
 		background: #98B1D5;
 		margin: 0;
-		display: flex;
-		align-items: baseline;
-		justify-content: flex-end;
-		flex-wrap: wrap;
-		height: auto;
+		
 		a {
-			padding: 1em;
+			padding: .5em 1em;
 			display: block;
 			border: none;
 			color: white;
@@ -793,18 +831,38 @@ header.site-header {
 			background: $color__amarillo;
 			color: #5D769B;
 			position: relative;
-			&:after {
-				content: "";
-				width: 2em;
-				height: 8px;
-				background: $color__amarillo;
-				position: absolute;
-				bottom: -8px;
-				left: calc(50% - 1em);
-				-webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
-				clip-path: polygon(50% 100%, 0 0, 100% 0);
-			}
+			
 		}
+	}
+	
+	@media screen and (min-width: $break__medium) {
+		>ul {
+			text-align: inherit!important;
+			display: flex;
+			align-items: baseline;
+			//justify-content: flex-end;
+			flex-wrap: wrap;
+			height: auto;
+			li {
+				display: inline-block;
+				a {
+					padding: 1em;
+				}
+			}
+			.current-menu-item a {
+				&:after {
+					content: "";
+					width: 2em;
+					height: 8px;
+					background: $color__amarillo;
+					position: absolute;
+					bottom: -8px;
+					left: calc(50% - 1em);
+					-webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+					clip-path: polygon(50% 100%, 0 0, 100% 0);
+				}
+			}
+		}	
 	}
 }
 /************************************************************************/
@@ -812,6 +870,22 @@ header.site-header {
 /************************************************************************/
 .ocw-front {
 	
+	.fs-title {
+		display: block;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 1em;
+		letter-spacing: 6px;
+		width: auto;
+		margin: 40px 0 20px;
+		padding: 0 20px;
+		color: #a4a4a4;
+		text-shadow: 2px 2px 1px white;
+		
+		@media screen and (min-width: $break__small) {
+			font-size: 1.5em;
+		}
+	}
 	.site-main { //banner de arriba
 		margin: 0 0 20px!important;
 		background: white;

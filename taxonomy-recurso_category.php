@@ -14,12 +14,16 @@ get_header(); ?>
 	<?php 
 		
 	do_action( 'generate_archive_title' );
-	
-	wp_nav_menu( array( 
-		'theme_location' => 'recursos-nav', 
-		'container_class' => 'recursos-nav', 
-	) );
 	?>
+	<nav id="responsive-navigation" class="responsive-navigation" role="navigation">
+		<button class="submenu-toggle">Tipo de recursos</button>
+		<?php 
+		wp_nav_menu( array( 
+			'theme_location' => 'recursos-nav', 
+			'container_class' => 'recursos-nav nav-submenu',
+		) );	
+		?>
+	</nav>
 	
 	<section id="primary" <?php generate_content_class(); ?>>
 		<main id="main" <?php generate_main_class(); ?>>

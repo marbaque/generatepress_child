@@ -29,13 +29,16 @@ add_action( 'admin_menu' , 'remove_tags_fields' );
 //esta función se carga despues del functions.php del parent theme
 function generate_press_child_setup() {
 	
-	
-	add_action( 'wp_enqueue_scripts', 'generate_custom_scripts', 10 );
+
 	function generate_custom_scripts() {
 		// OJO!!!!!! AQUI SE AGREGAN estilos y scripts nuevos que se quieran agregar al sitio*************************************************!!
-		wp_dequeue_script( 'fontawesome' );
-		wp_enqueue_script( 'fontawesome-generatepress-child', 'https://use.fontawesome.com/releases/v5.0.8/js/all.js', false, '5.0.8', 'all' );
+		//wp_dequeue_script( 'fontawesome' );
+		//wp_enqueue_script( 'fontawesome-generatepress-child', 'https://use.fontawesome.com/releases/v5.0.8/js/all.js', false, '5.0.8', 'all' );
+		
+		//importar js para navegación responsive
+		wp_enqueue_script( 'wpb_togglemenu', get_stylesheet_directory_uri() . '/js/responsive-nav.js', array('jquery'), '20180314', true );
 	}
+	add_action( 'wp_enqueue_scripts', 'generate_custom_scripts', 10 );
 	
 	//agregar tamaños de imagen
 	add_image_size('portada-curso', 350, 350, true);
