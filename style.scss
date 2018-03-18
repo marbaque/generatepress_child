@@ -20,7 +20,15 @@ header.site-header {
 	border-bottom: 1px solid #eee;
 	background: #FFFFFF;
 	.inside-header {
-		padding: 10px;
+		padding: 20px;
+		
+		@media screen and (max-width: $break__medium) {
+			padding: 10px;
+			.site-logo {
+				width: 150px;
+				margin-bottom: 5px;
+			}
+		}
 		a {
 			border: none;
 		}
@@ -28,21 +36,21 @@ header.site-header {
 	
 }
 .main-navigation {
-	background-color: white;
+	background-color: transparent;
 	
 	@media screen and (min-width: $break__medium) {
 		background-color: transparent;
 	}
 	button.menu-toggle {
-		background-color: $color__dark;
-		color: white;
+		color: $color__body-text;
+	}
+	.fa-search:before {
+		color: $color__body-text;
 	}
 	.navigation-search {
-		
 		input[type="search"] {
-			
-			background-color: white;
-			color: $color__body-text;
+			background-color: $color__primario;
+			color: white;
 			
 			&:focus {
 				
@@ -155,60 +163,79 @@ header.site-header {
 	.site-main {
 		margin: 0;
 		.curso_sidebar {
-			background-color: #DFE5EE;
 			width: 100%;
 			display: block;
-			margin: 0 0 20px;
-			text-align: center;
-			.submenu {
-				padding: 20px 20px;
-				font-size: .8em;
+			margin: 20px 0 0;
+			padding: 0;
+			
+			.submenu { 
+				font-size: .9em;
+				letter-spacing: 1px;
 				h4 {
-					margin-top: 0;
-					margin-bottom: 20px;
+					display: none;
 				}
 				//submenu de curso
 				ul {
 					list-style: none;
 					margin: 0;
-					
+					max-width: 90%;
+										
 					li {
-						margin-bottom: .5em;
-					}
-					a {
-						color: $color__body-text;
-						border: none;
-					}
-					
-					li.current-item {
+						border-left: 2px solid $color__grisillo;
+						padding: 0 0 0 15px;
 						position: relative;
-						&:before {
-							font-family: 'FontAwesome';
-							content: "\f06e";
-							color: $color__primario;
-							margin-right: 4px;
-							position: absolute;
-							left: -1.2em;
-							line-height: 1.3;
-						}
+						text-align: left;
 						a {
-							color: $color__primario;
+							color: $color__body-text;
+							border: none;
+							padding: 5px 0;
+							display: block;
+						}
+					}
+										
+					li.current-item {
+								
+						&:before {
+							content: "";
+							width: 10px;
+							height: 10px;
+							@include radio(50%);
+							border: 2px solid $color__grisillo;
+							background: white;
+							display: inline-block;
+							top: 10px;
+							left: -8px;
+							position: absolute;
+						}				
+						a {
+							font-weight: 400;
+							
 						}
 					}
 				}
 				
-				@media screen and (min-width: $break__medium) {
+				
+			}//aqui termina el submenu
+			
+			@media screen and (min-width: $break__medium) { //.sidebar
+				background-color: #DFE5EE;
+				margin: 0 0 20px;
+				margin: 0;
+				.submenu {
 					padding: 40px 20px;
 					position: -webkit-sticky;
 					position: sticky;
 					top: 20px;
-					ul {
-						padding-left: 20px;
+					padding: 20px;
+					h4 {
+						margin-top: 0;
+						margin-bottom: 20px;
+						display: block;
 					}
 				}
-				
 			}
-		}
+		} //aqui termina el sidebar
+		
 		.curso,
 		.seccion {
 			width: 100%;
@@ -227,7 +254,6 @@ header.site-header {
 			.curso_sidebar {
 				width: 30%;
 				margin-bottom: 20px;
-				text-align: left;
 			}
 			.curso,
 			.seccion {
@@ -739,6 +765,7 @@ header.site-header {
 .responsive-navigation {
     text-align: center;
     width: 100%;
+    margin-bottom: 0!important;
     
     ul.nav-submenu,
 	div.nav-submenu > ul {
@@ -912,8 +939,13 @@ header.site-header {
 			width: 100%;
 			height: 320px;
 			margin-bottom: 0;
-			background: white url(img/dibujo.png) no-repeat center center;
+			background-image:  url(img/dibujo-sm.png);
 			background-size: cover;
+			background-position: center center;
+			
+			@media screen and (min-width: $break__small) {
+				background-image:  url(img/dibujo.png);
+			}
 		}
 		.btn1 {
 			top: 0;
@@ -926,7 +958,7 @@ header.site-header {
 			.texto {
 				width: 50%;
 				order: 1;
-				padding: 40px;
+				//padding: 40px;
 			}
 			.dibujo {
 				width: 50%;

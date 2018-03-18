@@ -60,7 +60,8 @@ get_header(); ?>
 			?>
 			<aside class="curso_sidebar">
 				
-					
+				<nav id="responsive-navigation" class="responsive-navigation" role="navigation">
+					<button class="submenu-toggle">Contenidos del curso</button>
 					<?php 
 					global $post;
 					
@@ -76,7 +77,7 @@ get_header(); ?>
 					// The Loop
 					if ( $the_query->have_posts() ) :
 						
-						echo '<div class="submenu">';
+						echo '<div class="submenu nav-submenu">';
 						echo '<h4>Contenidos</h4>';
 						echo '<ul>';
 						echo '<li class="current-item"><a href="' . get_permalink() . '" title="Inicio del curso">Inicio</a></li>';
@@ -92,7 +93,8 @@ get_header(); ?>
 					?>
 					
 					<p class="escondido"><?php echo getPostViews(get_the_ID()); ?></p>
-				
+				</nav>
+			
 			</aside><!-- aside .curso_sidebar -->
 
 			<?php

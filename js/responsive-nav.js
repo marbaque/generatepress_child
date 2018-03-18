@@ -24,6 +24,7 @@
         if ( -1 !== button.className.indexOf( 'submenuToggled-on' ) ) {
             button.className = button.className.replace( ' submenuToggled-on', '' );
             menu.className = menu.className.replace( ' submenuToggled-on', '' );
+            menu.slideDown();
         } else {
             button.className += ' submenuToggled-on';
             menu.className += ' submenuToggled-on';

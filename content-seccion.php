@@ -89,21 +89,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'after'  => '</div>',
 			) );
 			?>
-			<?php 
-		
-			$licencia = get_field('seleccionar_licencia');
-			$icono = get_field('icono_licencia', $licencia);
-					
-			if( $licencia ): ?>
-				<footer class="licencia-block">
-					<h4>¿Cómo compartir este contenido?</h4>
-					<?php if ($icono): ?>
-					<img class="aligh-left" src="<?php echo $icono; ?>">
-					<?php endif; ?>
-					<p><strong><?php echo $licencia->name; ?></strong></p>
-					<p><?php echo $licencia->description; ?></p>
-				</footer>
-			<?php endif; ?>
+			
+			<?php include('inc/licencia.php'); ?>
 
 		</div><!-- .entry-content -->
 

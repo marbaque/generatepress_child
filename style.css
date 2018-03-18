@@ -66,21 +66,28 @@ header.site-header {
   border-bottom: 1px solid #eee;
   background: #FFFFFF; }
   header.site-header .inside-header {
-    padding: 10px; }
+    padding: 20px; }
+    @media screen and (max-width: 768px) {
+      header.site-header .inside-header {
+        padding: 10px; }
+        header.site-header .inside-header .site-logo {
+          width: 150px;
+          margin-bottom: 5px; } }
     header.site-header .inside-header a {
       border: none; }
 
 .main-navigation {
-  background-color: white; }
+  background-color: transparent; }
   @media screen and (min-width: 768px) {
     .main-navigation {
       background-color: transparent; } }
   .main-navigation button.menu-toggle {
-    background-color: #2B2E35;
-    color: white; }
-  .main-navigation .navigation-search input[type="search"] {
-    background-color: white;
     color: #4A4A4A; }
+  .main-navigation .fa-search:before {
+    color: #4A4A4A; }
+  .main-navigation .navigation-search input[type="search"] {
+    background-color: #FA9046;
+    color: white; }
   .main-navigation .main-nav ul li a {
     color: #4A4A4A; }
     .main-navigation .main-nav ul li a:hover {
@@ -139,55 +146,69 @@ header.site-header {
   margin: 0; }
   .single-curso .site-main .curso_sidebar,
   .single-seccion .site-main .curso_sidebar {
-    background-color: #DFE5EE;
     width: 100%;
     display: block;
-    margin: 0 0 20px;
-    text-align: center; }
+    margin: 20px 0 0;
+    padding: 0; }
     .single-curso .site-main .curso_sidebar .submenu,
     .single-seccion .site-main .curso_sidebar .submenu {
-      padding: 20px 20px;
-      font-size: .8em; }
+      font-size: .9em;
+      letter-spacing: 1px; }
       .single-curso .site-main .curso_sidebar .submenu h4,
       .single-seccion .site-main .curso_sidebar .submenu h4 {
-        margin-top: 0;
-        margin-bottom: 20px; }
+        display: none; }
       .single-curso .site-main .curso_sidebar .submenu ul,
       .single-seccion .site-main .curso_sidebar .submenu ul {
         list-style: none;
-        margin: 0; }
+        margin: 0;
+        max-width: 90%; }
         .single-curso .site-main .curso_sidebar .submenu ul li,
         .single-seccion .site-main .curso_sidebar .submenu ul li {
-          margin-bottom: .5em; }
-        .single-curso .site-main .curso_sidebar .submenu ul a,
-        .single-seccion .site-main .curso_sidebar .submenu ul a {
-          color: #4A4A4A;
-          border: none; }
-        .single-curso .site-main .curso_sidebar .submenu ul li.current-item,
-        .single-seccion .site-main .curso_sidebar .submenu ul li.current-item {
-          position: relative; }
-          .single-curso .site-main .curso_sidebar .submenu ul li.current-item:before,
-          .single-seccion .site-main .curso_sidebar .submenu ul li.current-item:before {
-            font-family: 'FontAwesome';
-            content: "\f06e";
-            color: #FA9046;
-            margin-right: 4px;
-            position: absolute;
-            left: -1.2em;
-            line-height: 1.3; }
-          .single-curso .site-main .curso_sidebar .submenu ul li.current-item a,
-          .single-seccion .site-main .curso_sidebar .submenu ul li.current-item a {
-            color: #FA9046; }
-      @media screen and (min-width: 768px) {
+          border-left: 2px solid #98B1D5;
+          padding: 0 0 0 15px;
+          position: relative;
+          text-align: left; }
+          .single-curso .site-main .curso_sidebar .submenu ul li a,
+          .single-seccion .site-main .curso_sidebar .submenu ul li a {
+            color: #4A4A4A;
+            border: none;
+            padding: 5px 0;
+            display: block; }
+        .single-curso .site-main .curso_sidebar .submenu ul li.current-item:before,
+        .single-seccion .site-main .curso_sidebar .submenu ul li.current-item:before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+          border: 2px solid #98B1D5;
+          background: white;
+          display: inline-block;
+          top: 10px;
+          left: -8px;
+          position: absolute; }
+        .single-curso .site-main .curso_sidebar .submenu ul li.current-item a,
+        .single-seccion .site-main .curso_sidebar .submenu ul li.current-item a {
+          font-weight: 400; }
+    @media screen and (min-width: 768px) {
+      .single-curso .site-main .curso_sidebar,
+      .single-seccion .site-main .curso_sidebar {
+        background-color: #DFE5EE;
+        margin: 0 0 20px;
+        margin: 0; }
         .single-curso .site-main .curso_sidebar .submenu,
         .single-seccion .site-main .curso_sidebar .submenu {
           padding: 40px 20px;
           position: -webkit-sticky;
           position: sticky;
-          top: 20px; }
-          .single-curso .site-main .curso_sidebar .submenu ul,
-          .single-seccion .site-main .curso_sidebar .submenu ul {
-            padding-left: 20px; } }
+          top: 20px;
+          padding: 20px; }
+          .single-curso .site-main .curso_sidebar .submenu h4,
+          .single-seccion .site-main .curso_sidebar .submenu h4 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            display: block; } }
   .single-curso .site-main .curso,
   .single-curso .site-main .seccion,
   .single-seccion .site-main .curso,
@@ -209,8 +230,7 @@ header.site-header {
       .single-curso .site-main .curso_sidebar,
       .single-seccion .site-main .curso_sidebar {
         width: 30%;
-        margin-bottom: 20px;
-        text-align: left; }
+        margin-bottom: 20px; }
       .single-curso .site-main .curso,
       .single-curso .site-main .seccion,
       .single-seccion .site-main .curso,
@@ -628,7 +648,8 @@ header.site-header {
 
 .responsive-navigation {
   text-align: center;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 0 !important; }
   .responsive-navigation ul.nav-submenu,
   .responsive-navigation div.nav-submenu > ul {
     display: none;
@@ -740,8 +761,12 @@ header.site-header {
     width: 100%;
     height: 320px;
     margin-bottom: 0;
-    background: white url(img/dibujo.png) no-repeat center center;
-    background-size: cover; }
+    background-image: url(img/dibujo-sm.png);
+    background-size: cover;
+    background-position: center center; }
+    @media screen and (min-width: 500px) {
+      .ocw-front .site-main .dibujo {
+        background-image: url(img/dibujo.png); } }
   .ocw-front .site-main .btn1 {
     top: 0; }
   @media screen and (min-width: 768px) {
@@ -751,8 +776,7 @@ header.site-header {
       margin-top: 20px !important; }
       .ocw-front .site-main .texto {
         width: 50%;
-        order: 1;
-        padding: 40px; }
+        order: 1; }
       .ocw-front .site-main .dibujo {
         width: 50%;
         height: auto;
