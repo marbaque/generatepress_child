@@ -167,9 +167,9 @@ function generate_press_child_setup() {
 	
 	//permitir que los cursom posts tengan archivos de categorias y etiquetas
 	function wpa_cpt_tags( $query ) {
-	    if ( ( $query->is_tag() || $query->is_category() ) && $query->is_main_query() ) {
+	    if ( $query->is_tag() && $query->is_main_query() ) {
 	        $query->set( 'post_type', array( 'post', 'object', 'recurso', 'curso' ) );
-	    }
+	    } 
 	}
 	add_action( 'pre_get_posts', 'wpa_cpt_tags' );
 	

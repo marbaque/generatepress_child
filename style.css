@@ -201,9 +201,8 @@ header.site-header {
         .single-seccion .site-main .curso_sidebar .submenu {
           padding: 40px 20px;
           position: -webkit-sticky;
-          position: sticky;
-          top: 20px;
-          padding: 20px; }
+          position: sticky !important;
+          top: 20px; }
           .single-curso .site-main .curso_sidebar .submenu h4,
           .single-seccion .site-main .curso_sidebar .submenu h4 {
             margin-top: 0;
@@ -659,8 +658,9 @@ header.site-header {
     display: inline-block;
     width: calc(100% - 40px);
     margin: 0 auto; }
-  .responsive-navigation .submenu-toggle {
-    background: #98B1D5; }
+  .responsive-navigation button.submenu-toggle {
+    background: #98B1D5;
+    letter-spacing: 1px; }
   @media screen and (min-width: 768px) {
     .responsive-navigation ul.nav-submenu,
     .responsive-navigation div.nav-submenu > ul {

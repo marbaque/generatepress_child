@@ -224,9 +224,8 @@ header.site-header {
 				.submenu {
 					padding: 40px 20px;
 					position: -webkit-sticky;
-					position: sticky;
+					position: sticky!important;
 					top: 20px;
-					padding: 20px;
 					h4 {
 						margin-top: 0;
 						margin-bottom: 20px;
@@ -778,8 +777,9 @@ header.site-header {
 	    width: calc(100% - 40px);
 	    margin: 0 auto;
 	}
-	.submenu-toggle {
+	button.submenu-toggle {
 		background: #98B1D5;
+		letter-spacing: 1px;
 	}
 	
 	//estilos para desktop

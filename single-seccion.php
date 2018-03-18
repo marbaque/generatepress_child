@@ -64,7 +64,7 @@ get_header(); ?>
 			?>
 			<aside class="curso_sidebar">
 				<nav id="responsive-navigation" class="responsive-navigation" role="navigation">
-					<button class="submenu-toggle">Contenidos del curso</button>
+					<button class="submenu-toggle">Contenidos</button>
 					
 					<div class="submenu nav-submenu">
 						<?php 
