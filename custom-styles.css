@@ -4,3 +4,11 @@
 body {
 	background: red;
 }
+
+#3d-contenedor {
+	display: block;
+	background: #FFF;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
