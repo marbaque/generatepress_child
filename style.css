@@ -146,68 +146,93 @@ header.site-header {
   margin: 0; }
   .single-curso .site-main .curso_sidebar,
   .single-seccion .site-main .curso_sidebar {
-    width: 100%;
+    background-color: #DFE5EE;
+    max-width: 100%;
     display: block;
-    margin: 20px 0 0;
-    padding: 0; }
+    margin: 0;
+    padding: 20px; }
     .single-curso .site-main .curso_sidebar .submenu,
     .single-seccion .site-main .curso_sidebar .submenu {
-      font-size: .9em;
-      letter-spacing: 1px; }
+      font-size: .8em;
+      letter-spacing: .5px;
+      line-height: 1.25; }
       .single-curso .site-main .curso_sidebar .submenu h4,
       .single-seccion .site-main .curso_sidebar .submenu h4 {
-        display: none; }
+        display: none;
+        text-align: left; }
       .single-curso .site-main .curso_sidebar .submenu ul,
       .single-seccion .site-main .curso_sidebar .submenu ul {
         list-style: none;
         margin: 0;
-        max-width: 90%; }
+        max-width: 90%;
+        border-left: 2px solid #98B1D5; }
         .single-curso .site-main .curso_sidebar .submenu ul li,
         .single-seccion .site-main .curso_sidebar .submenu ul li {
-          border-left: 2px solid #98B1D5;
-          padding: 0 0 0 15px;
           position: relative;
           text-align: left; }
           .single-curso .site-main .curso_sidebar .submenu ul li a,
           .single-seccion .site-main .curso_sidebar .submenu ul li a {
             color: #4A4A4A;
             border: none;
-            padding: 5px 0;
-            display: block; }
-        .single-curso .site-main .curso_sidebar .submenu ul li.current-item:before,
-        .single-seccion .site-main .curso_sidebar .submenu ul li.current-item:before {
-          content: "";
-          width: 10px;
-          height: 10px;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          border-radius: 50%;
-          border: 2px solid #98B1D5;
-          background: white;
-          display: inline-block;
-          top: 10px;
-          left: -8px;
-          position: absolute; }
-        .single-curso .site-main .curso_sidebar .submenu ul li.current-item a,
-        .single-seccion .site-main .curso_sidebar .submenu ul li.current-item a {
-          font-weight: 400; }
+            padding: 7.5px 1em 7.5px;
+            display: block;
+            background: white;
+            margin: 7.5px 0; }
+            .single-curso .site-main .curso_sidebar .submenu ul li a:hover,
+            .single-seccion .site-main .curso_sidebar .submenu ul li a:hover {
+              padding-left: 1.5em; }
+          .single-curso .site-main .curso_sidebar .submenu ul li a:last-child,
+          .single-seccion .site-main .curso_sidebar .submenu ul li a:last-child {
+            margin: 7.5px 0 0; }
+          .single-curso .site-main .curso_sidebar .submenu ul li:before,
+          .single-seccion .site-main .curso_sidebar .submenu ul li:before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            border: 2px solid #98B1D5;
+            background: #98B1D5;
+            display: inline-block;
+            top: calc(50% - 7.5px);
+            left: -8px;
+            position: absolute; }
+        .single-curso .site-main .curso_sidebar .submenu ul li.current-item,
+        .single-seccion .site-main .curso_sidebar .submenu ul li.current-item {
+          font-weight: 700; }
+          .single-curso .site-main .curso_sidebar .submenu ul li.current-item a,
+          .single-seccion .site-main .curso_sidebar .submenu ul li.current-item a {
+            font-weight: 400; }
+          .single-curso .site-main .curso_sidebar .submenu ul li.current-item:before,
+          .single-seccion .site-main .curso_sidebar .submenu ul li.current-item:before {
+            background: #FA9046; }
     @media screen and (min-width: 768px) {
       .single-curso .site-main .curso_sidebar,
       .single-seccion .site-main .curso_sidebar {
-        background-color: #DFE5EE;
         margin: 0 0 20px;
         margin: 0; }
+        .single-curso .site-main .curso_sidebar nav,
+        .single-seccion .site-main .curso_sidebar nav {
+          position: sticky;
+          position: -webkit-sticky;
+          top: 40px;
+          /* required */
+          overflow: visible; }
         .single-curso .site-main .curso_sidebar .submenu,
         .single-seccion .site-main .curso_sidebar .submenu {
-          padding: 40px 20px;
-          position: -webkit-sticky;
-          position: sticky !important;
-          top: 20px; }
+          overflow: visible; }
+          .single-curso .site-main .curso_sidebar .submenu ul,
+          .single-seccion .site-main .curso_sidebar .submenu ul {
+            width: 100%;
+            max-width: 100%; }
           .single-curso .site-main .curso_sidebar .submenu h4,
           .single-seccion .site-main .curso_sidebar .submenu h4 {
-            margin-top: 0;
-            margin-bottom: 20px;
-            display: block; } }
+            margin: 0;
+            display: block;
+            background: white;
+            padding: 7.5px 5px 7.5px 12px;
+            border-top: 2px solid #98B1D5; } }
   .single-curso .site-main .curso,
   .single-curso .site-main .seccion,
   .single-seccion .site-main .curso,
@@ -218,7 +243,7 @@ header.site-header {
     .single-curso .site-main .seccion .entry-title,
     .single-seccion .site-main .curso .entry-title,
     .single-seccion .site-main .seccion .entry-title {
-      margin-bottom: 20px;
+      margin: 0;
       padding-bottom: 20px; }
   @media screen and (min-width: 768px) {
     .single-curso .site-main,
@@ -228,13 +253,15 @@ header.site-header {
       min-height: 740px; }
       .single-curso .site-main .curso_sidebar,
       .single-seccion .site-main .curso_sidebar {
-        width: 30%;
-        margin-bottom: 20px; }
+        width: 25%;
+        margin-bottom: 20px;
+        flex-shrink: 0; }
       .single-curso .site-main .curso,
       .single-curso .site-main .seccion,
       .single-seccion .site-main .curso,
       .single-seccion .site-main .seccion {
-        background: white; } }
+        background: white;
+        width: 75%; } }
 .single-curso .entry-header,
 .single-seccion .entry-header {
   margin-top: 0;
@@ -257,76 +284,79 @@ header.site-header {
       .single-seccion .entry-header .entry-title {
         font-size: 1.25em;
         padding: .5em 1em .75em; } }
-.single-curso .content-area .site-main,
-.single-seccion .content-area .site-main {
-  margin: 0; }
-  .single-curso .content-area .site-main .entry-content,
-  .single-seccion .content-area .site-main .entry-content {
+.single-curso .content-area,
+.single-seccion .content-area {
+  width: 100% !important; }
+  .single-curso .content-area .site-main,
+  .single-seccion .content-area .site-main {
     margin: 0; }
-  .single-curso .content-area .site-main .portada__wrap,
-  .single-seccion .content-area .site-main .portada__wrap {
-    display: block;
-    margin: 0 -20px 2em;
-    background: #CDD8E8; }
-    .single-curso .content-area .site-main .portada__wrap .portada-curso,
-    .single-seccion .content-area .site-main .portada__wrap .portada-curso {
-      width: 100%;
-      min-height: 320px;
-      overflow: hidden;
-      position: relative;
-      background-size: cover;
-      background-position: center center; }
-    .single-curso .content-area .site-main .portada__wrap .curso__info,
-    .single-seccion .content-area .site-main .portada__wrap .curso__info {
-      width: auto;
-      padding: 1em;
-      line-height: 1.4;
-      font-size: .9em;
-      overflow: hidden; }
-      .single-curso .content-area .site-main .portada__wrap .curso__info ul,
-      .single-seccion .content-area .site-main .portada__wrap .curso__info ul {
-        list-style: none;
-        margin: 0; }
-        .single-curso .content-area .site-main .portada__wrap .curso__info ul li,
-        .single-seccion .content-area .site-main .portada__wrap .curso__info ul li {
-          margin-bottom: .5em; }
-        .single-curso .content-area .site-main .portada__wrap .curso__info ul li.seccion-title,
-        .single-seccion .content-area .site-main .portada__wrap .curso__info ul li.seccion-title {
-          font-size: 1.3em;
-          font-weight: 600;
-          line-height: 1.2em; }
-        .single-curso .content-area .site-main .portada__wrap .curso__info ul .curso_codigo,
-        .single-seccion .content-area .site-main .portada__wrap .curso__info ul .curso_codigo {
-          font-size: .8em;
-          color: #777;
-          margin: .5em 0 .75em; }
-        .single-curso .content-area .site-main .portada__wrap .curso__info ul .curso_area,
-        .single-seccion .content-area .site-main .portada__wrap .curso__info ul .curso_area {
-          font-weight: 600; }
-      .single-curso .content-area .site-main .portada__wrap .curso__info .curso_info,
-      .single-seccion .content-area .site-main .portada__wrap .curso__info .curso_info {
-        font-size: .85em; }
-    @media screen and (min-width: 500px) {
-      .single-curso .content-area .site-main .portada__wrap,
-      .single-seccion .content-area .site-main .portada__wrap {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 0 2em; }
-        .single-curso .content-area .site-main .portada__wrap .portada-curso,
-        .single-seccion .content-area .site-main .portada__wrap .portada-curso {
-          width: 100%; }
-        .single-curso .content-area .site-main .portada__wrap .curso__info,
-        .single-seccion .content-area .site-main .portada__wrap .curso__info {
-          width: 100%;
-          padding: 1em 4% 1.5em; } }
-    @media screen and (min-width: 768px) {
+    .single-curso .content-area .site-main .entry-content,
+    .single-seccion .content-area .site-main .entry-content {
+      margin: 0; }
+    .single-curso .content-area .site-main .portada__wrap,
+    .single-seccion .content-area .site-main .portada__wrap {
+      display: block;
+      margin: 0 -20px 2em;
+      background: #CDD8E8; }
       .single-curso .content-area .site-main .portada__wrap .portada-curso,
       .single-seccion .content-area .site-main .portada__wrap .portada-curso {
-        width: 50%; }
+        width: 100%;
+        min-height: 320px;
+        overflow: hidden;
+        position: relative;
+        background-size: cover;
+        background-position: center center; }
       .single-curso .content-area .site-main .portada__wrap .curso__info,
       .single-seccion .content-area .site-main .portada__wrap .curso__info {
-        width: 42%;
-        padding: 1em 4% 1.5em; } }
+        width: auto;
+        padding: 1em;
+        line-height: 1.4;
+        font-size: .9em;
+        overflow: hidden; }
+        .single-curso .content-area .site-main .portada__wrap .curso__info ul,
+        .single-seccion .content-area .site-main .portada__wrap .curso__info ul {
+          list-style: none;
+          margin: 0; }
+          .single-curso .content-area .site-main .portada__wrap .curso__info ul li,
+          .single-seccion .content-area .site-main .portada__wrap .curso__info ul li {
+            margin-bottom: .5em; }
+          .single-curso .content-area .site-main .portada__wrap .curso__info ul li.seccion-title,
+          .single-seccion .content-area .site-main .portada__wrap .curso__info ul li.seccion-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            line-height: 1.2em; }
+          .single-curso .content-area .site-main .portada__wrap .curso__info ul .curso_codigo,
+          .single-seccion .content-area .site-main .portada__wrap .curso__info ul .curso_codigo {
+            font-size: .8em;
+            color: #777;
+            margin: .5em 0 .75em; }
+          .single-curso .content-area .site-main .portada__wrap .curso__info ul .curso_area,
+          .single-seccion .content-area .site-main .portada__wrap .curso__info ul .curso_area {
+            font-weight: 600; }
+        .single-curso .content-area .site-main .portada__wrap .curso__info .curso_info,
+        .single-seccion .content-area .site-main .portada__wrap .curso__info .curso_info {
+          font-size: .85em; }
+      @media screen and (min-width: 500px) {
+        .single-curso .content-area .site-main .portada__wrap,
+        .single-seccion .content-area .site-main .portada__wrap {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 0 2em; }
+          .single-curso .content-area .site-main .portada__wrap .portada-curso,
+          .single-seccion .content-area .site-main .portada__wrap .portada-curso {
+            width: 100%; }
+          .single-curso .content-area .site-main .portada__wrap .curso__info,
+          .single-seccion .content-area .site-main .portada__wrap .curso__info {
+            width: 100%;
+            padding: 1em 4% 1.5em; } }
+      @media screen and (min-width: 768px) {
+        .single-curso .content-area .site-main .portada__wrap .portada-curso,
+        .single-seccion .content-area .site-main .portada__wrap .portada-curso {
+          width: 50%; }
+        .single-curso .content-area .site-main .portada__wrap .curso__info,
+        .single-seccion .content-area .site-main .portada__wrap .curso__info {
+          width: 42%;
+          padding: 1em 4% 1.5em; } }
 
 .migajas {
   font-size: .77em;
@@ -471,40 +501,9 @@ header.site-header {
 .archive-view .taxonomy-description,
 .ocw-front .taxonomy-description {
   display: none; }
-.archive-view .cursos-nav ul,
-.ocw-front .cursos-nav ul {
-  margin: 20px 0 0;
-  padding-top: 10px;
-  font-size: .8em;
-  background-color: #98B1D5;
-  padding-bottom: 80px;
-  list-style: none;
-  -webkit-clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
-  clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0); }
-  .archive-view .cursos-nav ul li,
-  .ocw-front .cursos-nav ul li {
-    margin: 2px 0;
-    line-height: 1.3; }
-  .archive-view .cursos-nav ul a,
-  .ocw-front .cursos-nav ul a {
-    background-color: rgba(255, 255, 255, 0.47);
-    color: #5D769B;
-    border: none;
-    padding: 1em;
-    display: block;
-    letter-spacing: .25px; }
-    .archive-view .cursos-nav ul a:hover, .archive-view .cursos-nav ul a:active,
-    .ocw-front .cursos-nav ul a:hover,
-    .ocw-front .cursos-nav ul a:active {
-      background: #51F0FA; }
-  .archive-view .cursos-nav ul li.current-menu-item a,
-  .ocw-front .cursos-nav ul li.current-menu-item a {
-    background: #FA9046;
-    color: #fff;
-    position: relative; }
 .archive-view .cursos-container,
 .ocw-front .cursos-container {
-  padding: 0 20px; }
+  padding: 0; }
   .archive-view .cursos-container .curso,
   .ocw-front .cursos-container .curso {
     margin: 0 0 20px;
@@ -612,10 +611,59 @@ header.site-header {
         margin: 0 1% 20px;
         /* Some gutter */ } }
 
-@media screen and (min-width: 768px) {
+.archivo-cursos .responsive-navigation,
+.tax-area .responsive-navigation {
+  margin-top: 20px; }
+.archivo-cursos .cursos-nav,
+.tax-area .cursos-nav {
+  font-size: .77em;
+  letter-spacing: .5em; }
+  .archivo-cursos .cursos-nav ul,
+  .tax-area .cursos-nav ul {
+    margin: 0;
+    background-color: #98B1D5;
+    padding: 5px 0;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
+    clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0); }
+    .archivo-cursos .cursos-nav ul li,
+    .tax-area .cursos-nav ul li {
+      line-height: 1.3;
+      padding: 0 5px; }
+    .archivo-cursos .cursos-nav ul a,
+    .tax-area .cursos-nav ul a {
+      color: white;
+      border: none;
+      padding: .5em;
+      display: block;
+      letter-spacing: .25px;
+      width: auto;
+      margin: 5px 0; }
+      .archivo-cursos .cursos-nav ul a:hover, .archivo-cursos .cursos-nav ul a:active,
+      .tax-area .cursos-nav ul a:hover,
+      .tax-area .cursos-nav ul a:active {
+        background: #51F0FA;
+        padding-left: 1em; }
+    .archivo-cursos .cursos-nav ul li.current-menu-item a,
+    .tax-area .cursos-nav ul li.current-menu-item a {
+      background: #FA9046;
+      color: #fff;
+      position: relative; }
+@media screen and (min-width: 500px) {
+  .archivo-cursos .cursos-nav ul,
+  .tax-area .cursos-nav ul {
+    padding: 5px 0 80px; }
   .archivo-cursos .cursos-container,
   .tax-area .cursos-container {
-    padding: 0; }
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap; }
+    .archivo-cursos .cursos-container .curso,
+    .tax-area .cursos-container .curso {
+      width: 30%;
+      flex-grow: 0;
+      margin: 0 0 10px 0;
+      min-width: 280px; } }
+@media screen and (min-width: 768px) {
   .archivo-cursos .content-area,
   .tax-area .content-area {
     width: 100%;
@@ -625,25 +673,11 @@ header.site-header {
     justify-content: space-between; }
     .archivo-cursos .content-area .responsive-navigation,
     .tax-area .content-area .responsive-navigation {
-      width: 30%; }
+      width: 20%; }
     .archivo-cursos .content-area .site-main,
     .tax-area .content-area .site-main {
-      width: 65%;
+      width: 75%;
       margin-left: 0; } }
-@media screen and (min-width: 500px) {
-  .archivo-cursos .cursos-container,
-  .tax-area .cursos-container {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap; }
-    .archivo-cursos .cursos-container .curso,
-    .tax-area .cursos-container .curso {
-      width: auto;
-      flex-grow: 0;
-      margin: 10px auto;
-      max-width: 310px;
-      min-width: 300px; } }
 
 .responsive-navigation {
   text-align: center;
@@ -808,15 +842,16 @@ header.site-header {
   @media screen and (min-width: 500px) {
     .ocw-front .cursos-container {
       display: flex;
-      justify-content: flex-start !important;
+      justify-content: space-around;
       flex-direction: row;
       flex-wrap: wrap;
       padding: 40px 40px 60px; }
       .ocw-front .cursos-container .curso {
         width: 30%;
         flex-shrink: 0;
-        margin: 10px auto;
-        min-width: 240px !important;
+        margin: 10px 0;
+        min-width: 240px;
+        max-width: 300px;
         background: white; } }
 .ocw-front .recursos-container {
   background: #F6E871;

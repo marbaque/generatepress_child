@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			do_action( 'generate_before_entry_title' );
 
 			if ( generate_show_title() ) {
-				the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' );
+				the_title( '<h2 class="entry-title" itemprop="headline">', '</h2>' );
 			}
 
 			/**

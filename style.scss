@@ -160,56 +160,72 @@ header.site-header {
 /************************************************************************/
 .single-curso,
 .single-seccion {
+
 	.site-main {
 		margin: 0;
 		.curso_sidebar {
-			width: 100%;
+			background-color: #DFE5EE;
+			max-width: 100%;
 			display: block;
-			margin: 20px 0 0;
-			padding: 0;
-			
+			margin: 0;
+			padding: 20px;
 			.submenu { 
-				font-size: .9em;
-				letter-spacing: 1px;
+				font-size: .8em;
+				letter-spacing: .5px;
+				line-height: 1.25;
 				h4 {
 					display: none;
+					text-align: left;
 				}
 				//submenu de curso
 				ul {
 					list-style: none;
 					margin: 0;
 					max-width: 90%;
-										
+					border-left: 2px solid $color__grisillo;	
 					li {
-						border-left: 2px solid $color__grisillo;
-						padding: 0 0 0 15px;
 						position: relative;
 						text-align: left;
 						a {
 							color: $color__body-text;
 							border: none;
-							padding: 5px 0;
+							padding: 7.5px 1em 7.5px;
 							display: block;
+							background: white;
+							margin: 7.5px 0;
+							
+							&:hover {
+								padding-left: 1.5em;
+							}
+							
+							
 						}
-					}
-										
-					li.current-item {
-								
+						a:last-child {
+							margin: 7.5px 0 0;
+						}
 						&:before {
 							content: "";
 							width: 10px;
 							height: 10px;
 							@include radio(50%);
 							border: 2px solid $color__grisillo;
-							background: white;
+							background: $color__grisillo;
 							display: inline-block;
-							top: 10px;
+							top: calc(50% - 7.5px);
 							left: -8px;
 							position: absolute;
-						}				
+						}			
+						
+					}
+										
+					li.current-item {
+						font-weight: 700;		
 						a {
 							font-weight: 400;
 							
+						}
+						&:before {
+							background: $color__primario;
 						}
 					}
 				}
@@ -218,18 +234,28 @@ header.site-header {
 			}//aqui termina el submenu
 			
 			@media screen and (min-width: $break__medium) { //.sidebar
-				background-color: #DFE5EE;
-				margin: 0 0 20px;
+				
+				margin: 0 0 20px; //importante
 				margin: 0;
-				.submenu {
-					padding: 40px 20px;
+				nav {
+					position: sticky;
 					position: -webkit-sticky;
-					position: sticky!important;
-					top: 20px;
+					top: 40px; /* required */
+					overflow: visible;
+					
+				}
+				.submenu {
+					overflow: visible;
+					ul {
+						width: 100%;
+						max-width: 100%;
+					}
 					h4 {
-						margin-top: 0;
-						margin-bottom: 20px;
+						margin: 0;
 						display: block;
+						background: white;
+						padding: 7.5px 5px 7.5px 12px;
+						border-top: 2px solid $color__grisillo;
 					}
 				}
 			}
@@ -239,24 +265,27 @@ header.site-header {
 		.seccion {
 			width: 100%;
 			margin-bottom: 20px;
-			
 			.entry-title {
-				margin-bottom: 20px;
+				margin: 0;
 				padding-bottom: 20px;
 
 			}
+
 		}
+		
 		@media screen and (min-width:$break__medium) {
 			display: flex;
 			align-items: stretch!important;
 			min-height: 740px;
 			.curso_sidebar {
-				width: 30%;
+				width: 25%;
 				margin-bottom: 20px;
+				flex-shrink: 0;
 			}
 			.curso,
 			.seccion {
 				background: white;
+				width: 75%;
 			}
 		}
 	}
@@ -289,14 +318,11 @@ header.site-header {
 		}
 	}
 	.content-area {
+		width: 100%!important;
 		.site-main {
 			margin: 0;
 			
-			.inside-article {
-				@media screen and (max-width: $break__small) {
-					//padding: 0 40px 40px;
-				}
-			}
+			
 			.entry-content {
 				margin: 0;
 			}	
@@ -562,45 +588,10 @@ header.site-header {
 	}
 	
 
-	//submenu de areas de cursos
-	.cursos-nav {
-		ul {
-			margin: 20px 0 0;
-			padding-top: 10px;
-			font-size: .8em;
-			background-color: #98B1D5;
-			padding-bottom: 80px;
-			list-style: none;
-			-webkit-clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
-			clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
-			
-			li {
-				margin: 2px 0;
-				line-height: 1.3;				
-			}
-			a {
-				background-color: rgba(255, 255, 255, 0.47);
-				color: #5D769B;
-				border: none;
-				padding: 1em;
-				display: block;
-				letter-spacing: .25px;
-				&:hover,
-				&:active {
-					background: #51F0FA;
-					
-				}
-			}
-			li.current-menu-item a {
-				background: $color__primario;
-				color: #fff;
-				position: relative;
-			}
-		}
-	}
+	
 	
 	.cursos-container {
-		padding: 0 20px;
+		padding: 0;
 		.curso {
 			margin: 0 0 20px;
 			width: 100%;
@@ -722,10 +713,64 @@ header.site-header {
 
 .archivo-cursos,
 .tax-area {
-	@media screen and (min-width: $break__medium) {
-		.cursos-container {
-			padding: 0;
+	//submenu de areas de cursos
+	.responsive-navigation {
+		margin-top: 20px;
+	}
+	.cursos-nav {
+		font-size: .77em;
+		letter-spacing: .5em;
+		ul {
+			margin: 0;
+			background-color: #98B1D5;
+			padding: 5px 0;
+			-webkit-clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
+			clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);			
+			li {
+				line-height: 1.3;	
+				padding: 0 5px;			
+			}
+			a {
+				color: white;
+				border: none;
+				padding: .5em;
+				display: block;
+				letter-spacing: .25px;
+				width: auto;
+				margin: 5px 0;
+				&:hover,
+				&:active {
+					background: #51F0FA;
+					padding-left: 1em;
+				}
+			}
+			li.current-menu-item a {
+				background: $color__primario;
+				color: #fff;
+				position: relative;
+			}
 		}
+	}
+	@media screen and (min-width: $break__small) {
+		.cursos-nav {
+			ul {
+				padding: 5px 0 80px;
+			}
+		}
+		.cursos-container {
+			display: flex;
+			justify-content: space-around;
+			flex-flow: row wrap;
+			.curso {
+				//width: 48%;
+				width: 30%;
+				flex-grow: 0;
+				margin: 0 0 10px 0;
+				min-width: 280px;
+			}
+		}
+	}
+	@media screen and (min-width: $break__medium) {
 		.content-area {
 			width: 100%;
 			margin: 0;
@@ -733,30 +778,15 @@ header.site-header {
 			display: flex;
 			justify-content: space-between;
 			.responsive-navigation {
-				width: 30%;
+				width: 20%;
 			}
 			.site-main {
-				width: 65%;
+				width: 75%;
 				margin-left: 0;
 			}
 		}
 	}
-	@media screen and (min-width: $break__small) {
-		.cursos-container {
-			display: flex;
-			justify-content: space-around;
-			flex-direction: row;
-			flex-wrap: wrap;
-			.curso {
-				//width: 48%;
-				width: auto;
-				flex-grow: 0;
-				margin: 10px auto;
-				max-width: 310px;
-				min-width: 300px;
-			}
-		}
-	}
+	
 }
 
 
@@ -1000,15 +1030,16 @@ header.site-header {
 		position: relative;		
 		@media screen and (min-width: $break__small) {
 			display: flex;
-			justify-content: flex-start!important;
+			justify-content: space-around;
 			flex-direction: row;
 			flex-wrap: wrap;
 			padding: 40px 40px 60px;
 			.curso {
 				width: 30%;
 				flex-shrink: 0;
-				margin: 10px auto;
-				min-width: 240px!important;
+				margin: 10px 0;
+				min-width: 240px;
+				max-width: 300px;
 				background: white;
 			}
 		}
