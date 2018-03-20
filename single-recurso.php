@@ -33,9 +33,9 @@ get_header();
 				<?php 
 				if ( has_post_video() ) { ?>
 					<input type="hidden" id="stl-uri" value="<?php echo get_the_post_video_url(); ?>">
-					<script src="js/three.js"></script>
-					<script src="js/stats.js"></script>
-					<script src="js/detector.js"></script>
+					<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/three.js"></script>
+					<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/stats.js"></script>
+					<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/detector.js"></script>
 					<script>
 
 						var camera, scene, renderer,
