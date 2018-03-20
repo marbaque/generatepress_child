@@ -28,8 +28,8 @@ get_header();
 		</div>
 		<?php 
 		elseif( $term && $term->slug == 'modelo-3d' ): ?>
-		<div class="3d-wrap">
-			<div id="3d-contenedor">
+		<div class="m3d-wrap">
+			<div id="3d-contenedor" class="m3d-contenedor">
 				<?php 
 				if ( has_post_video() ) { ?>
 
@@ -112,7 +112,7 @@ get_header();
 							// }
 							new THREE.MeshLambertMaterial({
 								overdraw:true,
-								color: 0xaa0000,
+								color: 0xCDD8E8,
 								shading: THREE.FlatShading
 							}
 														 ));
@@ -243,8 +243,8 @@ get_header();
 						scene = new THREE.Scene();
 
 						camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 1, 1000 );
-						camera.position.z = 70;
-						camera.position.y = 0;
+						camera.position.z = 130;
+						camera.position.y = 20;
 						scene.add( camera );
 
 						var directionalLight = new THREE.DirectionalLight( 0xffffff );
@@ -315,7 +315,8 @@ get_header();
 				}
 				?>
 			</div>
-		</div>	
+			<div class="video-dark-background" aria-hidden></div>
+		</div>	<!-- 3d-wrap -->
 		<?php endif; ?>
 
 	<div id="primary" <?php generate_content_class();?>>

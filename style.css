@@ -399,27 +399,36 @@ header.site-header {
 @media screen and (min-width: 1200px) {
   .single-recurso .recurso-category {
     margin-left: -60px; } }
-.single-recurso .video-dark-background {
-  position: absolute;
-  background-color: #111;
-  height: 100%;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw); }
-.single-recurso .video-wrap {
+.single-recurso .video-wrap,
+.single-recurso .m3d-wrap {
   display: block;
-  background: #111;
   width: 100%;
   height: auto;
   position: relative; }
-.single-recurso .video-contenedor {
+  .single-recurso .video-wrap .video-dark-background,
+  .single-recurso .m3d-wrap .video-dark-background {
+    position: absolute;
+    top: 0;
+    background-color: #111;
+    height: 100%;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    z-index: -1; }
+.single-recurso .video-contenedor,
+.single-recurso .m3d-contenedor {
   display: block;
-  background: #111;
   width: 100%;
   text-align: center;
-  margin: 0 auto; }
-  .single-recurso .video-contenedor .attachment-portada-video {
+  margin: 0 auto;
+  z-index: 99; }
+  .single-recurso .video-contenedor .attachment-portada-video,
+  .single-recurso .m3d-contenedor .attachment-portada-video {
     margin: 0 auto !important; }
+.single-recurso .m3d-contenedor canvas {
+  width: 100%;
+  margin: 0 auto;
+  display: block; }
 .single-recurso .meta-info {
   font-size: .77em;
   color: #a4a4a4;

@@ -461,31 +461,44 @@ header.site-header {
 			margin-left: -60px;
 		}
 	}
-	.video-dark-background {
-		position: absolute;
-		background-color: #111;
-		height: 100%;
-		width: 100vw;
-		margin-left: calc(50% - 50vw);
-	    margin-right: calc(50% - 50vw);
-	}
-	.video-wrap {
+	
+	.video-wrap,
+	.m3d-wrap {
 		display: block;
-		background: #111;
+		//background: #111;
 		width: 100%;
 		height: auto;
 		position: relative;
 		
+		.video-dark-background {
+			position: absolute;
+			top: 0;
+			background-color: #111;
+			height: 100%;
+			width: 100vw;
+			margin-left: calc(50% - 50vw);
+		    margin-right: calc(50% - 50vw);
+		    z-index: -1	;
+		}
+		
 	}
-	.video-contenedor {
+	.video-contenedor,
+	.m3d-contenedor {
 		display: block;
-		background: #111;
+		//background: #111;
 		width: 100%;
-		//max-width: 900px;
 		text-align: center;
 		margin: 0 auto;
+		z-index: 99;
 		.attachment-portada-video {
 			margin: 0 auto!important;
+		}
+	}
+	.m3d-contenedor {
+		canvas {
+			width: 100%;
+			margin: 0 auto;
+			display: block;
 		}
 	}
 	.meta-info {
