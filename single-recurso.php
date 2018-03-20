@@ -34,6 +34,8 @@ get_header();
 				if ( has_post_video() ) { ?>
 
 				<input type="hidden" id="stl-uri" value="<?php echo get_the_post_video_url(); ?>">
+
+				<!-- STL viewer based on https://github.com/tonylukasavage/jsstl -->
 				<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/three.js"></script>
 				<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/stats.js"></script>
 				<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/detector.js"></script>
@@ -280,7 +282,7 @@ get_header();
 						container = document.getElementById( '3d-contenedor' );
 
 						renderer = new THREE.WebGLRenderer(); //new THREE.CanvasRenderer();
-						renderer.setSize( window.innerWidth / 2 , window.innerHeight / 3 );
+						renderer.setSize( window.innerWidth / 2 , window.innerHeight / 2 );
 
 						container.appendChild( renderer.domElement );
 
@@ -298,7 +300,7 @@ get_header();
 
 						//mesh.rotation.x += 0.01;
 						if (mesh) {
-							mesh.rotation.z += 0.02;
+							mesh.rotation.z += 0.01;
 						}
 						//light1.position.z -= 1;
 
@@ -307,6 +309,8 @@ get_header();
 					}
 
 				</script>
+				<!-- STL viewer -->
+
 				<?php
 				}
 				?>
