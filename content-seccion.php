@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			do_action( 'generate_before_entry_title' );
 
 			if ( generate_show_title() ) {
-				the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' );
+				the_title( '<h2 class="entry-title" itemprop="headline">', '</h2>' );
 			}
 
 			/**
@@ -89,20 +89,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'after'  => '</div>',
 			) );
 			?>
-			<?php 
-		
-			$licencia = get_field('seleccionar_licencia');
-			$icono = get_field('icono_licencia', $licencia);
-					
-			if( $licencia ): ?>
-				<footer class="licencia">
-					<?php if ($icono): ?>
-					<img class="aligh-left" src="<?php echo $icono; ?>">
-					<?php endif; ?>
-					<p><strong><?php echo $licencia->name; ?></strong>
-					<span><?php echo $licencia->description; ?></span></p>
-				</footer>
-			<?php endif; ?>
+			
+			<?php include('inc/licencia.php'); ?>
 
 		</div><!-- .entry-content -->
 

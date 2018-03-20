@@ -22,9 +22,10 @@ get_header(); ?>
 		
 		$parent = $post->post_parent;
 		$permalink = get_permalink( $post->post_parent );
-
+		$current = $post->ID;
+		
 		if ( generate_show_title() ) {
-			echo '<a href="' . $permalink . '" title="Inicio del curso"><h2 class="entry-title" itemprop="headline">' . get_the_title($parent) . '</h2></a>';
+			echo '<a href="' . $permalink . '" title="Inicio del curso"><h2 class="entry-title" itemprop="headline"><span>Curso </span>' . get_the_title($parent) . '</h2></a>';
 		}
 
 		/**
@@ -62,34 +63,47 @@ get_header(); ?>
 			do_action( 'generate_before_main_content' );
 			?>
 			<aside class="curso_sidebar">
-				<div class="submenu">
-					<?php 
-					global $post;
-
-					$args = array(
-					    'post_parent' => $parent,
-					    'posts_per_page' => -1,
-					    'orderby' => 'menu_order',
-					    'order' => 'ASC',
-					    'post_type' => 'seccion', //you can use also 'any'
-					    );
+				<nav id="responsive-navigation" class="responsive-navigation" role="navigation">
+					<button class="submenu-toggle">Contenidos</button>
 					
-					$the_query = new WP_Query( $args );
-					// The Loop
-					if ( $the_query->have_posts() ) :
-						echo '<h4>Contenidos</h4>';
-						echo '<ul>';
-						echo '<li><a href="' . $permalink . '" title="Inicio del curso">Inicio</a></li>';
-						while ( $the_query->have_posts() ) : $the_query->the_post();
-							// Do Stuff
-							echo '<li><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';
-						endwhile;
-						echo '</ul>';
-					endif;
-					// Reset Post Data
-					wp_reset_postdata();
-					?>
-				</div><!-- submenu -->
+					<div class="submenu nav-submenu">
+						<?php 
+						global $post;
+						
+						
+	
+						$args = array(
+						    'post_parent' => $parent,
+						    'posts_per_page' => -1,
+						    'orderby' => 'menu_order',
+						    'order' => 'ASC',
+						    'post_type' => 'seccion', //you can use also 'any'
+						    );
+						
+						$the_query = new WP_Query( $args );
+						// The Loop
+						if ( $the_query->have_posts() ) :
+							echo '<h4>Contenidos</h4>';
+							echo '<ul>';
+							echo '<li><a href="' . $permalink . '" title="Inicio del curso">Inicio</a></li>';
+							while ( $the_query->have_posts() ) : $the_query->the_post();
+								// Do Stuff
+								$queried_object = get_the_ID();
+								
+								if( $queried_object == $current) {
+									echo '<li class="current-item"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';
+								} else {
+									echo '<li><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';
+								}
+									
+							endwhile;
+							echo '</ul>';
+						endif;
+						// Reset Post Data
+						wp_reset_postdata();
+						?>
+					</div><!-- submenu -->
+				</nav>
 			</aside><!-- aside .curso_sidebar -->
 			<?php
 			while ( have_posts() ) : the_post();
@@ -125,6 +139,6 @@ get_header(); ?>
 	 */
 	 do_action( 'generate_after_primary_content_area' );
 
-	 generate_construct_sidebars();
+	 //generate_construct_sidebars();
 
 get_footer();

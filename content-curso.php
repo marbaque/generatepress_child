@@ -36,11 +36,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				$image = get_field('portada_del_curso');
 				$size = 'portada-curso';
 				$thumb = $image['sizes'][ $size ];
-		
+				$placeholder = get_stylesheet_directory_uri() . '/img/placeholder.png';
 				
-				if( !empty($image) ): ?>
+				if( ($image) ): ?>
 				
 					<div class="portada-curso" style="background-image: url(<?php echo $thumb; ?>)" aria-hideen="true"></div>
+				<?php else: ?>
+					<div class="portada-curso" style="background-image: url(<?php echo $placeholder; ?>)" aria-hideen="true"></div>
 				<?php endif; ?>
 				
 				<div class="curso__info">

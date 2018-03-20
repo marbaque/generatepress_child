@@ -19,10 +19,16 @@
 header.site-header {
 	border-bottom: 1px solid #eee;
 	background: #FFFFFF;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.13);
 	.inside-header {
 		padding: 20px;
 		
+		@media screen and (max-width: $break__medium) {
+			padding: 10px;
+			.site-logo {
+				width: 150px;
+				margin-bottom: 5px;
+			}
+		}
 		a {
 			border: none;
 		}
@@ -31,16 +37,20 @@ header.site-header {
 }
 .main-navigation {
 	background-color: transparent;
+	
+	@media screen and (min-width: $break__medium) {
+		background-color: transparent;
+	}
 	button.menu-toggle {
-		background-color: $color__dark;
-		color: $color__text-overdark;
+		color: $color__body-text;
+	}
+	.fa-search:before {
+		color: $color__body-text;
 	}
 	.navigation-search {
-		
 		input[type="search"] {
-			
-			background-color: $color__secundario;
-			color: $color__body-text;
+			background-color: $color__primario;
+			color: white;
 			
 			&:focus {
 				
@@ -141,79 +151,163 @@ header.site-header {
 }
 
 
+.escondido {
+	display: none;
+}
+
 /************************************************************************/
 // pagina de single-curso
 /************************************************************************/
 .single-curso,
 .single-seccion {
+
 	.site-main {
 		margin: 0;
 		.curso_sidebar {
-			background-color: $color__secundario;
-			width: 100%;
+			background-color: #DFE5EE;
+			max-width: 100%;
 			display: block;
-			min-height: 20px;
 			margin: 0;
-			.submenu {
-				padding: 40px 20px;
-				font-size: .9em;
+			padding: 20px;
+			.submenu { 
+				font-size: .8em;
+				letter-spacing: .5px;
+				line-height: 1.25;
 				h4 {
-					margin-top: 0;
-					margin-bottom: 20px;
+					display: none;
+					text-align: left;
 				}
 				//submenu de curso
 				ul {
 					list-style: none;
 					margin: 0;
+					max-width: 90%;
+					border-left: 2px solid $color__grisillo;	
 					li {
-						margin-bottom: .5em;
+						position: relative;
+						text-align: left;
+						a {
+							color: $color__body-text;
+							border: none;
+							padding: 7.5px 1em 7.5px;
+							display: block;
+							background: white;
+							margin: 7.5px 0;
+							
+							&:hover {
+								padding-left: 1.5em;
+							}
+							
+							
+						}
+						a:last-child {
+							margin: 7.5px 0 0;
+						}
+						&:before {
+							content: "";
+							width: 10px;
+							height: 10px;
+							@include radio(50%);
+							border: 2px solid $color__grisillo;
+							background: $color__grisillo;
+							display: inline-block;
+							top: calc(50% - 7.5px);
+							left: -8px;
+							position: absolute;
+						}			
+						
 					}
-					a {
-						color: $color__body-text;
+										
+					li.current-item {
+						font-weight: 700;		
+						a {
+							font-weight: 400;
+							
+						}
+						&:before {
+							background: $color__primario;
+						}
+					}
+				}
+				
+				
+			}//aqui termina el submenu
+			
+			@media screen and (min-width: $break__medium) { //.sidebar
+				
+				margin: 0 0 20px; //importante
+				margin: 0;
+				nav {
+					position: sticky;
+					position: -webkit-sticky;
+					top: 40px; /* required */
+					overflow: visible;
+					
+				}
+				.submenu {
+					overflow: visible;
+					ul {
+						width: 100%;
+						max-width: 100%;
+					}
+					h4 {
+						margin: 0;
+						display: block;
+						background: white;
+						padding: 7.5px 5px 7.5px 12px;
+						border-top: 2px solid $color__grisillo;
 					}
 				}
 			}
-		}
+		} //aqui termina el sidebar
+		
 		.curso,
 		.seccion {
 			width: 100%;
 			margin-bottom: 20px;
-			
 			.entry-title {
-				margin-bottom: 20px;
+				margin: 0;
 				padding-bottom: 20px;
-				border-bottom: 1px solid $color__dark;
+
 			}
+
 		}
-		@media screen and (min-width:$break__small) {
+		
+		@media screen and (min-width:$break__medium) {
 			display: flex;
 			align-items: stretch!important;
 			min-height: 740px;
-			
 			.curso_sidebar {
-				width: 30%;
+				width: 25%;
 				margin-bottom: 20px;
+				flex-shrink: 0;
 			}
 			.curso,
 			.seccion {
-				border: 1px solid #eee;
 				background: white;
+				width: 75%;
 			}
 		}
 	}
 	
 	.entry-header {
-		margin-top: 20px;
+		margin-top: 0;
 		width: 100%;
 		
 		.entry-title {
-			font-size: 1.2em;
+			font-size: 1.1em;
 			padding: .5em 1em .5em;
 			background: $color__primario;
 			color: white;
 			margin-top: 0;
+			span {
+				display: block;
+				font-size: .5em;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
 			@media screen and (min-width: $break__small) {
-				font-size: 1.5em;
+				font-size: 1.25em;
 				padding: .5em 1em .75em;
 			}
 		}
@@ -224,14 +318,11 @@ header.site-header {
 		}
 	}
 	.content-area {
+		width: 100%!important;
 		.site-main {
-			margin-top: 0;
+			margin: 0;
 			
-			.inside-article {
-				@media screen and (max-width: $break__small) {
-					//padding: 0 40px 40px;
-				}
-			}
+			
 			.entry-content {
 				margin: 0;
 			}	
@@ -239,7 +330,7 @@ header.site-header {
 			.portada__wrap {
 				display: block;
 				margin: 0 -20px 2em;
-				background: $color__secundario;
+				background: $color__text-overdark;
 				
 				.portada-curso {
 					width: 100%;
@@ -397,11 +488,7 @@ header.site-header {
 			margin: 0 auto!important;
 		}
 	}
-	.hentry {
-		border: 1px solid #eee;
-	}
 	.meta-info {
-		text-align: center;
 		font-size: .77em;
 		color: #a4a4a4;
 		margin-bottom: 2em;
@@ -427,7 +514,7 @@ header.site-header {
 }	
 
 .btn {
-	background: $color__secundario;
+	background: $color__grisillo;
 	padding: 1em;
 	margin-bottom: 20px;
 	display: block;
@@ -436,19 +523,20 @@ header.site-header {
 	max-width: $break__medium;
 	&:hover {
 		border: none;
+		color: $color__dark;
 	}
 }
-.licencia {
+.licencia-block {
 	padding: 1em 1em 1.25em;
 	margin: 2em 0 0;
 	display: block;
 	background: #eee;
 	font-size: .8em;
 	@include radio(5px);
-	span {
-		display: block;
+	h4 {
+		margin: 0 0 .5em;
 	}
-	p:last-child {
+	p{
 		margin: 0;
 	}
 	img {
@@ -474,14 +562,16 @@ header.site-header {
 	&.archivo-recursos,
 	&.archivo-cursos,
 	&.tax-recurso_category,
-	&.tax-area { 
+	&.tax-area,
+	&.tax-recurso_category { 
 		.page-header {
 			margin: 20px 0 0;
 			padding: 20px;
 			background: none;
 		}
 	}
-	&.archivo-recursos {
+	&.archivo-recursos,
+	&.tax-recurso_category {
 		.content-area {
 			left: 0;
 			margin-left: 0;
@@ -498,199 +588,282 @@ header.site-header {
 	}
 	
 
-	//menu de cursos
-	.cursos-nav {
-		ul {
-			margin: 20px 0 0;
-			padding-top: 10px;
-			font-size: .8em;
-			background-color: #98B1D5;
-			padding-bottom: 80px;
-			list-style: none;
-			-webkit-clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
-			clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
-			
-			li {
-				margin: 2px 0;
-				line-height: 1.3;				
+	
+	
+	.cursos-container {
+		padding: 0;
+		.curso {
+			margin: 0 0 20px;
+			width: 100%;
+			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+			background-color: white;
+			img {
+				width: 100%;
+				margin: 0;
+				outline: none;
 			}
 			a {
-				background-color: rgba(255, 255, 255, 0.47);
-				color: #5D769B;
 				border: none;
-				padding: 1em;
-				display: block;
-				letter-spacing: .25px;
-				&:hover,
-				&:active {
-					background: #51F0FA;
-					
+				color: inherit;
+				text-decoration: none;
+			}
+			
+			.inside-article {
+				padding: 20px;
+				margin: 0;
+				line-height: 1.25;
+				.entry-title {
+					font-family: $headings;
+					margin: 0;
+				}
+				.curso_codigo {
+					margin: 1em 0 0;
+					font-size: .7em;
+					color: #a4a4a4;
 				}
 			}
-			li.current-menu-item a {
-				background: #51F0FA;
-				color: #5D769B;
-				position: relative;
+		}
+	
+	}
+	.recursos-container {
+		padding: 40px 0 0;
+		
+		.recurso {
+			display: flex;
+			margin-bottom: 20px;
+			position: relative;
+			box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+			
+			&:after { //icono de flecha
+				content: "";
+				width: 12px;
+				height: 20px;
+				background: url(img/arrow-right.png) no-repeat;
+				position: absolute;
+				right: 14px;
+				top: calc(50% - 10px);
 			}
+			a {
+				border: none;
+			}
+			
+			.thumb-recurso {
+				width: 150px;
+				height: 150px;
+				flex-shrink: 0;
+				border: none;
+				background-color: $color__grisillo;
+				z-index: 10;
+				.recurso-icon {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			
+			.inside-article {
+				height: 130px; //150px menus 20px del padding
+				padding: 10px 40px 10px 20px;
+				flex-grow: 1;
+				overflow: hidden;
+				position: relative;
+				
+				.entry-title {
+					font-family: $headings;
+					font-size: 1.2em;
+					margin: 0 0 .5em;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			
+				.entry-content {
+					margin: 0;
+					width: 100%;
+					height: auto;
+					font-size: .85em;
+					font-weight: 200;
+					line-height: 1.3;
+				    overflow: hidden;
+				}
+				
+			}
+			.recurso-category {
+				position: absolute;
+				left: -6px;
+				bottom: 0;
+				z-index: 20;
+			}
+		}
+		
+		@media screen and (min-width: $break__medium) {
+			display: flex;
+			flex-flow: row wrap;
+			padding: 40px 0 0;
+			.recurso {
+				flex: auto;
+				height: auto;
+				max-width: 48%;
+				margin: 0 1% 20px; /* Some gutter */
+			}
+	
 		}
 	}
 	
 }
 
-.archivo-cursos {
-	@media screen and (min-width: $break__medium) {
-		.cursos-container {
-			padding: 0;
+.archivo-cursos,
+.tax-area {
+	//submenu de areas de cursos
+	.responsive-navigation {
+		margin-top: 20px;
+	}
+	.cursos-nav {
+		font-size: .77em;
+		letter-spacing: .5em;
+		ul {
+			margin: 0;
+			background-color: #98B1D5;
+			padding: 5px 0;
+			-webkit-clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
+			clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);			
+			li {
+				line-height: 1.3;	
+				padding: 0 5px;			
+			}
+			a {
+				color: white;
+				border: none;
+				padding: .5em;
+				display: block;
+				letter-spacing: .25px;
+				width: auto;
+				margin: 5px 0;
+				&:hover,
+				&:active {
+					background: #51F0FA;
+					padding-left: 1em;
+				}
+			}
+			li.current-menu-item a {
+				background: $color__primario;
+				color: #fff;
+				position: relative;
+			}
 		}
+	}
+	@media screen and (min-width: $break__small) {
+		.cursos-nav {
+			ul {
+				padding: 5px 0 80px;
+			}
+		}
+		.cursos-container {
+			display: flex;
+			justify-content: space-around;
+			flex-flow: row wrap;
+			.curso {
+				//width: 48%;
+				width: 30%;
+				flex-grow: 0;
+				margin: 0 0 10px 0;
+				min-width: 280px;
+			}
+		}
+	}
+	@media screen and (min-width: $break__medium) {
 		.content-area {
 			width: 100%;
 			margin: 0;
 			left: 0;
 			display: flex;
 			justify-content: space-between;
-			.cursos-nav {
-				width: 30%;
+			.responsive-navigation {
+				width: 20%;
 			}
 			.site-main {
-				width: 65%;
+				width: 75%;
 				margin-left: 0;
 			}
 		}
 	}
-	@media screen and (min-width: $break__small) {
-		.cursos-container {
-			display: flex;
-			justify-content: space-around;
-			flex-direction: row;
-			flex-wrap: wrap;
-			.curso {
-				//width: 48%;
-				width: auto;
-				flex-grow: 0;
-				margin: 10px auto;
-				max-width: 310px;
-				min-width: 300px;
-			}
-		}
-	}
+	
 }
-.cursos-container {
-	padding: 0 20px;
-}
-.curso {
-	margin: 0 0 20px;
-	width: 100%;
-	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-	background-color: white;
-	img {
-		width: 100%;
-		margin: 0;
-		outline: none;
+
+
+//sub menu responsive
+.responsive-navigation {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0!important;
+    
+    ul.nav-submenu,
+	div.nav-submenu > ul {
+	    display: none;
+	    width: 100%;
 	}
-	a {
-		border: none;
-		color: inherit;
-		text-decoration: none;
+	ul.nav-submenu.submenuToggled-on,
+	.submenu-toggle {
+	    display: inline-block;
+	    width: calc(100% - 40px);
+	    margin: 0 auto;
+	}
+	button.submenu-toggle {
+		background: #98B1D5;
+		letter-spacing: 1px;
 	}
 	
-	.inside-article {
-		padding: 20px;
-		margin: 0;
-		line-height: 1.25;
-		.entry-title {
-			font-family: $headings;
-			margin: 0;
-		}
-		.curso_codigo {
-			margin: 1em 0 0;
-			font-size: .7em;
-			color: #a4a4a4;
-		}
+	//estilos para desktop
+	@media screen and (min-width: $break__medium) {
+		ul.nav-submenu,
+	    div.nav-submenu > ul {
+	        display: inline-block!important;
+	        text-align: left;
+	        //width: 100%;
+	    }
+	    
+	    .submenu-toggle {
+	        display: none;
+	    }
 	}
 }
 
+
+
+//iconos de recursos sin imagen destacada
 .recursos-container {
-	padding: 40px 0 0;
-	
 	.recurso {
-		display: flex;
-		margin-bottom: 20px;
-		position: relative;
-		box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-		
-		&:after { //icono de flecha
-			content: "";
-			width: 12px;
-			height: 20px;
-			background: url(img/arrow-right.png) no-repeat;
-			position: absolute;
-			right: 14px;
-			top: calc(50% - 10px);
-		}
-		a {
-			border: none;
-		}
 		
 		.thumb-recurso {
-			width: 150px;
-			height: 150px;
-			flex-shrink: 0;
-			border: none;
-			background-color: $color__grisillo;
-			z-index: 10;
-			.recurso-icon {
-				width: 100%;
-				height: 100%;
-			}
+			background-repeat: no-repeat;
+			background-position: center center;
+			@include vector-bg-with-fallback(recurso);
 		}
 		
-		.inside-article {
-			height: 130px; //150px menus 20px del padding
-			padding: 10px 40px 10px 20px;
-			flex-grow: 1;
-			overflow: hidden;
-			position: relative;
-			
-			.entry-title {
-				font-family: $headings;
-				font-size: 1.2em;
-				margin: 0 0 .5em;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
+		&.recurso_category-interactivo {
+			.thumb-recurso {
+				@include vector-bg-with-fallback(interactivo);
 			}
-		
-			.entry-content {
-				margin: 0;
-				width: 100%;
-				height: auto;
-				font-size: .85em;
-				font-weight: 200;
-				line-height: 1.3;
+		}
+		&.recurso_category-video-educativo {
+			.thumb-recurso {
+				@include vector-bg-with-fallback(video);
 			}
-			
 		}
-		.recurso-category {
-			position: absolute;
-			left: -6px;
-			bottom: 0;
-			z-index: 20;
+		&.recurso_category-modelo-3d {
+			.thumb-recurso {
+				@include vector-bg-with-fallback(3d);
+			}
 		}
-	}
-	
-	@media screen and (min-width: $break__medium) {
-		display: flex;
-		flex-flow: row wrap;
-		padding: 40px 0 0;
-		.recurso {
-			flex: auto;
-			height: auto;
-			max-width: 48%;
-			margin: 0 1% 20px; /* Some gutter */
+		&.recurso_category-manual {
+			.thumb-recurso {
+				@include vector-bg-with-fallback(manual);
+			}
 		}
-
 	}
 }
+
+
+
 
 //menu de recursos
 .recursos-nav {
@@ -698,13 +871,9 @@ header.site-header {
 		list-style: none;
 		background: #98B1D5;
 		margin: 0;
-		display: flex;
-		align-items: baseline;
-		justify-content: flex-end;
-		flex-wrap: wrap;
-		height: auto;
+		
 		a {
-			padding: 1em;
+			padding: .5em 1em;
 			display: block;
 			border: none;
 			color: white;
@@ -716,48 +885,178 @@ header.site-header {
 			}
 		}
 		.current-menu-item a {
-			background: #51F0FA;
+			background: $color__amarillo;
 			color: #5D769B;
 			position: relative;
-			&:after {
-				content: "";
-				width: 2em;
-				height: 8px;
-				background: #51F0FA;
-				position: absolute;
-				bottom: -8px;
-				left: calc(50% - 1em);
-				-webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
-				clip-path: polygon(50% 100%, 0 0, 100% 0);
-			}
+			
 		}
+	}
+	
+	@media screen and (min-width: $break__medium) {
+		>ul {
+			text-align: inherit!important;
+			display: flex;
+			align-items: baseline;
+			//justify-content: flex-end;
+			flex-wrap: wrap;
+			height: auto;
+			li {
+				display: inline-block;
+				a {
+					padding: 1em;
+				}
+			}
+			.current-menu-item a {
+				&:after {
+					content: "";
+					width: 2em;
+					height: 8px;
+					background: $color__amarillo;
+					position: absolute;
+					bottom: -8px;
+					left: calc(50% - 1em);
+					-webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+					clip-path: polygon(50% 100%, 0 0, 100% 0);
+				}
+			}
+		}	
 	}
 }
 /************************************************************************/
-// Front page especiales
+// Front page especifico
 /************************************************************************/
 .ocw-front {
+	
+	.fs-title {
+		display: block;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 1em;
+		letter-spacing: 6px;
+		width: auto;
+		margin: 40px 0 20px;
+		padding: 0 20px;
+		color: #a4a4a4;
+		text-shadow: 2px 2px 1px white;
+		
+		@media screen and (min-width: $break__small) {
+			font-size: 1.5em;
+		}
+	}
+	.site-main { //banner de arriba
+		margin: 0 0 20px!important;
+		background: white;
+		
+		.texto {
+			max-width: 100%;
+			background: $color__primario;
+			background-image: linear-gradient(45deg, #89FDC8 0%, #51F0FA 100%);
+			color: #3F7EC5;
+			padding: 40px 20px;
+			margin-bottom: 0;
+			line-height: 1.45;
+			
+			.entry-title {
+				margin-top: 0;
+				margin-bottom: .5em;
+			}
+			
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+		.dibujo {
+			width: 100%;
+			height: 320px;
+			margin-bottom: 0;
+			background-image:  url(img/dibujo-sm.png);
+			background-size: cover;
+			background-position: center center;
+			
+			@media screen and (min-width: $break__small) {
+				background-image:  url(img/dibujo.png);
+			}
+		}
+		.btn1 {
+			top: 0;
+		}
+		
+		@media screen and (min-width: $break__medium) {
+			display: flex;
+			align-content: stretch;
+			margin-top: 20px!important;
+			.texto {
+				width: 50%;
+				order: 1;
+				//padding: 40px;
+			}
+			.dibujo {
+				width: 50%;
+				height: auto;
+				overflow: hidden;
+				order: 2;
+				margin: 0;
+				img {
+					
+				}
+				
+			}
+		}
+		
+		@media screen and (min-width: $break__large) {
+			flex-wrap: wrap;
+			margin-bottom: 20px;
+			.texto {
+				order: 2;
+				width: 100%;
+				padding: 40px 25%;
+				-webkit-clip-path: polygon(95% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
+				clip-path: polygon(95% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
+			}
+			.dibujo {
+				order: 1;
+				width: 100%;
+				height: 65vh;
+			}
+		}
+	}
 	.cursos-container {
 		background: $color__verdeazul;
-		padding: 40px 20px 60px;
+		background-image: linear-gradient(-140deg, #FD8F7C 0%, #FA9046 93%);
+		padding: 40px 10px 60px;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 95%);
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 95%);
+		overflow: visible;
+		position: relative;		
 		@media screen and (min-width: $break__small) {
 			display: flex;
 			justify-content: space-around;
 			flex-direction: row;
 			flex-wrap: wrap;
+			padding: 40px 40px 60px;
 			.curso {
-				//width: 48%;
-				width: auto;
-				flex-grow: 0;
-				margin: 10px auto;
-				max-width: 310px;
-				min-width: 300px;
+				width: 30%;
+				flex-shrink: 0;
+				margin: 10px 0;
+				min-width: 240px;
+				max-width: 300px;
+				background: white;
 			}
 		}
 	}
 	.recursos-container {
 		background: $color__amarillo;
-		padding: 40px 20px 60px;
+		background-image: linear-gradient(-222deg, #ECCB6A 0%, #F6E871 95%);
+		padding: 40px 10px 60px;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 93% 100%, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 94%, 93% 100%, 0 100%);
+		@media screen and (min-width: $break__small) {
+			padding: 40px 40px 60px;
+		}
+		
+		.recurso {
+			background: white;
+		}
 	}
 	
 	
@@ -789,7 +1088,7 @@ a.btn1:visited {
 	.widget {
 		padding: 2em;
 		font-size: .9em;
-		background: $color__amarillo;
+		background: #fff;
 	}
 	h2 {
 		margin: 0 0 1em;
@@ -837,7 +1136,7 @@ a.btn1:visited {
 			margin: 0 5px;
 			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.19);
 			&.current {
-				background: $color__secundario;
+				background: $color__grisillo;
 			}
 		}
 	}

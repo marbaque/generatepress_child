@@ -15,10 +15,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$image = get_field('portada_del_curso');
 	$size = 'portada-curso';
 	$thumb = $image['sizes'][ $size ];
+	$placeholder = get_stylesheet_directory_uri() . '/img/placeholder.png';
 
 	
-	if( !empty($image) ): ?>
-		<img src="<?php echo $thumb; ?>">
+	if( $image ): ?>
+		<a href="<?php the_permalink(); ?>" rel="bookmark"><img src="<?php echo $thumb; ?>"></a>
+	<?php else: ?>
+		<a href="<?php the_permalink(); ?>" rel="bookmark"><img src="<?php echo $placeholder; ?>"></a>
 	<?php endif; ?>
 
 	

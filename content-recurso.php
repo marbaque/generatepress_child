@@ -16,20 +16,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php
 		$term = get_field('tipo_recurso');
 		
-		if( $term->slug == 'modelo-3d' || $term->slug == 'manual' || $term->slug == 'interactivo' ): ?>
-		
+		if( $term ):
+			if( $term->slug == 'modelo-3d' || $term->slug == 'manual' || $term->slug == 'interactivo' ): ?>
 			
-			<?php 
-			if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-				?>
-				<figure class="portada">
-					<?php the_post_thumbnail('portada-recurso'); ?>
-						<figcaption>
-						<?php echo get_post(get_post_thumbnail_id())->post_content; ?>
-						</figcaption>
-				</figure>
-			<?php } ?>
+				
+				<?php 
+				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+					?>
+					<figure class="portada">
+						<?php the_post_thumbnail('portada-recurso'); ?>
+							<figcaption>
+							<?php echo get_post(get_post_thumbnail_id())->post_content; ?>
+							</figcaption>
+					</figure>
+				<?php } ?>
+			<?php endif; ?>
 		<?php endif; ?>
+		
 		<?php if ($term){ ?>
 			<span class="recurso-category"><?php echo $term->name; ?></span>
 		<?php } ?>
@@ -90,19 +93,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			) );
 			
 			the_tags('<div class="tags"><span class="screen-reader-text">Contenido etiquetado como: </span>', ' ', '</div>'); 
+			?>
 			
-			$licencia = get_field('seleccionar_licencia');
-			$icono = get_field('icono_licencia', $licencia);
-					
-			if( $licencia ): ?>
-				<footer class="licencia">
-					<?php if ($icono): ?>
-					<img class="aligh-left" src="<?php echo $icono; ?>">
-					<?php endif; ?>
-					<p><strong><?php echo $licencia->name; ?></strong>
-					<span><?php echo $licencia->description; ?></span></p>
-				</footer>
-			<?php endif; ?>
+			<?php include('inc/licencia.php'); ?>
+			
 			
 		</div><!-- .entry-content -->
 

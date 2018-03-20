@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header(); ?>
-
+<?php setPostViews(get_the_ID()); ?>
 	<header class="entry-header grid-container grid-parent">
 		<?php
 		/**
@@ -21,7 +21,7 @@ get_header(); ?>
 		do_action( 'generate_before_entry_title' );
 
 		if ( generate_show_title() ) {
-			the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' );
+			the_title( '<h1 class="entry-title" itemprop="headline"><span>Curso </span>', '</h1>' );
 		}
 
 		/**
@@ -60,10 +60,11 @@ get_header(); ?>
 			?>
 			<aside class="curso_sidebar">
 				
-					
+				<nav id="responsive-navigation" class="responsive-navigation" role="navigation">
+					<button class="submenu-toggle">Contenidos</button>
 					<?php 
 					global $post;
-
+					
 					$args = array(
 					    'post_parent' => $post->ID, //id de del curso
 					    'posts_per_page' => -1, //todos
@@ -72,12 +73,14 @@ get_header(); ?>
 					    );
 					
 					$the_query = new WP_Query( $args );
+					
 					// The Loop
 					if ( $the_query->have_posts() ) :
-						echo '<div class="submenu">';
+						
+						echo '<div class="submenu nav-submenu">';
 						echo '<h4>Contenidos</h4>';
 						echo '<ul>';
-						echo '<li><a href="' . $permalink . '" title="Inicio del curso">Inicio</a></li>';
+						echo '<li class="current-item"><a href="' . get_permalink() . '" title="Inicio del curso">Inicio</a></li>';
 						while ( $the_query->have_posts() ) : $the_query->the_post();
 							// Do Stuff
 							echo '<li><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';
@@ -89,7 +92,9 @@ get_header(); ?>
 					wp_reset_postdata();
 					?>
 					
-				
+					<p class="escondido"><?php echo getPostViews(get_the_ID()); ?></p>
+				</nav>
+			
 			</aside><!-- aside .curso_sidebar -->
 
 			<?php
@@ -126,6 +131,6 @@ get_header(); ?>
 	 */
 	 do_action( 'generate_after_primary_content_area' );
 
-	 generate_construct_sidebars();
+	 //generate_construct_sidebars();
 
 get_footer();

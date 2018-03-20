@@ -14,19 +14,23 @@ get_header(); ?>
 	<?php 
 		
 	do_action( 'generate_archive_title' );
-	//the_archive_title('<div class="page-header"><h1 class="page-title">', '</div></h1>');
 	?>
 	
 	
 	
 	
 	<section id="primary" <?php generate_content_class(); ?>>
-		<?php 
-		wp_nav_menu( array( 
-			'theme_location' => 'cursos-areas', 
-			'container_class' => 'cursos-nav', 
-		) );	
-		?>
+		
+		<nav id="responsive-navigation" class="responsive-navigation" role="navigation">
+			<button class="submenu-toggle">Áreas</button>
+			<?php 
+			wp_nav_menu( array( 
+				'theme_location' => 'cursos-areas', 
+				'container_class' => 'cursos-nav nav-submenu',
+			) );	
+			?>
+		</nav>
+		
 		<main id="main" <?php generate_main_class(); ?>>
 			<?php
 			/**

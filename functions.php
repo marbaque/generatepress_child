@@ -6,16 +6,7 @@
  * Only edit this file if you have direct access to it on your server (to fix errors if they happen).
  */
 
- // Permite subida de archivos stl (modelos 3D)
- function custom_upload_mimes($mimes = array()) {
 
-	// Add a key and value for the stl file type
-	$mimes['stl'] = "object/stl";
-
-	return $mimes;
-}
-
-add_action('upload_mimes', 'custom_upload_mimes');
  
  
 function generatepress_child_enqueue_scripts() {
@@ -38,6 +29,17 @@ add_action( 'admin_menu' , 'remove_tags_fields' );
 //esta función se carga despues del functions.php del parent theme
 function generate_press_child_setup() {
 	
+
+	function generate_custom_scripts() {
+		// OJO!!!!!! AQUI SE AGREGAN estilos y scripts nuevos que se quieran agregar al sitio*************************************************!!
+		//wp_dequeue_script( 'fontawesome' );
+		//wp_enqueue_script( 'fontawesome-generatepress-child', 'https://use.fontawesome.com/releases/v5.0.8/js/all.js', false, '5.0.8', 'all' );
+		
+		//importar js para navegación responsive
+		wp_enqueue_script( 'wpb_togglemenu', get_stylesheet_directory_uri() . '/js/responsive-nav.js', array('jquery'), '20180314', true );
+	}
+	add_action( 'wp_enqueue_scripts', 'generate_custom_scripts', 10 );
+	
 	//agregar tamaños de imagen
 	add_image_size('portada-curso', 350, 350, true);
 	add_image_size('portada-curso-thumbnail', 270, 270, true);
@@ -50,10 +52,18 @@ function generate_press_child_setup() {
 		'cursos-areas' => ( 'Menu de áreas para cursos' ),
 	) );
 	
-	//agregar iconos de fontawesome-com
-	wp_enqueue_script('generatepress-fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js' );
 	
 	
+	 // Permite subida de archivos stl (modelos 3D)
+	 function custom_upload_mimes($mimes = array()) {
+	
+		// Add a key and value for the stl file type
+		$mimes['stl'] = "object/stl";
+	
+		return $mimes;
+	}
+	
+	add_action('upload_mimes', 'custom_upload_mimes');
 	
 	//Las siguientes funciones son para agregar un metabox de parent-post
 	//o sea, para escoger el curso al que pertenecen las secciones
@@ -124,10 +134,44 @@ function generate_press_child_setup() {
 	
 	//cortar el estracto del post
 	function custom_excerpt_length( $length ) {
-		return 20;
+		return 10;
 	}
 	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 	
+	
+	//generar numero de visitas
+	function getPostViews($postID){
+	    $count_key = 'post_views_count';
+	    $count = get_post_meta($postID, $count_key, true);
+	    if($count==''){
+	        delete_post_meta($postID, $count_key);
+	        add_post_meta($postID, $count_key, '0');
+	        return "0 visitas";
+	    }
+	    return $count.' visitas';
+	}
+	function setPostViews($postID) {
+	    $count_key = 'post_views_count'; //este es el meta key usado en el query de cursos de la página principal
+	    $count = get_post_meta($postID, $count_key, true);
+	    if($count==''){
+	        $count = 0;
+	        delete_post_meta($postID, $count_key);
+	        add_post_meta($postID, $count_key, '0');
+	    }else{
+	        $count++;
+	        update_post_meta($postID, $count_key, $count);
+	    }
+	}
+	// Remove issues with prefetching adding extra views
+	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+	
+	//permitir que los cursom posts tengan archivos de categorias y etiquetas
+	function wpa_cpt_tags( $query ) {
+	    if ( $query->is_tag() && $query->is_main_query() ) {
+	        $query->set( 'post_type', array( 'post', 'object', 'recurso', 'curso' ) );
+	    } 
+	}
+	add_action( 'pre_get_posts', 'wpa_cpt_tags' );
 	
 		
 		

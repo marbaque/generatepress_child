@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="36px" viewBox="0 0 48 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>video</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,0 L48,0 L48,36 L0,36 L0,0 Z M28.8461402,13.0504559 L20,8 L20,18.1009119 L28.8461402,13.0504559 Z M7,25 L7,29 L42,29 L42,25 L7,25 Z" id="path-1"></path>
+    </defs>
+    <g id="Home-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="video">
+            <g id="Combined-Shape">
+                <use fill-opacity="0.300498188" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <path stroke="#7D95B8" stroke-width="2" d="M1,1 L1,35 L47,35 L47,1 L1,1 Z M19,6.27757816 L30.863053,13.0504559 L19,19.8233337 L19,6.27757816 Z M6,24 L43,24 L43,30 L6,30 L6,24 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg>

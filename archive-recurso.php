@@ -15,12 +15,17 @@ get_header(); ?>
 		
 	//do_action( 'generate_archive_title' );
 	the_archive_title('<div class="page-header"><h1 class="page-title">', '</div></h1>');
-	
-	wp_nav_menu( array( 
-		'theme_location' => 'recursos-nav', 
-		'container_class' => 'recursos-nav', 
-	) );
 	?>
+	
+	<nav id="responsive-navigation" class="responsive-navigation" role="navigation">
+		<button class="submenu-toggle">Tipo de recursos</button>
+		<?php 
+		wp_nav_menu( array( 
+			'theme_location' => 'recursos-nav', 
+			'container_class' => 'recursos-nav nav-submenu',
+		) );	
+		?>
+	</nav>
 	
 	<section id="primary" <?php generate_content_class(); ?>>
 		<main id="main" <?php generate_main_class(); ?>>
@@ -76,6 +81,6 @@ get_header(); ?>
 	 */
 	 do_action( 'generate_after_primary_content_area' );
 
-	 generate_construct_sidebars();
+	 //generate_construct_sidebars();
 
 get_footer();
