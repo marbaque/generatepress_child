@@ -17,7 +17,6 @@ get_header();
 		
 		if( $term && $term->slug == 'video-educativo' ): ?>
 		<div class="video-wrap">
-			<div class="video-dark-background" aria-hidden></div>
 			<div class="video-contenedor">
 				<?php 
 				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
@@ -25,6 +24,7 @@ get_header();
 				} 
 				?>
 			</div>
+			<div class="video-dark-background" aria-hidden></div>
 		</div>
 		<?php 
 		elseif( $term && $term->slug == 'modelo-3d' ): ?>
@@ -107,14 +107,16 @@ get_header();
 
 						mesh = new THREE.Mesh( 
 							geo,
-							// new THREE.MeshNormalMaterial({
-							//     overdraw:true
-							// }
+							new THREE.MeshNormalMaterial({
+							    overdraw:true
+							}
+/*
 							new THREE.MeshLambertMaterial({
 								overdraw:true,
-								color: 0xCDD8E8,
-								shading: THREE.FlatShading
+								color: 0x51F0FA,
+								shading: THREE.FlatShading,
 							}
+*/
 														 ));
 						scene.add(mesh);
 
@@ -243,8 +245,8 @@ get_header();
 						scene = new THREE.Scene();
 
 						camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 1, 1000 );
-						camera.position.z = 130;
-						camera.position.y = 20;
+						camera.position.z = 160;
+						camera.position.y = 40;
 						scene.add( camera );
 
 						var directionalLight = new THREE.DirectionalLight( 0xffffff );
@@ -263,7 +265,8 @@ get_header();
 									parseStlBinary(rep);
 									//parseStl(xhr.responseText);
 									mesh.rotation.x = 5;
-									mesh.rotation.z = .25;
+									mesh.rotation.z = 0;
+									mesh.translate( 0, 0, 0 );
 									console.log('done parsing');
 								}
 							}
@@ -283,6 +286,7 @@ get_header();
 
 						renderer = new THREE.WebGLRenderer(); //new THREE.CanvasRenderer();
 						renderer.setSize( window.innerWidth / 2 , window.innerHeight / 2 );
+						
 
 						container.appendChild( renderer.domElement );
 
@@ -297,13 +301,12 @@ get_header();
 					}
 
 					function render() {
-
 						//mesh.rotation.x += 0.01;
 						if (mesh) {
 							mesh.rotation.z += 0.01;
+							
 						}
 						//light1.position.z -= 1;
-
 						renderer.render( scene, camera );
 
 					}

@@ -499,6 +499,10 @@ header.site-header {
 			width: 100%;
 			margin: 0 auto;
 			display: block;
+			
+			@media screen and (min-width: $break__medium) {
+				width: 66%;
+			}
 		}
 	}
 	.meta-info {
