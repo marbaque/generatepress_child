@@ -49,7 +49,7 @@ header.site-header {
 	}
 	.navigation-search {
 		input[type="search"] {
-			background-color: $color__primario;
+			background-color: $color__dark;
 			color: white;
 			
 			&:focus {
@@ -240,7 +240,7 @@ header.site-header {
 				nav {
 					position: sticky;
 					position: -webkit-sticky;
-					top: 40px; /* required */
+					top: 20px; /* required */
 					overflow: visible;
 					
 				}
@@ -297,8 +297,8 @@ header.site-header {
 		.entry-title {
 			font-size: 1.1em;
 			padding: .5em 1em .5em;
-			background: $color__primario;
-			color: white;
+			background: $color__azul;
+			color: $color__text-overdark;
 			margin-top: 0;
 			span {
 				display: block;
@@ -330,23 +330,30 @@ header.site-header {
 			.portada__wrap {
 				display: block;
 				margin: 0 -20px 2em;
-				background: $color__text-overdark;
+				//border: 1px solid $color__grisillo;
+				//background: $color__text-overdark;
 				
 				.portada-curso {
-					width: 100%;
-					min-height: 320px;
-					overflow: hidden;
-					position: relative;
+					width: 320px;
+					max-width: 100%;
+					height: 320px;
+					margin: 0 auto;
+					//position: relative;
 					background-size: cover;
 					background-position: center center;
+
 					
 				}
 				.curso__info {
 					width: auto; 
-					padding: 1em;
 					line-height: 1.4;
 					font-size: .9em;
 					overflow: hidden;
+					.curso__info-inside {
+						padding: 1em;
+						width: 100%;
+					}
+					
 					ul {
 						list-style: none;
 						margin: 0;
@@ -377,24 +384,19 @@ header.site-header {
 					display: flex;
 					flex-wrap: wrap;
 					margin: 0 0 2em;
-					
-					.portada-curso {
-						width: 100%;
-					}
-					.curso__info {
-						width:100%;
-						padding: 1em 4% 1.5em;
-						
-					}
-				}
-				@media screen and (min-width: $break__medium) {
-					
 					.portada-curso {
 						width: 50%;
+						max-width: 320px;
+						margin: 0;
+						flex-shrink: 0;
+						-webkit-flex-shrink: 0;
 					}
 					.curso__info {
-						width:42%;
-						padding: 1em 4% 1.5em;
+						width:50%;
+						flex-shrink: 2;
+						-webkit-flex-shrink: 2; 
+						flex-grow: 2;
+						-webkit-flex-grow: 2; 
 					}
 				}
 			}
@@ -1176,6 +1178,16 @@ a.btn1:visited {
 	
 }
 
+/************************************************************************/
+// Search results
+/************************************************************************/
+.search-results .results {
+	background: white;
+	padding: 20px;
+	@media screen and (min-width: $break__small) {
+		padding: 20px 40px;
+	}
+}
 
 /************************************************************************/
 // footer

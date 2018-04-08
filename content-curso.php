@@ -46,36 +46,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php endif; ?>
 				
 				<div class="curso__info">
-					<ul>
-						<?php the_title( '<li class="seccion-title" itemprop="headline">', '</li>' ); ?>
+					<div class="curso__info-inside">
+						<ul>
+							<?php the_title( '<li class="seccion-title" itemprop="headline">', '</li>' ); ?>
+							
+							<?php 
+							$codigo = get_field('codigo_del_curso');
+							if( $codigo ): ?>
+								<li class="curso_codigo">Código del curso: <?php echo $codigo; ?></li>
+							<?php endif; ?>
+							
+							<?php 
+							$term = get_field('area_curso');
+							if( $term ): ?>
+							
+								<li class="curso_area"><?php echo $term->name; ?></li>
+							<?php endif; ?>
+							
+							<?php 
+							$profe = get_field('profe');
+							if( $profe ): ?>
+								<li class="curso_profe"><?php echo $profe; ?></li>
+							<?php endif; ?>
+						</ul>
 						
 						<?php 
-						$codigo = get_field('codigo_del_curso');
-						if( $codigo ): ?>
-							<li class="curso_codigo">Código del curso: <?php echo $codigo; ?></li>
+				
+						$info = get_field('informacion_adicional');
+						if( $info ): ?>
+							<div class="curso_info"><?php echo $info; ?></div>
 						<?php endif; ?>
-						
-						<?php 
-						$term = get_field('area_curso');
-						if( $term ): ?>
-						
-							<li class="curso_area"><?php echo $term->name; ?></li>
-						<?php endif; ?>
-						
-						<?php 
-						$profe = get_field('profe');
-						if( $profe ): ?>
-							<li class="curso_profe"><?php echo $profe; ?></li>
-						<?php endif; ?>
-					</ul>
-					
-					<?php 
-			
-					$info = get_field('informacion_adicional');
-					if( $info ): ?>
-						<div class="curso_info"><?php echo $info; ?></div>
-					<?php endif; ?>
-					
+					</div>
 				</div><!-- curso__info -->
 			</div><!-- portada__wrap -->
 			

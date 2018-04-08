@@ -86,7 +86,7 @@ header.site-header {
   .main-navigation .fa-search:before {
     color: #4A4A4A; }
   .main-navigation .navigation-search input[type="search"] {
-    background-color: #FA9046;
+    background-color: #2B2E35;
     color: white; }
   .main-navigation .main-nav ul li a {
     color: #4A4A4A; }
@@ -216,7 +216,7 @@ header.site-header {
         .single-seccion .site-main .curso_sidebar nav {
           position: sticky;
           position: -webkit-sticky;
-          top: 40px;
+          top: 20px;
           /* required */
           overflow: visible; }
         .single-curso .site-main .curso_sidebar .submenu,
@@ -270,8 +270,8 @@ header.site-header {
   .single-seccion .entry-header .entry-title {
     font-size: 1.1em;
     padding: .5em 1em .5em;
-    background: #FA9046;
-    color: white;
+    background: #176AC7;
+    color: #CDD8E8;
     margin-top: 0; }
     .single-curso .entry-header .entry-title span,
     .single-seccion .entry-header .entry-title span {
@@ -296,23 +296,25 @@ header.site-header {
     .single-curso .content-area .site-main .portada__wrap,
     .single-seccion .content-area .site-main .portada__wrap {
       display: block;
-      margin: 0 -20px 2em;
-      background: #CDD8E8; }
+      margin: 0 -20px 2em; }
       .single-curso .content-area .site-main .portada__wrap .portada-curso,
       .single-seccion .content-area .site-main .portada__wrap .portada-curso {
-        width: 100%;
-        min-height: 320px;
-        overflow: hidden;
-        position: relative;
+        width: 320px;
+        max-width: 100%;
+        height: 320px;
+        margin: 0 auto;
         background-size: cover;
         background-position: center center; }
       .single-curso .content-area .site-main .portada__wrap .curso__info,
       .single-seccion .content-area .site-main .portada__wrap .curso__info {
         width: auto;
-        padding: 1em;
         line-height: 1.4;
         font-size: .9em;
         overflow: hidden; }
+        .single-curso .content-area .site-main .portada__wrap .curso__info .curso__info-inside,
+        .single-seccion .content-area .site-main .portada__wrap .curso__info .curso__info-inside {
+          padding: 1em;
+          width: 100%; }
         .single-curso .content-area .site-main .portada__wrap .curso__info ul,
         .single-seccion .content-area .site-main .portada__wrap .curso__info ul {
           list-style: none;
@@ -344,19 +346,18 @@ header.site-header {
           margin: 0 0 2em; }
           .single-curso .content-area .site-main .portada__wrap .portada-curso,
           .single-seccion .content-area .site-main .portada__wrap .portada-curso {
-            width: 100%; }
+            width: 50%;
+            max-width: 320px;
+            margin: 0;
+            flex-shrink: 0;
+            -webkit-flex-shrink: 0; }
           .single-curso .content-area .site-main .portada__wrap .curso__info,
           .single-seccion .content-area .site-main .portada__wrap .curso__info {
-            width: 100%;
-            padding: 1em 4% 1.5em; } }
-      @media screen and (min-width: 768px) {
-        .single-curso .content-area .site-main .portada__wrap .portada-curso,
-        .single-seccion .content-area .site-main .portada__wrap .portada-curso {
-          width: 50%; }
-        .single-curso .content-area .site-main .portada__wrap .curso__info,
-        .single-seccion .content-area .site-main .portada__wrap .curso__info {
-          width: 42%;
-          padding: 1em 4% 1.5em; } }
+            width: 50%;
+            flex-shrink: 2;
+            -webkit-flex-shrink: 2;
+            flex-grow: 2;
+            -webkit-flex-grow: 2; } }
 
 .migajas {
   font-size: .77em;
@@ -960,6 +961,15 @@ a.btn1:visited {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.19); }
   .archive-view .nav-links a.current, .archive-view .nav-links span.current {
     background: #98B1D5; }
+
+/************************************************************************/
+/************************************************************************/
+.search-results .results {
+  background: white;
+  padding: 20px; }
+  @media screen and (min-width: 500px) {
+    .search-results .results {
+      padding: 20px 40px; } }
 
 /************************************************************************/
 /************************************************************************/
