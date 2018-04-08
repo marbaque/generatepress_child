@@ -497,8 +497,32 @@ header.site-header {
 .ocw-front.tax-area .page-header,
 .ocw-front.tax-recurso_category .page-header {
   margin: 20px 0 0;
-  padding: 20px;
-  background: none; }
+  padding: 0;
+  background: none;
+  display: block; }
+  .archive-view.archivo-recursos .page-header .page-title, .archive-view.archivo-cursos .page-header .page-title, .archive-view.tax-recurso_category .page-header .page-title, .archive-view.tax-area .page-header .page-title, .archive-view.tax-recurso_category .page-header .page-title,
+  .ocw-front.archivo-recursos .page-header .page-title,
+  .ocw-front.archivo-cursos .page-header .page-title,
+  .ocw-front.tax-recurso_category .page-header .page-title,
+  .ocw-front.tax-area .page-header .page-title,
+  .ocw-front.tax-recurso_category .page-header .page-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 6px;
+    width: auto;
+    margin: 40px 0 20px;
+    padding: 0 20px;
+    color: #a4a4a4;
+    text-shadow: 2px 2px 1px white; }
+    @media screen and (min-width: 500px) {
+      .archive-view.archivo-recursos .page-header .page-title, .archive-view.archivo-cursos .page-header .page-title, .archive-view.tax-recurso_category .page-header .page-title, .archive-view.tax-area .page-header .page-title, .archive-view.tax-recurso_category .page-header .page-title,
+      .ocw-front.archivo-recursos .page-header .page-title,
+      .ocw-front.archivo-cursos .page-header .page-title,
+      .ocw-front.tax-recurso_category .page-header .page-title,
+      .ocw-front.tax-area .page-header .page-title,
+      .ocw-front.tax-recurso_category .page-header .page-title {
+        font-size: 1.5em; } }
 .archive-view.archivo-recursos .content-area, .archive-view.tax-recurso_category .content-area,
 .ocw-front.archivo-recursos .content-area,
 .ocw-front.tax-recurso_category .content-area {
