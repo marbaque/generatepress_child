@@ -68,6 +68,7 @@ get_header(); ?>
 					$args = array(
 					    'post_parent' => $post->ID, //id de del curso
 					    'posts_per_page' => -1, //todos
+					    'orderby' => 'menu_order',
 					    'order' => 'ASC', //en orden numerico ascendente, en atributos de página se puede cambiar
 					    'post_type' => 'seccion', //you can use also 'any'
 					    );
