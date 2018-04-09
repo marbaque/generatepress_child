@@ -3,7 +3,7 @@
 $licencia = get_field('seleccionar_licencia');
 $icono = get_field('icono_licencia', $licencia);
 		
-if( $licencia ): ?>
+if( $licencia && $licencia->slug != 'sin-licencia' ): ?>
 	<footer class="licencia-block">
 		<h4>Licencia</h4>
 		<?php if ($icono): ?>

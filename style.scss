@@ -265,10 +265,13 @@ header.site-header {
 		.seccion {
 			width: 100%;
 			margin-bottom: 20px;
+			.seccion-header {
+				border-bottom: 2px solid $color__primario;
+				padding-bottom: 10px;
+				margin-bottom: 10px;
+			}
 			.entry-title {
 				margin: 0;
-				padding-bottom: 20px;
-
 			}
 
 		}
@@ -405,11 +408,12 @@ header.site-header {
 	}
 }
 .migajas {
-	font-size: .77em;
+	font-size: .7em;
 	font-weight: 200;
-	margin-top: -10px;
+	//margin-top: -10px;
 	margin-bottom: 20px;
 	color: #aaa;
+	letter-spacing: 1px;
 	a {
 		color: #bbb;
 		border: none;

@@ -1,0 +1,8 @@
+@import url('../style.css');
+
+
+body {
+	font-family: helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 1.55;
+}

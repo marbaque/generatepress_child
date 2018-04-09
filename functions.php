@@ -187,12 +187,11 @@ function generate_press_child_setup() {
 	    } elseif ( is_tax() ) {
 	        $title = single_term_title( '', false );
 	    }
-	  
 	    return $title;
-	}
-	 
+	}	 
 	add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
 	
+	add_editor_style( 'inc/editor-style.css' );
 		
 		
 }

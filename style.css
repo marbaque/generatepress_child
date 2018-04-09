@@ -41,7 +41,8 @@ h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;
   font-family: "Varela Round", Helvetica, serif;
   font-weight: inherit;
-  line-height: 1.2; }
+  line-height: 1.2;
+  letter-spacing: 0.5px; }
 
 h1 {
   margin-top: 0;
@@ -239,12 +240,18 @@ header.site-header {
   .single-seccion .site-main .seccion {
     width: 100%;
     margin-bottom: 20px; }
+    .single-curso .site-main .curso .seccion-header,
+    .single-curso .site-main .seccion .seccion-header,
+    .single-seccion .site-main .curso .seccion-header,
+    .single-seccion .site-main .seccion .seccion-header {
+      border-bottom: 2px solid #FA9046;
+      padding-bottom: 10px;
+      margin-bottom: 10px; }
     .single-curso .site-main .curso .entry-title,
     .single-curso .site-main .seccion .entry-title,
     .single-seccion .site-main .curso .entry-title,
     .single-seccion .site-main .seccion .entry-title {
-      margin: 0;
-      padding-bottom: 20px; }
+      margin: 0; }
   @media screen and (min-width: 768px) {
     .single-curso .site-main,
     .single-seccion .site-main {
@@ -360,11 +367,11 @@ header.site-header {
             -webkit-flex-grow: 2; } }
 
 .migajas {
-  font-size: .77em;
+  font-size: .7em;
   font-weight: 200;
-  margin-top: -10px;
   margin-bottom: 20px;
-  color: #aaa; }
+  color: #aaa;
+  letter-spacing: 1px; }
   .migajas a {
     color: #bbb;
     border: none; }
