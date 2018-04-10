@@ -102,6 +102,41 @@ function generate_press_child_setup() {
 	}
 	add_filter('post_type_link', 'my_permalinks', 10, 3);
 	
+	
+	//*************Agregar opción para filtrar secciones por curso (parent id)*************
+	function fws_admin_posts_filter( $query ) {
+	    global $pagenow;
+	    if ( is_admin() && $pagenow == 'edit.php' && !empty($_GET['my_parent_pages'])) {
+	        $query->query_vars['post_parent'] = $_GET['my_parent_pages'];
+	    }
+	}
+	add_filter( 'parse_query', 'fws_admin_posts_filter' );
+	 
+	function admin_page_filter_parentpages() {
+	    global $wpdb;
+	    if (isset($_GET['post_type']) && $_GET['post_type'] == 'seccion') {
+			$sql = "SELECT ID, post_title FROM ".$wpdb->posts." WHERE post_type = 'curso' AND post_parent = 0 AND post_status = 'publish' ORDER BY post_title";
+			$parent_pages = $wpdb->get_results($sql, OBJECT_K);
+			$select = '<select name="my_parent_pages">
+				<option value="">Parent Pages</option>';
+			
+			$current = isset($_GET['my_parent_pages']) ? $_GET['my_parent_pages'] : '';
+			
+			foreach ($parent_pages as $page) {
+				$select .= sprintf('<option value="%s"%s>%s</option>', $page->ID, $page->ID == $current ? ' selected="selected"' : '', $page->post_title);
+			}
+			
+			$select .= '</select>';
+			echo $select;
+		} else {
+			return;
+		}
+	}
+	add_action( 'restrict_manage_posts', 'admin_page_filter_parentpages' );
+	//**************************************************************************************
+	
+	
+	
 	//Agregar clases a las paginas
 	function generatepress_body_classes( $classes ) {
 		
@@ -176,23 +211,30 @@ function generate_press_child_setup() {
 	
 	// quitar palabra "archivo" del titulo
 	function my_theme_archive_title( $title ) {
-	    if ( is_category() ) {
-	        $title = single_cat_title( '', false );
+		if ( is_category() ) {
+			$title = single_cat_title( '', false );
 	    } elseif ( is_tag() ) {
-	        $title = single_tag_title( '', false );
+		    $title = single_tag_title( '', false );
 	    } elseif ( is_author() ) {
-	        $title = '<span class="vcard">' . get_the_author() . '</span>';
-	    } elseif ( is_post_type_archive() ) {
-	        $title = post_type_archive_title( '', false );
-	    } elseif ( is_tax() ) {
-	        $title = single_term_title( '', false );
+		    $title = '<span class="vcard">' . get_the_author() . '</span>';
+		} elseif ( is_post_type_archive() ) {
+			$title = post_type_archive_title( '', false );
+		} elseif ( is_tax() ) {
+			$title = single_term_title( '', false );
 	    }
 	    return $title;
-	}	 
+    }	 
 	add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
 	
-	add_editor_style( 'inc/editor-style.css' );
+	//agregar los estilos personalizados del tema al editor
+	add_editor_style( 'inc/editor-style.css' );		
 		
 		
+	
+	
+	
 }
 add_action('after_setup_theme', 'generate_press_child_setup');
+
+
+
