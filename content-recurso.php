@@ -74,28 +74,40 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="entry-content" itemprop="text">
 			
+			<!-- aqui van el autor, el boton de descarga y la licencia -->
+			<div class="recurso-flexwrap">
+				<!-- autor -->
+				<?php echo get_the_term_list( $post->ID, 'autor_recurso', '<div class="recurso-flexitem"><p class="meta-info"><strong>Creado por:</strong><br>', ', ', '.</p></div>' ); ?>
+				<!-- boton de descargar -->
+				
+				<?php
+				$file = get_field('archivo_recurso');
+				if ($file) {
+				?>
+				<div class="recurso-flexitem"><a href="<?php echo $file; ?>" class="filelink"><i class="fa fa-download"></i>Descargar <strong><?php echo get_field('nombre_archivo'); ?></strong></a></div>
+				<?php
+				}
+				?>
+				
+				<!-- licencia -->
+				<?php include('inc/licencia.php'); ?>
+			</div>
+			
+			
+			<?php the_content(); ?>
+			
 			<?php
-			$file = get_field('archivo_recurso');
-			if ($file) {
-			?>
-			<a href="<?php echo $file; ?>" class="descargar btn"><i class="fa fa-download"></i> Descargar <strong><?php echo get_field('nombre_archivo'); ?></strong></a>
-			<?php
-			}
-			
-			echo get_the_term_list( $post->ID, 'autor_recurso', '<p class="meta-info">Hecho por ', ', ', '.</p>' );
-			
-			the_content();
-			
-
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'generatepress' ),
 				'after'  => '</div>',
 			) );
-			
-			the_tags('<div class="tags"><span class="screen-reader-text">Contenido etiquetado como: </span>', ' ', '</div>'); 
 			?>
 			
-			<?php include('inc/licencia.php'); ?>
+			<?php 
+			the_tags('<div class="tags"><h5>Palabras clave:</h5><span class="screen-reader-text">Contenido etiquetado como: </span>', ' ', '</div>'); 
+			?>
+			
+			
 			
 			
 		</div><!-- .entry-content -->

@@ -20,14 +20,10 @@ header.site-header {
 	border-bottom: 1px solid #eee;
 	background: #FFFFFF;
 	.inside-header {
-		padding: 20px;
+		padding: 10px;
 		
-		@media screen and (max-width: $break__medium) {
-			padding: 10px;
-			.site-logo {
-				width: 150px;
-				margin-bottom: 5px;
-			}
+		@media screen and (min-width: $break__medium) {
+			padding: 20px;
 		}
 		a {
 			border: none;
@@ -36,6 +32,11 @@ header.site-header {
 	
 }
 .main-navigation {
+	
+	&.toggled {
+		background: $color__secundario;
+	}
+	
 	background-color: transparent;
 	
 	@media screen and (min-width: $break__medium) {
@@ -107,7 +108,6 @@ header.site-header {
 			
 			ul {
 				background-color: $color__secundario;
-				
 				li {
 					a {
 						background-color: $color__secundario;
@@ -344,7 +344,18 @@ header.site-header {
 					//position: relative;
 					background-size: cover;
 					background-position: center center;
-
+					position: relative;
+					
+					span {
+						font-size: .6em;
+						font-weight: 600;
+						background: $color__dark;
+						color: $color__text-overdark;
+						padding: 2px 4px;
+						position: absolute;
+						bottom: 0; right: 0;
+						opacity: .8;
+					}
 					
 				}
 				.curso__info {
@@ -511,10 +522,42 @@ header.site-header {
 			}
 		}
 	}
-	.meta-info {
-		font-size: .77em;
-		color: #a4a4a4;
+	
+	.recurso-flexwrap {
 		margin-bottom: 2em;
+		.recurso-flexitem {
+			padding: 10px 2%;
+			background: #f1f1f1;
+			
+			&.licencia {
+				font-size: .8em;
+				h4,p {
+					margin-bottom: 5px;
+				}
+				.aligh-left {
+					float: left; margin: 10px 10px 20px 0;
+				}
+			}
+		}
+		@media screen and (min-width: $break__medium) {
+			
+			width: auto;
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			align-items: stretch;
+			align-content: flex-start;
+			
+			.recurso-flexitem {
+				flex-basis: 28%;
+				flex-grow: 2;
+				margin: 0 5px;
+				@include radio(10px);
+			}
+		}
+	}
+	.meta-info {
+		
 		span {
 			display: block;
 		}
@@ -779,7 +822,10 @@ header.site-header {
 				&:hover,
 				&:active {
 					background: #51F0FA;
-					padding-left: 1em;
+					color: #179ba4;
+					@media screen and (min-width: $break__medium) {
+						padding-left: 1em;
+					}
 				}
 			}
 			li.current-menu-item a {
@@ -844,6 +890,9 @@ header.site-header {
 	    display: inline-block;
 	    width: calc(100% - 40px);
 	    margin: 0 auto;
+	}
+	.submenu-toggle {
+		border-bottom: 1px solid $color__text-overdark;
 	}
 	button.submenu-toggle {
 		background: #98B1D5;
@@ -919,7 +968,7 @@ header.site-header {
 			&:hover,
 			&:active {
 				background: #51F0FA;
-				
+				color: #179ba4;
 			}
 		}
 		.current-menu-item a {
@@ -983,14 +1032,14 @@ header.site-header {
 	}
 	.site-main { //banner de arriba
 		margin: 0 0 20px!important;
-		background: white;
+		background: transparent;
 		
 		.texto {
 			max-width: 100%;
 			background: $color__primario;
 			background-image: linear-gradient(45deg, #89FDC8 0%, #51F0FA 100%);
 			color: #3F7EC5;
-			padding: 40px 20px;
+			padding: 40px;
 			margin-bottom: 0;
 			line-height: 1.45;
 			
@@ -1024,12 +1073,12 @@ header.site-header {
 			align-content: stretch;
 			margin-top: 20px!important;
 			.texto {
-				width: 50%;
+				width: 40%;
 				order: 1;
 				//padding: 40px;
 			}
 			.dibujo {
-				width: 50%;
+				width: 60%;
 				height: auto;
 				overflow: hidden;
 				order: 2;

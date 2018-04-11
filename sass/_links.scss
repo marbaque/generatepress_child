@@ -8,9 +8,21 @@ a {
 	}
 }
 
-.filelink {
+.filelink,
+.filelink:visited {
 	padding: 20px 15px;
 	border: 0;
-	background: $color__secundario;
+	background: $color__primario;
+	color: white;
+	font-weight: 600;
 	margin: 1em 0;
+	border-bottom: 2px solid $color__primario;
+	display: block;
+	text-align: center;
+	line-height: 1.3;
+	
+	&:hover {
+		background: $color__secundario;
+		color: $color__primario;
+	}
 }

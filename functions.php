@@ -217,7 +217,7 @@ function generate_press_child_setup() {
 		    $title = '<span class="vcard">' . get_the_author() . '</span>';
 		} elseif ( is_post_type_archive() ) {
 			$title = post_type_archive_title( '', false );
-		} elseif ( is_tax() ) {
+		} elseif ( is_tax() && !is_tax('autor_recurso') ) {
 			$title = single_term_title( '', false );
 	    }
 	    return $title;

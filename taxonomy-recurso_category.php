@@ -16,7 +16,7 @@ get_header(); ?>
 	do_action( 'generate_archive_title' );
 	?>
 	<nav id="responsive-navigation" class="responsive-navigation" role="navigation">
-		<button class="submenu-toggle">Tipo de recursos</button>
+		<button class="submenu-toggle">Tipo de recurso</button>
 		<?php 
 		wp_nav_menu( array( 
 			'theme_location' => 'recursos-nav', 
