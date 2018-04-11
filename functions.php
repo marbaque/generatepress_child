@@ -32,9 +32,7 @@ function generate_press_child_setup() {
 
 	function generate_custom_scripts() {
 		// OJO!!!!!! AQUI SE AGREGAN estilos y scripts nuevos que se quieran agregar al sitio*************************************************!!
-		//wp_dequeue_script( 'fontawesome' );
-		//wp_enqueue_script( 'fontawesome-generatepress-child', 'https://use.fontawesome.com/releases/v5.0.8/js/all.js', false, '5.0.8', 'all' );
-		
+				
 		//importar js para navegación responsive
 		wp_enqueue_script( 'wpb_togglemenu', get_stylesheet_directory_uri() . '/js/responsive-nav.js', array('jquery'), '20180314', true );
 	}
@@ -85,7 +83,7 @@ function generate_press_child_setup() {
 	//Setting the exactly URL structure
 	function my_add_rewrite_rules() {
 		add_rewrite_tag('%seccion%', '([^/]+)', 'seccion=');
-		add_permastruct('seccion', '/seccion/%curso%/%seccion%', false);
+		add_permastruct('seccion', '/seccion/%curso%/%seccion%/', false);
 		add_rewrite_rule('^seccion/([^/]+)/([^/]+)/?','index.php?seccion=$matches[2]','top');
 	}
 	add_action( 'init', 'my_add_rewrite_rules' );

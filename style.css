@@ -921,6 +921,15 @@ a.btn1:visited {
   position: relative;
   top: -2em;
   color: #98B1D5; }
+  a.btn1:after,
+  a.btn1:visited:after {
+    content: "\f054";
+    font-family: 'Fontawesome';
+    margin-left: .5em; }
+  a.btn1:hover,
+  a.btn1:visited:hover {
+    color: #176AC7;
+    transform: rotate(-5deg); }
 
 .ocw-front .btn1 {
   margin: 0 auto; }

@@ -1112,6 +1112,17 @@ a.btn1:visited {
 	position: relative;
 	top: -2em;
 	color: $color__grisillo;
+	&:after {
+		content: "\f054";
+		font-family: 'Fontawesome';
+		margin-left: .5em;
+	}
+	
+	&:hover {
+		color: $color__azul;
+		transform: rotate(-5deg);
+		
+	}
 }
 .ocw-front .btn1 {
 	margin: 0 auto;
