@@ -40,8 +40,9 @@ a {
   padding: 1em;
   border: none;
   background: white;
-  margin: 0 5px;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.19); }
+  margin: 5px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.19);
+  display: inline-block; }
   .page-links a.current, .page-links span.current,
   .nav-links a.current,
   .nav-links span.current {
