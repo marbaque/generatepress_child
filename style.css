@@ -28,7 +28,8 @@ a {
   border-bottom: 2px solid #FA9046;
   display: block;
   text-align: center;
-  line-height: 1.3; }
+  line-height: 1.3;
+  max-width: 320px; }
   .filelink:hover,
   .filelink:visited:hover {
     background: #F9E9C9;
@@ -475,11 +476,11 @@ header.site-header {
   .single-recurso .recurso-flexwrap .recurso-flexitem {
     padding: 10px 2%;
     background: #f1f1f1; }
-    .single-recurso .recurso-flexwrap .recurso-flexitem.licencia {
+    .single-recurso .recurso-flexwrap .recurso-flexitem.licencia, .single-recurso .recurso-flexwrap .recurso-flexitem.autores {
       font-size: .8em; }
-      .single-recurso .recurso-flexwrap .recurso-flexitem.licencia h4, .single-recurso .recurso-flexwrap .recurso-flexitem.licencia p {
+      .single-recurso .recurso-flexwrap .recurso-flexitem.licencia h4, .single-recurso .recurso-flexwrap .recurso-flexitem.licencia p, .single-recurso .recurso-flexwrap .recurso-flexitem.autores h4, .single-recurso .recurso-flexwrap .recurso-flexitem.autores p {
         margin-bottom: 5px; }
-      .single-recurso .recurso-flexwrap .recurso-flexitem.licencia .aligh-left {
+      .single-recurso .recurso-flexwrap .recurso-flexitem.licencia .aligh-left, .single-recurso .recurso-flexwrap .recurso-flexitem.autores .aligh-left {
         float: left;
         margin: 10px 10px 20px 0; }
   @media screen and (min-width: 768px) {

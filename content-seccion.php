@@ -72,11 +72,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 			the_content();
 			?>
 			
-			<?php 
-			$file = get_field('archivo_seccion');
 			
-			if( $file ): ?>
-				<a class="filelink" title="Enlace de descarga" href="<?php echo $file['url']; ?>"><i class="fas fa-cloud-download-alt"></i> Descargar archivo</a>
+			
+			<?php $file = get_field('archivo_seccion'); ?>
+			
+			
+			<?php if( $file ): ?>
+			
+				<?php 
+				
+				$mime = $file["mime_type"];
+				$url = $file["url"];
+				$id = $file["id"];
+				$filesize = filesize( get_attached_file( $id ) );
+				$filesize = size_format($filesize, 2);
+				$title = $file["title"];
+				//echo '<pre>';
+					//var_dump( $file );
+				//echo '</pre>';
+				?>
+				
+				<a class="filelink" title="Enlace de descarga" href="<?php echo $url; ?>">
+					<i class="fa fa-cloud-download-alt"></i> Descargar 
+					<?php echo "<i>" . $title. "</i> (" . $mime . ", " . $filesize . ")"; ?>
+				</a>
 			
 			<?php endif; ?>
 
