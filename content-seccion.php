@@ -90,7 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			) );
 			?>
 			
-			<footer class="licencia-block"><?php include('inc/licencia.php'); ?></footer>
+			<?php include('inc/licencia.php'); ?>
 
 		</div><!-- .entry-content -->
 
