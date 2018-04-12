@@ -156,7 +156,7 @@ header.site-header {
 }
 
 /************************************************************************/
-// pagina de single-curso
+// pagina de single-curso y single-seccion
 /************************************************************************/
 .single-curso,
 .single-seccion {
@@ -433,6 +433,14 @@ header.site-header {
 			border-bottom: 1px solid $color__primario;
 		}
 	}	
+}
+//paginacion de la seccion
+.page-links {
+	margin-top: 2.5em;
+	display: block;
+	height: auto;
+	clear: both;
+	
 }
 
 
@@ -1233,18 +1241,6 @@ a.btn1:visited {
 	.paging-navigation {
 		text-align: center;
 		background: none;
-	}
-	.nav-links {
-		a, span {
-			padding: 1em;
-			border: none;
-			background: white;
-			margin: 0 5px;
-			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.19);
-			&.current {
-				background: $color__grisillo;
-			}
-		}
 	}
 	
 	

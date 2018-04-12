@@ -26,3 +26,17 @@ a {
 		color: $color__primario;
 	}
 }
+
+.page-links,
+.nav-links {
+	a, span {
+		padding: 1em;
+		border: none;
+		background: white;
+		margin: 0 5px;
+		box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.19);
+		&.current {
+			background: $color__grisillo;
+		}
+	}
+}

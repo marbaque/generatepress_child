@@ -34,6 +34,19 @@ a {
     background: #F9E9C9;
     color: #FA9046; }
 
+.page-links a, .page-links span,
+.nav-links a,
+.nav-links span {
+  padding: 1em;
+  border: none;
+  background: white;
+  margin: 0 5px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.19); }
+  .page-links a.current, .page-links span.current,
+  .nav-links a.current,
+  .nav-links span.current {
+    background: #98B1D5; }
+
 /************************************************************************/
 /************************************************************************/
 h1, h2, h3 {
@@ -388,6 +401,12 @@ header.site-header {
     .migajas a:hover {
       color: #FA9046;
       border-bottom: 1px solid #FA9046; }
+
+.page-links {
+  margin-top: 2.5em;
+  display: block;
+  height: auto;
+  clear: both; }
 
 /************************************************************************/
 /************************************************************************/
@@ -1013,14 +1032,6 @@ a.btn1:visited {
 .archive-view .paging-navigation {
   text-align: center;
   background: none; }
-.archive-view .nav-links a, .archive-view .nav-links span {
-  padding: 1em;
-  border: none;
-  background: white;
-  margin: 0 5px;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.19); }
-  .archive-view .nav-links a.current, .archive-view .nav-links span.current {
-    background: #98B1D5; }
 
 /************************************************************************/
 /************************************************************************/

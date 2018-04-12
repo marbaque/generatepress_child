@@ -85,7 +85,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'generatepress' ),
+				'before' => '<div class="page-links"><strong>Continuar</strong>: ',
 				'after'  => '</div>',
 			) );
 			?>
