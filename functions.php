@@ -116,7 +116,7 @@ function generate_press_child_setup() {
 			$sql = "SELECT ID, post_title FROM ".$wpdb->posts." WHERE post_type = 'curso' AND post_parent = 0 AND post_status = 'publish' ORDER BY post_title";
 			$parent_pages = $wpdb->get_results($sql, OBJECT_K);
 			$select = '<select name="my_parent_pages">
-				<option value="">Parent Pages</option>';
+				<option value="">Cursos asignados</option>';
 			
 			$current = isset($_GET['my_parent_pages']) ? $_GET['my_parent_pages'] : '';
 			
