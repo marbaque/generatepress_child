@@ -83,8 +83,10 @@ function generate_press_child_setup() {
 	//Setting the exactly URL structure
 	function my_add_rewrite_rules() {
 		add_rewrite_tag('%seccion%', '([^/]+)', 'seccion=');
-		add_permastruct('seccion', '/%curso%/seccion/%seccion%/', false);
-		add_rewrite_rule('^seccion/([^/]+)/([^/]+)/?','index.php?seccion=$matches[2]','top');
+		add_permastruct('seccion', '/seccion/%curso%/%seccion%/', false);
+		add_rewrite_rule('seccion/([^/]+)/([^/]+)/?/page/([0-9]{1,})/?','index.php?seccion=$matches[2]&paged=$matches[3]','top');
+		
+		//add_rewrite_rule('region/([^/]+)/type/([^/]+)/page/([0-9]{1,})/?', 'index.php?taxonomy=region&term=$matches[1]&post_type=$matches[2]&paged=$matches[3]', 'top' );
 	}
 	add_action( 'init', 'my_add_rewrite_rules' );
 	
@@ -116,7 +118,7 @@ function generate_press_child_setup() {
 			$sql = "SELECT ID, post_title FROM ".$wpdb->posts." WHERE post_type = 'curso' AND post_parent = 0 AND post_status = 'publish' ORDER BY post_title";
 			$parent_pages = $wpdb->get_results($sql, OBJECT_K);
 			$select = '<select name="my_parent_pages">
-				<option value="">Cursos asignados</option>';
+				<option value="">Curso asignado</option>';
 			
 			$current = isset($_GET['my_parent_pages']) ? $_GET['my_parent_pages'] : '';
 			
@@ -228,20 +230,7 @@ function generate_press_child_setup() {
 	add_editor_style( 'inc/editor-style.css' );		
 		
 		
-	//permitir paginacion dentro de las secciones del curso
-	function fix_request_redirect( $request ) {
-	    if ( isset( $request->query_vars['post_type'] )
-	         && 'seccion' === $request->query_vars['post_type']
-	         && true === $request->is_singular
-	         && - 1 == $request->current_post
-	         && true === $request->is_paged
-	    ) {
-	            add_filter( 'redirect_canonical', '__return_false' );
-	    }
 	
-	    return $request;
-	}
-	add_action( 'parse_query', 'fix_request_redirect' );
 	
 	
 }

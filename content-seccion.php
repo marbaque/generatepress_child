@@ -89,6 +89,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'after'  => '</div>',
 			) );
 			?>
+
+
 			
 			<?php include('inc/licencia.php'); ?>
 
