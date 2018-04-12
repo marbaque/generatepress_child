@@ -83,7 +83,7 @@ function generate_press_child_setup() {
 	//Setting the exactly URL structure
 	function my_add_rewrite_rules() {
 		add_rewrite_tag('%seccion%', '([^/]+)', 'seccion=');
-		add_permastruct('seccion', '/seccion/%curso%/%seccion%/', false);
+		add_permastruct('seccion', '/%curso%/seccion/%seccion%/', false);
 		add_rewrite_rule('^seccion/([^/]+)/([^/]+)/?','index.php?seccion=$matches[2]','top');
 	}
 	add_action( 'init', 'my_add_rewrite_rules' );
@@ -228,7 +228,20 @@ function generate_press_child_setup() {
 	add_editor_style( 'inc/editor-style.css' );		
 		
 		
+	//permitir paginacion dentro de las secciones del curso
+	function fix_request_redirect( $request ) {
+	    if ( isset( $request->query_vars['post_type'] )
+	         && 'seccion' === $request->query_vars['post_type']
+	         && true === $request->is_singular
+	         && - 1 == $request->current_post
+	         && true === $request->is_paged
+	    ) {
+	            add_filter( 'redirect_canonical', '__return_false' );
+	    }
 	
+	    return $request;
+	}
+	add_action( 'parse_query', 'fix_request_redirect' );
 	
 	
 }
