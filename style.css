@@ -905,8 +905,9 @@ header.site-header {
     height: 320px;
     margin-bottom: 0;
     background-image: url(img/dibujo-sm.png);
-    background-size: cover;
-    background-position: center center; }
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat; }
     @media screen and (min-width: 500px) {
       .ocw-front .site-main .dibujo {
         background-image: url(img/dibujo.png); } }
