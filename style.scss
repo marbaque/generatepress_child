@@ -537,15 +537,23 @@ header.site-header {
 			padding: 10px 2%;
 			background: #f1f1f1;
 			
+			&.descargar {
+				p {
+					font-size: .7em;
+					text-align: center;
+				}
+				a.filelink {
+					margin: 0 auto 1em;
+				}
+			}
 			&.licencia,
 			&.autores {
 				font-size: .8em;
+				text-align: center;
 				h4,p {
 					margin-bottom: 5px;
 				}
-				.aligh-left {
-					float: left; margin: 10px 10px 20px 0;
-				}
+				
 			}
 		}
 		@media screen and (min-width: $break__medium) {
@@ -561,7 +569,10 @@ header.site-header {
 				flex-basis: 28%;
 				flex-grow: 2;
 				margin: 0 5px;
-				@include radio(10px);
+				@include radio(5px);
+				&.licencia {
+					text-align: left;
+				}
 			}
 		}
 	}
@@ -677,7 +688,14 @@ header.site-header {
 		display: none;
 	}
 	
-
+	&.search-results {
+		h3 {
+			line-height: 1.4;
+		}
+		.page-title span {
+			color: $color__primario;
+		}
+	}
 	
 	
 	.cursos-container {
@@ -1072,12 +1090,15 @@ header.site-header {
 			height: 320px;
 			margin-bottom: 0;
 			background-image:  url(img/dibujo-sm.png);
-			background-size: contain;
+			background-size: cover;
 			background-position: center center;
 			background-repeat: no-repeat;
 			
 			@media screen and (min-width: $break__small) {
 				background-image:  url(img/dibujo.png);
+			}
+			@media screen and (min-width: $break__large) {
+				background-size: 85%;
 			}
 		}
 		.btn1 {
@@ -1087,7 +1108,6 @@ header.site-header {
 		@media screen and (min-width: $break__medium) {
 			display: flex;
 			align-content: stretch;
-			margin-top: 20px!important;
 			.texto {
 				width: 40%;
 				order: 1;

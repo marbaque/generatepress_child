@@ -476,13 +476,16 @@ header.site-header {
   .single-recurso .recurso-flexwrap .recurso-flexitem {
     padding: 10px 2%;
     background: #f1f1f1; }
+    .single-recurso .recurso-flexwrap .recurso-flexitem.descargar p {
+      font-size: .7em;
+      text-align: center; }
+    .single-recurso .recurso-flexwrap .recurso-flexitem.descargar a.filelink {
+      margin: 0 auto 1em; }
     .single-recurso .recurso-flexwrap .recurso-flexitem.licencia, .single-recurso .recurso-flexwrap .recurso-flexitem.autores {
-      font-size: .8em; }
+      font-size: .8em;
+      text-align: center; }
       .single-recurso .recurso-flexwrap .recurso-flexitem.licencia h4, .single-recurso .recurso-flexwrap .recurso-flexitem.licencia p, .single-recurso .recurso-flexwrap .recurso-flexitem.autores h4, .single-recurso .recurso-flexwrap .recurso-flexitem.autores p {
         margin-bottom: 5px; }
-      .single-recurso .recurso-flexwrap .recurso-flexitem.licencia .aligh-left, .single-recurso .recurso-flexwrap .recurso-flexitem.autores .aligh-left {
-        float: left;
-        margin: 10px 10px 20px 0; }
   @media screen and (min-width: 768px) {
     .single-recurso .recurso-flexwrap {
       width: auto;
@@ -495,9 +498,11 @@ header.site-header {
         flex-basis: 28%;
         flex-grow: 2;
         margin: 0 5px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px; } }
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px; }
+        .single-recurso .recurso-flexwrap .recurso-flexitem.licencia {
+          text-align: left; } }
 .single-recurso .meta-info span {
   display: block; }
 .single-recurso .meta-info a {
@@ -599,6 +604,12 @@ header.site-header {
 .archive-view .taxonomy-description,
 .ocw-front .taxonomy-description {
   display: none; }
+.archive-view.search-results h3,
+.ocw-front.search-results h3 {
+  line-height: 1.4; }
+.archive-view.search-results .page-title span,
+.ocw-front.search-results .page-title span {
+  color: #FA9046; }
 .archive-view .cursos-container,
 .ocw-front .cursos-container {
   padding: 0 40px; }
@@ -905,19 +916,21 @@ header.site-header {
     height: 320px;
     margin-bottom: 0;
     background-image: url(img/dibujo-sm.png);
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat; }
     @media screen and (min-width: 500px) {
       .ocw-front .site-main .dibujo {
         background-image: url(img/dibujo.png); } }
+    @media screen and (min-width: 1200px) {
+      .ocw-front .site-main .dibujo {
+        background-size: 85%; } }
   .ocw-front .site-main .btn1 {
     top: 0; }
   @media screen and (min-width: 768px) {
     .ocw-front .site-main {
       display: flex;
-      align-content: stretch;
-      margin-top: 20px !important; }
+      align-content: stretch; }
       .ocw-front .site-main .texto {
         width: 40%;
         order: 1; }

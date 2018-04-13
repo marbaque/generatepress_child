@@ -96,10 +96,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 					//echo '</pre>';
 					?>
 					
-					<div class="recurso-flexitem"><a class="filelink" title="Enlace de descarga" href="<?php echo $url; ?>">
-						<i class="fa fa-cloud-download-alt"></i> Descargar 
-						<?php echo "<i>" . $title. "</i> (" . $mime . ", " . $filesize . ")"; ?>
-					</a></div>
+					<div class="recurso-flexitem descargar">
+						<a class="filelink" title="Enlace de descarga" href="<?php echo $url; ?>">Descargar</a>
+					<p><?php echo "<i>" . $title. "</i> (" . $mime . ", " . $filesize . ")"; ?></p>
+					</div>
 				
 				<?php endif; ?>
 				
