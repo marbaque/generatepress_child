@@ -74,7 +74,7 @@ function generate_press_child_setup() {
 	
 	function lesson_attributes_meta_box( $post ) {
 		$post_type_object = get_post_type_object( $post->post_type );
-		$pages = wp_dropdown_pages( array( 'post_type' => 'curso', 'selected' => $post->post_parent, 'name' => 'parent_id', 'show_option_none' => __( '(no parent)' ), 'sort_column'=> 'menu_order, post_title', 'echo' => 0 ) );
+		$pages = wp_dropdown_pages( array( 'post_type' => 'curso', 'post_status' => array( 'pending', 'draft', 'auto-draft', 'publish' ), 'selected' => $post->post_parent, 'name' => 'parent_id', 'show_option_none' => __( '(no parent)' ), 'sort_column'=> 'menu_order, post_title', 'echo' => 0 ) );
 		if ( ! empty( $pages ) ) {
 			echo $pages;
 		}
@@ -115,7 +115,7 @@ function generate_press_child_setup() {
 	function admin_page_filter_parentpages() {
 	    global $wpdb;
 	    if (isset($_GET['post_type']) && $_GET['post_type'] == 'seccion') {
-			$sql = "SELECT ID, post_title FROM ".$wpdb->posts." WHERE post_type = 'curso' AND post_parent = 0 AND post_status = 'publish' ORDER BY post_title";
+			$sql = "SELECT ID, post_title FROM ".$wpdb->posts." WHERE post_type = 'curso' AND post_parent = 0 AND post_status = 'publish' OR post_status = 'pending' ORDER BY post_title";
 			$parent_pages = $wpdb->get_results($sql, OBJECT_K);
 			$select = '<select name="my_parent_pages">
 				<option value="">Curso asignado</option>';
