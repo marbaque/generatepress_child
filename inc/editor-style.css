@@ -106,3 +106,17 @@ so build it into dg css */
     padding: 10px;
     min-width: 130px;
 }
+.document-gallery .descriptions.document-icon-row {
+	zoom: 1;
+	padding: 20px 0;
+	border-bottom: 2px solid #f4f4f4;
+}
+.document-gallery .descriptions.document-icon-row img {
+	border: 1px solid #9ec9e1;
+}
+.document-gallery .document-icon a{
+    border: none;
+}
+.document-gallery .document-icon a:after {
+content= ""!important;
+}
