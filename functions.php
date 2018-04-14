@@ -74,7 +74,7 @@ function generate_press_child_setup() {
 	
 	function lesson_attributes_meta_box( $post ) {
 		$post_type_object = get_post_type_object( $post->post_type );
-		$pages = wp_dropdown_pages( array( 'post_type' => 'curso', 'post_status' => array( 'pending', 'draft', 'auto-draft', 'publish' ), 'selected' => $post->post_parent, 'name' => 'parent_id', 'show_option_none' => __( '(no parent)' ), 'sort_column'=> 'menu_order, post_title', 'echo' => 0 ) );
+		$pages = wp_dropdown_pages( array( 'post_type' => 'curso', 'post_status' => array( 'pending', 'draft', 'publish' ), 'selected' => $post->post_parent, 'name' => 'parent_id', 'show_option_none' => __( '(no parent)' ), 'sort_column'=> 'menu_order, post_title', 'echo' => 0 ) );
 		if ( ! empty( $pages ) ) {
 			echo $pages;
 		}
