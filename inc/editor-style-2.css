@@ -115,7 +115,7 @@ so build it into dg css */
 	border: 1px solid #9ec9e1;
 }
 .document-gallery .document-icon a{
-    border: none;
+    border: none!important;
 }
 .document-gallery .document-icon a:after {
 content= ""!important;

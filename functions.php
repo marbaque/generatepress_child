@@ -227,7 +227,7 @@ function generate_press_child_setup() {
 	add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
 	
 	//agregar los estilos personalizados del tema al editor
-	add_editor_style( 'inc/editor-style.css' );		
+	add_editor_style( 'inc/editor-style-2.css' );		
 		
 		
 	
