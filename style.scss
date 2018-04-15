@@ -365,7 +365,7 @@ header.site-header {
 					overflow: hidden;
 					.curso__info-inside {
 						padding: 1em;
-						width: 100%;
+						width: auto;
 					}
 					
 					ul {
@@ -380,7 +380,7 @@ header.site-header {
 							line-height: 1.2em;
 						}
 						.curso_codigo {
-							font-size: .8em;
+							font-size: .9em;
 							color: #777;
 							margin: .5em 0 .75em;
 						}
