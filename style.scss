@@ -455,16 +455,21 @@ header.site-header {
 
 .tags {
 	margin: 80px 0 40px;
+	h5 {
+		text-transform: uppercase;
+		font-size: .7em;
+		letter-spacing: 2px;
+		margin-bottom: .5em;
+	}
 	a {
-		margin: 0;
-		padding: .25em .5em;
-		background-color: $color__dark;
-		color: $color__amarillo;
+		margin: 0 5px 10px 0;
+		padding: .5em;
+		display: inline-block;
 		font-size: .66em;
 		letter-spacing: 1px;
 		font-weight: 200;
 		text-transform: uppercase;
-		border: none;
+		border: 1px solid $color__grisillo;
 		
 	}
 }
@@ -535,7 +540,12 @@ header.site-header {
 		margin-bottom: 2em;
 		.recurso-flexitem {
 			padding: 10px 2%;
-			background: #f1f1f1;
+			background: $color__text-overdark;
+			h4 {
+				text-transform: uppercase;
+				font-size: .9em;
+				letter-spacing: 2px;
+			}
 			
 			&.descargar {
 				p {
@@ -548,7 +558,7 @@ header.site-header {
 			}
 			&.licencia,
 			&.autores {
-				font-size: .8em;
+				font-size: .7em;
 				text-align: center;
 				h4,p {
 					margin-bottom: 5px;
@@ -582,7 +592,7 @@ header.site-header {
 			display: block;
 		}
 		a {
-			color: #a4a4a4;
+			//color: #a4a4a4;
 		}
 	}
 }
