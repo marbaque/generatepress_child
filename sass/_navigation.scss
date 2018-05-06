@@ -1,112 +1,58 @@
 .main-navigation {
+	background-color: white;
 	
-	&.toggled {
-		background: $color__secundario;
-	}
-	
-	background-color: transparent;
-	
-	@media screen and (min-width: $break__medium) {
-		background-color: transparent;
-	}
-	button.menu-toggle {
+	.menu-toggle {
 		color: $color__body-text;
 	}
-	.fa-search:before {
-		color: $color__body-text;
-	}
-	.navigation-search {
-		input[type="search"] {
-			background-color: $color__dark;
-			color: white;
-			
-			&:focus {
-				
-			}
-			
-		}
-		
-	}
+	
 	.main-nav {
-		
+		background-color: #f4f4f4;
 		ul {
 			li {
 				a {
 					color: $color__body-text;
+					
 					&:hover {
-						background-color: $color__secundario;
-						color: $color__body-text;
+						background-color: $color__primario;
+						opacity: .8;
 					}
 				}
-				
-				&:focus, 
-				&.sfHover  {
-					>a {
-						background-color: $color__secundario;
-						color: $color__body-text;
-					}
-				}	
 			}
 			
-			li[class*="current-menu-"],
-			li[class*="current-menu-"].sfHover {
-				a {
-					background-color: white;
-					color: $color__body-text;
-					
-					&:hover {
-						background-color: $color__secundario;
-						color: $color__body-text;
-					}
-				}
-				&:after {
-					display: block;
-					content: "";
-					background-color: $color__primario;
-					height: 3px;
-					width: 30px;
-					position: absolute;
-					bottom: 5px;
-					left: 5px;
-					
-				}
-				
+			li[class*="current-menu-"] > a,
+			li[class*="current-menu-"] > a:hover,
+			li[class*="current-menu-"].sfHover > a {
+				background-color: $color__primario;
+			}
+			
+			li:hover > a,
+			li:focus > a,
+			li.sfHover > a {
+				background-color: $color__primario;
 			}
 			
 			ul {
-				background-color: $color__secundario;
-				li {
-					a {
-						background-color: $color__secundario;
-						color: $color__body-text;
-					}
-					&:focus,
-					&.sfHover,
-					&:hover  {
-						>a {
-							background-color: $color__secundario;
-							color: $color__body-text;
-							&:hover {
-								background-color: $color__primario;
-							}
-						}
-					}
+				background-color: $color__grisillo;
+				
+				li[class*="current-menu-"] > a:hover,
+				li[class*="current-menu-"].sfHover > a,
+				li:focus > a,
+				li.sfHover > a,
+				li:hover > a {
+					background-color: $color__azul;
+					opacity: .8;
 				}
-				li[class*="current-menu-"],
-				li[class*="current-menu-"].sfHover {
-					a {
-						background-color: white;
-						color: $color__body-text;
-						
-						&:hover {
-							background-color: $color__secundario;
-							color: $color__body-text;
-						}
-					}
-					
+				
+				li[class*="current-menu-"] > a {
+					background-color: $color__azul;
+					opacity: .5;
 				}
 			}
 		}
 	}
+}
 
+
+button.menu-toggle:hover, button.menu-toggle:focus, .main-navigation .mobile-bar-items a, .main-navigation .mobile-bar-items a:hover, .main-navigation .mobile-bar-items a:focus {
+	color: $color__body-text;
 }
