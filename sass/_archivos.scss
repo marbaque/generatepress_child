@@ -1,0 +1,436 @@
+/************************************************************************/
+// archivo de recursos y cursos
+/************************************************************************/
+.archive-view, 
+.ocw-front {
+	&.archivo-recursos,
+	&.archivo-cursos,
+	&.tax-recurso_category,
+	&.tax-area,
+	&.tax-recurso_category { 
+		.page-header {
+			margin: 20px 0 0;
+			padding: 0;
+			background: none;
+			display: block;
+			.page-title {
+				text-align: center;
+				text-transform: uppercase;
+				font-size: 1em;
+				letter-spacing: 6px;
+				width: auto;
+				margin: 40px 0 20px;
+				padding: 0 20px;
+				color: #a4a4a4;
+				text-shadow: 2px 2px 1px white;
+				@media screen and (min-width: $break__small) {
+					font-size: 1.5em;
+				}
+			}
+		}
+	}
+	&.archivo-recursos,
+	&.tax-recurso_category {
+		.content-area {
+			left: 0;
+			margin-left: 0;
+			width: 100%!important;
+			.site-main {
+				margin: 0;
+				width: 100%!important;
+			}
+		}
+
+	}
+	.taxonomy-description {
+		display: none;
+	}
+	
+	&.search-results {
+		h3 {
+			line-height: 1.4;
+		}
+		.page-title span {
+			color: $color__primario;
+		}
+	}
+	
+	
+	.cursos-container {
+		padding: 0 40px;
+		.curso {
+			margin: 1rem;
+			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+			background-color: white;
+			img {
+				width: 100%;
+				margin: 0;
+				outline: none;
+			}
+			a {
+				border: none;
+				color: inherit;
+				text-decoration: none;
+			}
+			
+			.inside-article {
+				padding: 20px;
+				margin: 0;
+				line-height: 1.25;
+				.entry-title {
+					font-family: $headings;
+					margin: 0;
+				}
+				.curso_codigo {
+					margin: 1em 0 0;
+					font-size: .7em;
+					color: #a4a4a4;
+				}
+			}
+		}
+	
+	}
+	.recursos-container {
+		padding: 40px 20px 0;
+		
+		.recurso {
+			display: flex;
+			margin-bottom: 20px;
+			position: relative;
+			box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+			
+			&:after { //icono de flecha
+				content: "";
+				width: 12px;
+				height: 20px;
+				background: url(img/arrow-right.png) no-repeat;
+				position: absolute;
+				right: 14px;
+				top: calc(50% - 10px);
+			}
+			a {
+				border: none;
+			}
+			
+			.thumb-recurso {
+				width: 150px;
+				height: 150px;
+				flex-shrink: 0;
+				border: none;
+				background-color: $color__grisillo;
+				z-index: 10;
+				.recurso-icon {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			
+			.inside-article {
+				height: 130px; //150px menus 20px del padding
+				padding: 10px 40px 10px 20px;
+				flex-grow: 1;
+				overflow: hidden;
+				position: relative;
+				
+				.entry-title {
+					font-family: $headings;
+					font-size: 1.2em;
+					margin: 0 0 .5em;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			
+				.entry-content {
+					margin: 0;
+					width: 100%;
+					height: auto;
+					font-size: .85em;
+					font-weight: 200;
+					line-height: 1.3;
+				    overflow: hidden;
+				}
+				
+			}
+			.recurso-category {
+				position: absolute;
+				left: -6px;
+				bottom: 0;
+				z-index: 20;
+			}
+		}
+		
+		@media screen and (min-width: $break__medium) {
+			display: flex;
+			flex-flow: row wrap;
+			padding: 40px 0 0;
+			.recurso {
+				flex: auto;
+				height: auto;
+				max-width: 48%;
+				margin: 0 1% 20px; /* Some gutter */
+			}
+	
+		}
+	}
+	
+}
+
+.archivo-cursos,
+.tax-area {
+	//submenu de areas de cursos
+	.responsive-navigation {
+		margin-top: 20px;
+	}
+	.cursos-nav {
+		font-size: .77em;
+		letter-spacing: .5em;
+		ul {
+			margin: 0;
+			background-color: #98B1D5;
+			padding: 5px 0;
+			-webkit-clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
+			clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);			
+			li {
+				line-height: 1.3;	
+				padding: 0 5px;			
+			}
+			a {
+				color: white;
+				border: none;
+				padding: .5em;
+				display: block;
+				letter-spacing: .25px;
+				width: auto;
+				margin: 5px 0;
+				&:hover,
+				&:active {
+					background: #51F0FA;
+					color: #179ba4;
+					@media screen and (min-width: $break__medium) {
+						padding-left: 1em;
+					}
+				}
+			}
+			li.current-menu-item a {
+				background: $color__primario;
+				color: #fff;
+				position: relative;
+			}
+		}
+	}
+	
+	@media screen and (min-width: $break__small) {
+		.cursos-nav {
+			ul {
+				padding: 5px 0 80px;
+			}
+		}
+		.cursos-container {
+			display: flex;
+			flex-wrap: wrap;
+		    flex-direction: row;
+			padding: 0;
+			.curso {
+				width: calc(50% - 2rem);
+				flex-grow: 0;
+				margin: 1rem;
+				//min-width: 280px;
+			}
+		}
+	}
+	@media screen and (min-width: $break__medium) {
+		.cursos-container {
+			.curso {
+				width: calc(33.3333% - 2rem);
+			}
+		}
+		.content-area {
+			width: 100%;
+			margin: 0;
+			left: 0;
+			display: flex;
+			justify-content: space-between;
+			.responsive-navigation {
+				width: 20%;
+			}
+			.site-main {
+				width: 75%;
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+	}
+	
+}
+
+
+//sub menu responsive
+.responsive-navigation {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0!important;
+    
+    ul.nav-submenu,
+	div.nav-submenu > ul {
+	    display: none;
+	    width: 100%;
+	}
+	ul.nav-submenu.submenuToggled-on,
+	.submenu-toggle {
+	    display: inline-block;
+	    width: calc(100% - 40px);
+	    margin: 0 auto;
+	}
+	.submenu-toggle {
+		border-bottom: 1px solid $color__text-overdark;
+	}
+	button.submenu-toggle {
+		background: #98B1D5;
+		letter-spacing: 1px;
+	}
+	
+	//estilos para desktop
+	@media screen and (min-width: $break__medium) {
+		ul.nav-submenu,
+	    div.nav-submenu > ul {
+	        display: inline-block!important;
+	        text-align: left;
+	        //width: 100%;
+	    }
+	    
+	    .submenu-toggle {
+	        display: none;
+	    }
+	}
+}
+
+
+
+//iconos de recursos sin imagen destacada
+.recursos-container {
+	.recurso {
+		
+		.thumb-recurso {
+			background-repeat: no-repeat;
+			background-position: center center;
+			@include vector-bg-with-fallback(recurso);
+		}
+		
+		&.recurso_category-interactivo {
+			.thumb-recurso {
+				@include vector-bg-with-fallback(interactivo);
+			}
+		}
+		&.recurso_category-video-educativo {
+			.thumb-recurso {
+				@include vector-bg-with-fallback(video);
+			}
+		}
+		&.recurso_category-modelo-3d {
+			.thumb-recurso {
+				@include vector-bg-with-fallback(3d);
+			}
+		}
+		&.recurso_category-manual {
+			.thumb-recurso {
+				@include vector-bg-with-fallback(manual);
+			}
+		}
+	}
+}
+
+
+
+
+//menu de recursos
+.recursos-nav {
+	ul {
+		list-style: none;
+		background: #98B1D5;
+		margin: 0;
+		
+		a {
+			padding: .5em 1em;
+			display: block;
+			border: none;
+			color: white;
+			letter-spacing: .5px;
+			&:hover,
+			&:active {
+				background: #51F0FA;
+				color: #179ba4;
+			}
+		}
+		.current-menu-item a {
+			background: $color__amarillo;
+			color: #5D769B;
+			position: relative;
+			
+		}
+	}
+	
+	@media screen and (min-width: $break__medium) {
+		>ul {
+			text-align: inherit!important;
+			display: flex;
+			align-items: baseline;
+			//justify-content: flex-end;
+			flex-wrap: wrap;
+			height: auto;
+			li {
+				display: inline-block;
+				a {
+					padding: 1em;
+				}
+			}
+			.current-menu-item a {
+				&:after {
+					content: "";
+					width: 2em;
+					height: 8px;
+					background: $color__amarillo;
+					position: absolute;
+					bottom: -8px;
+					left: calc(50% - 1em);
+					-webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+					clip-path: polygon(50% 100%, 0 0, 100% 0);
+				}
+			}
+		}	
+	}
+}
+
+/************************************************************************/
+// Pagina archivo de blog
+/************************************************************************/
+.archive-view {
+	//background: #f4f4f4;
+	.post {
+		background: white;
+		position: relative;
+
+		.entry-title {
+			margin-top: 0;
+		}
+		.read-more {
+			position: absolute;
+			padding: 1em;
+			background-color: $color__dark;
+			color: $color__text-overdark;
+			bottom: 0;
+			right: 0;
+			border: none;
+			&:hover {
+				background: $color__primario;
+				color: white;
+			}
+		}
+	}
+	.paging-navigation {
+		text-align: center;
+		background: none;
+	}
+	
+	
+}

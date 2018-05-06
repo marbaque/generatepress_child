@@ -1,0 +1,112 @@
+.main-navigation {
+	
+	&.toggled {
+		background: $color__secundario;
+	}
+	
+	background-color: transparent;
+	
+	@media screen and (min-width: $break__medium) {
+		background-color: transparent;
+	}
+	button.menu-toggle {
+		color: $color__body-text;
+	}
+	.fa-search:before {
+		color: $color__body-text;
+	}
+	.navigation-search {
+		input[type="search"] {
+			background-color: $color__dark;
+			color: white;
+			
+			&:focus {
+				
+			}
+			
+		}
+		
+	}
+	.main-nav {
+		
+		ul {
+			li {
+				a {
+					color: $color__body-text;
+					&:hover {
+						background-color: $color__secundario;
+						color: $color__body-text;
+					}
+				}
+				
+				&:focus, 
+				&.sfHover  {
+					>a {
+						background-color: $color__secundario;
+						color: $color__body-text;
+					}
+				}	
+			}
+			
+			li[class*="current-menu-"],
+			li[class*="current-menu-"].sfHover {
+				a {
+					background-color: white;
+					color: $color__body-text;
+					
+					&:hover {
+						background-color: $color__secundario;
+						color: $color__body-text;
+					}
+				}
+				&:after {
+					display: block;
+					content: "";
+					background-color: $color__primario;
+					height: 3px;
+					width: 30px;
+					position: absolute;
+					bottom: 5px;
+					left: 5px;
+					
+				}
+				
+			}
+			
+			ul {
+				background-color: $color__secundario;
+				li {
+					a {
+						background-color: $color__secundario;
+						color: $color__body-text;
+					}
+					&:focus,
+					&.sfHover,
+					&:hover  {
+						>a {
+							background-color: $color__secundario;
+							color: $color__body-text;
+							&:hover {
+								background-color: $color__primario;
+							}
+						}
+					}
+				}
+				li[class*="current-menu-"],
+				li[class*="current-menu-"].sfHover {
+					a {
+						background-color: white;
+						color: $color__body-text;
+						
+						&:hover {
+							background-color: $color__secundario;
+							color: $color__body-text;
+						}
+					}
+					
+				}
+			}
+		}
+	}
+
+}
