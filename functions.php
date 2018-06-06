@@ -42,7 +42,7 @@ function generate_press_child_setup() {
 	add_image_size('portada-curso', 350, 350, true);
 	add_image_size('portada-curso-thumbnail', 270, 270, true);
 	add_image_size('portada-video', 840, 473, true);
-	add_image_size('portada-recurso', 630, 330, true);
+	add_image_size('portada-recurso', 800, 420, true);
 	
 	//registrar menu para recursos
 	register_nav_menus( array(
