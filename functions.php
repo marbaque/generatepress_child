@@ -35,6 +35,7 @@ function generate_press_child_setup() {
 				
 		//importar js para navegación responsive
 		wp_enqueue_script( 'wpb_togglemenu', get_stylesheet_directory_uri() . '/js/responsive-nav.js', array('jquery'), '20180314', true );
+		
 	}
 	add_action( 'wp_enqueue_scripts', 'generate_custom_scripts', 10 );
 	

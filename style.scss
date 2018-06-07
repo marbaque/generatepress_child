@@ -132,7 +132,7 @@ header.site-header {
 			margin-bottom: 0;
 			background-image:  url(img/dibujo-sm.png);
 			background-size: cover;
-			background-position: center center;
+			background-position: center top;
 			background-repeat: no-repeat;
 			
 			@media screen and (min-width: $break__small) {
@@ -181,6 +181,7 @@ header.site-header {
 				order: 1;
 				width: 100%;
 				height: 65vh;
+				min-height: 540px;
 			}
 		}
 	}

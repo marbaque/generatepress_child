@@ -77,7 +77,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<!-- aqui van el autor, el boton de descarga y la licencia -->
 			<div class="recurso-flexwrap">
 				<!-- autor -->
-				<?php echo get_the_term_list( $post->ID, 'autor_recurso', '<div class="recurso-flexitem autores"><h4>Creado por</h4><p class="meta-info">', '<br>', '</p></div>' ); ?>
+				<?php echo get_the_term_list( $post->ID, 'autor_recurso', '<div class="recurso-flexitem autores"><h4>Creado por</h4><p class="meta-info">', ', ', '</p></div>' ); ?>
 				<!-- boton de descargar -->
 				
 				<?php $file = get_field('archivo_recurso'); ?>
