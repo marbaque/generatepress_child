@@ -37,7 +37,7 @@ function generate_press_child_setup() {
 		wp_enqueue_script( 'wpb_togglemenu', get_stylesheet_directory_uri() . '/js/responsive-nav.js', array('jquery'), '20180314', true );
 		
 		//incluir script para iconos fontawesome
-		wp_enqueue_script('ocw-fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js');
+		//wp_enqueue_script('ocw-fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js');
 	}
 	add_action( 'wp_enqueue_scripts', 'generate_custom_scripts', 10 );
 	

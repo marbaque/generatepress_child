@@ -422,13 +422,18 @@ a.btn1:visited {
   .single-recurso .video-contenedor .attachment-portada-video,
   .single-recurso .m3d-contenedor .attachment-portada-video {
     margin: 0 auto !important; }
-.single-recurso .m3d-contenedor canvas {
-  width: 100%;
-  margin: 0 auto;
-  display: block; }
+.single-recurso .m3d-contenedor {
+  max-height: 400px; }
+  .single-recurso .m3d-contenedor canvas {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    max-height: 400px; }
   @media screen and (min-width: 768px) {
-    .single-recurso .m3d-contenedor canvas {
-      width: 66%; } }
+    .single-recurso .m3d-contenedor {
+      height: auto; }
+      .single-recurso .m3d-contenedor canvas {
+        width: 66%; } }
 .single-recurso .recurso-flexwrap {
   margin-bottom: 2em; }
   .single-recurso .recurso-flexwrap .recurso-flexitem {
@@ -447,7 +452,8 @@ a.btn1:visited {
     .single-recurso .recurso-flexwrap .recurso-flexitem.descargar a.filelink {
       margin: 0 auto 1em; }
     .single-recurso .recurso-flexwrap .recurso-flexitem.licencia, .single-recurso .recurso-flexwrap .recurso-flexitem.autores {
-      text-align: center; }
+      text-align: center;
+      font-size: .8em; }
       .single-recurso .recurso-flexwrap .recurso-flexitem.licencia h4, .single-recurso .recurso-flexwrap .recurso-flexitem.licencia p, .single-recurso .recurso-flexwrap .recurso-flexitem.autores h4, .single-recurso .recurso-flexwrap .recurso-flexitem.autores p {
         margin-bottom: 5px; }
       .single-recurso .recurso-flexwrap .recurso-flexitem.licencia img, .single-recurso .recurso-flexwrap .recurso-flexitem.autores img {
@@ -1061,7 +1067,9 @@ header.site-header {
 /************************************************************************/
 /************************************************************************/
 .site-footer .footer-widgets {
-  background: #2B2E35;
+  background: #50545E;
+  /* Rectangle 5: */
+  background-image: linear-gradient(-140deg, #57687F 0%, #454E64 100%);
   color: #CDD8E8; }
   .site-footer .footer-widgets .widget-title {
     color: #CDD8E8; }

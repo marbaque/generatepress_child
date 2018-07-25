@@ -40,7 +40,6 @@
 	.video-contenedor,
 	.m3d-contenedor {
 		display: block;
-		//background: #111;
 		width: 100%;
 		text-align: center;
 		margin: 0 auto;
@@ -50,12 +49,17 @@
 		}
 	}
 	.m3d-contenedor {
+		max-height: 400px;
 		canvas {
 			width: 100%;
 			margin: 0 auto;
 			display: block;
+			max-height: 400px;
 			
-			@media screen and (min-width: $break__medium) {
+		}
+		@media screen and (min-width: $break__medium) {
+			height: auto;
+			canvas {
 				width: 66%;
 			}
 		}
@@ -91,6 +95,7 @@
 			&.licencia,
 			&.autores {
 				text-align: center;
+				font-size: .8em;
 				h4,p {
 					margin-bottom: 5px;
 				}
