@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php generate_article_schema( 'CreativeWork' ); ?>>
-	
+
 	<div class="inside-article">
 		<?php
 		/**
@@ -24,57 +24,57 @@ if ( ! defined( 'ABSPATH' ) ) {
 		do_action( 'generate_before_content' );
 		?>
 
-		
-		
+
+
 
 		<div class="entry-content" itemprop="text">
 			<?php
 			//the_content();
 			?>
 			<div class="portada__wrap">
-				<?php 
+				<?php
 				$image = get_field('portada_del_curso');
 				$size = 'portada-curso';
 				$thumb = $image['sizes'][ $size ];
 				$placeholder = get_stylesheet_directory_uri() . '/img/placeholder.png';
-				
+
 				if( ($image) ): ?>
-				
+
 					<div class="portada-curso" style="background-image: url(<?php echo $thumb; ?>)" aria-hideen="true">
-						<span><?php echo $image['description']; // image description ?></span>
+						<span><?php echo $image['description']; ?></span>
 					</div>
-					
+
 				<?php else: ?>
 					<div class="portada-curso" style="background-image: url(<?php echo $placeholder; ?>)" aria-hideen="true"></div>
 				<?php endif; ?>
-				
+
 				<div class="curso__info">
 					<div class="curso__info-inside">
 						<ul>
 							<?php the_title( '<li class="seccion-title" itemprop="headline">', '</li>' ); ?>
-							
-							<?php 
+
+							<?php
 							$codigo = get_field('codigo_del_curso');
 							if( $codigo ): ?>
 								<li class="curso_codigo">Código del curso: <?php echo $codigo; ?></li>
 							<?php endif; ?>
-							
-							<?php 
+
+							<?php
 							$term = get_field('area_curso');
 							if( $term ): ?>
-							
+
 								<li class="curso_area"><?php echo $term->name; ?></li>
 							<?php endif; ?>
-							
-							<?php 
+
+							<?php
 							$profe = get_field('profe');
 							if( $profe ): ?>
 								<li class="curso_profe"><?php echo $profe; ?></li>
 							<?php endif; ?>
 						</ul>
-						
-						<?php 
-				
+
+						<?php
+
 						$info = get_field('informacion_adicional');
 						if( $info ): ?>
 							<div class="curso_info"><?php echo $info; ?></div>
@@ -82,16 +82,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 				</div><!-- curso__info -->
 			</div><!-- portada__wrap -->
-			
-			<?php 
-	
-			$desc = get_field('descripcion_general');
-			if( $desc ): ?>
-				<h3>Descripción general del curso</h3>
-				<div><?php echo $desc; ?></div>
-			<?php endif; ?>
-			
-	
+
+			<h3>Descripción general del curso</h3>
+			<?php the_content(); ?>
+
+
 		</div><!-- .entry-content -->
 
 		<?php
