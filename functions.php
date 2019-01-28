@@ -59,7 +59,8 @@ function generate_press_child_setup() {
 	 function custom_upload_mimes($mimes = array()) {
 
 		// Add a key and value for the stl file type
-		$mimes['stl'] = "object/stl";
+//		$mimes['stl'] = "object/stl";
+                $mimes['stl'] = "application/vnd.ms-pki.stl";
 
 		return $mimes;
 	}
