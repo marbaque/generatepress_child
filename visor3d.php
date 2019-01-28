@@ -212,9 +212,9 @@ if ( has_post_video() ) { ?>
 
 		scene = new THREE.Scene();
 
-		camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 1, 1000 );
-		camera.position.z = 160;
-		camera.position.y = 40;
+		camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 1, 1000 );
+		camera.position.z = 220;
+		camera.position.y = 15;
 		scene.add( camera );
 
 		var directionalLight = new THREE.DirectionalLight( 0xffffff );
