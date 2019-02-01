@@ -16,7 +16,7 @@
 			margin-left: -60px;
 		}
 	}
-	
+
 	.video-wrap,
 	.m3d-wrap {
 		display: block;
@@ -24,7 +24,7 @@
 		width: 100%;
 		height: auto;
 		position: relative;
-		
+
 		.video-dark-background {
 			position: absolute;
 			top: 0;
@@ -35,7 +35,7 @@
 		    margin-right: calc(50% - 50vw);
 		    z-index: -1	;
 		}
-		
+
 	}
 	.video-contenedor,
 	.m3d-contenedor {
@@ -55,7 +55,7 @@
 			margin: 0 auto;
 			display: block;
 			max-height: 400px;
-			
+
 		}
 		@media screen and (min-width: $break__medium) {
 			height: auto;
@@ -64,24 +64,24 @@
 			}
 		}
 	}
-	
+
 	.recurso-flexwrap {
 		margin-bottom: 2em;
 		.recurso-flexitem {
 			padding: .5em 40px;
 			background: #f1f1f1;
-			
+
 			a {
 				border: none;
 			}
-			
+
 			h4 {
 				text-transform: uppercase;
 				letter-spacing: 2px;
 				text-align: center;
 				line-height: 1.2;
 			}
-			
+
 			&.descargar {
 				p {
 					font-size: .7em;
@@ -103,18 +103,18 @@
 					height: 32px;
 					width: auto;
 				}
-				
+
 			}
 		}
 		@media screen and (min-width: $break__medium) {
-			
+
 			width: auto;
 			display: flex;
 			flex-wrap: nowrap;
 			justify-content: space-between;
 			align-items: stretch;
 			align-content: flex-start;
-			
+
 			.recurso-flexitem {
 				padding: 20px 2% 40px;
 				flex-basis: 28%;
@@ -128,7 +128,7 @@
 		}
 	}
 	.meta-info {
-		
+
 		span {
 			display: block;
 		}
@@ -144,11 +144,16 @@
 	color: $color__dark;
 	padding: 4px 10px;
 	margin-bottom: 1em;
+	border: none;
 	display: inline-block;
 	-webkit-clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%);
 	clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%);
-	
-}	
+
+	&:hover {
+		border: none;
+	}
+
+}
 
 .btn {
 	background: $color__grisillo;

@@ -10,7 +10,6 @@
 */
 /************************************************************************/
 /************************************************************************/
-@import url("https://fonts.googleapis.com/css?family=Varela+Round");
 @import url("custom-styles.css");
 h1, h2, h3 {
   margin: 1.414em 0 0.5em;
@@ -108,7 +107,7 @@ a.btn1:visited {
     margin-left: .5em; }
   a.btn1:hover,
   a.btn1:visited:hover {
-    color: #176AC7;
+    color: #FA9046;
     transform: rotate(-5deg); }
 
 .ocw-front .btn1 {
@@ -485,9 +484,12 @@ a.btn1:visited {
   color: #2B2E35;
   padding: 4px 10px;
   margin-bottom: 1em;
+  border: none;
   display: inline-block;
   -webkit-clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%);
   clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%); }
+  .recurso-category:hover {
+    border: none; }
 
 .btn {
   background: #98B1D5;

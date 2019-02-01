@@ -1,7 +1,7 @@
 a {
 	border-bottom: 2px solid currentcolor;
 	transition: .5s all;
-	
+
 	&:hover {
 		border-bottom: 2px solid $color__primario;
 		color: $color__primario;
@@ -24,7 +24,7 @@ a {
 	max-width: 320px;
 	@include radio(4px);
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-	
+
 	&:hover {
 		background: $color__secundario;
 		color: $color__primario;
@@ -74,11 +74,11 @@ a.btn1:visited {
 		font-family: 'Fontawesome';
 		margin-left: .5em;
 	}
-	
+
 	&:hover {
-		color: $color__azul;
+		color: $color__primario;
 		transform: rotate(-5deg);
-		
+
 	}
 }
 .ocw-front .btn1 {
