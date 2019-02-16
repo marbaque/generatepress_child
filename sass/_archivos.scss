@@ -1,13 +1,17 @@
 /************************************************************************/
 // archivo de recursos y cursos
 /************************************************************************/
-.archive-view, 
+.archive-view {
+	background-color: $color__sutil;
+}
+
+.archive-view,
 .ocw-front {
 	&.archivo-recursos,
 	&.archivo-cursos,
 	&.tax-recurso_category,
 	&.tax-area,
-	&.tax-recurso_category { 
+	&.tax-recurso_category {
 		.page-header {
 			margin: 20px 0 0;
 			padding: 0;
@@ -45,7 +49,7 @@
 	.taxonomy-description {
 		display: none;
 	}
-	
+
 	&.search-results {
 		h3 {
 			line-height: 1.4;
@@ -54,8 +58,8 @@
 			color: $color__primario;
 		}
 	}
-	
-	
+
+
 	.cursos-container {
 		padding: 0 40px;
 		.curso {
@@ -72,13 +76,12 @@
 				color: inherit;
 				text-decoration: none;
 			}
-			
+
 			.inside-article {
 				padding: 20px;
 				margin: 0;
 				line-height: 1.25;
 				.entry-title {
-					font-family: $headings;
 					margin: 0;
 				}
 				.curso_codigo {
@@ -88,17 +91,17 @@
 				}
 			}
 		}
-	
+
 	}
 	.recursos-container {
 		padding: 40px 20px 0;
-		
+
 		.recurso {
 			display: flex;
 			margin-bottom: 20px;
 			position: relative;
 			box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-			
+
 			&:after { //icono de flecha
 				content: "";
 				width: 12px;
@@ -111,7 +114,7 @@
 			a {
 				border: none;
 			}
-			
+
 			.thumb-recurso {
 				width: 150px;
 				height: 150px;
@@ -124,23 +127,22 @@
 					height: 100%;
 				}
 			}
-			
+
 			.inside-article {
 				height: 130px; //150px menus 20px del padding
 				padding: 10px 40px 10px 20px;
 				flex-grow: 1;
 				overflow: hidden;
 				position: relative;
-				
+
 				.entry-title {
-					font-family: $headings;
 					font-size: 1.2em;
 					margin: 0 0 .5em;
 					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
 				}
-			
+
 				.entry-content {
 					margin: 0;
 					width: 100%;
@@ -150,7 +152,7 @@
 					line-height: 1.3;
 				    overflow: hidden;
 				}
-				
+
 			}
 			.recurso-category {
 				position: absolute;
@@ -159,7 +161,7 @@
 				z-index: 20;
 			}
 		}
-		
+
 		@media screen and (min-width: $break__medium) {
 			display: flex;
 			flex-flow: row wrap;
@@ -170,10 +172,10 @@
 				max-width: 48%;
 				margin: 0 1% 20px; /* Some gutter */
 			}
-	
+
 		}
 	}
-	
+
 }
 
 .archivo-cursos,
@@ -183,17 +185,17 @@
 		margin-top: 20px;
 	}
 	.cursos-nav {
-		font-size: .77em;
+		font-size: .9em;
 		letter-spacing: .5em;
 		ul {
 			margin: 0;
 			background-color: #98B1D5;
 			padding: 5px 0;
 			-webkit-clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
-			clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);			
+			clip-path: polygon(100% 0, 100% 100%, 23% 100%, 0 86%, 0 0);
 			li {
-				line-height: 1.3;	
-				padding: 0 5px;			
+				line-height: 1.3;
+				padding: 0 5px;
 			}
 			a {
 				color: white;
@@ -219,7 +221,7 @@
 			}
 		}
 	}
-	
+
 	@media screen and (min-width: $break__small) {
 		.cursos-nav {
 			ul {
@@ -261,7 +263,7 @@
 			}
 		}
 	}
-	
+
 }
 
 
@@ -270,7 +272,7 @@
     text-align: center;
     width: 100%;
     margin-bottom: 0!important;
-    
+
     ul.nav-submenu,
 	div.nav-submenu > ul {
 	    display: none;
@@ -289,7 +291,7 @@
 		background: #98B1D5;
 		letter-spacing: 1px;
 	}
-	
+
 	//estilos para desktop
 	@media screen and (min-width: $break__medium) {
 		ul.nav-submenu,
@@ -298,7 +300,7 @@
 	        text-align: left;
 	        //width: 100%;
 	    }
-	    
+
 	    .submenu-toggle {
 	        display: none;
 	    }
@@ -310,13 +312,13 @@
 //iconos de recursos sin imagen destacada
 .recursos-container {
 	.recurso {
-		
+
 		.thumb-recurso {
 			background-repeat: no-repeat;
 			background-position: center center;
 			@include vector-bg-with-fallback(recurso);
 		}
-		
+
 		&.recurso_category-interactivo {
 			.thumb-recurso {
 				@include vector-bg-with-fallback(interactivo);
@@ -349,7 +351,7 @@
 		list-style: none;
 		background: #98B1D5;
 		margin: 0;
-		
+
 		a {
 			padding: .5em 1em;
 			display: block;
@@ -366,10 +368,10 @@
 			background: $color__amarillo;
 			color: #5D769B;
 			position: relative;
-			
+
 		}
 	}
-	
+
 	@media screen and (min-width: $break__medium) {
 		>ul {
 			text-align: inherit!important;
@@ -397,7 +399,7 @@
 					clip-path: polygon(50% 100%, 0 0, 100% 0);
 				}
 			}
-		}	
+		}
 	}
 }
 
@@ -431,6 +433,6 @@
 		text-align: center;
 		background: none;
 	}
-	
-	
+
+
 }

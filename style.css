@@ -11,26 +11,6 @@
 /************************************************************************/
 /************************************************************************/
 @import url("custom-styles.css");
-h1, h2, h3 {
-  margin: 1.414em 0 0.5em;
-  font-family: "Varela Round", Helvetica, serif;
-  font-weight: bold;
-  line-height: 1.2;
-  letter-spacing: 0.5px; }
-
-h1 {
-  margin-top: 0;
-  font-size: 2.441em; }
-
-h2 {
-  font-size: 1.953em; }
-
-h3 {
-  font-size: 1.563em; }
-
-h4 {
-  font-size: 1.25em; }
-
 small, .font_small {
   font-size: 0.8em; }
 
@@ -48,7 +28,6 @@ a {
   background: #FA9046;
   color: #F9E9C9;
   letter-spacing: 1px;
-  font-family: "Varela Round", Helvetica, serif;
   margin: 1em 0;
   border: none;
   display: block;
@@ -93,7 +72,6 @@ a.btn1:visited {
   padding: 1em;
   background: #FFFFFF;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.22);
-  font-family: "Varela Round", Helvetica, serif;
   border: none !important;
   display: inline-block;
   margin: 1em auto;
@@ -115,19 +93,22 @@ a.btn1:visited {
 
 /************************************************************************/
 /************************************************************************/
+.single-curso .site-header,
+.single-seccion .site-header {
+  display: none; }
 .single-curso .site-main,
 .single-seccion .site-main {
   margin: 0; }
   .single-curso .site-main .curso_sidebar,
   .single-seccion .site-main .curso_sidebar {
-    background-color: #DFE5EE;
+    background-color: #f0f0f0;
     max-width: 100%;
     display: block;
     margin: 0;
     padding: 20px; }
     .single-curso .site-main .curso_sidebar .submenu,
     .single-seccion .site-main .curso_sidebar .submenu {
-      font-size: .8em;
+      font-size: 1em;
       letter-spacing: .5px;
       line-height: 1.25; }
       .single-curso .site-main .curso_sidebar .submenu h4,
@@ -138,46 +119,36 @@ a.btn1:visited {
       .single-seccion .site-main .curso_sidebar .submenu ul {
         list-style: none;
         margin: 0;
-        max-width: 90%;
-        border-left: 2px solid #98B1D5; }
+        max-width: 90%; }
         .single-curso .site-main .curso_sidebar .submenu ul li,
         .single-seccion .site-main .curso_sidebar .submenu ul li {
           position: relative;
           text-align: left; }
           .single-curso .site-main .curso_sidebar .submenu ul li a,
           .single-seccion .site-main .curso_sidebar .submenu ul li a {
-            color: #4A4A4A;
+            color: gray;
             border: none;
-            padding: 7.5px 1em 7.5px;
-            display: block;
-            background: white;
-            margin: 7.5px 0; }
+            padding: .5em 1em .5em 2em;
+            display: block; }
           .single-curso .site-main .curso_sidebar .submenu ul li a:last-child,
           .single-seccion .site-main .curso_sidebar .submenu ul li a:last-child {
             margin: 7.5px 0 0; }
           .single-curso .site-main .curso_sidebar .submenu ul li:before,
           .single-seccion .site-main .curso_sidebar .submenu ul li:before {
-            content: "";
-            width: 10px;
-            height: 10px;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            border-radius: 50%;
-            border: 2px solid #98B1D5;
-            background: #98B1D5;
+            font-family: 'Fontawesome';
+            content: "\f15c";
             display: inline-block;
-            top: calc(50% - 7.5px);
-            left: -8px;
-            position: absolute; }
-        .single-curso .site-main .curso_sidebar .submenu ul li.current-item,
-        .single-seccion .site-main .curso_sidebar .submenu ul li.current-item {
-          font-weight: 700; }
-          .single-curso .site-main .curso_sidebar .submenu ul li.current-item a,
-          .single-seccion .site-main .curso_sidebar .submenu ul li.current-item a {
-            font-weight: 400; }
-          .single-curso .site-main .curso_sidebar .submenu ul li.current-item:before,
-          .single-seccion .site-main .curso_sidebar .submenu ul li.current-item:before {
-            background: #FA9046; }
+            font-size: 19px;
+            top: calc(50% - 11px);
+            left: 2px;
+            position: absolute;
+            color: gray; }
+        .single-curso .site-main .curso_sidebar .submenu ul li.current-item a,
+        .single-seccion .site-main .curso_sidebar .submenu ul li.current-item a {
+          font-weight: 400; }
+        .single-curso .site-main .curso_sidebar .submenu ul li.current-item:before,
+        .single-seccion .site-main .curso_sidebar .submenu ul li.current-item:before {
+          color: #FA9046; }
     @media screen and (min-width: 768px) {
       .single-curso .site-main .curso_sidebar,
       .single-seccion .site-main .curso_sidebar {
@@ -200,10 +171,7 @@ a.btn1:visited {
           .single-curso .site-main .curso_sidebar .submenu h4,
           .single-seccion .site-main .curso_sidebar .submenu h4 {
             margin: 0;
-            display: block;
-            background: white;
-            padding: 7.5px 5px 7.5px 12px;
-            border-top: 2px solid #98B1D5; } }
+            display: block; } }
   .single-curso .site-main .curso,
   .single-curso .site-main .seccion,
   .single-seccion .site-main .curso,
@@ -242,14 +210,30 @@ a.btn1:visited {
 .single-curso .entry-header,
 .single-seccion .entry-header {
   margin-top: 0;
-  width: 100%; }
+  width: 100%;
+  background: #176AC7;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap; }
+  .single-curso .entry-header a.back2cursos,
+  .single-seccion .entry-header a.back2cursos {
+    padding: 5px;
+    text-decoration: none;
+    border: 1px solid white;
+    margin-right: 10px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: auto;
+    flex-shrink: 0; }
   .single-curso .entry-header .entry-title,
   .single-seccion .entry-header .entry-title {
     font-size: 1.1em;
     padding: .5em 1em .5em;
     background: #176AC7;
     color: #CDD8E8;
-    margin-top: 0; }
+    margin-top: 0;
+    width: 100%; }
     .single-curso .entry-header .entry-title span,
     .single-seccion .entry-header .entry-title span {
       display: block;
@@ -512,6 +496,9 @@ a.btn1:visited {
 
 /************************************************************************/
 /************************************************************************/
+.archive-view {
+  background-color: #f9f9f9; }
+
 .archive-view.archivo-recursos .page-header, .archive-view.archivo-cursos .page-header, .archive-view.tax-recurso_category .page-header, .archive-view.tax-area .page-header, .archive-view.tax-recurso_category .page-header,
 .ocw-front.archivo-recursos .page-header,
 .ocw-front.archivo-cursos .page-header,
@@ -590,7 +577,6 @@ a.btn1:visited {
       line-height: 1.25; }
       .archive-view .cursos-container .curso .inside-article .entry-title,
       .ocw-front .cursos-container .curso .inside-article .entry-title {
-        font-family: "Varela Round", Helvetica, serif;
         margin: 0; }
       .archive-view .cursos-container .curso .inside-article .curso_codigo,
       .ocw-front .cursos-container .curso .inside-article .curso_codigo {
@@ -639,7 +625,6 @@ a.btn1:visited {
       position: relative; }
       .archive-view .recursos-container .recurso .inside-article .entry-title,
       .ocw-front .recursos-container .recurso .inside-article .entry-title {
-        font-family: "Varela Round", Helvetica, serif;
         font-size: 1.2em;
         margin: 0 0 .5em;
         white-space: nowrap;
@@ -679,7 +664,7 @@ a.btn1:visited {
   margin-top: 20px; }
 .archivo-cursos .cursos-nav,
 .tax-area .cursos-nav {
-  font-size: .77em;
+  font-size: .9em;
   letter-spacing: .5em; }
   .archivo-cursos .cursos-nav ul,
   .tax-area .cursos-nav ul {

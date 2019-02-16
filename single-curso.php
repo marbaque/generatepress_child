@@ -22,7 +22,9 @@ get_header(); ?>
 
 		if ( generate_show_title() ) {
 			the_title( '<h1 class="entry-title" itemprop="headline"><span>Curso </span>', '</h1>' );
+
 		}
+
 
 		/**
 		 * generate_after_entry_title hook.
@@ -33,6 +35,7 @@ get_header(); ?>
 		 */
 		do_action( 'generate_after_entry_title' );
 		?>
+		<a href="<?php echo get_post_type_archive_link('curso'); ?>" class="back2cursos" title="Volver cursos"><i class="fa fa-undo"></i> cursos</a>
 	</header><!-- .entry-header -->
 	<?php
 	/**
@@ -45,10 +48,10 @@ get_header(); ?>
 	do_action( 'generate_after_entry_header' );
 	?>
 
-	
-	
+
+
 	<div id="primary" <?php generate_content_class();?>>
-		
+
 		<main id="main" <?php generate_main_class(); ?>>
 			<?php
 			/**
@@ -59,12 +62,12 @@ get_header(); ?>
 			do_action( 'generate_before_main_content' );
 			?>
 			<aside class="curso_sidebar">
-				
+
 				<nav id="responsive-navigation" class="responsive-navigation" role="navigation">
 					<button class="submenu-toggle">Contenidos</button>
-					<?php 
+					<?php
 					global $post;
-					
+
 					$args = array(
 					    'post_parent' => $post->ID, //id de del curso
 					    'posts_per_page' => -1, //todos
@@ -72,12 +75,12 @@ get_header(); ?>
 					    'order' => 'ASC', //en orden numerico ascendente, en atributos de página se puede cambiar
 					    'post_type' => 'seccion', //you can use also 'any'
 					    );
-					
+
 					$the_query = new WP_Query( $args );
-					
+
 					// The Loop
 					if ( $the_query->have_posts() ) :
-						
+
 						echo '<div class="submenu nav-submenu">';
 						echo '<h4>Contenidos</h4>';
 						echo '<ul>';
@@ -92,10 +95,10 @@ get_header(); ?>
 					// Reset Post Data
 					wp_reset_postdata();
 					?>
-					
+
 					<p class="escondido"><?php echo getPostViews(get_the_ID()); ?></p>
 				</nav>
-			
+
 			</aside><!-- aside .curso_sidebar -->
 
 			<?php

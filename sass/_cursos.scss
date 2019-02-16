@@ -3,17 +3,19 @@
 /************************************************************************/
 .single-curso,
 .single-seccion {
-
+	.site-header {
+		display: none;
+	}
 	.site-main {
 		margin: 0;
 		.curso_sidebar {
-			background-color: #DFE5EE;
+			background-color: #f0f0f0;
 			max-width: 100%;
 			display: block;
 			margin: 0;
 			padding: 20px;
-			.submenu { 
-				font-size: .8em;
+			.submenu {
+				font-size: 1em;
 				letter-spacing: .5px;
 				line-height: 1.25;
 				h4 {
@@ -25,55 +27,48 @@
 					list-style: none;
 					margin: 0;
 					max-width: 90%;
-					border-left: 2px solid $color__grisillo;	
+
 					li {
 						position: relative;
 						text-align: left;
 						a {
-							color: $color__body-text;
+							color: gray;
 							border: none;
-							padding: 7.5px 1em 7.5px;
+							padding: .5em 1em .5em 2em;
 							display: block;
-							background: white;
-							margin: 7.5px 0;
-							
-							
 						}
 						a:last-child {
 							margin: 7.5px 0 0;
 						}
 						&:before {
-							content: "";
-							width: 10px;
-							height: 10px;
-							@include radio(50%);
-							border: 2px solid $color__grisillo;
-							background: $color__grisillo;
+							font-family: 'Fontawesome';
+							content: "\f15c";
 							display: inline-block;
-							top: calc(50% - 7.5px);
-							left: -8px;
+							font-size: 19px;
+							top: calc(50% - 11px);
+							left: 2px;
 							position: absolute;
-						}			
-						
+							color: gray;
+						}
+
 					}
-										
+
 					li.current-item {
-						font-weight: 700;		
 						a {
 							font-weight: 400;
-							
+
 						}
 						&:before {
-							background: $color__primario;
+							color: $color__primario;
 						}
 					}
 				}
-				
-				
+
+
 			}//aqui termina el submenu
-			
+
 			@media screen and (min-width: $break__medium) { //.sidebar
-				
+
 				margin: 0 0 20px; //importante
 				margin: 0;
 				nav {
@@ -81,7 +76,7 @@
 					position: -webkit-sticky;
 					top: 20px; /* required */
 					overflow: visible;
-					
+
 				}
 				.submenu {
 					overflow: visible;
@@ -92,14 +87,11 @@
 					h4 {
 						margin: 0;
 						display: block;
-						background: white;
-						padding: 7.5px 5px 7.5px 12px;
-						border-top: 2px solid $color__grisillo;
 					}
 				}
 			}
 		} //aqui termina el sidebar
-		
+
 		.curso,
 		.seccion {
 			width: 100%;
@@ -114,7 +106,7 @@
 			}
 
 		}
-		
+
 		@media screen and (min-width:$break__medium) {
 			display: flex;
 			align-items: stretch!important;
@@ -131,17 +123,34 @@
 			}
 		}
 	}
-	
+	//barra superior del curso y de secciones
 	.entry-header {
 		margin-top: 0;
 		width: 100%;
-		
+		background: $color__azul;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		flex-wrap: nowrap;
+
+		a.back2cursos {
+			padding: 5px;
+			text-decoration: none;
+			border: 1px solid white;
+			margin-right: 10px;
+			color: white;
+			background-color: hsla(0, 0, 100, 0.2);
+			width: auto;
+			flex-shrink: 0;
+		}
 		.entry-title {
 			font-size: 1.1em;
 			padding: .5em 1em .5em;
 			background: $color__azul;
 			color: $color__text-overdark;
 			margin-top: 0;
+			width: 100%;
+
 			span {
 				display: block;
 				font-size: .5em;
@@ -163,18 +172,18 @@
 		width: 100%!important;
 		.site-main {
 			margin: 0;
-			
-			
+
+
 			.entry-content {
 				margin: 0;
-			}	
-			
+			}
+
 			.portada__wrap {
 				display: block;
 				margin: 0 -20px 2em;
 				//border: 1px solid $color__grisillo;
 				//background: $color__text-overdark;
-				
+
 				.portada-curso {
 					width: 320px;
 					max-width: 100%;
@@ -184,7 +193,7 @@
 					background-size: cover;
 					background-position: center center;
 					position: relative;
-					
+
 					span {
 						font-size: .6em;
 						font-weight: 600;
@@ -195,10 +204,10 @@
 						bottom: 0; right: 0;
 						opacity: .8;
 					}
-					
+
 				}
 				.curso__info {
-					width: auto; 
+					width: auto;
 					line-height: 1.4;
 					font-size: .9em;
 					overflow: hidden;
@@ -206,7 +215,7 @@
 						padding: 1em;
 						width: auto;
 					}
-					
+
 					ul {
 						list-style: none;
 						margin: 0;
@@ -226,7 +235,7 @@
 						.curso_area {
 							font-weight: 600;
 						}
-						
+
 					}
 					.curso_info {
 						font-size: .85em;
@@ -247,9 +256,9 @@
 					.curso__info {
 						width:50%;
 						flex-shrink: 2;
-						-webkit-flex-shrink: 2; 
+						-webkit-flex-shrink: 2;
 						flex-grow: 2;
-						-webkit-flex-grow: 2; 
+						-webkit-flex-grow: 2;
 					}
 				}
 			}
@@ -271,7 +280,7 @@
 			color: $color__primario;
 			border-bottom: 1px solid $color__primario;
 		}
-	}	
+	}
 }
 //paginacion de la seccion
 .page-links {
@@ -279,7 +288,7 @@
 	display: block;
 	height: auto;
 	clear: both;
-	
+
 }
 
 //licencia cc
@@ -302,5 +311,3 @@
 		height: 32px;
 	}
 }
-
-

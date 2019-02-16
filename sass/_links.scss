@@ -15,7 +15,6 @@ a {
 	background: $color__primario;
 	color: $color__secundario;
 	letter-spacing: 1px;
-	font-family: $headings;
 	margin: 1em 0;
 	border: none;
 	display: block;
@@ -62,7 +61,6 @@ a.btn1:visited {
 	padding: 1em;
 	background: #FFFFFF;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
-	font-family: $headings;
 	border: none!important;
 	display: inline-block;
 	margin: 1em auto;

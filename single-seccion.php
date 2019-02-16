@@ -19,13 +19,13 @@ get_header(); ?>
 		 * @since 0.1
 		 */
 		do_action( 'generate_before_entry_title' );
-		
+
 		$parent = $post->post_parent;
 		$permalink = get_permalink( $post->post_parent );
 		$current = $post->ID;
-		
+
 		if ( generate_show_title() ) {
-			echo '<a href="' . $permalink . '" title="Inicio del curso"><h2 class="entry-title" itemprop="headline"><span>Curso </span>' . get_the_title($parent) . '</h2></a>';
+			echo '<h1 class="entry-title" itemprop="headline"><span>Curso </span>' . get_the_title($parent) . '</h1>';
 		}
 
 		/**
@@ -37,6 +37,7 @@ get_header(); ?>
 		 */
 		do_action( 'generate_after_entry_title' );
 		?>
+		<a href="<?php echo get_post_type_archive_link('curso'); ?>" class="back2cursos" title="Volver cursos"><i class="fa fa-undo"></i> cursos</a>
 	</header><!-- .entry-header -->
 	<?php
 	/**
@@ -49,10 +50,10 @@ get_header(); ?>
 	do_action( 'generate_after_entry_header' );
 	?>
 
-	
-	
+
+
 	<div id="primary" <?php generate_content_class();?>>
-		
+
 		<main id="main" <?php generate_main_class(); ?>>
 			<?php
 			/**
@@ -65,13 +66,13 @@ get_header(); ?>
 			<aside class="curso_sidebar">
 				<nav id="responsive-navigation" class="responsive-navigation" role="navigation">
 					<button class="submenu-toggle">Contenidos</button>
-					
+
 					<div class="submenu nav-submenu">
-						<?php 
+						<?php
 						global $post;
-						
-						
-	
+
+
+
 						$args = array(
 						    'post_parent' => $parent,
 						    'posts_per_page' => -1,
@@ -79,7 +80,7 @@ get_header(); ?>
 						    'order' => 'ASC',
 						    'post_type' => 'seccion', //you can use also 'any'
 						    );
-						
+
 						$the_query = new WP_Query( $args );
 						// The Loop
 						if ( $the_query->have_posts() ) :
@@ -89,13 +90,13 @@ get_header(); ?>
 							while ( $the_query->have_posts() ) : $the_query->the_post();
 								// Do Stuff
 								$queried_object = get_the_ID();
-								
+
 								if( $queried_object == $current) {
 									echo '<li class="current-item"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';
 								} else {
 									echo '<li><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></li>';
 								}
-									
+
 							endwhile;
 							echo '</ul>';
 						endif;
