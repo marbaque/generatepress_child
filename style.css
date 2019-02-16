@@ -139,7 +139,7 @@ a.btn1:visited {
             content: "\f15c";
             display: inline-block;
             font-size: 19px;
-            top: calc(50% - 11px);
+            top: calc(50% - 12px);
             left: 2px;
             position: absolute;
             color: gray; }
