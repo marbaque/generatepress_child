@@ -181,24 +181,27 @@
 			.portada__wrap {
 				display: block;
 				margin: 0 -20px 2em;
-				//border: 1px solid $color__grisillo;
-				//background: $color__text-overdark;
+				border: 1px solid $color__sutil;
+				box-shadow: 0 0 5px hsl(0, 0, 80);
+				border-radius: 4px;
 
 				.portada-curso {
-					width: 320px;
-					max-width: 100%;
-					height: 320px;
+					width: 100%;
+					max-height: 340px;
 					margin: 0 auto;
-					//position: relative;
-					background-size: cover;
-					background-position: center center;
-					position: relative;
+					overflow: hidden;
+
+					img {
+						width: 100%;
+						height: auto;
+						object-fit: cover;
+					}
 
 					span {
 						font-size: .6em;
 						font-weight: 600;
 						background: $color__dark;
-						color: $color__text-overdark;
+						color: $color__sutil;
 						padding: 2px 4px;
 						position: absolute;
 						bottom: 0; right: 0;
@@ -210,10 +213,11 @@
 					width: auto;
 					line-height: 1.4;
 					font-size: .9em;
-					overflow: hidden;
+
 					.curso__info-inside {
-						padding: 1em;
+						padding: 20px;
 						width: auto;
+
 					}
 
 					ul {
@@ -229,7 +233,6 @@
 						}
 						.curso_codigo {
 							font-size: .9em;
-							color: #777;
 							margin: .5em 0 .75em;
 						}
 						.curso_area {
@@ -241,24 +244,21 @@
 						font-size: .85em;
 					}
 				}
-				//portada
+				//portada__wrap
 				@media screen and (min-width: $break__small) {
+					min-height: 100%;
 					display: flex;
-					flex-wrap: wrap;
-					margin: 0 0 2em;
+					align-items: stretch;
+
 					.portada-curso {
 						width: 50%;
-						max-width: 320px;
 						margin: 0;
-						flex-shrink: 0;
-						-webkit-flex-shrink: 0;
+						height: auto;
+						align-self: stretch;
+						background-color: $color__grisillo;
 					}
 					.curso__info {
 						width:50%;
-						flex-shrink: 2;
-						-webkit-flex-shrink: 2;
-						flex-grow: 2;
-						-webkit-flex-grow: 2;
 					}
 				}
 			}
@@ -294,7 +294,7 @@
 //licencia cc
 .seccion .licencia-block {
 	padding: 1em 1em 2em;
-	margin: 2em 0 0;
+	margin: 40px 0 0;
 	display: block;
 	background: #eee;
 	font-size: .8em;
@@ -310,4 +310,20 @@
 		margin: 0 1em 1em 0;
 		height: 32px;
 	}
+}
+
+
+//footnotes
+.simple-footnotes {
+	font-size: .77em;
+	color: #aaa;
+}
+.simple-footnotes .notes{
+	display: none;
+}
+.simple-footnotes a {
+	border: none;
+}
+a.simple-footnote {
+	border: none;
 }

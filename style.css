@@ -14,6 +14,12 @@
 small, .font_small {
   font-size: 0.8em; }
 
+.site-main ol li {
+  margin-bottom: 1em; }
+
+blockquote cite {
+  font-size: 0.8rem; }
+
 a {
   border-bottom: 2px solid currentcolor;
   transition: .5s all; }
@@ -257,22 +263,27 @@ a.btn1:visited {
     .single-curso .content-area .site-main .portada__wrap,
     .single-seccion .content-area .site-main .portada__wrap {
       display: block;
-      margin: 0 -20px 2em; }
+      margin: 0 -20px 2em;
+      border: 1px solid #f9f9f9;
+      box-shadow: 0 0 5px #cccccc;
+      border-radius: 4px; }
       .single-curso .content-area .site-main .portada__wrap .portada-curso,
       .single-seccion .content-area .site-main .portada__wrap .portada-curso {
-        width: 320px;
-        max-width: 100%;
-        height: 320px;
+        width: 100%;
+        max-height: 340px;
         margin: 0 auto;
-        background-size: cover;
-        background-position: center center;
-        position: relative; }
+        overflow: hidden; }
+        .single-curso .content-area .site-main .portada__wrap .portada-curso img,
+        .single-seccion .content-area .site-main .portada__wrap .portada-curso img {
+          width: 100%;
+          height: auto;
+          object-fit: cover; }
         .single-curso .content-area .site-main .portada__wrap .portada-curso span,
         .single-seccion .content-area .site-main .portada__wrap .portada-curso span {
           font-size: .6em;
           font-weight: 600;
           background: #2B2E35;
-          color: #CDD8E8;
+          color: #f9f9f9;
           padding: 2px 4px;
           position: absolute;
           bottom: 0;
@@ -282,11 +293,10 @@ a.btn1:visited {
       .single-seccion .content-area .site-main .portada__wrap .curso__info {
         width: auto;
         line-height: 1.4;
-        font-size: .9em;
-        overflow: hidden; }
+        font-size: .9em; }
         .single-curso .content-area .site-main .portada__wrap .curso__info .curso__info-inside,
         .single-seccion .content-area .site-main .portada__wrap .curso__info .curso__info-inside {
-          padding: 1em;
+          padding: 20px;
           width: auto; }
         .single-curso .content-area .site-main .portada__wrap .curso__info ul,
         .single-seccion .content-area .site-main .portada__wrap .curso__info ul {
@@ -303,7 +313,6 @@ a.btn1:visited {
           .single-curso .content-area .site-main .portada__wrap .curso__info ul .curso_codigo,
           .single-seccion .content-area .site-main .portada__wrap .curso__info ul .curso_codigo {
             font-size: .9em;
-            color: #777;
             margin: .5em 0 .75em; }
           .single-curso .content-area .site-main .portada__wrap .curso__info ul .curso_area,
           .single-seccion .content-area .site-main .portada__wrap .curso__info ul .curso_area {
@@ -314,23 +323,19 @@ a.btn1:visited {
       @media screen and (min-width: 500px) {
         .single-curso .content-area .site-main .portada__wrap,
         .single-seccion .content-area .site-main .portada__wrap {
+          min-height: 100%;
           display: flex;
-          flex-wrap: wrap;
-          margin: 0 0 2em; }
+          align-items: stretch; }
           .single-curso .content-area .site-main .portada__wrap .portada-curso,
           .single-seccion .content-area .site-main .portada__wrap .portada-curso {
             width: 50%;
-            max-width: 320px;
             margin: 0;
-            flex-shrink: 0;
-            -webkit-flex-shrink: 0; }
+            height: auto;
+            align-self: stretch;
+            background-color: #98B1D5; }
           .single-curso .content-area .site-main .portada__wrap .curso__info,
           .single-seccion .content-area .site-main .portada__wrap .curso__info {
-            width: 50%;
-            flex-shrink: 2;
-            -webkit-flex-shrink: 2;
-            flex-grow: 2;
-            -webkit-flex-grow: 2; } }
+            width: 50%; } }
 
 .migajas {
   font-size: .7em;
@@ -353,7 +358,7 @@ a.btn1:visited {
 
 .seccion .licencia-block {
   padding: 1em 1em 2em;
-  margin: 2em 0 0;
+  margin: 40px 0 0;
   display: block;
   background: #eee;
   font-size: .8em;
@@ -368,6 +373,19 @@ a.btn1:visited {
     float: left;
     margin: 0 1em 1em 0;
     height: 32px; }
+
+.simple-footnotes {
+  font-size: .77em;
+  color: #aaa; }
+
+.simple-footnotes .notes {
+  display: none; }
+
+.simple-footnotes a {
+  border: none; }
+
+a.simple-footnote {
+  border: none; }
 
 /************************************************************************/
 /************************************************************************/
@@ -1079,7 +1097,8 @@ a.easy-footnote-to-top {
     color: #CDD8E8; }
 
 .site-info {
-  background: #2B2E35; }
+  background: #50545E;
+  background-image: linear-gradient(-140deg, #57687F 0%, #454E64 100%); }
 
 .copyright-bar {
   display: none; }
