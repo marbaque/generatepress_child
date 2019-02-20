@@ -59,28 +59,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 		<div class="entry-content" itemprop="text">
-			
-				<?php 
+
+				<?php
 				if(function_exists('bcn_display')) {
 					echo '<div class="migajas">';
 					bcn_display();
 					echo '</div>';
 				}
 				?>
-			
+
 			<?php
 			the_content();
 			?>
-			
-			
-			
+
+
+
 			<?php $file = get_field('archivo_seccion'); ?>
-			
-			
+
+
 			<?php if( $file ): ?>
-			
-				<?php 
-				
+
+				<?php
+
 				$mime = $file["mime_type"];
 				$url = $file["url"];
 				$id = $file["id"];
@@ -91,16 +91,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 					//var_dump( $file );
 				//echo '</pre>';
 				?>
-				
+
 				<a class="filelink" title="Enlace de descarga" href="<?php echo $url; ?>">
-					<i class="fa fa-cloud-download-alt"></i> Descargar 
+					<i class="fa fa-cloud-download-alt"></i> Descargar
 					<?php echo "<i>" . $title. "</i> (" . $mime . ", " . $filesize . ")"; ?>
 				</a>
-			
+
 			<?php endif; ?>
 
 
-			
+
 			<?php
 
 			wp_link_pages( array(
@@ -110,7 +110,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 
 
-			
+
 			<?php include('inc/licencia.php'); ?>
 
 		</div><!-- .entry-content -->

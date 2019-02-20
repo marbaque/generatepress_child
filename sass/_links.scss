@@ -38,7 +38,7 @@ a {
 .page-links,
 .nav-links {
 	a, span {
-		padding: 1em;
+		padding: 10px 20px;
 		border: none;
 		background: white;
 		margin: 5px;
@@ -58,25 +58,33 @@ a {
 
 a.btn1,
 a.btn1:visited {
-	padding: 1em;
+	padding: 1em 2.5em 1em 1.5em;
 	background: #FFFFFF;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
 	border: none!important;
 	display: inline-block;
 	margin: 1em auto;
+	color: $color__moradito;
 	position: relative;
-	top: -2em;
-	color: $color__grisillo;
+	border: 2px solid $color__secundario;
+	border-radius: 2px;
+
 	&:after {
 		content: "\f054";
 		font-family: 'Fontawesome';
-		margin-left: .5em;
+		font-size: 16px;
+		position: absolute;
+		right: 1em;
+		top: calc(50% - 7px);
+		line-height: 1;
+		transition: all .5s;
 	}
 
 	&:hover {
 		color: $color__primario;
-		transform: rotate(-5deg);
-
+		&:after {
+			right: 0.75em;
+		}
 	}
 }
 .ocw-front .btn1 {

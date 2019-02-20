@@ -1,48 +1,48 @@
 .main-navigation {
-	background-color: white;
-	
+	background-color: $color__moradito;
+
 	.menu-toggle {
 		color: $color__body-text;
 	}
-	
+
 	.main-nav {
-		background-color: #f4f4f4;
+		//background-color: #f4f4f4;
 		ul {
 			li {
 				a {
-					color: $color__body-text;
-					
+					color: #fff;
+
 					&:hover {
 						background-color: $color__primario;
-						opacity: .8;
+						opacity: 1;
 					}
 				}
 			}
-			
+
 			li[class*="current-menu-"] > a,
 			li[class*="current-menu-"] > a:hover,
 			li[class*="current-menu-"].sfHover > a {
 				background-color: $color__primario;
 			}
-			
+
 			li:hover > a,
 			li:focus > a,
 			li.sfHover > a {
 				background-color: $color__primario;
 			}
-			
+
 			ul {
-				background-color: $color__grisillo;
-				
+				background-color: $color__moradito;
+
 				li[class*="current-menu-"] > a:hover,
 				li[class*="current-menu-"].sfHover > a,
 				li:focus > a,
 				li.sfHover > a,
 				li:hover > a {
-					background-color: $color__azul;
+					background-color: $color__primario;
 					opacity: .8;
 				}
-				
+
 				li[class*="current-menu-"] > a {
 					background-color: $color__azul;
 					opacity: .5;

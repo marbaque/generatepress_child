@@ -23,7 +23,7 @@ get_header(); ?>
 				$image = get_stylesheet_directory_uri() . '/img/dibujo.png';
 				//echo '<div class="dibujo"><img src="'. $image . '"></div>';
 				echo '<div class="dibujo"></div>';
-				
+
 				echo '<div class="texto">';
 				the_title( '<h2 class="entry-title">', '</h2>' );
 				the_content( sprintf(
@@ -49,40 +49,50 @@ get_header(); ?>
 			do_action( 'generate_after_main_content' );
 			?>
 		</main><!-- #main -->
-		
-		<h2 class="fs-title">Cursos más visitados</h2>
+
+
 		<section class="cursos-container">
-			<?php $custom_query = new WP_Query( array(
-				'posts_per_page' => 3,
-				'meta_key' => 'post_views_count',
-				'order' => 'DESC',
-				'orderby' => 'meta_value_num',
-				'post_type' => 'curso', 
-				) );
-			while($custom_query->have_posts()) : $custom_query->the_post(); ?>
-			
-				<?php echo get_template_part( 'content', 'cursoitem' ); ?>
-			
-			<?php endwhile; ?>
-			<?php wp_reset_postdata(); // reset the query ?>
+			<h2 class="fs-title">Cursos más visitados</h2>
+
+			<div class="cursos-flex">
+				<?php $custom_query = new WP_Query( array(
+					'posts_per_page' => 3,
+					'meta_key' => 'post_views_count',
+					'order' => 'DESC',
+					'orderby' => 'meta_value_num',
+					'post_type' => 'curso',
+					) );
+				while($custom_query->have_posts()) : $custom_query->the_post(); ?>
+
+					<?php echo get_template_part( 'content', 'cursoitem' ); ?>
+
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); // reset the query ?>
+			</div>
+			<div align="center"><a class="btn1" href="<?php echo get_post_type_archive_link('curso'); ?>" title="Todos los cursos">Ver todos los cursos</a></div>
 		</section>
-		<div align="center"><a class="btn1" href="<?php echo get_post_type_archive_link('curso'); ?>" title="Todos los cursos">Ver todos los cursos</a></div>
-		<h2 class="fs-title">Recursos recientes</h2>	
-		<section class="recursos-container">
-			<?php $custom_query = new WP_Query( array(
-				'post_type' => 'recurso',
-				'orderby' => 'date',
-				'order'   => 'DESC',
-				'posts_per_page' => '8', 
-				) );
-			while($custom_query->have_posts()) : $custom_query->the_post(); ?>
-			
-				<?php echo get_template_part( 'content', 'recursoitem' ); ?>
-			
-			<?php endwhile; ?>
-			<?php wp_reset_postdata(); // reset the query ?>
+
+
+		<section class="recursos-section">
+
+			<h2 class="fs-title">Recursos recientes</h2>
+			<div class="recursos-container">
+				<?php $custom_query = new WP_Query( array(
+					'post_type' => 'recurso',
+					'orderby' => 'date',
+					'order'   => 'DESC',
+					'posts_per_page' => '8',
+					) );
+				while($custom_query->have_posts()) : $custom_query->the_post(); ?>
+
+					<?php echo get_template_part( 'content', 'recursoitem' ); ?>
+
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); // reset the query ?>
+			</div>
+			<div align="center"><a class="btn1" href="<?php echo get_post_type_archive_link('recurso'); ?>" title="Todos los recursos">Ver todos los recursos</a></div>
 		</section>
-		<div align="center"><a class="btn1" href="<?php echo get_post_type_archive_link('recurso'); ?>" title="Todos los recursos">Ver todos los recursos</a></div>
+
 
 	<?php
 	/**
