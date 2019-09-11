@@ -79,6 +79,7 @@ get_header(); ?>
 						    'orderby' => 'menu_order',
 						    'order' => 'ASC',
 						    'post_type' => 'seccion', //you can use also 'any'
+						    'post_status' => array('publish', 'pending', 'draft', 'future', 'private') // Mostrar secciones sin publicar
 						    );
 
 						$the_query = new WP_Query( $args );
