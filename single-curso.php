@@ -73,7 +73,8 @@ get_header(); ?>
 					    'posts_per_page' => -1, //todos
 					    'orderby' => 'menu_order',
 					    'order' => 'ASC', //en orden numerico ascendente, en atributos de página se puede cambiar
-					    'post_type' => 'seccion', //you can use also 'any'
+					    'post_type' => 'seccion', //you can use also 'any',
+					    'post_status' => array('publish', 'pending', 'draft', 'future', 'private') // Mostrar secciones sin publicar
 					    );
 
 					$the_query = new WP_Query( $args );
