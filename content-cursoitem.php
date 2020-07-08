@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		
 		<header class="entry-header">
 			<?php
-			the_title( sprintf( '<p class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></p>' );
+			the_title( sprintf( '<h3 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
 			?>
 		</header><!-- .entry-header -->
 

@@ -16,9 +16,6 @@ get_header(); ?>
 	do_action( 'generate_archive_title' );
 	?>
 	
-	
-	
-	
 	<section id="primary" <?php generate_content_class(); ?>>
 		
 		<nav id="responsive-navigation" class="responsive-navigation" role="navigation">

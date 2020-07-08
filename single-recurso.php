@@ -20,7 +20,7 @@ $oEmbed = get_field('video_url');
 if (get_field('video_url')) : ?>
 	<div class="video-wrap">
 		<div class="video-contenedor">
-			<?php the_field('video_url'); ?>
+			<?php echo $oEmbed; ?>
 		</div>
 		<div class="video-dark-background" aria-hidden></div>
 	</div>

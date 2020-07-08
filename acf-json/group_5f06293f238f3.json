@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5f062946905ba",
-            "label": "video url",
+            "label": "Contenido multimedia",
             "name": "video_url",
             "type": "oembed",
             "instructions": "Agregue la dirección para agregar videos, imágenes, tweets, audio u otro contenido.",
@@ -36,5 +36,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1594241260
+    "modified": 1594241916
 }

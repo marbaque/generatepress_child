@@ -44,7 +44,6 @@ function generate_press_child_setup() {
 	//agregar tamaños de imagen
 	add_image_size('portada-curso', 350, 350, true);
 	add_image_size('portada-curso-thumbnail', 270, 270, true);
-	add_image_size('portada-video', 840, 473, true);
 	add_image_size('portada-recurso', 800, 420, true);
 
 	//registrar menu para recursos
@@ -173,7 +172,7 @@ function generate_press_child_setup() {
 
 	//cortar el estracto del post
 	function custom_excerpt_length( $length ) {
-		return 10;
+		return 30;
 	}
 	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
@@ -254,4 +253,4 @@ function my_acf_json_save_point( $path ) {
 
 
 /* Include custom post types */
-require_once('inc/cpt.php');
+require get_stylesheet_directory() . '/inc/cpt.php';

@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<figure class="portada">
 						<?php the_post_thumbnail('portada-recurso'); ?>
 							<figcaption>
-							<?php echo get_post(get_post_thumbnail_id())->post_content; ?>
+							<?php echo get_the_post_thumbnail_caption(); ?>
 							</figcaption>
 					</figure>
 				<?php endif; ?>

@@ -98,34 +98,34 @@
 	.recursos-container {
 		padding: 40px 20px 0;
 
+		a {
+			border: none;
+		}
+
 		.recurso {
 			display: flex;
+			align-content: stretch;
 			margin-bottom: 20px;
 			position: relative;
 			box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 			@include radio(2px);
 			overflow: hidden;
 
-			&:after { //icono de flecha
-				content: "";
-				width: 12px;
-				height: 20px;
-				background: url(img/arrow-right.png) no-repeat;
-				position: absolute;
-				right: 14px;
-				top: calc(50% - 10px);
-			}
-			a {
-				border: none;
-			}
+			
 
 			.thumb-recurso {
-				width: 150px;
-				height: 150px;
+				width: 30%;
+				height: 100%;
+				position: relative;
 				flex-shrink: 0;
 				border: none;
-				background-color: $color__grisillo;
+				background-color: $color__secundario;
 				z-index: 10;
+				img {
+					object-fit: cover;
+					height: 100%;
+					width: 100%;
+				}
 				.recurso-icon {
 					width: 100%;
 					height: 100%;
@@ -133,28 +133,21 @@
 			}
 
 			.inside-article {
-				height: 130px; //150px menus 20px del padding
-				padding: 10px 40px 10px 20px;
+				height: auto;
+				padding: 20px;
 				flex-grow: 1;
 				overflow: hidden;
 				position: relative;
 
 				.entry-title {
-					font-size: 1.2em;
-					margin: 0 0 .5em;
-					white-space: nowrap;
-					overflow: hidden;
-					text-overflow: ellipsis;
+					margin-bottom: 0.5em;
 				}
 
 				.entry-content {
 					margin: 0;
 					width: 100%;
 					height: auto;
-					font-size: .85em;
-					font-weight: 200;
-					line-height: 1.3;
-				    overflow: hidden;
+					font-size: 80%;
 				}
 
 			}
@@ -168,12 +161,12 @@
 
 		@media screen and (min-width: $break__medium) {
 			display: flex;
+			align-items: stretch;
 			flex-flow: row wrap;
 			padding: 40px 0 0;
 			.recurso {
-				flex: auto;
 				height: auto;
-				max-width: 48%;
+				width: 48%;
 				margin: 0 1% 20px; /* Some gutter */
 			}
 
@@ -290,9 +283,10 @@
 	}
 	.submenu-toggle {
 		border-bottom: 1px solid $color__text-overdark;
+		color: $color__dark;
 	}
 	button.submenu-toggle {
-		background: #98B1D5;
+		background: $color__secundario;
 		letter-spacing: 1px;
 	}
 
@@ -302,7 +296,6 @@
 	    div.nav-submenu > ul {
 	        display: inline-block!important;
 	        text-align: left;
-	        //width: 100%;
 	    }
 
 	    .submenu-toggle {
@@ -353,14 +346,14 @@
 .recursos-nav {
 	ul {
 		list-style: none;
-		background: #98B1D5;
+		background:$color__secundario;
 		margin: 0;
 
 		a {
 			padding: .5em 1em;
 			display: block;
 			border: none;
-			color: white;
+			color: $color__dark;
 			letter-spacing: .5px;
 			&:hover,
 			&:active {

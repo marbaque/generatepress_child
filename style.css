@@ -139,8 +139,7 @@ a.btn1:visited {
     margin-right: 10px;
     background-color: #f9f9f9;
     width: auto;
-    flex-shrink: 0;
-    color: #4A4A4A; }
+    flex-shrink: 0; }
     .single-curso .entry-header a.back2cursos:hover,
     .single-seccion .entry-header a.back2cursos:hover {
       color: #FA9046; }
@@ -640,9 +639,13 @@ a.simple-footnote {
 .archive-view .recursos-container,
 .ocw-front .recursos-container {
   padding: 40px 20px 0; }
+  .archive-view .recursos-container a,
+  .ocw-front .recursos-container a {
+    border: none; }
   .archive-view .recursos-container .recurso,
   .ocw-front .recursos-container .recurso {
     display: flex;
+    align-content: stretch;
     margin-bottom: 20px;
     position: relative;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
@@ -654,53 +657,40 @@ a.simple-footnote {
     -moz-background-clip: padding;
     background-clip: padding-box;
     overflow: hidden; }
-    .archive-view .recursos-container .recurso:after,
-    .ocw-front .recursos-container .recurso:after {
-      content: "";
-      width: 12px;
-      height: 20px;
-      background: url(img/arrow-right.png) no-repeat;
-      position: absolute;
-      right: 14px;
-      top: calc(50% - 10px); }
-    .archive-view .recursos-container .recurso a,
-    .ocw-front .recursos-container .recurso a {
-      border: none; }
     .archive-view .recursos-container .recurso .thumb-recurso,
     .ocw-front .recursos-container .recurso .thumb-recurso {
-      width: 150px;
-      height: 150px;
+      width: 30%;
+      height: 100%;
+      position: relative;
       flex-shrink: 0;
       border: none;
-      background-color: #ddd;
+      background-color: #F9E9C9;
       z-index: 10; }
+      .archive-view .recursos-container .recurso .thumb-recurso img,
+      .ocw-front .recursos-container .recurso .thumb-recurso img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%; }
       .archive-view .recursos-container .recurso .thumb-recurso .recurso-icon,
       .ocw-front .recursos-container .recurso .thumb-recurso .recurso-icon {
         width: 100%;
         height: 100%; }
     .archive-view .recursos-container .recurso .inside-article,
     .ocw-front .recursos-container .recurso .inside-article {
-      height: 130px;
-      padding: 10px 40px 10px 20px;
+      height: auto;
+      padding: 20px;
       flex-grow: 1;
       overflow: hidden;
       position: relative; }
       .archive-view .recursos-container .recurso .inside-article .entry-title,
       .ocw-front .recursos-container .recurso .inside-article .entry-title {
-        font-size: 1.2em;
-        margin: 0 0 .5em;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis; }
+        margin-bottom: 0.5em; }
       .archive-view .recursos-container .recurso .inside-article .entry-content,
       .ocw-front .recursos-container .recurso .inside-article .entry-content {
         margin: 0;
         width: 100%;
         height: auto;
-        font-size: .85em;
-        font-weight: 200;
-        line-height: 1.3;
-        overflow: hidden; }
+        font-size: 80%; }
     .archive-view .recursos-container .recurso .recurso-category,
     .ocw-front .recursos-container .recurso .recurso-category {
       position: absolute;
@@ -711,13 +701,13 @@ a.simple-footnote {
     .archive-view .recursos-container,
     .ocw-front .recursos-container {
       display: flex;
+      align-items: stretch;
       flex-flow: row wrap;
       padding: 40px 0 0; }
       .archive-view .recursos-container .recurso,
       .ocw-front .recursos-container .recurso {
-        flex: auto;
         height: auto;
-        max-width: 48%;
+        width: 48%;
         margin: 0 1% 20px;
         /* Some gutter */ } }
 
@@ -812,9 +802,10 @@ a.simple-footnote {
     width: calc(100% - 40px);
     margin: 0 auto; }
   .responsive-navigation .submenu-toggle {
-    border-bottom: 1px solid #CDD8E8; }
+    border-bottom: 1px solid #CDD8E8;
+    color: #2B2E35; }
   .responsive-navigation button.submenu-toggle {
-    background: #98B1D5;
+    background: #F9E9C9;
     letter-spacing: 1px; }
   @media screen and (min-width: 768px) {
     .responsive-navigation ul.nav-submenu,
@@ -844,13 +835,13 @@ a.simple-footnote {
 
 .recursos-nav ul {
   list-style: none;
-  background: #98B1D5;
+  background: #F9E9C9;
   margin: 0; }
   .recursos-nav ul a {
     padding: .5em 1em;
     display: block;
     border: none;
-    color: white;
+    color: #2B2E35;
     letter-spacing: .5px; }
     .recursos-nav ul a:hover, .recursos-nav ul a:active {
       background: #51F0FA;
@@ -905,8 +896,7 @@ a.simple-footnote {
 
 .main-navigation .main-nav ul li a:hover {
   background-color: #F9E9C9;
-  opacity: 1;
-  color: #4A4A4A; }
+  opacity: 1; }
 .main-navigation .main-nav ul li[class*="current-menu-"] > a,
 .main-navigation .main-nav ul li[class*="current-menu-"] > a:hover,
 .main-navigation .main-nav ul li[class*="current-menu-"].sfHover > a {
@@ -922,14 +912,10 @@ a.simple-footnote {
 .main-navigation .main-nav ul ul li.sfHover > a,
 .main-navigation .main-nav ul ul li:hover > a {
   background-color: #F9E9C9;
-  opacity: .9;
-  color: #4A4A4A; }
+  opacity: .9; }
 .main-navigation .main-nav ul ul li[class*="current-menu-"] > a {
   background-color: #176AC7;
   opacity: .9; }
-
-button.menu-toggle:hover, button.menu-toggle:focus, .main-navigation .mobile-bar-items a, .main-navigation .mobile-bar-items a:hover, .main-navigation .mobile-bar-items a:focus {
-  color: #4A4A4A; }
 
 .site-content {
   min-height: 700px; }
@@ -1002,7 +988,8 @@ a.easy-footnote-to-top {
     .ocw-front .fs-title {
       font-size: 1.5em; } }
 .ocw-front .site-main {
-  margin: 0; }
+  margin: 0;
+  min-height: 300px; }
   .ocw-front .site-main .texto {
     max-width: 100%;
     background: #51F0FA;

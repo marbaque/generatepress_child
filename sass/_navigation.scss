@@ -15,7 +15,7 @@
 					&:hover {
 						background-color: $color__secundario;
 						opacity: 1;
-						color: $color__body-text;
+						//color: $color__body-text;
 					}
 				}
 			}
@@ -42,7 +42,7 @@
 				li:hover > a {
 					background-color: $color__secundario;
 					opacity: .9;
-					color: $color__body-text;
+					//color: $color__body-text;
 				}
 
 				li[class*="current-menu-"] > a {
@@ -56,5 +56,5 @@
 
 
 button.menu-toggle:hover, button.menu-toggle:focus, .main-navigation .mobile-bar-items a, .main-navigation .mobile-bar-items a:hover, .main-navigation .mobile-bar-items a:focus {
-	color: $color__body-text;
+	//color: $color__body-text;
 }
