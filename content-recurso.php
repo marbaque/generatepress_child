@@ -15,11 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php
 		$term = get_field('tipo_recurso');
+		$oEmbed = get_field('video_url');
 
 		if( $term ):
-			if( !$term->slug == 'modelo-3d' || $term->slug == 'manual' || $term->slug == 'interactivo' ): ?>
-
-
+			if( !$oEmbed ): ?>
 				<?php
 				if ( has_post_thumbnail() ) : // check if the post has a Post Thumbnail assigned to it.
 					?>

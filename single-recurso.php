@@ -1,80 +1,68 @@
 <?php
+
 /**
  * The Template for displaying all single posts.
  *
  * @package GeneratePress
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
-get_header(); 
+get_header();
 ?>
-		<?php 
-		
-		$term = get_field('tipo_recurso');
-		
-		if( $term && $term->slug == 'video-educativo' ): ?>
-		<div class="video-wrap">
-			<div class="video-contenedor">
-				<?php 
-				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-					the_post_thumbnail('portada-video');
-				} 
-				?>
-			</div>
-			<div class="video-dark-background" aria-hidden></div>
+<?php
+
+$term = get_field('tipo_recurso');
+$oEmbed = get_field('video_url');
+
+if (get_field('video_url')) : ?>
+	<div class="video-wrap">
+		<div class="video-contenedor">
+			<?php the_field('video_url'); ?>
 		</div>
-		<?php 
-		elseif( $term && $term->slug == 'modelo-3d' ): ?>
-		<div class="m3d-wrap">
-			<div id="3d-contenedor" class="m3d-contenedor">
-				
-				<?php include('visor3d.php'); ?>
-			
-			</div>
-			<div class="video-dark-background" aria-hidden></div>
-		</div>	<!-- 3d-wrap -->
-		<?php endif; ?>
+		<div class="video-dark-background" aria-hidden></div>
+	</div>
+<?php endif; ?>
 
-	<div id="primary" <?php generate_content_class();?>>
-		<main id="main" <?php generate_main_class(); ?>>
-			
-			<?php
-			while ( have_posts() ) : the_post();
+<div id="primary" <?php generate_content_class(); ?>>
+	<main id="main" <?php generate_main_class(); ?>>
 
-				get_template_part( 'content', 'recurso' );
+		<?php
+		while (have_posts()) : the_post();
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || '0' != get_comments_number() ) : ?>
+			get_template_part('content', 'recurso');
 
-					<div class="comments-area">
-						<?php comments_template(); ?>
-					</div>
+			// If comments are open or we have at least one comment, load up the comment template.
+			if (comments_open() || '0' != get_comments_number()) : ?>
 
-				<?php endif;
+				<div class="comments-area">
+					<?php comments_template(); ?>
+				</div>
 
-			endwhile;
+		<?php endif;
 
-			/**
-			 * generate_after_main_content hook.
-			 *
-			 * @since 0.1
-			 */
-			do_action( 'generate_after_main_content' );
-			?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		endwhile;
 
-	<?php
-	/**
-	 * generate_after_primary_content_area hook.
-	 *
-	 * @since 2.0
-	 */
-	 do_action( 'generate_after_primary_content_area' );
+		/**
+		 * generate_after_main_content hook.
+		 *
+		 * @since 0.1
+		 */
+		do_action('generate_after_main_content');
+		?>
+	</main><!-- #main -->
+</div><!-- #primary -->
 
-	 generate_construct_sidebars();
+<?php
+/**
+ * generate_after_primary_content_area hook.
+ *
+ * @since 2.0
+ */
+do_action('generate_after_primary_content_area');
+
+generate_construct_sidebars();
 
 get_footer();

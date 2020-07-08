@@ -435,14 +435,12 @@ a.simple-footnote {
 @media screen and (min-width: 1200px) {
   .single-recurso .recurso-category {
     margin-left: -60px; } }
-.single-recurso .video-wrap,
-.single-recurso .m3d-wrap {
+.single-recurso .video-wrap {
   display: block;
   width: 100%;
   height: auto;
   position: relative; }
-  .single-recurso .video-wrap .video-dark-background,
-  .single-recurso .m3d-wrap .video-dark-background {
+  .single-recurso .video-wrap .video-dark-background {
     position: absolute;
     top: 0;
     background-color: #111;
@@ -451,28 +449,20 @@ a.simple-footnote {
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     z-index: -1; }
-.single-recurso .video-contenedor,
-.single-recurso .m3d-contenedor {
-  display: block;
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-  z-index: 99; }
-  .single-recurso .video-contenedor .attachment-portada-video,
-  .single-recurso .m3d-contenedor .attachment-portada-video {
-    margin: 0 auto !important; }
-.single-recurso .m3d-contenedor {
-  max-height: 400px; }
-  .single-recurso .m3d-contenedor canvas {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-    max-height: 400px; }
-  @media screen and (min-width: 768px) {
-    .single-recurso .m3d-contenedor {
-      height: auto; }
-      .single-recurso .m3d-contenedor canvas {
-        width: 66%; } }
+  .single-recurso .video-wrap .video-contenedor {
+    position: relative;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto; }
+    .single-recurso .video-wrap .video-contenedor iframe,
+    .single-recurso .video-wrap .video-contenedor object,
+    .single-recurso .video-wrap .video-contenedor embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
 .single-recurso .recurso-flexwrap {
   margin-bottom: 2em; }
   .single-recurso .recurso-flexwrap .recurso-flexitem {
