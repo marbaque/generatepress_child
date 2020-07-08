@@ -235,3 +235,23 @@ function generate_press_child_setup() {
 
 }
 add_action('after_setup_theme', 'generate_press_child_setup');
+
+
+/* sincronizar custom fields con el tema */
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+ 
+function my_acf_json_save_point( $path ) {
+    
+    // update path
+    $path = get_stylesheet_directory() . '/acf-json';
+    
+    
+    // return
+    return $path;
+    
+}
+
+
+
+/* Include custom post types */
+require_once('inc/cpt.php');

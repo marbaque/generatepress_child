@@ -1,0 +1,150 @@
+{
+    "key": "group_5c48c88d67872",
+    "title": "Datos del curso",
+    "fields": [
+        {
+            "key": "field_5a6de3257b7f0",
+            "label": "Área",
+            "name": "area_curso",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "area",
+            "field_type": "radio",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_5a63896d3ace7",
+            "label": "Portada del curso",
+            "name": "portada_del_curso",
+            "type": "image",
+            "instructions": "Agregue aquí una imagen de portada para este curso.\r\nAgregue una descripción para mostrar un texto al pie de página.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "preview_size": "thumbnail",
+            "library": "uploadedTo",
+            "return_format": "array",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_5a6389b93ace8",
+            "label": "Código del curso",
+            "name": "codigo_del_curso",
+            "type": "text",
+            "instructions": "Agregue el número de asignatura correspondiente si aplica.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Introduce el código o asignatura del curso aquí",
+            "prepend": "Curso",
+            "append": "",
+            "formatting": "none",
+            "maxlength": 10
+        },
+        {
+            "key": "field_5a638a463ace9",
+            "label": "Profesor",
+            "name": "profe",
+            "type": "text",
+            "instructions": "Nombre del profesor o autor del curso",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Introduce el nombre o nombres aquí",
+            "prepend": "Profesor(a) o profesores(as)",
+            "append": "",
+            "maxlength": 140
+        },
+        {
+            "key": "field_5a638ab83a0a3",
+            "label": "Información adicional",
+            "name": "informacion_adicional",
+            "type": "textarea",
+            "instructions": "Información adicional como programa, fecha de publicación, etc.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Programa: Bachillerato en Administración de Empresas con énfasis en Mercadeo\r\nEscuela Ciencias de la Administración\r\nUNED, Costa Rica\r\nIII cuatrimestre, 2008",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 6,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_5a638b4f3a0a4",
+            "label": "Descripción general",
+            "name": "descripcion_general",
+            "type": "wysiwyg",
+            "instructions": "Agregue una descripción corta o resumen del curso",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "tabs": "all",
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "curso"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "categories",
+        "tags"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1594189108
+}

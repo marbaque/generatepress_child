@@ -1,0 +1,63 @@
+{
+    "key": "group_5c48c88d5e126",
+    "title": "Archivo de recurso",
+    "fields": [
+        {
+            "key": "field_5a89050b9d157",
+            "label": "Nombre del archivo",
+            "name": "nombre_archivo",
+            "type": "text",
+            "instructions": "Título del archivo o documento.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a88f53d40389",
+            "label": "Documento",
+            "name": "archivo_recurso",
+            "type": "file",
+            "instructions": "Subir un archivo para que el usuario lo pueda descargar (.zip, .pdf, .mp4, u otros)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "library": "uploadedTo",
+            "return_format": "array",
+            "min_size": 0,
+            "max_size": 0,
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1594186761
+}

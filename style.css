@@ -5,7 +5,7 @@
  Author:       Mario Badilla and Ricardo Herrera
  Author URI:   https://mariobadilla.com
  Template:     generatepress
- Version:      1.0
+ Version:      2.0
  GitHub Theme URI: https://github.com/marbaque/generatepress_child
 */
 /************************************************************************/
@@ -913,35 +913,30 @@ a.simple-footnote {
   text-align: center;
   background: none; }
 
-.main-navigation {
-  background-color: #98B1D5; }
-  .main-navigation .menu-toggle {
-    color: #4A4A4A; }
-  .main-navigation .main-nav ul li a {
-    color: #fff; }
-    .main-navigation .main-nav ul li a:hover {
-      background-color: #FA9046;
-      opacity: 1; }
-  .main-navigation .main-nav ul li[class*="current-menu-"] > a,
-  .main-navigation .main-nav ul li[class*="current-menu-"] > a:hover,
-  .main-navigation .main-nav ul li[class*="current-menu-"].sfHover > a {
-    background-color: #FA9046; }
-  .main-navigation .main-nav ul li:hover > a,
-  .main-navigation .main-nav ul li:focus > a,
-  .main-navigation .main-nav ul li.sfHover > a {
-    background-color: #FA9046; }
-  .main-navigation .main-nav ul ul {
-    background-color: #98B1D5; }
-    .main-navigation .main-nav ul ul li[class*="current-menu-"] > a:hover,
-    .main-navigation .main-nav ul ul li[class*="current-menu-"].sfHover > a,
-    .main-navigation .main-nav ul ul li:focus > a,
-    .main-navigation .main-nav ul ul li.sfHover > a,
-    .main-navigation .main-nav ul ul li:hover > a {
-      background-color: #FA9046;
-      opacity: .8; }
-    .main-navigation .main-nav ul ul li[class*="current-menu-"] > a {
-      background-color: #176AC7;
-      opacity: .5; }
+.main-navigation .main-nav ul li a:hover {
+  background-color: #F9E9C9;
+  opacity: 1;
+  color: #4A4A4A; }
+.main-navigation .main-nav ul li[class*="current-menu-"] > a,
+.main-navigation .main-nav ul li[class*="current-menu-"] > a:hover,
+.main-navigation .main-nav ul li[class*="current-menu-"].sfHover > a {
+  background-color: #F9E9C9;
+  color: inherit; }
+.main-navigation .main-nav ul li:hover > a,
+.main-navigation .main-nav ul li:focus > a,
+.main-navigation .main-nav ul li.sfHover > a {
+  background-color: #F9E9C9; }
+.main-navigation .main-nav ul ul li[class*="current-menu-"] > a:hover,
+.main-navigation .main-nav ul ul li[class*="current-menu-"].sfHover > a,
+.main-navigation .main-nav ul ul li:focus > a,
+.main-navigation .main-nav ul ul li.sfHover > a,
+.main-navigation .main-nav ul ul li:hover > a {
+  background-color: #F9E9C9;
+  opacity: .9;
+  color: #4A4A4A; }
+.main-navigation .main-nav ul ul li[class*="current-menu-"] > a {
+  background-color: #176AC7;
+  opacity: .9; }
 
 button.menu-toggle:hover, button.menu-toggle:focus, .main-navigation .mobile-bar-items a, .main-navigation .mobile-bar-items a:hover, .main-navigation .mobile-bar-items a:focus {
   color: #4A4A4A; }
@@ -1012,8 +1007,7 @@ a.easy-footnote-to-top {
   width: auto;
   margin: 10px 0;
   padding: 0 20px;
-  color: #f4f4f4;
-  text-shadow: 2px 2px 1px #98B1D5; }
+  color: #f4f4f4; }
   @media screen and (min-width: 500px) {
     .ocw-front .fs-title {
       font-size: 1.5em; } }

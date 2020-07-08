@@ -5,7 +5,7 @@
  Author:       Mario Badilla and Ricardo Herrera
  Author URI:   https://mariobadilla.com
  Template:     generatepress
- Version:      1.0
+ Version:      2.0
  GitHub Theme URI: https://github.com/marbaque/generatepress_child
 */
 
@@ -113,7 +113,6 @@ a.easy-footnote-to-top {
 		margin: 10px 0;
 		padding: 0 20px;
 		color: #f4f4f4;
-		text-shadow: 2px 2px 1px $color__moradito;
 
 		@media screen and (min-width: $break__small) {
 			font-size: 1.5em;
