@@ -1,0 +1,53 @@
+{
+    "key": "group_5c48c88d7a80b",
+    "title": "Recursos\/Sección - Licencia",
+    "fields": [
+        {
+            "key": "field_5a6de19cce149",
+            "label": "Seleccionar licencia",
+            "name": "seleccionar_licencia",
+            "type": "taxonomy",
+            "instructions": "Seleccione el tipo de licencia para este recurso o sección. Si no aparece la licencia que necesita, por favor avisar al administrador del sitio.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "licencia",
+            "field_type": "select",
+            "allow_null": 0,
+            "return_format": "object",
+            "multiple": 0,
+            "add_term": 1,
+            "load_terms": 0,
+            "save_terms": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "recurso"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "seccion"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1594265691
+}

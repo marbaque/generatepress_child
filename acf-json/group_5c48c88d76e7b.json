@@ -1,6 +1,6 @@
 {
     "key": "group_5c48c88d76e7b",
-    "title": "Información del Recurso",
+    "title": "Recurso - Metadatos",
     "fields": [
         {
             "key": "field_5a6ce4599ce04",
@@ -67,5 +67,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1594237515
+    "modified": 1594265670
 }

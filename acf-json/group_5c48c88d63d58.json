@@ -1,13 +1,13 @@
 {
-    "key": "group_5f06293f238f3",
-    "title": "Recurso - Video",
+    "key": "group_5c48c88d63d58",
+    "title": "Sección - Subir archivo",
     "fields": [
         {
-            "key": "field_5f062946905ba",
-            "label": "Contenido multimedia",
-            "name": "video_url",
-            "type": "oembed",
-            "instructions": "Agregue la dirección para agregar videos, imágenes, tweets, audio u otro contenido.",
+            "key": "field_5a63875bb213c",
+            "label": "Archivo de recursos",
+            "name": "archivo_seccion",
+            "type": "file",
+            "instructions": "Suba aquí el archivo comprimido del curso completo.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,8 +15,11 @@
                 "class": "",
                 "id": ""
             },
-            "width": "",
-            "height": ""
+            "library": "uploadedTo",
+            "return_format": "array",
+            "min_size": 0,
+            "max_size": 0,
+            "mime_types": ""
         }
     ],
     "location": [
@@ -24,17 +27,17 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "recurso"
+                "value": "seccion"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "side",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1594265709
+    "modified": 1594266662
 }

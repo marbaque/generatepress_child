@@ -1,0 +1,48 @@
+{
+    "key": "group_5c48c88d73359",
+    "title": "Tax- Licencias - Icono",
+    "fields": [
+        {
+            "key": "field_5a6ddb5415783",
+            "label": "Ícono para licencia",
+            "name": "icono_licencia",
+            "type": "image",
+            "instructions": "Subir ícono de la licencia.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "preview_size": "thumbnail",
+            "library": "uploadedTo",
+            "return_format": "url",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "licencia"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1594265635
+}

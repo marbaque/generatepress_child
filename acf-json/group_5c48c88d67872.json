@@ -1,6 +1,6 @@
 {
     "key": "group_5c48c88d67872",
-    "title": "Datos del curso",
+    "title": "Curso - Metadatos",
     "fields": [
         {
             "key": "field_5a6de3257b7f0",
@@ -105,25 +105,6 @@
             "maxlength": "",
             "rows": 6,
             "new_lines": "br"
-        },
-        {
-            "key": "field_5a638b4f3a0a4",
-            "label": "Descripción general",
-            "name": "descripcion_general",
-            "type": "wysiwyg",
-            "instructions": "Agregue una descripción corta o resumen del curso",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "tabs": "all",
-            "delay": 0
         }
     ],
     "location": [
@@ -146,5 +127,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1594189108
+    "modified": 1594266645
 }
