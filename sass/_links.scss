@@ -37,13 +37,19 @@ a {
 
 .page-links,
 .nav-links {
-	a, span {
-		padding: 10px 20px;
+	.page-numbers {
+		padding: 5px 10px;
 		border: none;
 		background: white;
-		margin: 5px;
+		margin: 2px;
 		box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.19);
 		display: inline-block;
+		font-size: 0.8rem;
+		@media (min-width: $break__medium) {
+			padding: 10px 20px;
+			margin: 5px;
+			font-size: 1rem;
+		}
 		&.current {
 			background: $color__grisillo;
 		}
